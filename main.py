@@ -39,7 +39,8 @@ def train_single_epoch(net, optimizer, loader, criterion, task_id=None, manual=F
 		else:
 			if args.opt=='agem':
 				net = buffer.observe_agem(data, task_id-1, target)
-			optimizer.step()
+			else:
+				optimizer.step()
 
 	return net, alpha_mean
 
