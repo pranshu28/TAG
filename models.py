@@ -13,11 +13,9 @@ class ResNet18_CUB(nn.Module):
         for param in resnet.parameters():
             param.requires_grad = True
         self.net = resnet
-        num_ftrs = resnet.fc.in_features
-        self.net.fc = nn.Linear(num_ftrs, 200)
+        self.net.fc = nn.Linear(resnet.fc.in_features, 200)
         self.input_size = config['input_size']
         self.n_classes = config['classes']
-
 
     def forward(self, x, task_id=None):
         x = x.view(x.size(0), *self.input_size)
@@ -58,92 +56,6 @@ class MLP(nn.Module):
         out = self.dropout_2(out)
         out = self.W3(out)
         return out
-
-
-# def conv3x3(in_planes, out_planes, stride=1):
-#     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
-#                      padding=1, bias=False)
-#
-# class BasicBlock(nn.Module):
-#     expansion = 1
-#
-#     def __init__(self, in_planes, planes, stride=1, p=0):
-#         super(BasicBlock, self).__init__()
-#         self.conv1 = conv3x3(in_planes, planes, stride)
-#         self.bn1 = nn.BatchNorm2d(planes)
-#         self.conv2 = conv3x3(planes, planes)
-#         self.bn2 = nn.BatchNorm2d(planes)
-#         self.dropout = nn.Dropout(p)
-#         self.shortcut = nn.Sequential()
-#         if stride != 1 or in_planes != self.expansion * planes:
-#             self.shortcut = nn.Sequential(
-#                 nn.Conv2d(in_planes, self.expansion * planes, kernel_size=1,
-#                           stride=stride, bias=False),
-#                 nn.BatchNorm2d(self.expansion * planes),
-#                 nn.Dropout(p)
-#             )
-#
-#     def forward(self, x):
-#         out = F.relu(self.bn1(self.conv1(x)))
-#         out = self.dropout(self.bn2(self.conv2(out)))
-#         out += self.shortcut(x)
-#         out = F.relu(out)
-#         return out
-#
-# class ResNet(nn.Module):
-#     def __init__(self, block, num_blocks, num_classes, nf, p=0, config={}):
-#         super(ResNet, self).__init__()
-#         self.in_planes = nf
-#         self.input_size = config['input_size']
-#         self.n_classes = config['classes']
-#
-#         self.conv1 = conv3x3(self.input_size[0], nf * 1)
-#         self.bn1 = nn.BatchNorm2d(nf * 1)
-#         self.dropout = nn.Dropout(p=0)
-#         self.layer1 = self._make_layer(block, nf * 1, num_blocks[0], stride=1, p=p)
-#         self.layer2 = self._make_layer(block, nf * 2, num_blocks[1], stride=2, p=p)
-#         self.layer3 = self._make_layer(block, nf * 4, num_blocks[2], stride=2, p=p)
-#         self.layer4 = self._make_layer(block, nf * 8, num_blocks[3], stride=2, p=p)
-#
-#         # hardcoded for now
-#         last_hid = nf * 8 * block.expansion if self.input_size[1] in [8,16,21,32,42] else 640
-#         self.linear = nn.Linear(last_hid, num_classes)
-#
-#     def _make_layer(self, block, planes, num_blocks, stride, p):
-#         strides = [stride] + [1] * (num_blocks - 1)
-#         layers = []
-#         for stride in strides:
-#             layers.append(block(self.in_planes, planes, stride, p))
-#             self.in_planes = planes * block.expansion
-#         return nn.Sequential(*layers)
-#
-#     def return_hidden(self, x):
-#         bsz = x.size(0)
-#         out = F.relu(self.bn1(self.conv1(x.view(bsz, *self.input_size))))
-#         out = self.layer1(out)
-#         out = self.layer2(out)
-#         out = self.layer3(out)
-#         out = self.layer4(out)
-#         out = F.avg_pool2d(out, 4)
-#         out = out.view(out.size(0), -1)
-#         return out
-#
-#     def forward(self, x, t):
-#         out = self.return_hidden(x.float())
-#         out = self.linear(out)
-#         if t is None:
-#             return out
-#         offset1 = int((t-1) * self.n_classes)
-#         offset2 = int(t * self.n_classes)
-#         if offset1 > 0:
-#             out[:, :offset1].data.fill_(-10e10)
-#         if offset2 < 100:
-#             out[:, offset2:100].data.fill_(-10e10)
-#         return out
-#
-# def ResNet18(nclasses=100, nf=20, config={}):
-#     net = ResNet(BasicBlock, [2, 2, 2, 2], nclasses, nf, config=config)
-#     return net
 
 
 def conv3x3(in_planes, out_planes, stride=1):
@@ -210,28 +122,49 @@ class ResNet(nn.Module):
             self.in_planes = planes * block.expansion
         return nn.Sequential(*layers)
 
-    def forward(self, x, task_id=None):
+    def return_hidden(self, x):
         bsz = x.size(0)
-        scale = 1. #if self.input_size[1]==32 else 255.
-        x = (x.view(bsz, *self.input_size)/scale).float()
-        out = relu(self.bn1(self.conv1(x)))
+        out = relu(self.bn1(self.conv1(x.view(bsz, *self.input_size).float())))
         out = self.layer1(out)
         out = self.layer2(out)
         out = self.layer3(out)
         out = self.layer4(out)
         out = avg_pool2d(out, 4)
         out = out.view(out.size(0), -1)
+        return out
+
+    def forward(self, x, task_id=None):
+        out = self.return_hidden(x)
         out = self.linear(out)
         if task_id is None:
             return out
-        t = task_id
-        offset1 = int((t-1) * self.n_classes)
-        offset2 = int(t * self.n_classes)
+        offset1 = int((task_id-1) * self.n_classes)
+        offset2 = int(task_id * self.n_classes)
         if offset1 > 0:
             out[:, :offset1].data.fill_(-10e10)
         if offset2 < 100:
             out[:, offset2:100].data.fill_(-10e10)
         return out
+
+    # def forward(self, x, task_id=None):
+    #     bsz = x.size(0)
+    #     out = relu(self.bn1(self.conv1(x.view(bsz, *self.input_size))))
+    #     out = self.layer1(out)
+    #     out = self.layer2(out)
+    #     out = self.layer3(out)
+    #     out = self.layer4(out)
+    #     out = avg_pool2d(out, 4)
+    #     out = out.view(out.size(0), -1)
+    #     out = self.linear(out)
+    #     if task_id is None:
+    #         return out
+    #     offset1 = int((task_id-1) * self.n_classes)
+    #     offset2 = int(task_id * self.n_classes)
+    #     if offset1 > 0:
+    #         out[:, :offset1].data.fill_(-10e10)
+    #     if offset2 < 100:
+    #         out[:, offset2:100].data.fill_(-10e10)
+    #     return out
 
 
 def ResNet18(nclasses=100, nf=20, config={}):

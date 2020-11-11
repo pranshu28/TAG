@@ -39,7 +39,7 @@ def parse_arguments():
 	parser.add_argument('--b', default=None, type=int, help='b')
 	parser.add_argument('--seed', default=1234, type=int, help='random seed')
 	parser.add_argument('--runs', default=3, type=int, help='# runs')
-	parser.add_argument('--man-opt', default='rms', type=str, help='man opt')
+	parser.add_argument('--tag-opt', default='rms', type=str, help='man opt')
 	parser.add_argument('--mem-size', default=1, type=int, help='mem')
 	parser.add_argument('--multi', default=0, type=int, help='MTL')
 
@@ -50,7 +50,7 @@ def parse_arguments():
 	if args.opt=='er' or args.opt=='agem':
 		print("  mem="+str(args.mem_size))
 	elif args.opt=='param':
-		print("  man-opt="+str(args.man_opt))
+		print("  tag-opt="+str(args.man_opt))
 		print("  b="+str(args.b))
 	return args
 

@@ -2,7 +2,7 @@ import math
 from utils import *
 
 
-class manual_opt():
+class tag_opt():
 	def __init__(self, model, args, num_tasks, optim='rms', lr=None, b=5):
 		self.optim = optim
 		self.args = args
@@ -89,8 +89,8 @@ class manual_opt():
 
 
 def store_alpha(optimizer, task_id, iter, alpha_mean):
-	for j in optimizer.alpha_add_[task_id - 1]:
-		alphas = optimizer.alpha_add_[task_id - 1][j]
+	for j in optimizer.alpha_add_[task_id]:
+		alphas = optimizer.alpha_add_[task_id][j]
 		if iter==0:
 			alpha_mean[j] = alphas
 		else:

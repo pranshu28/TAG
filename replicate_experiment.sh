@@ -7,7 +7,7 @@ cd ~/pranshu/research/mtl_ll/tag
 if [ $1 = "cifar" ]; then
     echo "************************ replicating experiment 2 (Split CIFAR-100) ***********************"
 
-    echo " >>>>>>>> Plastic (Naive) SGD "
+    echo " >>>>>>>> Naive SGD "
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --multi 1
 #
@@ -22,29 +22,29 @@ if [ $1 = "cifar" ]; then
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
 ##    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 #
-    echo " >>>>>>>> Plastic (Naive) RMSProp "
+    echo " >>>>>>>> Naive RMSProp "
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 
-    echo " >>>>>>>> Manual RMSProp (Ours) "
-    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'rms'
+    echo " >>>>>>>> TAG-RMSProp"
+    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'rms'
 
-#    echo " >>>>>>>> Manual Adagrad (Ours) "
-#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adagrad'
+#    echo " >>>>>>>> TAG-Adagrad"
+#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adagrad'
 
-#    echo " >>>>>>>> Manual Adam (Ours) "
-#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adam'
+#    echo " >>>>>>>> TAG-Adam"
+#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adam'
 #
-#    echo " >>>>>>>> Plastic (Naive) Adagrad "
+#    echo " >>>>>>>> Naive Adagrad "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
 
-#    echo " >>>>>>>> Plastic (Naive) Adam "
+#    echo " >>>>>>>> Naive Adam "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adam'
 
 
 elif [ $1 = "imagenet" ]; then
     echo "************************ replicating experiment 2 (mini-imagenet) ***********************"
 
-    echo " >>>>>>>> Plastic (Naive) SGD "
+    echo " >>>>>>>> Naive SGD "
     python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
     python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --multi 1
 #
@@ -58,28 +58,28 @@ elif [ $1 = "imagenet" ]; then
     python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
 ##    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 #
-    echo " >>>>>>>> Plastic (Naive) RMSProp "
+    echo " >>>>>>>> Naive RMSProp "
     python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 #
-    echo " >>>>>>>> Manual RMSProp (Ours) "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'rms'
+        echo " >>>>>>>> TAG-RMSProp"
+    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'rms'
 #
-#    echo " >>>>>>>> Manual Adagrad (Ours) "
-#    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adagrad'
+#    echo " >>>>>>>> TAG-Adagrad"
+#    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adagrad'
 
-#    echo " >>>>>>>> Manual Adam (Ours) "
-#    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adam'
+#    echo " >>>>>>>> TAG-Adam"
+#    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adam'
 
-#    echo " >>>>>>>> Plastic (Naive) Adagrad "
+#    echo " >>>>>>>> Naive Adagrad "
 #    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
 
-#    echo " >>>>>>>> Plastic (Naive) Adam "
+#    echo " >>>>>>>> Naive Adam "
 #    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adam'
 
 elif [ $1 = "cub" ]; then
     echo "************************ replicating experiment 2 (cub) ***********************"
 
-    echo " >>>>>>>> Plastic (Naive) SGD "
+    echo " >>>>>>>> Naive SGD "
     python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
     python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --multi 1
 
@@ -93,22 +93,22 @@ elif [ $1 = "cub" ]; then
     python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
 ##    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 
-    echo " >>>>>>>> Plastic (Naive) RMSProp "
+    echo " >>>>>>>> Naive RMSProp "
     python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 
-    echo " >>>>>>>> Manual RMSProp (Ours) "
-    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'rms'
+    echo " >>>>>>>> TAG-RMSProp"
+    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'rms'
 
-#    echo " >>>>>>>> Manual Adagrad (Ours) "
-#    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adagrad'
+#    echo " >>>>>>>> TAG-Adagrad"
+#    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adagrad'
 #
-#    echo " >>>>>>>> Manual Adam (Ours) "
-#    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --man-opt 'adam'
+#    echo " >>>>>>>> TAG-Adam"
+#    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'param' --b 5 --tag-opt 'adam'
 #
-#    echo " >>>>>>>> Plastic (Naive) Adagrad "
+#    echo " >>>>>>>> Naive Adagrad "
 #    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
 
-#    echo " >>>>>>>> Plastic (Naive) Adam "
+#    echo " >>>>>>>> Naive Adam "
 #    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adam'
 
 

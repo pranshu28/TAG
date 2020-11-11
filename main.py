@@ -1,4 +1,4 @@
-from manual_update import *
+from tag_update import *
 from er import *
 from agem import *
 
@@ -10,35 +10,38 @@ def train_single_epoch(net, optimizer, loader, criterion, task_id=None, manual=F
 	for batch_idx, (data, target) in enumerate(loader):
 		data = data.to(DEVICE)
 		target = target.to(DEVICE)
-		if task_id:
-			pred = net(data, task_id)
+		if task_id is not None:
+			pred = net(data, task_id+1)
 		else:
-			pred = net(data)
+			hidden = net.return_hidden(data)
+			pred = net.linear(hidden)
+			task_id = task_centroid(hidden)
+			# pred = net(data)
 		net.zero_grad()
 
 		if buffer is not None:
 			if args.opt=='agem':
-				net = buffer.observe_agem(net, data, task_id-1, target)
+				net = buffer.observe_agem(net, data, task_id, target)
 				continue
 			else:
-				if task_id > 1:
+				if task_id > 0:
 					mem_x, mem_y, b_task_ids = buffer.sample(args.batch_size, exclude_task=None, pr=False)
 					mem_pred = net(mem_x, None)
 					mem_pred = apply_mask(mem_y, mem_pred, net.n_classes)
 					loss_mem = criterion(mem_pred, mem_y)
 					loss_mem.backward()
-				buffer.add_reservoir(data, target, None, task_id - 1)
+				buffer.add_reservoir(data, target, None, task_id)
 
 		loss = criterion(pred, target)
 		loss.backward()
 
 		if manual:
-			optimizer.step(net, task_id - 1, batch_idx, lr=lr)
-			if task_id > 1:
+			optimizer.step(net, task_id, batch_idx, lr=lr)
+			if task_id > 0:
 				alpha_mean = store_alpha(optimizer, task_id, batch_idx, alpha_mean)
 		else:
 			if args.opt=='agem':
-				net = buffer.observe_agem(data, task_id-1, target)
+				net = buffer.observe_agem(data, task_id, target)
 			else:
 				optimizer.step()
 
@@ -79,7 +82,7 @@ def run(args, train_loaders, val_loaders):
 	if args.opt is not None:
 		opt = {'rms': torch.optim.RMSprop, 'adagrad': torch.optim.Adagrad, 'adam': torch.optim.Adam}
 		if manual:
-			optimizer = manual_opt(model, args, args.tasks, lr=args.lr, optim=args.man_opt, b=args.b)
+			optimizer = tag_opt(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
 		elif args.opt == 'er':
 			buffer = ER(args)
 			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)  # if args.gamma!=1.0 else 0.0)
@@ -100,7 +103,7 @@ def run(args, train_loaders, val_loaders):
 
 		if args.opt is None:
 			optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.8 if args.gamma != 1.0 else 0.0)
-		model, alpha_mean = train_single_epoch(model, optimizer, train_loader, criterion, current_task_id, manual, lr, buffer)
+		model, alpha_mean = train_single_epoch(model, optimizer, train_loader, criterion, current_task_id-1, manual, lr, buffer)
 
 		############ Analysis Part #############
 		mat = np.array([alpha_mean[i] for i in alpha_mean])
