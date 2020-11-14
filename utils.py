@@ -103,10 +103,6 @@ def get_benchmark_data_loader(args):
 		return get_rotated_mnist_tasks
 	elif args.dataset == 'cifar-100' or args.dataset == 'cifar100':
 		return get_split_cifar100_tasks
-	elif args.dataset == 'imagenet' or args.dataset == 'mini-imagenet':
-		return get_mini_imagenet_tasks
-	elif args.dataset == 'cub':
-		return get_split_cub_tasks
 	else:
 		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
 
@@ -131,6 +127,8 @@ def get_benchmark_model(args):
 		return ResNet18(config={'input_size': (3, 84, 84), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	elif 'cub' in args.dataset:
 		return ResNet18_CUB(config={'input_size': (3, 224, 224), 'dropout': args.dropout, 'classes': int(200 / args.tasks)}).to(DEVICE)
+	elif '5data' in args.dataset:
+		return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	else:
 		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
 

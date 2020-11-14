@@ -160,8 +160,8 @@ if __name__ == "__main__":
 	val_loaders = None
 
 	print("Loading {} tasks for {}".format(args.tasks, args.dataset))
-	if args.dataset == 'cifar100':
-		tasks = get_benchmark_data_loader(args)(args.tasks, args.batch_size)
+	if args.dataset in ['cifar100','cifar10'] :
+		tasks = get_split_cifar100_tasks(args.tasks, args.batch_size)
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		if args.tasks == 10:
 			val_loaders = [tasks[i]['val'] for i in tasks]
@@ -169,9 +169,13 @@ if __name__ == "__main__":
 	elif 'imagenet' in args.dataset:
 		train_loaders, test_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_miniimagenet(args), [True, False])]
 		args.classes = 100
-	else:# args.dataset == 'cub':
+	elif args.dataset == 'cub':
 		train_loaders, test_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_split_cub_(args), [True, False])]
 		args.classes = 200
+	else:
+		tasks = get_5_datasets_tasks(args.tasks, args.batch_size)
+		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
+		args.classes = 50
 	print("loaded all tasks!")
 
 	# all_scores = []
@@ -185,11 +189,11 @@ if __name__ == "__main__":
 	#       'learning accuracy = ', all_scores.mean(axis=0)[2],'+/-',all_scores.std(axis=0)[2] )
 	# print('------------------- Experiment ended -----------------\n\n\n')
 
-	lrs = (0.00005, 0.000025, 0.00001)
+	lrs = (0.005, 0.0025, 0.001, 0.0005)
 	args.runs=2
 	bs = (3, 5)
 	for lr in lrs:
-		args.lr = lr*10
+		args.lr = lr
 		for b in bs:
 			args.b = b
 			all_scores = []
