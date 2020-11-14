@@ -91,7 +91,7 @@ def get_rotated_mnist_tasks(num_tasks, batch_size):
 	return datasets
 
 
-def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test):
+def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, get_val=False):
 	"""
 	Returns a single task of split CIFAR-100 dataset
 	:param task_id:
@@ -108,10 +108,22 @@ def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test):
 	
 	targets_test = torch.tensor(cifar_test.targets)
 	target_test_idx = ((targets_test >= start_class) & (targets_test < end_class))
-	train_loader = torch.utils.data.DataLoader(torch.utils.data.dataset.Subset(cifar_train, np.where(target_train_idx==1)[0]), batch_size=batch_size, shuffle=True)
+	train_data = torch.utils.data.dataset.Subset(cifar_train, np.where(target_train_idx==1)[0])
+	train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True)
 	test_loader = torch.utils.data.DataLoader(torch.utils.data.dataset.Subset(cifar_test, np.where(target_test_idx==1)[0]), batch_size=batch_size)
-
-	return train_loader, test_loader
+	if get_val:
+		dataset_size = len(train_loader.dataset)
+		indices = list(range(dataset_size))
+		split = int(np.floor(0.05 * dataset_size))
+		np.random.shuffle(indices)
+		train_indices, val_indices = indices[split:], indices[:split]
+		train_sampler = torch.utils.data.SubsetRandomSampler(train_indices)
+		valid_sampler = torch.utils.data.SubsetRandomSampler(val_indices)
+		train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=train_sampler)
+		val_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=valid_sampler)
+	else:
+		val_loader = None
+	return train_loader, test_loader, val_loader
 
 
 def get_split_cifar100_tasks(num_tasks, batch_size):
@@ -131,8 +143,8 @@ def get_split_cifar100_tasks(num_tasks, batch_size):
 	classes = int(100/num_tasks)
 
 	for task_id in range(1, num_tasks+1):
-		train_loader, test_loader = get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test)
-		datasets[task_id] = {'train': train_loader, 'test': test_loader}
+		train_loader, test_loader, val_loader = get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, num_tasks==10)
+		datasets[task_id] = {'train': train_loader, 'test': test_loader, 'val': val_loader}
 	return datasets
 
 

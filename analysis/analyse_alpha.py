@@ -5,9 +5,10 @@ plt.style.use('ggplot')
 params = {'mathtext.default': 'regular'}
 plt.rcParams.update(params)
 
-dataset = 'cub'
+dataset = 'cifar'
 f = open(dataset+'.txt', 'r')
 dataset = {'cifar':'CIFAR-100', 'imagenet':'Mini-imagenet', 'cub':'CUB'}[dataset]
+ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
 
 lines = f.readlines()
 curr = 0
@@ -16,6 +17,9 @@ man_acc, rms_acc = np.zeros((20,20)), np.zeros((20,20))
 tasks = np.arange(1,21)
 corr = np.zeros((20,20))
 runs = -1
+
+la = []
+
 for i, line in enumerate(lines):
 	l = line.split('\t')
 	while '' in l:
@@ -24,7 +28,7 @@ for i, line in enumerate(lines):
 		if 'Manual RMSProp' in line:
 			valid = 2
 			print(valid)
-		elif 'Plastic (Naive) RMSProp' in line:
+		elif 'Stable SGD' in line:
 			valid = 1
 			print(valid)
 		else:
@@ -52,6 +56,7 @@ for i, line in enumerate(lines):
 					man_acc_main += man_acc
 					corr_main += corr
 				elif valid == 1:
+					la += [np.mean(np.diag(rms_acc))]
 					rms_acc_prev += rms_acc
 			except:
 				if valid==2:
@@ -76,7 +81,7 @@ man_acc_main /= runs
 rms_acc_prev /= runs
 corr_main /= runs
 
-
+print(' & $',np.mean(la[1:]).round(2),' ~(\pm ',np.std(la[1:]).round(2),' )$ ')
 colors = plt.cm.tab20(np.linspace(0, 1, len(corr)))
 corr_main[corr_main<=0.1]=np.nan
 corr_main = pd.DataFrame(corr_main)
@@ -158,4 +163,4 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 
 # plot_means(man_acc_main, rms_acc_prev, corr_main)
 plot_detailed(range(10))
-plt.show()
+# plt.show()

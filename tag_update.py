@@ -83,6 +83,8 @@ class tag_opt():
 			for n, v in model.named_parameters():
 				if n == name:
 					break
+			if v.grad is None:
+				continue
 			update = self.manual_update(name, v.grad, task, self.lr if lr is None else lr)
 			state_dict[name].data.copy_(param + update.reshape(param.shape))
 		return state_dict
