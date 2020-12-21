@@ -23,9 +23,15 @@ class ER(nn.Module):
         elif 'imagenet' in args.dataset:
             input_size = (3, 84, 84)
             n_classes = 100
-        else:
+        elif '5data' in args.dataset:
             input_size = (3, 32, 32)
             n_classes = 50
+        elif 'rot' in args.dataset:
+            input_size = (1,28,28)
+            n_classes = 10
+        else:
+            input_size = (784,)
+            n_classes = 10
         # img_size = np.prod(input_size)
 
         buffer_size = args.mem_size*n_classes

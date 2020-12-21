@@ -22,7 +22,7 @@ Last login: Tue Nov 10 15:33:31 2020 from 10.25.0.14
 iitm@euclid:~$ cd ~/pranshu/research/mtl_ll/stable_cl
 iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh imagenet
 ************************ replicating experiment 2 (mini-imagenet) ***********************
- >>>>>>>> Plastic (Naive) SGD
+ >>>>>>>> Naive SGD
 Parameters:
   benchmark=imagenet
   num_tasks=20
@@ -4776,7 +4776,7 @@ Final Average accuracy =  52.18833333333333 +/- 1.952082933119849 forget =  0.10
 
 
 
- >>>>>>>> Plastic (Naive) RMSProp
+ >>>>>>>> Naive RMSProp
 Parameters:
   benchmark=imagenet
   num_tasks=20
@@ -5964,7 +5964,7 @@ Final Average accuracy =  43.84666666666667 +/- 1.480030029725373 forget =  0.17
 
 
 
- >>>>>>>> Manual RMSProp (Ours)
+ >>>>>>>> TAG-RMSProp 
 Parameters:
   benchmark=imagenet
   num_tasks=20

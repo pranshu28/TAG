@@ -22,7 +22,7 @@ Last login: Tue Nov 10 15:32:31 2020 from 10.25.0.14
 iitm@euclid:~$ cd ~/pranshu/research/mtl_ll/stable_cl
 iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh cifar
 ************************ replicating experiment 2 (Split CIFAR-100) ***********************
- >>>>>>>> Plastic (Naive) SGD
+ >>>>>>>> Naive SGD
 Parameters:
   benchmark=cifar100
   num_tasks=20
@@ -4784,7 +4784,7 @@ Final Average accuracy =  60.634 +/- 0.9062803098379631 forget =  0.110905263157
 
 
 
- >>>>>>>> Plastic (Naive) RMSProp
+ >>>>>>>> Naive RMSProp
 Parameters:
   benchmark=cifar100
   num_tasks=20
@@ -5974,7 +5974,7 @@ Final Average accuracy =  49.17799999999999 +/- 1.4800729711740566 forget =  0.1
 
 
 
- >>>>>>>> Manual RMSProp (Ours)
+ >>>>>>>> TAG-RMSProp 
 Parameters:
   benchmark=cifar100
   num_tasks=20
@@ -7168,7 +7168,7 @@ Final Average accuracy =  63.17600000000001 +/- 0.927266951853679 forget =  0.08
 
 iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh cifar
 ************************ replicating experiment 2 (Split CIFAR-100) ***********************
- >>>>>>>> Manual Adagrad (Ours)
+ >>>>>>>> TAG-Adagrad 
 Parameters:
   benchmark=cifar100
   num_tasks=20
@@ -7697,79 +7697,3 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Tue Nov 10 19:57:12 2020 from 10.25.0.14
 iitm@euclid:~$ cd ~/pranshu/research/mtl_ll/stable_cl
-iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh cifar
-************************ replicating experiment 2 (Split CIFAR-100) ***********************
- >>>>>>>> Manual Adagrad (Ours)
-Parameters:
-  benchmark=cifar100
-  num_tasks=20
-  runs=5
-  batch_size=10
-  learning_rate=0.005
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=param
-  man-opt=adagrad
-  b=5
-Loading 20 tasks for cifar100
-Files already downloaded and verified
-Files already downloaded and verified
-loaded all tasks!
-
-------------------- Experiment-1234 started -----------------
-[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 65.2    	 1.0
-TASK 1 / 20 	Avg Acc: 65.2
-	Prev Task: 1  	Manual	 50.2    	 1.883
-	Prev Task: 2  	Manual	 67.0    	 0.007
-TASK 2 / 20 	Avg Acc: 58.6
-	Prev Task: 1  	Manual	 50.4    	 1.707
-	Prev Task: 2  	Manual	 56.8    	 1.573
-	Prev Task: 3  	Manual	 63.8    	 0.007
-TASK 3 / 20 	Avg Acc: 57.0
-	Prev Task: 1  	Manual	 50.4    	 1.481
-	Prev Task: 2  	Manual	 53.2    	 1.569
-	Prev Task: 3  	Manual	 58.6    	 1.685
-	Prev Task: 4  	Manual	 65.6    	 0.007
-TASK 4 / 20 	Avg Acc: 56.949999999999996
-	Prev Task: 1  	Manual	 55.8    	 1.414
-	Prev Task: 2  	Manual	 60.6    	 1.413
-	Prev Task: 3  	Manual	 58.0    	 1.592
-	Prev Task: 4  	Manual	 59.0    	 1.615
-	Prev Task: 5  	Manual	 79.6    	 0.007
-TASK 5 / 20 	Avg Acc: 62.60000000000001
-	Prev Task: 1  	Manual	 51.4    	 1.321
-	Prev Task: 2  	Manual	 63.4    	 1.627
-	Prev Task: 3  	Manual	 58.2    	 1.588
-	Prev Task: 4  	Manual	 57.2    	 1.655
-	Prev Task: 5  	Manual	 70.0    	 1.325
-	Prev Task: 6  	Manual	 59.4    	 0.007
-TASK 6 / 20 	Avg Acc: 59.93333333333333
-	Prev Task: 1  	Manual	 49.2    	 1.473
-	Prev Task: 2  	Manual	 58.0    	 1.539
-	Prev Task: 3  	Manual	 52.6    	 1.73
-	Prev Task: 4  	Manual	 63.6    	 1.361
-	Prev Task: 5  	Manual	 68.4    	 1.598
-	Prev Task: 6  	Manual	 50.6    	 1.762
-	Prev Task: 7  	Manual	 72.0    	 0.007
-TASK 7 / 20 	Avg Acc: 59.199999999999996
-	Prev Task: 1  	Manual	 55.6    	 1.394
-	Prev Task: 2  	Manual	 62.8    	 1.452
-	Prev Task: 3  	Manual	 55.6    	 1.509
-	Prev Task: 4  	Manual	 59.0    	 1.376
-	Prev Task: 5  	Manual	 68.2    	 1.463
-	Prev Task: 6  	Manual	 57.0    	 1.533
-	Prev Task: 7  	Manual	 67.4    	 1.946
-	Prev Task: 8  	Manual	 68.4    	 0.007
-TASK 8 / 20 	Avg Acc: 61.75
-	Prev Task: 1  	Manual	 49.6    	 1.371
-	Prev Task: 2  	Manual	 62.0    	 1.495
-	Prev Task: 3  	Manual	 57.4    	 1.52
-	Prev Task: 4  	Manual	 59.8    	 1.344
-	Prev Task: 5  	Manual	 66.0    	 1.55
-	Prev Task: 6  	Manual	 53.0    	 1.532
-	Prev Task: 7  	Manual	 67.0    	 1.82
-	Prev Task: 8  	Manual	 65.0    	 1.626
-	Prev Task: 9  	Manual	 67.6    	 0.007
-TASK 9 / 20 	Avg Acc: 60.82222222222222
-

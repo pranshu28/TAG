@@ -39,8 +39,7 @@ def overwrite_grad(pp, newgrad, grad_dims):
 
 
 class AGEM(nn.Module):
-	def __init__(self,
-				 net, optimizer, criterion, args):
+	def __init__(self, net, optimizer, criterion, args):
 		super(AGEM, self).__init__()
 
 		self.net = net
@@ -53,6 +52,12 @@ class AGEM(nn.Module):
 			self.input_size = (3, 32, 32)
 		elif 'imagenet' in args.dataset:
 			self.input_size = (3, 84, 84)
+		elif '5data' in args.dataset:
+			self.input_size = (3, 32, 32)
+		elif 'rot' in args.dataset:
+			self.input_size = (1, 28, 28)
+		else:
+			self.input_size = (784,)
 		self.opt = optimizer
 
 		self.n_mem_per_class = args.mem_size
@@ -98,6 +103,7 @@ class AGEM(nn.Module):
 			mem_x, mem_y = self.sample(self.memory_data[prev_tasks].reshape((len(prev_tasks * self.n_mem_per_class * self.nc_per_task), *self.input_size)), self.memory_labs[prev_tasks].reshape(-1))
 			mem_preds = net(mem_x, None)
 			mem_preds = apply_mask(mem_y, mem_preds, self.nc_per_task)
+			# print(self.memory_data[prev_tasks].shape, self.memory_labs[prev_tasks], mem_y, torch.argmax(mem_preds,dim=1))
 			ptloss = self.ce(mem_preds, mem_y)
 			ptloss.backward()
 			store_grad(net.parameters, self.grads, self.grad_dims, 1)

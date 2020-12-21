@@ -101,8 +101,6 @@ def get_benchmark_data_loader(args):
 		return get_permuted_mnist_tasks
 	elif args.dataset == 'rot-mnist' or args.dataset == 'rotation-mnist':
 		return get_rotated_mnist_tasks
-	elif args.dataset == 'cifar-100' or args.dataset == 'cifar100':
-		return get_split_cifar100_tasks
 	else:
 		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
 
@@ -116,7 +114,7 @@ def get_benchmark_model(args):
 	if 'mnist' in args.dataset:
 		if args.tasks == 20 and args.hiddens < 256:
 			print("Warning! the main paper MLP with 256 neurons for experiment with 20 tasks")
-		return MLP(args.hiddens, {'dropout': args.dropout}).to(DEVICE)
+		return MLP(args.hiddens, {'dropout': args.dropout, 'classes': 10}).to(DEVICE)
 	elif 'cifar' in args.dataset:
 		if args.tasks==10:
 			return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
@@ -128,7 +126,7 @@ def get_benchmark_model(args):
 	elif 'cub' in args.dataset:
 		return ResNet18_CUB(config={'input_size': (3, 224, 224), 'dropout': args.dropout, 'classes': int(200 / args.tasks)}).to(DEVICE)
 	elif '5data' in args.dataset:
-		return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
+		return ResNet18(config={'input_size': (3, 32, 32), 'dropout': args.dropout, 'classes': int(50 / args.tasks)}).to(DEVICE)
 	else:
 		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
 

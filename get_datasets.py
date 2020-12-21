@@ -279,7 +279,7 @@ def make_valid_from_train(dataset, cut=0.95):
 # 		file_data = pickle.load(file)
 # 		data = file_data["image_data"]
 # 		if i == 'train':
-# 			main_data = data.reshape([64, 600, 84, 84, 3])
+# 			main_data = data.`([64, 600, 84, 84, 3])
 # 		else:
 # 			app_data = data.reshape([(20 if i == 'test' else 16), 600, 84, 84, 3])
 # 			main_data = np.append(main_data, app_data, axis=0)

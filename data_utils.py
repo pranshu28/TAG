@@ -3,11 +3,23 @@ import torchvision.transforms.functional as TorchVisionFunc
 from get_datasets import *
 from tqdm import tqdm
 import tarfile
-import imageio
 import os
-from sklearn.model_selection import train_test_split
+import cv2
+import imageio
 
-def get_nomnist():
+
+class MyDataloader(torch.utils.data.Dataset):
+    def __init__(self, X, Y):
+        self.images = X/255.
+        self.labels = torch.from_numpy(Y)
+    def __len__(self):
+        return len(self.images)
+
+    def __getitem__(self, idx):
+        return torch.from_numpy(self.images[idx].transpose((2, 0, 1))).float(), self.labels[idx]
+
+
+def get_nomnist(task_id):
     classes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
     tar_path = "./data/notMNIST_small.tar"
     tmp_path = "./data/tmp"
@@ -17,7 +29,7 @@ def get_nomnist():
 
     with tarfile.open(tar_path) as tar:
         tar_root = tar.next().name
-        for c in tqdm(classes):
+        for ind, c in enumerate(classes):
             files = [f for f in tar.getmembers() if f.name.startswith(tar_root+'/'+c)]
             if not os.path.exists(tmp_path):
                 os.mkdir(tmp_path)
@@ -25,12 +37,14 @@ def get_nomnist():
                 f_obj = tar.extractfile(f)
                 try:
                     arr = np.asarray(imageio.imread(f_obj))
-                    img_arr.append(arr)
-                    lab_arr.append(c)
-                except Exception:
+                    img = cv2.cvtColor(arr, cv2.COLOR_GRAY2BGR)
+                    img = cv2.resize(img, (32, 32))
+                    img_arr.append(np.asarray(img))
+                    lab_arr.append(ind+task_id*len(classes))
+                except:
                     continue
     os.rmdir(tmp_path)
-    return img_arr, lab_arr
+    return np.array(img_arr), np.array(lab_arr)
 
 
 def get_5_datasets(task_id, DATA, batch_size, get_val=False):
@@ -40,24 +54,36 @@ def get_5_datasets(task_id, DATA, batch_size, get_val=False):
     :param batch_size:
     :return:
     """
-    if task_id in [0, 2]:
+    if task_id in [0,2]:
         transforms = torchvision.transforms.Compose([
             torchvision.transforms.ToTensor(),
+
         ])
     else:
         transforms = torchvision.transforms.Compose([
-            torchvision.transforms.ToTensor(),
             torchvision.transforms.Resize(32),
-            torchvision.transforms.Lambda(lambda x: x.repeat(3, 1, 1)),
+            torchvision.transforms.Lambda(lambda x: x.convert('RGB')),
+            torchvision.transforms.ToTensor(),
         ])
-    try:
-        train_data = DATA('./data/', train=True, download=True, transform=transforms)
-        test_loader = torch.utils.data.DataLoader(DATA('./data/', train=False, download=True, transform=transforms), batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
-    except:
-        all_images, all_labels = get_nomnist()
-        train_data, train_labels, test_data, test_labels = train_test_split(all_images, all_labels, test_size=0.1)
-        train_data = (train_data, train_labels)
-        test_loader = torch.utils.data.DataLoader((test_data, test_labels), batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    target_transform = torchvision.transforms.Compose([torchvision.transforms.Lambda(lambda y: y+task_id*10)])
+    if task_id != 3:
+        try:
+            train_data = DATA('./data/', train=True, download=True, transform=transforms, target_transform=target_transform)
+            test_data = DATA('./data/', train=False, download=True, transform=transforms, target_transform=target_transform)
+        except:
+            train_data = DATA('./data/SVHN/', split='train', download=True, transform=transforms, target_transform=target_transform)
+            test_data = DATA('./data/SVHN/', split='test', download=True, transform=transforms, target_transform=target_transform)
+        test_loader = torch.utils.data.DataLoader(test_data,batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    else:
+        all_images, all_labels = get_nomnist(task_id)
+        dataset_size = len(all_images)
+        indices = list(range(dataset_size))
+        split = int(np.floor(0.1 * dataset_size))
+        np.random.shuffle(indices)
+        train_indices, test_indices = indices[split:], indices[:split]
+        train_data = MyDataloader(all_images[train_indices], all_labels[train_indices])
+        test_data = MyDataloader(all_images[test_indices], all_labels[test_indices])
+        test_loader = torch.utils.data.DataLoader(test_data, batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
     if get_val:
         dataset_size = len(train_data)
         indices = list(range(dataset_size))
@@ -82,7 +108,7 @@ def get_5_datasets_tasks(num_tasks, batch_size):
     :return:
     """
     datasets = {}
-    data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'not-MNIST', torchvision.datasets.FashionMNIST]
+    data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'notMNIST',  torchvision.datasets.FashionMNIST]
     for task_id, DATA in enumerate(data_list):
         print('Loading Task/Dataset:', task_id)
         train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=True)

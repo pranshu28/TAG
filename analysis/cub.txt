@@ -22,7 +22,7 @@ Last login: Tue Nov 10 15:33:40 2020 from 10.25.0.14
 iitm@euclid:~$ cd ~/pranshu/research/mtl_ll/stable_cl
 iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh cub
 ************************ replicating experiment 2 (cub) ***********************
- >>>>>>>> Plastic (Naive) SGD 
+ >>>>>>>> Naive SGD 
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -4816,7 +4816,7 @@ Final Average accuracy =  59.89833823885529 +/- 1.5314681464836173 forget =  0.1
 
 
 
- >>>>>>>> Plastic (Naive) RMSProp
+ >>>>>>>> Naive RMSProp
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -6014,7 +6014,7 @@ Final Average accuracy =  50.94577169865987 +/- 1.9685690603644046 forget =  0.2
 
 
 
- >>>>>>>> Manual RMSProp (Ours)
+ >>>>>>>> TAG-RMSProp 
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -7240,7 +7240,7 @@ Last login: Tue Nov 10 15:33:47 2020 from 10.25.0.14
 iitm@euclid:~$ cd ~/pranshu/research/mtl_ll/stable_cl
 iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$ bash replicate_experiment_2.sh cub
 ************************ replicating experiment 2 (cub) ***********************
- >>>>>>>> Manual Adagrad (Ours)
+ >>>>>>>> TAG-Adagrad 
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -8440,7 +8440,7 @@ Final Average accuracy =  61.98458143259013 +/- 1.0235031734991813 forget =  0.1
 
 
 
- >>>>>>>> Manual Adam (Ours)
+ >>>>>>>> TAG-Adam 
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -9640,7 +9640,7 @@ Final Average accuracy =  58.4836622502493 +/- 1.702441654531594 forget =  0.101
 
 
 
- >>>>>>>> Plastic (Naive) Adagrad
+ >>>>>>>> Naive Adagrad
 Parameters:
   benchmark=cub
   num_tasks=20
@@ -10837,7 +10837,7 @@ Final Average accuracy =  55.61976114751493 +/- 1.0041358541002312 forget =  0.1
 ------------------- Experiment ended -----------------
 
 
- >>>>>>>> Plastic (Naive) Adam
+ >>>>>>>> Naive Adam
 Parameters:
   benchmark=cub
   num_tasks=20

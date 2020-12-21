@@ -5,10 +5,12 @@ plt.style.use('ggplot')
 params = {'mathtext.default': 'regular'}
 plt.rcParams.update(params)
 
-dataset = 'cifar'
+dataset = 'cub'
 f = open(dataset+'.txt', 'r')
-dataset = {'cifar':'CIFAR-100', 'imagenet':'Mini-imagenet', 'cub':'CUB'}[dataset]
-ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
+dataset = {'cifar10_resnet': 'CIFAR-100 (10 tasks)', 'cifar10': 'CIFAR-100 (10 tasks)', 'cifar': 'Split-CIFAR100',
+           'imagenet': 'Split-miniImageNet', 'cub': 'Split-CUB', '5data': '5-dataset'}[dataset]
+# ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
+ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'TAG-RMSProp']
 
 lines = f.readlines()
 curr = 0
@@ -25,7 +27,7 @@ for i, line in enumerate(lines):
 	while '' in l:
 		l.remove('')
 	if '>' in line:
-		if 'Manual RMSProp' in line:
+		if 'TAG-RMSProp' in line:
 			valid = 2
 			print(valid)
 		elif 'Stable SGD' in line:
@@ -53,19 +55,19 @@ for i, line in enumerate(lines):
 			runs+=1
 			try:
 				if valid==2:
-					man_acc_main += man_acc
-					corr_main += corr
+					man_acc_main += [man_acc.copy()]
+					corr_main += [corr.copy()]
 				elif valid == 1:
 					la += [np.mean(np.diag(rms_acc))]
-					rms_acc_prev += rms_acc
+					rms_acc_prev += [rms_acc.copy()]
 			except:
 				if valid==2:
-					man_acc_main = man_acc
-					corr_main = corr
+					man_acc_main = []
+					corr_main = []
 					man_acc = np.zeros((20, 20))
 					corr = np.zeros((20, 20))
 				elif valid == 1:
-					rms_acc_prev = rms_acc
+					rms_acc_prev = []
 					rms_acc = np.zeros((20, 20))
 			continue
 		if line[:4]=='TASK':
@@ -77,22 +79,35 @@ for i, line in enumerate(lines):
 				man_acc[prev, curr] = float(l[-2].strip())
 			elif valid == 1:
 				rms_acc[prev, curr] = float(l[-1].strip())
-man_acc_main /= runs
-rms_acc_prev /= runs
-corr_main /= runs
+corr_main_full = np.array(corr_main)
+man_acc_main_full = np.array(man_acc_main)
+rms_acc_prev_full = np.array(rms_acc_prev)
 
-print(' & $',np.mean(la[1:]).round(2),' ~(\pm ',np.std(la[1:]).round(2),' )$ ')
+man_acc_main = man_acc_main_full.mean(axis=0)
+man_acc_main_std = man_acc_main_full.std(axis=0)
+rms_acc_prev = rms_acc_prev_full.mean(axis=0)
+rms_acc_prev_std = rms_acc_prev_full.std(axis=0)
+corr_main = corr_main_full.mean(axis=0)
+corr_main_std = corr_main_full.std(axis=0)
+print(man_acc_main, man_acc_main_std)
+
+# print(' & $',np.mean(la[1:]).round(2),' ~(\pm ',np.std(la[1:]).round(2),' )$ ')
 colors = plt.cm.tab20(np.linspace(0, 1, len(corr)))
 corr_main[corr_main<=0.1]=np.nan
+corr_main_std[corr_main_std<=0.0]=np.nan
 corr_main = pd.DataFrame(corr_main)
+corr_main_std = pd.DataFrame(corr_main_std)
 
-def plot(f, man_acc, label, i=-1, alpha=1.0):
-	man_acc[man_acc == 0] = np.nan
-	man_acc = pd.DataFrame(man_acc)
+def plot(f, man_acc, std, label, i=-1, alpha=1.0):
+	man_acc[man_acc <= 0.0] = np.nan
+	man_acc = pd.DataFrame(man_acc)/100
+	std[std <= 0.0] = np.nan
+	std = pd.DataFrame(std)/100
 	plt.figure(f)
 	# plt.plot(tasks[1:], man_acc.mean(axis=0)[1:]/100, alpha=alpha, label=label)
 	if i!=-1:
-		plt.plot(tasks[1:], man_acc.ix[i][1:]/100, label=label)
+		plt.plot(tasks[1:], man_acc.loc[i][1:], label=label)
+		plt.fill_between(tasks[1:], man_acc.loc[i][1:] - std.loc[i][1:], man_acc.loc[i][1:] + std.loc[i][1:], alpha=alpha)
 
 
 def plot_detailed(lim=5):
@@ -101,19 +116,20 @@ def plot_detailed(lim=5):
 		if i+1 not in lim:
 			continue
 		plt.figure(i+1)
-		plot(i+1,man_acc_main, 'TAG-RMSProp', i, alpha)
-		plot(i+1,rms_acc_prev, 'Naive RMSProp', i, alpha)
+		plot(i+1,man_acc_main, man_acc_main_std, 'TAG-RMSProp', i, alpha)
+		plot(i+1,rms_acc_prev, rms_acc_prev_std, 'Naive RMSProp', i, alpha)
 		plt.xticks(tasks)
 		# vals = (corr_main.ix[i][1:]-corr_main.min(axis=0)[1:])/(corr_main.max(axis=0)[1:]-corr_main.min(axis=0)[1:])
 		# plt.plot(tasks[1:], vals*0.2+0.8, color=colors[i], label=r'$\alpha(t, '+str(i+1)+')$', marker='o')
-		plt.plot(tasks[1:], corr_main.ix[i][1:], color=colors[i], label=r'$\alpha(t, '+str(i+1)+')$', marker='o')
+		plt.plot(tasks[1:], corr_main.loc[i][1:], color=colors[i], label=r'$\alpha(t, '+str(i+1)+')$', marker='o')
+		# plt.fill_between(tasks[1:], corr_main.loc[i][1:] - corr_main_std.loc[i][1:], corr_main.loc[i][1:] + corr_main_std.loc[i][1:], color=colors[i], alpha=0.25)
 		plt.plot(tasks[1:], corr_main.mean(axis=0)[1:], color = 'black',  alpha=alpha, label=r'$E_{\tau}~~[\alpha(t, \tau)]$')
 		plt.plot(tasks[1:], corr_main.max(axis=0)[1:], color = 'black', linestyle=':', alpha=alpha, label=r'$\max_{\tau}~~\alpha(t, \tau)$')
 		plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color = 'black', linestyle=':', alpha=alpha, label=r'$\min_{\tau}~~\alpha(t, \tau)$')
 
 		plt.xlabel('Tasks (t)')
 		plt.title(r'$\tau=$'+str(i+1)+' ('+dataset+')')
-		plt.ylabel('Test Accuracy\t\t\t' + r'$\alpha(t,\tau)$')
+		plt.ylabel('Accuracy\t\t\t' + r'$\alpha(t,\tau)$')
 		plt.legend()
 
 def plot_means(man_acc_main, rms_acc_prev, corr_main):
@@ -130,7 +146,7 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 	plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color = 'black', linestyle=':',label=r'$\min_{\tau}~~\alpha(t, \tau)$')
 	plt.xlabel('Tasks (t)')
 	plt.title(dataset)
-	plt.ylabel('Test Accuracy\t\t\t\t'+r'$\alpha(t,\tau)$')
+	plt.ylabel('Accuracy\t\t\t\t'+r'$\alpha(t,\tau)$')
 	plt.legend(bbox_to_anchor=(1.01, 1))
 
 	for i in range(len(corr)):
@@ -147,7 +163,7 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 	plt.xticks(tasks)
 	plt.title('TAG-RMSProp ('+dataset+')')
 	plt.xlabel('Tasks (t)')
-	plt.ylabel('Test Accuracy (%)')
+	plt.ylabel('Accuracy (%)')
 	plt.legend(bbox_to_anchor=(1.01, 1))
 
 	plt.figure(3)
@@ -158,9 +174,9 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 	plt.xticks(tasks)
 	plt.title('Naive RMSProp ('+dataset+')')
 	plt.xlabel('Tasks (t)')
-	plt.ylabel('Test Accuracy (%)')
+	plt.ylabel('Accuracy (%)')
 	plt.legend(bbox_to_anchor=(1.01, 1))
 
 # plot_means(man_acc_main, rms_acc_prev, corr_main)
 plot_detailed(range(10))
-# plt.show()
+plt.show()

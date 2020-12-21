@@ -18,9 +18,11 @@ class tag_opt():
 		self.alpha_add_ = {}
 		self.v, self.v_t = {}, {}
 		self.m, self.m_t = {}, {}
+		self.m_t_norms = {}
 		for task in range(num_tasks):
 			self.v_t[task] = {}
 			self.m_t[task] = {}
+			self.m_t_norms[task] = {}
 			self.alpha_add_[task] = {}
 			for (name, param) in model.named_parameters():
 				if task == 0:
@@ -29,11 +31,16 @@ class tag_opt():
 				self.alpha_add_[task][name] = np.array([1])
 				self.v_t[task][name] = torch.zeros_like(param).to(args.device)
 				self.m_t[task][name] = torch.zeros_like(param).to(args.device)
+				self.m_t_norms[task][name] = torch.zeros_like(param).to(args.device)
 
 	def zero_grad(self):
 		return self.model.zero_grad()
 
-	def manual_update_naive(self, name, dw, task, param, lr=None):
+	def update_all(self, task):
+		for name, v in self.model.named_parameters():
+			self.m_t_norms[task][name] = self.m_t[task][name].reshape(-1)/torch.norm(self.m_t[task][name])
+
+	def update_naive(self, name, dw, lr=None):
 		if self.optim=='rms':
 			self.v[name] = self.beta2 * self.v[name] + (1 - self.beta2) * dw ** 2
 		else:
@@ -41,7 +48,7 @@ class tag_opt():
 		denom = torch.sqrt(self.v[name]) + 1e-8
 		return - (lr * dw / denom)
 
-	def manual_update(self, name, dw, task, lr=None):
+	def update_tag(self, name, dw, task, lr=None):
 		bias_corr1, bias_corr2 = 1, 1
 		eq = {1:'n,nh->h', 2:'n,nhw->hw', 3:'n,nhwc->hwc', 4: 'n,nhwvd->hwvd', 5:'n,nhwzxc->hwzxc'}[len(dw.shape)]
 		new_v = None
@@ -59,7 +66,7 @@ class tag_opt():
 		if task>0:
 			alpha_add = []
 			for t in range(task):
-				corr = torch.dot(self.m_t[t][name].reshape(-1) / torch.norm(self.m_t[t][name]), self.m_t[task][name].reshape(-1) / torch.norm(self.m_t[task][name]))
+				corr = torch.dot(self.m_t[task][name].reshape(-1) / torch.norm(self.m_t[task][name]), self.m_t_norms[t][name])
 				alpha_add += [(-corr).cpu().numpy()]
 			alpha_add += [-1.]
 			alpha_add = torch.from_numpy(np.array(alpha_add)).to(DEVICE)
@@ -85,7 +92,7 @@ class tag_opt():
 					break
 			if v.grad is None:
 				continue
-			update = self.manual_update(name, v.grad, task, self.lr if lr is None else lr)
+			update = self.update_tag(name, v.grad, task, self.lr if lr is None else lr)
 			state_dict[name].data.copy_(param + update.reshape(param.shape))
 		return state_dict
 
