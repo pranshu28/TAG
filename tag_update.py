@@ -63,7 +63,7 @@ class tag_opt():
 			self.v_t[task][name] = self.beta2 * self.v_t[task][name] + (1 - self.beta2) * dw ** 2
 		else:
 			self.v_t[task][name] = self.v_t[task][name] + dw ** 2
-		if task>0:
+		if task<0:
 			alpha_add = []
 			for t in range(task):
 				corr = torch.dot(self.m_t[task][name].reshape(-1) / torch.norm(self.m_t[task][name]), self.m_t_norms[t][name])
@@ -71,9 +71,9 @@ class tag_opt():
 			alpha_add += [-1.]
 			alpha_add = torch.from_numpy(np.array(alpha_add)).to(DEVICE)
 			alpha_add_ = torch.exp(self.b*alpha_add).float()
-			self.alpha_add_[task][name] = alpha_add_.cpu().numpy()
 		else:
-			alpha_add_ = torch.from_numpy(np.array([1.0])).to(DEVICE)
+			alpha_add_ = torch.from_numpy(np.array([1.0]*(task+1))).to(DEVICE)
+		self.alpha_add_[task][name] = alpha_add_.cpu().numpy()
 
 		for t in range(task):
 			new_v = self.v_t[t][name].unsqueeze(0) if t==0 else torch.cat((new_v, self.v_t[t][name].unsqueeze(0)), dim=0)

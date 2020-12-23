@@ -42,6 +42,7 @@ def parse_arguments():
 	parser.add_argument('--tag-opt', default='rms', type=str, help='tag opt')
 	parser.add_argument('--mem-size', default=1, type=int, help='mem')
 	parser.add_argument('--multi', default=0, type=int, help='MTL')
+	parser.add_argument('--lambd', default=1, type=int, help='EWC')
 
 	args = parser.parse_args()
 	print("Parameters:\n  benchmark="+str(args.dataset)+"\n  num_tasks="+str(args.tasks)+"\n  "+
@@ -52,6 +53,8 @@ def parse_arguments():
 	elif args.opt=='param':
 		print("  tag-opt="+str(args.tag_opt))
 		print("  b="+str(args.b))
+	elif args.opt=='ewc':
+		print("  lambda="+str(args.lambd))
 	return args
 
 
@@ -114,7 +117,7 @@ def get_benchmark_model(args):
 	if 'mnist' in args.dataset:
 		if args.tasks == 20 and args.hiddens < 256:
 			print("Warning! the main paper MLP with 256 neurons for experiment with 20 tasks")
-		return MLP(args.hiddens, {'dropout': args.dropout, 'classes': 10}).to(DEVICE)
+		return MLP(args.hiddens, {'dropout': args.dropout, 'total_classes': args.tasks*10, 'classes': 10}).to(DEVICE)
 	elif 'cifar' in args.dataset:
 		if args.tasks==10:
 			return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)

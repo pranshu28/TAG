@@ -12033,6 +12033,1204 @@ average accuracy = 43.63750396062669, forget = 0.2601383684954426
 Final Average accuracy =  43.910554366074315 +/- 3.564742684826603 forget =  0.25634982538595247 +/- 0.034897650045263864
 ------------------- Experiment ended -----------------
 
+************************ replicating experiment (cub) ***********************
+ >>>>>>>> EWC
+Parameters:
+  benchmark=cub
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.01
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=ewc
+  lambda=10
+Loading 20 tasks for cub
+Finish reading  1000
+Finish reading  2000
+Finish reading  3000
+Finish reading  4000
+Finish reading  5000
+Finish reading  1000
+Finish reading  2000
+Finish reading  3000
+Finish reading  4000
+Finish reading  5000
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+	Prev Task: 1  	Manual	 65.02057613168725
+TASK 1 / 20 	Avg Acc: 65.02057613168725
+	Prev Task: 1  	Manual	 51.02880658436214
+	Prev Task: 2  	Manual	 78.30882352941177
+TASK 2 / 20 	Avg Acc: 64.66881505688696
+	Prev Task: 1  	Manual	 61.31687242798354
+	Prev Task: 2  	Manual	 62.86764705882353
+	Prev Task: 3  	Manual	 65.38461538461539
+TASK 3 / 20 	Avg Acc: 63.18971162380748
+	Prev Task: 1  	Manual	 57.61316872427984
+	Prev Task: 2  	Manual	 68.01470588235294
+	Prev Task: 3  	Manual	 59.09090909090909
+	Prev Task: 4  	Manual	 60.89965397923876
+TASK 4 / 20 	Avg Acc: 61.40460941919516
+	Prev Task: 1  	Manual	 60.90534979423868
+	Prev Task: 2  	Manual	 65.80882352941177
+	Prev Task: 3  	Manual	 61.53846153846154
+	Prev Task: 4  	Manual	 57.43944636678201
+	Prev Task: 5  	Manual	 83.61204013377926
+TASK 5 / 20 	Avg Acc: 65.86082427253464
+	Prev Task: 1  	Manual	 61.31687242798354
+	Prev Task: 2  	Manual	 65.44117647058823
+	Prev Task: 3  	Manual	 58.39160839160839
+	Prev Task: 4  	Manual	 60.207612456747405
+	Prev Task: 5  	Manual	 79.59866220735786
+	Prev Task: 6  	Manual	 79.79797979797979
+TASK 6 / 20 	Avg Acc: 67.4589852920442
+	Prev Task: 1  	Manual	 56.79012345679013
+	Prev Task: 2  	Manual	 64.70588235294117
+	Prev Task: 3  	Manual	 63.98601398601399
+	Prev Task: 4  	Manual	 55.70934256055364
+	Prev Task: 5  	Manual	 80.2675585284281
+	Prev Task: 6  	Manual	 77.44107744107744
+	Prev Task: 7  	Manual	 58.96551724137931
+TASK 7 / 20 	Avg Acc: 65.40935936674053
+	Prev Task: 1  	Manual	 58.43621399176955
+	Prev Task: 2  	Manual	 75.0
+	Prev Task: 3  	Manual	 59.44055944055944
+	Prev Task: 4  	Manual	 54.325259515570934
+	Prev Task: 5  	Manual	 76.25418060200668
+	Prev Task: 6  	Manual	 76.0942760942761
+	Prev Task: 7  	Manual	 60.0
+	Prev Task: 8  	Manual	 72.29729729729729
+TASK 8 / 20 	Avg Acc: 66.480973367685
+	Prev Task: 1  	Manual	 55.96707818930041
+	Prev Task: 2  	Manual	 58.455882352941174
+	Prev Task: 3  	Manual	 56.99300699300699
+	Prev Task: 4  	Manual	 55.36332179930796
+	Prev Task: 5  	Manual	 77.92642140468227
+	Prev Task: 6  	Manual	 80.47138047138047
+	Prev Task: 7  	Manual	 58.62068965517241
+	Prev Task: 8  	Manual	 60.13513513513514
+	Prev Task: 9  	Manual	 86.68941979522184
+TASK 9 / 20 	Avg Acc: 65.62470397734985
+	Prev Task: 1  	Manual	 54.32098765432099
+	Prev Task: 2  	Manual	 55.51470588235294
+	Prev Task: 3  	Manual	 57.34265734265734
+	Prev Task: 4  	Manual	 60.89965397923876
+	Prev Task: 5  	Manual	 82.94314381270902
+	Prev Task: 6  	Manual	 76.0942760942761
+	Prev Task: 7  	Manual	 56.89655172413793
+	Prev Task: 8  	Manual	 63.513513513513516
+	Prev Task: 9  	Manual	 81.91126279863481
+	Prev Task: 10  	Manual	 74.24749163879599
+TASK 10 / 20 	Avg Acc: 66.36842444406375
+	Prev Task: 1  	Manual	 58.02469135802469
+	Prev Task: 2  	Manual	 58.455882352941174
+	Prev Task: 3  	Manual	 61.88811188811189
+	Prev Task: 4  	Manual	 58.13148788927336
+	Prev Task: 5  	Manual	 76.92307692307692
+	Prev Task: 6  	Manual	 78.78787878787878
+	Prev Task: 7  	Manual	 56.206896551724135
+	Prev Task: 8  	Manual	 61.148648648648646
+	Prev Task: 9  	Manual	 83.95904436860069
+	Prev Task: 10  	Manual	 73.91304347826087
+	Prev Task: 11  	Manual	 77.06093189964157
+TASK 11 / 20 	Avg Acc: 67.68179037692569
+	Prev Task: 1  	Manual	 50.205761316872426
+	Prev Task: 2  	Manual	 57.35294117647059
+	Prev Task: 3  	Manual	 47.9020979020979
+	Prev Task: 4  	Manual	 59.16955017301038
+	Prev Task: 5  	Manual	 66.88963210702342
+	Prev Task: 6  	Manual	 71.71717171717172
+	Prev Task: 7  	Manual	 55.172413793103445
+	Prev Task: 8  	Manual	 56.41891891891892
+	Prev Task: 9  	Manual	 80.20477815699658
+	Prev Task: 10  	Manual	 67.22408026755853
+	Prev Task: 11  	Manual	 70.60931899641577
+	Prev Task: 12  	Manual	 47.038327526132406
+TASK 12 / 20 	Avg Acc: 60.82541600431434
+	Prev Task: 1  	Manual	 54.32098765432099
+	Prev Task: 2  	Manual	 59.19117647058823
+	Prev Task: 3  	Manual	 40.55944055944056
+	Prev Task: 4  	Manual	 56.74740484429066
+	Prev Task: 5  	Manual	 62.207357859531776
+	Prev Task: 6  	Manual	 65.31986531986531
+	Prev Task: 7  	Manual	 52.758620689655174
+	Prev Task: 8  	Manual	 54.729729729729726
+	Prev Task: 9  	Manual	 74.06143344709898
+	Prev Task: 10  	Manual	 63.54515050167224
+	Prev Task: 11  	Manual	 63.799283154121866
+	Prev Task: 12  	Manual	 38.32752613240418
+	Prev Task: 13  	Manual	 45.63758389261745
+TASK 13 / 20 	Avg Acc: 56.246581558102854
+	Prev Task: 1  	Manual	 46.09053497942387
+	Prev Task: 2  	Manual	 67.27941176470588
+	Prev Task: 3  	Manual	 42.30769230769231
+	Prev Task: 4  	Manual	 57.09342560553633
+	Prev Task: 5  	Manual	 72.24080267558529
+	Prev Task: 6  	Manual	 68.68686868686869
+	Prev Task: 7  	Manual	 58.96551724137931
+	Prev Task: 8  	Manual	 56.08108108108108
+	Prev Task: 9  	Manual	 74.40273037542661
+	Prev Task: 10  	Manual	 72.24080267558529
+	Prev Task: 11  	Manual	 69.17562724014337
+	Prev Task: 12  	Manual	 41.46341463414634
+	Prev Task: 13  	Manual	 38.25503355704698
+	Prev Task: 14  	Manual	 65.33333333333333
+TASK 14 / 20 	Avg Acc: 59.258305439853906
+	Prev Task: 1  	Manual	 47.325102880658434
+	Prev Task: 2  	Manual	 48.529411764705884
+	Prev Task: 3  	Manual	 52.7972027972028
+	Prev Task: 4  	Manual	 53.97923875432526
+	Prev Task: 5  	Manual	 71.90635451505017
+	Prev Task: 6  	Manual	 71.38047138047138
+	Prev Task: 7  	Manual	 59.310344827586206
+	Prev Task: 8  	Manual	 59.12162162162162
+	Prev Task: 9  	Manual	 86.3481228668942
+	Prev Task: 10  	Manual	 72.24080267558529
+	Prev Task: 11  	Manual	 73.83512544802868
+	Prev Task: 12  	Manual	 39.37282229965157
+	Prev Task: 13  	Manual	 32.5503355704698
+	Prev Task: 14  	Manual	 60.0
+	Prev Task: 15  	Manual	 47.651006711409394
+TASK 15 / 20 	Avg Acc: 58.42319760757737
+	Prev Task: 1  	Manual	 52.674897119341566
+	Prev Task: 2  	Manual	 55.88235294117647
+	Prev Task: 3  	Manual	 44.05594405594405
+	Prev Task: 4  	Manual	 42.56055363321799
+	Prev Task: 5  	Manual	 63.87959866220736
+	Prev Task: 6  	Manual	 63.63636363636363
+	Prev Task: 7  	Manual	 52.06896551724138
+	Prev Task: 8  	Manual	 51.689189189189186
+	Prev Task: 9  	Manual	 75.42662116040955
+	Prev Task: 10  	Manual	 69.23076923076923
+	Prev Task: 11  	Manual	 54.83870967741935
+	Prev Task: 12  	Manual	 40.76655052264808
+	Prev Task: 13  	Manual	 24.83221476510067
+	Prev Task: 14  	Manual	 57.333333333333336
+	Prev Task: 15  	Manual	 40.26845637583892
+	Prev Task: 16  	Manual	 59.375
+TASK 16 / 20 	Avg Acc: 53.03246998876255
+	Prev Task: 1  	Manual	 43.62139917695473
+	Prev Task: 2  	Manual	 53.30882352941177
+	Prev Task: 3  	Manual	 39.51048951048951
+	Prev Task: 4  	Manual	 38.75432525951557
+	Prev Task: 5  	Manual	 62.541806020066886
+	Prev Task: 6  	Manual	 52.18855218855219
+	Prev Task: 7  	Manual	 48.96551724137931
+	Prev Task: 8  	Manual	 37.16216216216216
+	Prev Task: 9  	Manual	 62.1160409556314
+	Prev Task: 10  	Manual	 60.20066889632107
+	Prev Task: 11  	Manual	 48.74551971326165
+	Prev Task: 12  	Manual	 42.508710801393725
+	Prev Task: 13  	Manual	 19.12751677852349
+	Prev Task: 14  	Manual	 55.0
+	Prev Task: 15  	Manual	 32.88590604026846
+	Prev Task: 16  	Manual	 51.736111111111114
+	Prev Task: 17  	Manual	 58.92255892255892
+TASK 17 / 20 	Avg Acc: 47.4880063710354
+	Prev Task: 1  	Manual	 42.38683127572016
+	Prev Task: 2  	Manual	 53.30882352941177
+	Prev Task: 3  	Manual	 37.41258741258741
+	Prev Task: 4  	Manual	 42.56055363321799
+	Prev Task: 5  	Manual	 61.20401337792642
+	Prev Task: 6  	Manual	 52.525252525252526
+	Prev Task: 7  	Manual	 45.86206896551724
+	Prev Task: 8  	Manual	 34.45945945945946
+	Prev Task: 9  	Manual	 58.02047781569966
+	Prev Task: 10  	Manual	 65.55183946488295
+	Prev Task: 11  	Manual	 47.31182795698925
+	Prev Task: 12  	Manual	 37.63066202090592
+	Prev Task: 13  	Manual	 27.516778523489933
+	Prev Task: 14  	Manual	 53.333333333333336
+	Prev Task: 15  	Manual	 27.181208053691275
+	Prev Task: 16  	Manual	 44.791666666666664
+	Prev Task: 17  	Manual	 50.841750841750844
+	Prev Task: 18  	Manual	 49.83050847457627
+TASK 18 / 20 	Avg Acc: 46.20720240728217
+	Prev Task: 1  	Manual	 47.325102880658434
+	Prev Task: 2  	Manual	 51.10294117647059
+	Prev Task: 3  	Manual	 53.14685314685315
+	Prev Task: 4  	Manual	 58.8235294117647
+	Prev Task: 5  	Manual	 78.59531772575251
+	Prev Task: 6  	Manual	 74.41077441077441
+	Prev Task: 7  	Manual	 51.03448275862069
+	Prev Task: 8  	Manual	 52.7027027027027
+	Prev Task: 9  	Manual	 78.15699658703072
+	Prev Task: 10  	Manual	 74.58193979933111
+	Prev Task: 11  	Manual	 68.45878136200717
+	Prev Task: 12  	Manual	 45.29616724738676
+	Prev Task: 13  	Manual	 38.25503355704698
+	Prev Task: 14  	Manual	 62.666666666666664
+	Prev Task: 15  	Manual	 39.261744966442954
+	Prev Task: 16  	Manual	 60.06944444444444
+	Prev Task: 17  	Manual	 48.484848484848484
+	Prev Task: 18  	Manual	 41.355932203389834
+	Prev Task: 19  	Manual	 71.18055555555556
+TASK 19 / 20 	Avg Acc: 57.62683237303936
+	Prev Task: 1  	Manual	 53.08641975308642
+	Prev Task: 2  	Manual	 52.94117647058823
+	Prev Task: 3  	Manual	 49.3006993006993
+	Prev Task: 4  	Manual	 55.70934256055364
+	Prev Task: 5  	Manual	 69.23076923076923
+	Prev Task: 6  	Manual	 68.68686868686869
+	Prev Task: 7  	Manual	 52.06896551724138
+	Prev Task: 8  	Manual	 51.351351351351354
+	Prev Task: 9  	Manual	 74.40273037542661
+	Prev Task: 10  	Manual	 68.56187290969899
+	Prev Task: 11  	Manual	 65.94982078853046
+	Prev Task: 12  	Manual	 43.90243902439025
+	Prev Task: 13  	Manual	 40.604026845637584
+	Prev Task: 14  	Manual	 58.0
+	Prev Task: 15  	Manual	 36.241610738255034
+	Prev Task: 16  	Manual	 53.81944444444444
+	Prev Task: 17  	Manual	 36.36363636363637
+	Prev Task: 18  	Manual	 32.20338983050848
+	Prev Task: 19  	Manual	 71.52777777777777
+	Prev Task: 20  	Manual	 54.333333333333336
+TASK 20 / 20 	Avg Acc: 54.41428376513988
+average accuracy = 54.41428376513987, forget = 0.11388677764999496, learning accuracy = 65.07932772892823
+
+------------------- Experiment-1235 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+	Prev Task: 1  	Manual	 65.4320987654321
+TASK 1 / 20 	Avg Acc: 65.4320987654321
+	Prev Task: 1  	Manual	 55.55555555555556
+	Prev Task: 2  	Manual	 74.63235294117646
+TASK 2 / 20 	Avg Acc: 65.093954248366
+	Prev Task: 1  	Manual	 61.72839506172839
+	Prev Task: 2  	Manual	 64.70588235294117
+	Prev Task: 3  	Manual	 59.79020979020979
+TASK 3 / 20 	Avg Acc: 62.07482906829311
+	Prev Task: 1  	Manual	 61.31687242798354
+	Prev Task: 2  	Manual	 66.54411764705883
+	Prev Task: 3  	Manual	 52.7972027972028
+	Prev Task: 4  	Manual	 55.36332179930796
+TASK 4 / 20 	Avg Acc: 59.00537866788828
+	Prev Task: 1  	Manual	 66.2551440329218
+	Prev Task: 2  	Manual	 70.95588235294117
+	Prev Task: 3  	Manual	 60.48951048951049
+	Prev Task: 4  	Manual	 53.28719723183391
+	Prev Task: 5  	Manual	 86.95652173913044
+TASK 5 / 20 	Avg Acc: 67.58885116926757
+	Prev Task: 1  	Manual	 69.95884773662551
+	Prev Task: 2  	Manual	 70.95588235294117
+	Prev Task: 3  	Manual	 58.74125874125874
+	Prev Task: 4  	Manual	 51.21107266435986
+	Prev Task: 5  	Manual	 84.2809364548495
+	Prev Task: 6  	Manual	 82.49158249158249
+TASK 6 / 20 	Avg Acc: 69.60659674026955
+	Prev Task: 1  	Manual	 67.48971193415638
+	Prev Task: 2  	Manual	 66.17647058823529
+	Prev Task: 3  	Manual	 57.69230769230769
+	Prev Task: 4  	Manual	 49.48096885813149
+	Prev Task: 5  	Manual	 86.95652173913044
+	Prev Task: 6  	Manual	 81.48148148148148
+	Prev Task: 7  	Manual	 63.44827586206897
+TASK 7 / 20 	Avg Acc: 67.53224830793025
+	Prev Task: 1  	Manual	 66.66666666666667
+	Prev Task: 2  	Manual	 63.60294117647059
+	Prev Task: 3  	Manual	 56.99300699300699
+	Prev Task: 4  	Manual	 53.63321799307958
+	Prev Task: 5  	Manual	 87.62541806020067
+	Prev Task: 6  	Manual	 84.17508417508418
+	Prev Task: 7  	Manual	 56.89655172413793
+	Prev Task: 8  	Manual	 78.71621621621621
+TASK 8 / 20 	Avg Acc: 68.53863787560785
+	Prev Task: 1  	Manual	 61.72839506172839
+	Prev Task: 2  	Manual	 62.5
+	Prev Task: 3  	Manual	 60.13986013986014
+	Prev Task: 4  	Manual	 43.59861591695502
+	Prev Task: 5  	Manual	 83.61204013377926
+	Prev Task: 6  	Manual	 82.15488215488216
+	Prev Task: 7  	Manual	 53.793103448275865
+	Prev Task: 8  	Manual	 71.28378378378379
+	Prev Task: 9  	Manual	 89.419795221843
+TASK 9 / 20 	Avg Acc: 67.58116398456751
+	Prev Task: 1  	Manual	 62.96296296296296
+	Prev Task: 2  	Manual	 70.22058823529412
+	Prev Task: 3  	Manual	 54.19580419580419
+	Prev Task: 4  	Manual	 55.017301038062286
+	Prev Task: 5  	Manual	 84.61538461538461
+	Prev Task: 6  	Manual	 83.5016835016835
+	Prev Task: 7  	Manual	 55.86206896551724
+	Prev Task: 8  	Manual	 73.3108108108108
+	Prev Task: 9  	Manual	 88.05460750853243
+	Prev Task: 10  	Manual	 80.60200668896321
+TASK 10 / 20 	Avg Acc: 70.83432185230153
+	Prev Task: 1  	Manual	 62.13991769547325
+	Prev Task: 2  	Manual	 67.6470588235294
+	Prev Task: 3  	Manual	 54.54545454545455
+	Prev Task: 4  	Manual	 48.78892733564014
+	Prev Task: 5  	Manual	 84.2809364548495
+	Prev Task: 6  	Manual	 82.15488215488216
+	Prev Task: 7  	Manual	 55.172413793103445
+	Prev Task: 8  	Manual	 76.6891891891892
+	Prev Task: 9  	Manual	 87.71331058020478
+	Prev Task: 10  	Manual	 71.57190635451505
+	Prev Task: 11  	Manual	 75.62724014336918
+TASK 11 / 20 	Avg Acc: 69.66647609729188
+	Prev Task: 1  	Manual	 57.20164609053498
+	Prev Task: 2  	Manual	 52.5735294117647
+	Prev Task: 3  	Manual	 39.86013986013986
+	Prev Task: 4  	Manual	 53.97923875432526
+	Prev Task: 5  	Manual	 86.95652173913044
+	Prev Task: 6  	Manual	 79.79797979797979
+	Prev Task: 7  	Manual	 57.241379310344826
+	Prev Task: 8  	Manual	 66.55405405405405
+	Prev Task: 9  	Manual	 76.10921501706484
+	Prev Task: 10  	Manual	 64.21404682274247
+	Prev Task: 11  	Manual	 69.89247311827957
+	Prev Task: 12  	Manual	 45.29616724738676
+TASK 12 / 20 	Avg Acc: 62.47303260197896
+	Prev Task: 1  	Manual	 51.440329218106996
+	Prev Task: 2  	Manual	 57.720588235294116
+	Prev Task: 3  	Manual	 38.11188811188811
+	Prev Task: 4  	Manual	 53.63321799307958
+	Prev Task: 5  	Manual	 83.61204013377926
+	Prev Task: 6  	Manual	 68.68686868686869
+	Prev Task: 7  	Manual	 56.55172413793103
+	Prev Task: 8  	Manual	 60.472972972972975
+	Prev Task: 9  	Manual	 72.0136518771331
+	Prev Task: 10  	Manual	 61.87290969899666
+	Prev Task: 11  	Manual	 62.72401433691756
+	Prev Task: 12  	Manual	 45.99303135888502
+	Prev Task: 13  	Manual	 32.214765100671144
+TASK 13 / 20 	Avg Acc: 57.31138475865571
+	Prev Task: 1  	Manual	 54.32098765432099
+	Prev Task: 2  	Manual	 73.16176470588235
+	Prev Task: 3  	Manual	 50.6993006993007
+	Prev Task: 4  	Manual	 51.55709342560554
+	Prev Task: 5  	Manual	 86.2876254180602
+	Prev Task: 6  	Manual	 81.14478114478115
+	Prev Task: 7  	Manual	 55.172413793103445
+	Prev Task: 8  	Manual	 66.21621621621621
+	Prev Task: 9  	Manual	 78.839590443686
+	Prev Task: 10  	Manual	 69.23076923076923
+	Prev Task: 11  	Manual	 70.96774193548387
+	Prev Task: 12  	Manual	 34.494773519163765
+	Prev Task: 13  	Manual	 23.48993288590604
+	Prev Task: 14  	Manual	 76.0
+TASK 14 / 20 	Avg Acc: 62.25592793373425
+	Prev Task: 1  	Manual	 57.61316872427984
+	Prev Task: 2  	Manual	 57.720588235294116
+	Prev Task: 3  	Manual	 46.85314685314685
+	Prev Task: 4  	Manual	 44.29065743944636
+	Prev Task: 5  	Manual	 78.26086956521739
+	Prev Task: 6  	Manual	 78.78787878787878
+	Prev Task: 7  	Manual	 57.241379310344826
+	Prev Task: 8  	Manual	 71.28378378378379
+	Prev Task: 9  	Manual	 86.00682593856655
+	Prev Task: 10  	Manual	 69.23076923076923
+	Prev Task: 11  	Manual	 66.30824372759857
+	Prev Task: 12  	Manual	 32.40418118466899
+	Prev Task: 13  	Manual	 21.140939597315437
+	Prev Task: 14  	Manual	 66.66666666666667
+	Prev Task: 15  	Manual	 54.36241610738255
+TASK 15 / 20 	Avg Acc: 59.21143434349066
+	Prev Task: 1  	Manual	 57.20164609053498
+	Prev Task: 2  	Manual	 58.8235294117647
+	Prev Task: 3  	Manual	 34.61538461538461
+	Prev Task: 4  	Manual	 48.44290657439446
+	Prev Task: 5  	Manual	 81.60535117056857
+	Prev Task: 6  	Manual	 79.12457912457913
+	Prev Task: 7  	Manual	 58.275862068965516
+	Prev Task: 8  	Manual	 64.86486486486487
+	Prev Task: 9  	Manual	 78.15699658703072
+	Prev Task: 10  	Manual	 68.89632107023411
+	Prev Task: 11  	Manual	 64.87455197132617
+	Prev Task: 12  	Manual	 40.069686411149824
+	Prev Task: 13  	Manual	 22.14765100671141
+	Prev Task: 14  	Manual	 60.333333333333336
+	Prev Task: 15  	Manual	 42.61744966442953
+	Prev Task: 16  	Manual	 65.27777777777777
+TASK 16 / 20 	Avg Acc: 57.8329932339406
+	Prev Task: 1  	Manual	 46.91358024691358
+	Prev Task: 2  	Manual	 70.22058823529412
+	Prev Task: 3  	Manual	 36.36363636363637
+	Prev Task: 4  	Manual	 50.173010380622834
+	Prev Task: 5  	Manual	 72.5752508361204
+	Prev Task: 6  	Manual	 74.41077441077441
+	Prev Task: 7  	Manual	 47.93103448275862
+	Prev Task: 8  	Manual	 50.67567567567568
+	Prev Task: 9  	Manual	 77.81569965870307
+	Prev Task: 10  	Manual	 70.90301003344482
+	Prev Task: 11  	Manual	 61.64874551971326
+	Prev Task: 12  	Manual	 28.222996515679444
+	Prev Task: 13  	Manual	 22.483221476510067
+	Prev Task: 14  	Manual	 63.333333333333336
+	Prev Task: 15  	Manual	 36.241610738255034
+	Prev Task: 16  	Manual	 45.138888888888886
+	Prev Task: 17  	Manual	 62.96296296296296
+TASK 17 / 20 	Avg Acc: 54.000824691722755
+	Prev Task: 1  	Manual	 46.50205761316872
+	Prev Task: 2  	Manual	 65.44117647058823
+	Prev Task: 3  	Manual	 33.91608391608391
+	Prev Task: 4  	Manual	 48.09688581314879
+	Prev Task: 5  	Manual	 72.90969899665552
+	Prev Task: 6  	Manual	 62.96296296296296
+	Prev Task: 7  	Manual	 48.62068965517241
+	Prev Task: 8  	Manual	 41.554054054054056
+	Prev Task: 9  	Manual	 61.092150170648466
+	Prev Task: 10  	Manual	 65.21739130434783
+	Prev Task: 11  	Manual	 58.78136200716846
+	Prev Task: 12  	Manual	 33.10104529616725
+	Prev Task: 13  	Manual	 21.140939597315437
+	Prev Task: 14  	Manual	 60.666666666666664
+	Prev Task: 15  	Manual	 36.577181208053695
+	Prev Task: 16  	Manual	 52.77777777777778
+	Prev Task: 17  	Manual	 55.21885521885522
+	Prev Task: 18  	Manual	 54.91525423728814
+TASK 18 / 20 	Avg Acc: 51.08290183145131
+	Prev Task: 1  	Manual	 51.02880658436214
+	Prev Task: 2  	Manual	 64.70588235294117
+	Prev Task: 3  	Manual	 43.70629370629371
+	Prev Task: 4  	Manual	 56.055363321799305
+	Prev Task: 5  	Manual	 83.94648829431438
+	Prev Task: 6  	Manual	 82.49158249158249
+	Prev Task: 7  	Manual	 51.03448275862069
+	Prev Task: 8  	Manual	 66.21621621621621
+	Prev Task: 9  	Manual	 84.98293515358361
+	Prev Task: 10  	Manual	 76.25418060200668
+	Prev Task: 11  	Manual	 74.55197132616487
+	Prev Task: 12  	Manual	 39.37282229965157
+	Prev Task: 13  	Manual	 28.523489932885905
+	Prev Task: 14  	Manual	 69.0
+	Prev Task: 15  	Manual	 47.986577181208055
+	Prev Task: 16  	Manual	 65.27777777777777
+	Prev Task: 17  	Manual	 40.4040404040404
+	Prev Task: 18  	Manual	 52.88135593220339
+	Prev Task: 19  	Manual	 85.41666666666667
+TASK 19 / 20 	Avg Acc: 61.25457542117469
+	Prev Task: 1  	Manual	 51.851851851851855
+	Prev Task: 2  	Manual	 62.5
+	Prev Task: 3  	Manual	 42.65734265734266
+	Prev Task: 4  	Manual	 52.94117647058823
+	Prev Task: 5  	Manual	 83.94648829431438
+	Prev Task: 6  	Manual	 79.79797979797979
+	Prev Task: 7  	Manual	 48.62068965517241
+	Prev Task: 8  	Manual	 62.5
+	Prev Task: 9  	Manual	 84.30034129692832
+	Prev Task: 10  	Manual	 72.90969899665552
+	Prev Task: 11  	Manual	 72.04301075268818
+	Prev Task: 12  	Manual	 38.32752613240418
+	Prev Task: 13  	Manual	 26.174496644295303
+	Prev Task: 14  	Manual	 65.33333333333333
+	Prev Task: 15  	Manual	 46.308724832214764
+	Prev Task: 16  	Manual	 59.02777777777778
+	Prev Task: 17  	Manual	 33.333333333333336
+	Prev Task: 18  	Manual	 43.05084745762712
+	Prev Task: 19  	Manual	 82.63888888888889
+	Prev Task: 20  	Manual	 69.0
+TASK 20 / 20 	Avg Acc: 58.8631754086698
+average accuracy = 58.863175408669804, forget = 0.09980498783952388, learning accuracy = 67.8962815879718
+
+------------------- Experiment-1237 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+	Prev Task: 1  	Manual	 65.02057613168725
+TASK 1 / 20 	Avg Acc: 65.02057613168725
+	Prev Task: 1  	Manual	 53.08641975308642
+	Prev Task: 2  	Manual	 86.76470588235294
+TASK 2 / 20 	Avg Acc: 69.92556281771968
+	Prev Task: 1  	Manual	 60.49382716049383
+	Prev Task: 2  	Manual	 82.72058823529412
+	Prev Task: 3  	Manual	 65.03496503496504
+TASK 3 / 20 	Avg Acc: 69.41646014358433
+	Prev Task: 1  	Manual	 55.96707818930041
+	Prev Task: 2  	Manual	 79.41176470588235
+	Prev Task: 3  	Manual	 63.63636363636363
+	Prev Task: 4  	Manual	 55.017301038062286
+TASK 4 / 20 	Avg Acc: 63.50812689240216
+	Prev Task: 1  	Manual	 58.43621399176955
+	Prev Task: 2  	Manual	 80.88235294117646
+	Prev Task: 3  	Manual	 56.64335664335665
+	Prev Task: 4  	Manual	 59.515570934256054
+	Prev Task: 5  	Manual	 87.29096989966555
+TASK 5 / 20 	Avg Acc: 68.55369288204486
+	Prev Task: 1  	Manual	 62.13991769547325
+	Prev Task: 2  	Manual	 79.77941176470588
+	Prev Task: 3  	Manual	 54.89510489510489
+	Prev Task: 4  	Manual	 53.63321799307958
+	Prev Task: 5  	Manual	 87.62541806020067
+	Prev Task: 6  	Manual	 79.79797979797979
+TASK 6 / 20 	Avg Acc: 69.64517503442401
+	Prev Task: 1  	Manual	 56.37860082304527
+	Prev Task: 2  	Manual	 77.20588235294117
+	Prev Task: 3  	Manual	 55.24475524475525
+	Prev Task: 4  	Manual	 56.74740484429066
+	Prev Task: 5  	Manual	 82.6086956521739
+	Prev Task: 6  	Manual	 81.81818181818181
+	Prev Task: 7  	Manual	 56.89655172413793
+TASK 7 / 20 	Avg Acc: 66.70001035136086
+	Prev Task: 1  	Manual	 54.732510288065846
+	Prev Task: 2  	Manual	 79.41176470588235
+	Prev Task: 3  	Manual	 56.64335664335665
+	Prev Task: 4  	Manual	 50.865051903114185
+	Prev Task: 5  	Manual	 85.28428093645485
+	Prev Task: 6  	Manual	 77.77777777777777
+	Prev Task: 7  	Manual	 55.86206896551724
+	Prev Task: 8  	Manual	 73.64864864864865
+TASK 8 / 20 	Avg Acc: 66.7781824836022
+	Prev Task: 1  	Manual	 59.67078189300412
+	Prev Task: 2  	Manual	 78.30882352941177
+	Prev Task: 3  	Manual	 52.7972027972028
+	Prev Task: 4  	Manual	 49.48096885813149
+	Prev Task: 5  	Manual	 81.27090301003345
+	Prev Task: 6  	Manual	 81.14478114478115
+	Prev Task: 7  	Manual	 51.37931034482759
+	Prev Task: 8  	Manual	 69.25675675675676
+	Prev Task: 9  	Manual	 90.10238907849829
+TASK 9 / 20 	Avg Acc: 68.15687971251639
+	Prev Task: 1  	Manual	 52.26337448559671
+	Prev Task: 2  	Manual	 74.63235294117646
+	Prev Task: 3  	Manual	 57.34265734265734
+	Prev Task: 4  	Manual	 55.017301038062286
+	Prev Task: 5  	Manual	 85.28428093645485
+	Prev Task: 6  	Manual	 80.47138047138047
+	Prev Task: 7  	Manual	 54.13793103448276
+	Prev Task: 8  	Manual	 68.58108108108108
+	Prev Task: 9  	Manual	 83.2764505119454
+	Prev Task: 10  	Manual	 80.93645484949833
+TASK 10 / 20 	Avg Acc: 69.19432646923356
+	Prev Task: 1  	Manual	 60.08230452674897
+	Prev Task: 2  	Manual	 75.0
+	Prev Task: 3  	Manual	 63.63636363636363
+	Prev Task: 4  	Manual	 51.55709342560554
+	Prev Task: 5  	Manual	 82.6086956521739
+	Prev Task: 6  	Manual	 82.15488215488216
+	Prev Task: 7  	Manual	 55.51724137931034
+	Prev Task: 8  	Manual	 72.63513513513513
+	Prev Task: 9  	Manual	 83.95904436860069
+	Prev Task: 10  	Manual	 71.57190635451505
+	Prev Task: 11  	Manual	 74.19354838709677
+TASK 11 / 20 	Avg Acc: 70.26511045640292
+	Prev Task: 1  	Manual	 50.617283950617285
+	Prev Task: 2  	Manual	 69.48529411764706
+	Prev Task: 3  	Manual	 53.49650349650349
+	Prev Task: 4  	Manual	 50.51903114186851
+	Prev Task: 5  	Manual	 76.25418060200668
+	Prev Task: 6  	Manual	 77.44107744107744
+	Prev Task: 7  	Manual	 54.48275862068966
+	Prev Task: 8  	Manual	 62.83783783783784
+	Prev Task: 9  	Manual	 69.62457337883959
+	Prev Task: 10  	Manual	 67.89297658862876
+	Prev Task: 11  	Manual	 73.11827956989248
+	Prev Task: 12  	Manual	 51.91637630662021
+TASK 12 / 20 	Avg Acc: 63.14051442101908
+	Prev Task: 1  	Manual	 50.205761316872426
+	Prev Task: 2  	Manual	 68.38235294117646
+	Prev Task: 3  	Manual	 46.50349650349651
+	Prev Task: 4  	Manual	 52.59515570934256
+	Prev Task: 5  	Manual	 64.54849498327759
+	Prev Task: 6  	Manual	 70.03367003367003
+	Prev Task: 7  	Manual	 49.6551724137931
+	Prev Task: 8  	Manual	 55.74324324324324
+	Prev Task: 9  	Manual	 53.924914675767916
+	Prev Task: 10  	Manual	 52.84280936454849
+	Prev Task: 11  	Manual	 64.87455197132617
+	Prev Task: 12  	Manual	 38.32752613240418
+	Prev Task: 13  	Manual	 44.630872483221474
+TASK 13 / 20 	Avg Acc: 54.78984782862618
+	Prev Task: 1  	Manual	 54.732510288065846
+	Prev Task: 2  	Manual	 77.57352941176471
+	Prev Task: 3  	Manual	 49.65034965034965
+	Prev Task: 4  	Manual	 55.70934256055364
+	Prev Task: 5  	Manual	 77.59197324414716
+	Prev Task: 6  	Manual	 76.0942760942761
+	Prev Task: 7  	Manual	 48.275862068965516
+	Prev Task: 8  	Manual	 60.472972972972975
+	Prev Task: 9  	Manual	 76.79180887372014
+	Prev Task: 10  	Manual	 75.58528428093645
+	Prev Task: 11  	Manual	 74.91039426523298
+	Prev Task: 12  	Manual	 35.88850174216028
+	Prev Task: 13  	Manual	 24.496644295302012
+	Prev Task: 14  	Manual	 67.66666666666667
+TASK 14 / 20 	Avg Acc: 61.10286545822244
+	Prev Task: 1  	Manual	 53.49794238683128
+	Prev Task: 2  	Manual	 74.26470588235294
+	Prev Task: 3  	Manual	 51.3986013986014
+	Prev Task: 4  	Manual	 49.48096885813149
+	Prev Task: 5  	Manual	 79.26421404682274
+	Prev Task: 6  	Manual	 81.14478114478115
+	Prev Task: 7  	Manual	 54.48275862068966
+	Prev Task: 8  	Manual	 71.28378378378379
+	Prev Task: 9  	Manual	 79.18088737201366
+	Prev Task: 10  	Manual	 78.26086956521739
+	Prev Task: 11  	Manual	 76.70250896057348
+	Prev Task: 12  	Manual	 46.34146341463415
+	Prev Task: 13  	Manual	 22.818791946308725
+	Prev Task: 14  	Manual	 63.666666666666664
+	Prev Task: 15  	Manual	 50.0
+TASK 15 / 20 	Avg Acc: 62.119262936493904
+	Prev Task: 1  	Manual	 53.90946502057613
+	Prev Task: 2  	Manual	 68.01470588235294
+	Prev Task: 3  	Manual	 47.9020979020979
+	Prev Task: 4  	Manual	 45.674740484429066
+	Prev Task: 5  	Manual	 72.90969899665552
+	Prev Task: 6  	Manual	 77.44107744107744
+	Prev Task: 7  	Manual	 53.793103448275865
+	Prev Task: 8  	Manual	 60.13513513513514
+	Prev Task: 9  	Manual	 70.64846416382252
+	Prev Task: 10  	Manual	 71.90635451505017
+	Prev Task: 11  	Manual	 72.04301075268818
+	Prev Task: 12  	Manual	 50.87108013937282
+	Prev Task: 13  	Manual	 28.187919463087248
+	Prev Task: 14  	Manual	 58.0
+	Prev Task: 15  	Manual	 40.939597315436245
+	Prev Task: 16  	Manual	 50.0
+TASK 16 / 20 	Avg Acc: 57.64852816625357
+	Prev Task: 1  	Manual	 53.08641975308642
+	Prev Task: 2  	Manual	 62.86764705882353
+	Prev Task: 3  	Manual	 42.30769230769231
+	Prev Task: 4  	Manual	 48.44290657439446
+	Prev Task: 5  	Manual	 68.56187290969899
+	Prev Task: 6  	Manual	 72.39057239057239
+	Prev Task: 7  	Manual	 50.0
+	Prev Task: 8  	Manual	 40.54054054054054
+	Prev Task: 9  	Manual	 65.18771331058021
+	Prev Task: 10  	Manual	 73.24414715719064
+	Prev Task: 11  	Manual	 61.64874551971326
+	Prev Task: 12  	Manual	 37.282229965156795
+	Prev Task: 13  	Manual	 26.174496644295303
+	Prev Task: 14  	Manual	 59.666666666666664
+	Prev Task: 15  	Manual	 30.201342281879196
+	Prev Task: 16  	Manual	 40.97222222222222
+	Prev Task: 17  	Manual	 72.05387205387206
+TASK 17 / 20 	Avg Acc: 53.21347572684618
+	Prev Task: 1  	Manual	 51.440329218106996
+	Prev Task: 2  	Manual	 55.51470588235294
+	Prev Task: 3  	Manual	 41.60839160839161
+	Prev Task: 4  	Manual	 38.75432525951557
+	Prev Task: 5  	Manual	 62.541806020066886
+	Prev Task: 6  	Manual	 67.003367003367
+	Prev Task: 7  	Manual	 51.724137931034484
+	Prev Task: 8  	Manual	 39.189189189189186
+	Prev Task: 9  	Manual	 56.996587030716725
+	Prev Task: 10  	Manual	 67.22408026755853
+	Prev Task: 11  	Manual	 46.59498207885304
+	Prev Task: 12  	Manual	 32.75261324041812
+	Prev Task: 13  	Manual	 28.187919463087248
+	Prev Task: 14  	Manual	 56.333333333333336
+	Prev Task: 15  	Manual	 27.85234899328859
+	Prev Task: 16  	Manual	 38.888888888888886
+	Prev Task: 17  	Manual	 61.61616161616162
+	Prev Task: 18  	Manual	 47.45762711864407
+TASK 18 / 20 	Avg Acc: 48.42671078572083
+	Prev Task: 1  	Manual	 52.674897119341566
+	Prev Task: 2  	Manual	 70.95588235294117
+	Prev Task: 3  	Manual	 54.19580419580419
+	Prev Task: 4  	Manual	 59.515570934256054
+	Prev Task: 5  	Manual	 83.61204013377926
+	Prev Task: 6  	Manual	 82.15488215488216
+	Prev Task: 7  	Manual	 55.86206896551724
+	Prev Task: 8  	Manual	 63.851351351351354
+	Prev Task: 9  	Manual	 76.79180887372014
+	Prev Task: 10  	Manual	 74.91638795986623
+	Prev Task: 11  	Manual	 70.25089605734767
+	Prev Task: 12  	Manual	 39.37282229965157
+	Prev Task: 13  	Manual	 27.181208053691275
+	Prev Task: 14  	Manual	 63.0
+	Prev Task: 15  	Manual	 39.93288590604027
+	Prev Task: 16  	Manual	 52.083333333333336
+	Prev Task: 17  	Manual	 57.91245791245791
+	Prev Task: 18  	Manual	 37.6271186440678
+	Prev Task: 19  	Manual	 86.11111111111111
+TASK 19 / 20 	Avg Acc: 60.421185650482116
+	Prev Task: 1  	Manual	 54.732510288065846
+	Prev Task: 2  	Manual	 71.32352941176471
+	Prev Task: 3  	Manual	 52.7972027972028
+	Prev Task: 4  	Manual	 55.36332179930796
+	Prev Task: 5  	Manual	 82.94314381270902
+	Prev Task: 6  	Manual	 80.13468013468014
+	Prev Task: 7  	Manual	 51.03448275862069
+	Prev Task: 8  	Manual	 63.17567567567568
+	Prev Task: 9  	Manual	 70.98976109215018
+	Prev Task: 10  	Manual	 66.5551839464883
+	Prev Task: 11  	Manual	 69.89247311827957
+	Prev Task: 12  	Manual	 38.67595818815331
+	Prev Task: 13  	Manual	 25.503355704697988
+	Prev Task: 14  	Manual	 64.33333333333333
+	Prev Task: 15  	Manual	 39.261744966442954
+	Prev Task: 16  	Manual	 50.34722222222222
+	Prev Task: 17  	Manual	 50.505050505050505
+	Prev Task: 18  	Manual	 32.20338983050848
+	Prev Task: 19  	Manual	 83.68055555555556
+	Prev Task: 20  	Manual	 60.333333333333336
+TASK 20 / 20 	Avg Acc: 58.18929542371213
+average accuracy = 58.189295423712124, forget = 0.10151050283803181, learning accuracy = 67.24369747730307
+
+------------------- Experiment-1240 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+	Prev Task: 1  	Manual	 62.96296296296296
+TASK 1 / 20 	Avg Acc: 62.96296296296296
+	Prev Task: 1  	Manual	 58.43621399176955
+	Prev Task: 2  	Manual	 79.41176470588235
+TASK 2 / 20 	Avg Acc: 68.92398934882596
+	Prev Task: 1  	Manual	 60.90534979423868
+	Prev Task: 2  	Manual	 68.01470588235294
+	Prev Task: 3  	Manual	 53.14685314685315
+TASK 3 / 20 	Avg Acc: 60.688969607814926
+	Prev Task: 1  	Manual	 61.72839506172839
+	Prev Task: 2  	Manual	 64.70588235294117
+	Prev Task: 3  	Manual	 48.95104895104895
+	Prev Task: 4  	Manual	 53.97923875432526
+TASK 4 / 20 	Avg Acc: 57.341141280010945
+	Prev Task: 1  	Manual	 58.02469135802469
+	Prev Task: 2  	Manual	 72.05882352941177
+	Prev Task: 3  	Manual	 46.50349650349651
+	Prev Task: 4  	Manual	 48.44290657439446
+	Prev Task: 5  	Manual	 91.63879598662207
+TASK 5 / 20 	Avg Acc: 63.33374279038989
+	Prev Task: 1  	Manual	 60.90534979423868
+	Prev Task: 2  	Manual	 75.73529411764706
+	Prev Task: 3  	Manual	 41.60839160839161
+	Prev Task: 4  	Manual	 43.59861591695502
+	Prev Task: 5  	Manual	 85.95317725752508
+	Prev Task: 6  	Manual	 79.79797979797979
+TASK 6 / 20 	Avg Acc: 64.5998014154562
+	Prev Task: 1  	Manual	 56.79012345679013
+	Prev Task: 2  	Manual	 75.36764705882354
+	Prev Task: 3  	Manual	 44.40559440559441
+	Prev Task: 4  	Manual	 51.55709342560554
+	Prev Task: 5  	Manual	 86.2876254180602
+	Prev Task: 6  	Manual	 77.77777777777777
+	Prev Task: 7  	Manual	 53.10344827586207
+TASK 7 / 20 	Avg Acc: 63.612758545501954
+	Prev Task: 1  	Manual	 59.25925925925926
+	Prev Task: 2  	Manual	 69.48529411764706
+	Prev Task: 3  	Manual	 47.55244755244755
+	Prev Task: 4  	Manual	 41.522491349480966
+	Prev Task: 5  	Manual	 82.27424749163879
+	Prev Task: 6  	Manual	 76.0942760942761
+	Prev Task: 7  	Manual	 52.06896551724138
+	Prev Task: 8  	Manual	 74.66216216216216
+TASK 8 / 20 	Avg Acc: 62.86489294301916
+	Prev Task: 1  	Manual	 59.25925925925926
+	Prev Task: 2  	Manual	 70.58823529411765
+	Prev Task: 3  	Manual	 45.45454545454545
+	Prev Task: 4  	Manual	 40.83044982698962
+	Prev Task: 5  	Manual	 89.63210702341136
+	Prev Task: 6  	Manual	 77.44107744107744
+	Prev Task: 7  	Manual	 52.758620689655174
+	Prev Task: 8  	Manual	 64.1891891891892
+	Prev Task: 9  	Manual	 89.76109215017065
+TASK 9 / 20 	Avg Acc: 65.54606403649065
+	Prev Task: 1  	Manual	 57.61316872427984
+	Prev Task: 2  	Manual	 63.60294117647059
+	Prev Task: 3  	Manual	 48.6013986013986
+	Prev Task: 4  	Manual	 45.32871972318339
+	Prev Task: 5  	Manual	 84.94983277591973
+	Prev Task: 6  	Manual	 72.39057239057239
+	Prev Task: 7  	Manual	 52.41379310344828
+	Prev Task: 8  	Manual	 68.24324324324324
+	Prev Task: 9  	Manual	 87.03071672354949
+	Prev Task: 10  	Manual	 76.25418060200668
+TASK 10 / 20 	Avg Acc: 65.64285670640723
+	Prev Task: 1  	Manual	 58.02469135802469
+	Prev Task: 2  	Manual	 58.088235294117645
+	Prev Task: 3  	Manual	 48.6013986013986
+	Prev Task: 4  	Manual	 43.25259515570934
+	Prev Task: 5  	Manual	 84.61538461538461
+	Prev Task: 6  	Manual	 73.06397306397307
+	Prev Task: 7  	Manual	 52.758620689655174
+	Prev Task: 8  	Manual	 69.25675675675676
+	Prev Task: 9  	Manual	 87.03071672354949
+	Prev Task: 10  	Manual	 69.89966555183946
+	Prev Task: 11  	Manual	 73.47670250896057
+TASK 11 / 20 	Avg Acc: 65.27897639266995
+	Prev Task: 1  	Manual	 42.38683127572016
+	Prev Task: 2  	Manual	 54.411764705882355
+	Prev Task: 3  	Manual	 38.46153846153846
+	Prev Task: 4  	Manual	 46.71280276816609
+	Prev Task: 5  	Manual	 60.53511705685619
+	Prev Task: 6  	Manual	 68.35016835016835
+	Prev Task: 7  	Manual	 51.37931034482759
+	Prev Task: 8  	Manual	 52.7027027027027
+	Prev Task: 9  	Manual	 73.37883959044369
+	Prev Task: 10  	Manual	 64.88294314381271
+	Prev Task: 11  	Manual	 66.66666666666667
+	Prev Task: 12  	Manual	 44.599303135888505
+TASK 12 / 20 	Avg Acc: 55.37233235022279
+	Prev Task: 1  	Manual	 39.09465020576132
+	Prev Task: 2  	Manual	 53.6764705882353
+	Prev Task: 3  	Manual	 28.67132867132867
+	Prev Task: 4  	Manual	 44.29065743944636
+	Prev Task: 5  	Manual	 50.836120401337794
+	Prev Task: 6  	Manual	 64.64646464646465
+	Prev Task: 7  	Manual	 47.58620689655172
+	Prev Task: 8  	Manual	 47.972972972972975
+	Prev Task: 9  	Manual	 61.774744027303754
+	Prev Task: 10  	Manual	 45.48494983277592
+	Prev Task: 11  	Manual	 56.98924731182796
+	Prev Task: 12  	Manual	 31.358885017421603
+	Prev Task: 13  	Manual	 37.24832214765101
+TASK 13 / 20 	Avg Acc: 46.894693858390696
+	Prev Task: 1  	Manual	 48.97119341563786
+	Prev Task: 2  	Manual	 76.83823529411765
+	Prev Task: 3  	Manual	 38.46153846153846
+	Prev Task: 4  	Manual	 46.71280276816609
+	Prev Task: 5  	Manual	 74.91638795986623
+	Prev Task: 6  	Manual	 68.01346801346801
+	Prev Task: 7  	Manual	 54.48275862068966
+	Prev Task: 8  	Manual	 58.108108108108105
+	Prev Task: 9  	Manual	 76.79180887372014
+	Prev Task: 10  	Manual	 66.5551839464883
+	Prev Task: 11  	Manual	 69.53405017921148
+	Prev Task: 12  	Manual	 38.32752613240418
+	Prev Task: 13  	Manual	 18.79194630872483
+	Prev Task: 14  	Manual	 76.66666666666667
+TASK 14 / 20 	Avg Acc: 58.083691053486255
+	Prev Task: 1  	Manual	 51.440329218106996
+	Prev Task: 2  	Manual	 60.661764705882355
+	Prev Task: 3  	Manual	 39.16083916083916
+	Prev Task: 4  	Manual	 36.67820069204152
+	Prev Task: 5  	Manual	 76.92307692307692
+	Prev Task: 6  	Manual	 76.76767676767676
+	Prev Task: 7  	Manual	 52.758620689655174
+	Prev Task: 8  	Manual	 69.25675675675676
+	Prev Task: 9  	Manual	 82.93515358361775
+	Prev Task: 10  	Manual	 69.23076923076923
+	Prev Task: 11  	Manual	 66.66666666666667
+	Prev Task: 12  	Manual	 37.97909407665505
+	Prev Task: 13  	Manual	 13.422818791946309
+	Prev Task: 14  	Manual	 59.666666666666664
+	Prev Task: 15  	Manual	 52.013422818791945
+TASK 15 / 20 	Avg Acc: 56.37079044994328
+	Prev Task: 1  	Manual	 51.440329218106996
+	Prev Task: 2  	Manual	 56.61764705882353
+	Prev Task: 3  	Manual	 33.21678321678322
+	Prev Task: 4  	Manual	 43.944636678200695
+	Prev Task: 5  	Manual	 72.24080267558529
+	Prev Task: 6  	Manual	 67.34006734006734
+	Prev Task: 7  	Manual	 53.793103448275865
+	Prev Task: 8  	Manual	 61.486486486486484
+	Prev Task: 9  	Manual	 80.54607508532423
+	Prev Task: 10  	Manual	 74.58193979933111
+	Prev Task: 11  	Manual	 63.08243727598566
+	Prev Task: 12  	Manual	 42.1602787456446
+	Prev Task: 13  	Manual	 25.503355704697988
+	Prev Task: 14  	Manual	 61.666666666666664
+	Prev Task: 15  	Manual	 45.63758389261745
+	Prev Task: 16  	Manual	 61.80555555555556
+TASK 16 / 20 	Avg Acc: 55.941484303009545
+	Prev Task: 1  	Manual	 43.62139917695473
+	Prev Task: 2  	Manual	 68.01470588235294
+	Prev Task: 3  	Manual	 36.01398601398601
+	Prev Task: 4  	Manual	 39.792387543252595
+	Prev Task: 5  	Manual	 72.24080267558529
+	Prev Task: 6  	Manual	 60.60606060606061
+	Prev Task: 7  	Manual	 51.03448275862069
+	Prev Task: 8  	Manual	 36.486486486486484
+	Prev Task: 9  	Manual	 72.6962457337884
+	Prev Task: 10  	Manual	 72.5752508361204
+	Prev Task: 11  	Manual	 61.64874551971326
+	Prev Task: 12  	Manual	 39.721254355400696
+	Prev Task: 13  	Manual	 24.496644295302012
+	Prev Task: 14  	Manual	 71.0
+	Prev Task: 15  	Manual	 39.261744966442954
+	Prev Task: 16  	Manual	 51.041666666666664
+	Prev Task: 17  	Manual	 53.535353535353536
+TASK 17 / 20 	Avg Acc: 52.575718650122795
+	Prev Task: 1  	Manual	 45.267489711934154
+	Prev Task: 2  	Manual	 67.6470588235294
+	Prev Task: 3  	Manual	 32.16783216783217
+	Prev Task: 4  	Manual	 43.25259515570934
+	Prev Task: 5  	Manual	 53.84615384615385
+	Prev Task: 6  	Manual	 58.24915824915825
+	Prev Task: 7  	Manual	 50.3448275862069
+	Prev Task: 8  	Manual	 32.770270270270274
+	Prev Task: 9  	Manual	 64.50511945392492
+	Prev Task: 10  	Manual	 66.88963210702342
+	Prev Task: 11  	Manual	 53.763440860215056
+	Prev Task: 12  	Manual	 35.54006968641115
+	Prev Task: 13  	Manual	 28.859060402684563
+	Prev Task: 14  	Manual	 63.333333333333336
+	Prev Task: 15  	Manual	 35.57046979865772
+	Prev Task: 16  	Manual	 45.138888888888886
+	Prev Task: 17  	Manual	 52.861952861952865
+	Prev Task: 18  	Manual	 34.91525423728814
+TASK 18 / 20 	Avg Acc: 48.05125596895413
+	Prev Task: 1  	Manual	 48.97119341563786
+	Prev Task: 2  	Manual	 60.661764705882355
+	Prev Task: 3  	Manual	 35.66433566433567
+	Prev Task: 4  	Manual	 44.29065743944636
+	Prev Task: 5  	Manual	 81.60535117056857
+	Prev Task: 6  	Manual	 76.76767676767676
+	Prev Task: 7  	Manual	 52.758620689655174
+	Prev Task: 8  	Manual	 60.810810810810814
+	Prev Task: 9  	Manual	 79.86348122866895
+	Prev Task: 10  	Manual	 74.24749163879599
+	Prev Task: 11  	Manual	 70.60931899641577
+	Prev Task: 12  	Manual	 39.37282229965157
+	Prev Task: 13  	Manual	 25.503355704697988
+	Prev Task: 14  	Manual	 69.33333333333333
+	Prev Task: 15  	Manual	 48.993288590604024
+	Prev Task: 16  	Manual	 59.375
+	Prev Task: 17  	Manual	 34.00673400673401
+	Prev Task: 18  	Manual	 17.627118644067796
+	Prev Task: 19  	Manual	 81.25
+TASK 19 / 20 	Avg Acc: 55.87959763720964
+	Prev Task: 1  	Manual	 46.09053497942387
+	Prev Task: 2  	Manual	 55.14705882352941
+	Prev Task: 3  	Manual	 31.11888111888112
+	Prev Task: 4  	Manual	 44.63667820069204
+	Prev Task: 5  	Manual	 68.22742474916387
+	Prev Task: 6  	Manual	 75.42087542087542
+	Prev Task: 7  	Manual	 47.93103448275862
+	Prev Task: 8  	Manual	 56.41891891891892
+	Prev Task: 9  	Manual	 72.35494880546075
+	Prev Task: 10  	Manual	 66.88963210702342
+	Prev Task: 11  	Manual	 68.81720430107526
+	Prev Task: 12  	Manual	 33.10104529616725
+	Prev Task: 13  	Manual	 25.16778523489933
+	Prev Task: 14  	Manual	 65.33333333333333
+	Prev Task: 15  	Manual	 47.651006711409394
+	Prev Task: 16  	Manual	 57.291666666666664
+	Prev Task: 17  	Manual	 28.61952861952862
+	Prev Task: 18  	Manual	 13.559322033898304
+	Prev Task: 19  	Manual	 78.81944444444444
+	Prev Task: 20  	Manual	 61.666666666666664
+TASK 20 / 20 	Avg Acc: 52.21314954574084
+average accuracy = 52.21314954574084, forget = 0.1310589711829793, learning accuracy = 64.59478629088248
+
+------------------- Experiment-1244 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+	Prev Task: 1  	Manual	 71.60493827160494
+TASK 1 / 20 	Avg Acc: 71.60493827160494
+	Prev Task: 1  	Manual	 66.66666666666667
+	Prev Task: 2  	Manual	 82.72058823529412
+TASK 2 / 20 	Avg Acc: 74.69362745098039
+	Prev Task: 1  	Manual	 67.90123456790124
+	Prev Task: 2  	Manual	 79.04411764705883
+	Prev Task: 3  	Manual	 57.34265734265734
+TASK 3 / 20 	Avg Acc: 68.09600318587246
+	Prev Task: 1  	Manual	 69.1358024691358
+	Prev Task: 2  	Manual	 78.67647058823529
+	Prev Task: 3  	Manual	 54.54545454545455
+	Prev Task: 4  	Manual	 52.94117647058823
+TASK 4 / 20 	Avg Acc: 63.82472601835347
+	Prev Task: 1  	Manual	 69.54732510288066
+	Prev Task: 2  	Manual	 72.79411764705883
+	Prev Task: 3  	Manual	 56.29370629370629
+	Prev Task: 4  	Manual	 45.32871972318339
+	Prev Task: 5  	Manual	 89.96655518394648
+TASK 5 / 20 	Avg Acc: 66.78608479015513
+	Prev Task: 1  	Manual	 63.78600823045267
+	Prev Task: 2  	Manual	 77.20588235294117
+	Prev Task: 3  	Manual	 56.64335664335665
+	Prev Task: 4  	Manual	 47.05882352941177
+	Prev Task: 5  	Manual	 86.2876254180602
+	Prev Task: 6  	Manual	 80.8080808080808
+TASK 6 / 20 	Avg Acc: 68.63162949705054
+	Prev Task: 1  	Manual	 63.37448559670782
+	Prev Task: 2  	Manual	 75.73529411764706
+	Prev Task: 3  	Manual	 54.19580419580419
+	Prev Task: 4  	Manual	 44.982698961937714
+	Prev Task: 5  	Manual	 81.27090301003345
+	Prev Task: 6  	Manual	 83.83838383838383
+	Prev Task: 7  	Manual	 54.827586206896555
+TASK 7 / 20 	Avg Acc: 65.46073656105867
+	Prev Task: 1  	Manual	 69.54732510288066
+	Prev Task: 2  	Manual	 71.69117647058823
+	Prev Task: 3  	Manual	 47.9020979020979
+	Prev Task: 4  	Manual	 46.36678200692042
+	Prev Task: 5  	Manual	 85.28428093645485
+	Prev Task: 6  	Manual	 80.8080808080808
+	Prev Task: 7  	Manual	 56.55172413793103
+	Prev Task: 8  	Manual	 74.66216216216216
+TASK 8 / 20 	Avg Acc: 66.60170369088952
+	Prev Task: 1  	Manual	 66.2551440329218
+	Prev Task: 2  	Manual	 68.38235294117646
+	Prev Task: 3  	Manual	 55.94405594405595
+	Prev Task: 4  	Manual	 44.63667820069204
+	Prev Task: 5  	Manual	 84.61538461538461
+	Prev Task: 6  	Manual	 82.15488215488216
+	Prev Task: 7  	Manual	 47.241379310344826
+	Prev Task: 8  	Manual	 65.54054054054055
+	Prev Task: 9  	Manual	 88.39590443686006
+TASK 9 / 20 	Avg Acc: 67.01848024187316
+	Prev Task: 1  	Manual	 62.55144032921811
+	Prev Task: 2  	Manual	 71.32352941176471
+	Prev Task: 3  	Manual	 53.14685314685315
+	Prev Task: 4  	Manual	 48.78892733564014
+	Prev Task: 5  	Manual	 88.62876254180603
+	Prev Task: 6  	Manual	 81.14478114478115
+	Prev Task: 7  	Manual	 45.86206896551724
+	Prev Task: 8  	Manual	 69.25675675675676
+	Prev Task: 9  	Manual	 84.64163822525597
+	Prev Task: 10  	Manual	 77.25752508361204
+TASK 10 / 20 	Avg Acc: 68.26022829412054
+	Prev Task: 1  	Manual	 69.1358024691358
+	Prev Task: 2  	Manual	 74.26470588235294
+	Prev Task: 3  	Manual	 55.59440559440559
+	Prev Task: 4  	Manual	 48.44290657439446
+	Prev Task: 5  	Manual	 83.27759197324414
+	Prev Task: 6  	Manual	 79.79797979797979
+	Prev Task: 7  	Manual	 51.03448275862069
+	Prev Task: 8  	Manual	 69.25675675675676
+	Prev Task: 9  	Manual	 87.03071672354949
+	Prev Task: 10  	Manual	 62.876254180602004
+	Prev Task: 11  	Manual	 77.06093189964157
+TASK 11 / 20 	Avg Acc: 68.88841223733485
+	Prev Task: 1  	Manual	 66.66666666666667
+	Prev Task: 2  	Manual	 74.26470588235294
+	Prev Task: 3  	Manual	 45.10489510489511
+	Prev Task: 4  	Manual	 45.674740484429066
+	Prev Task: 5  	Manual	 76.92307692307692
+	Prev Task: 6  	Manual	 68.01346801346801
+	Prev Task: 7  	Manual	 55.86206896551724
+	Prev Task: 8  	Manual	 71.28378378378379
+	Prev Task: 9  	Manual	 79.18088737201366
+	Prev Task: 10  	Manual	 56.52173913043478
+	Prev Task: 11  	Manual	 72.04301075268818
+	Prev Task: 12  	Manual	 44.250871080139376
+TASK 12 / 20 	Avg Acc: 62.982492846622144
+	Prev Task: 1  	Manual	 60.08230452674897
+	Prev Task: 2  	Manual	 75.0
+	Prev Task: 3  	Manual	 48.6013986013986
+	Prev Task: 4  	Manual	 37.37024221453287
+	Prev Task: 5  	Manual	 70.90301003344482
+	Prev Task: 6  	Manual	 66.66666666666667
+	Prev Task: 7  	Manual	 48.96551724137931
+	Prev Task: 8  	Manual	 59.45945945945946
+	Prev Task: 9  	Manual	 77.47440273037543
+	Prev Task: 10  	Manual	 51.17056856187291
+	Prev Task: 11  	Manual	 66.66666666666667
+	Prev Task: 12  	Manual	 32.75261324041812
+	Prev Task: 13  	Manual	 54.36241610738255
+TASK 13 / 20 	Avg Acc: 57.65194354233435
+	Prev Task: 1  	Manual	 58.02469135802469
+	Prev Task: 2  	Manual	 76.47058823529412
+	Prev Task: 3  	Manual	 54.54545454545455
+	Prev Task: 4  	Manual	 45.32871972318339
+	Prev Task: 5  	Manual	 85.95317725752508
+	Prev Task: 6  	Manual	 68.01346801346801
+	Prev Task: 7  	Manual	 50.3448275862069
+	Prev Task: 8  	Manual	 61.82432432432432
+	Prev Task: 9  	Manual	 70.98976109215018
+	Prev Task: 10  	Manual	 70.5685618729097
+	Prev Task: 11  	Manual	 72.75985663082437
+	Prev Task: 12  	Manual	 28.222996515679444
+	Prev Task: 13  	Manual	 28.187919463087248
+	Prev Task: 14  	Manual	 71.0
+TASK 14 / 20 	Avg Acc: 60.15959618700943
+	Prev Task: 1  	Manual	 61.31687242798354
+	Prev Task: 2  	Manual	 75.0
+	Prev Task: 3  	Manual	 58.04195804195804
+	Prev Task: 4  	Manual	 44.29065743944636
+	Prev Task: 5  	Manual	 82.6086956521739
+	Prev Task: 6  	Manual	 75.42087542087542
+	Prev Task: 7  	Manual	 54.13793103448276
+	Prev Task: 8  	Manual	 73.3108108108108
+	Prev Task: 9  	Manual	 84.64163822525597
+	Prev Task: 10  	Manual	 64.54849498327759
+	Prev Task: 11  	Manual	 74.19354838709677
+	Prev Task: 12  	Manual	 33.79790940766551
+	Prev Task: 13  	Manual	 31.20805369127517
+	Prev Task: 14  	Manual	 65.0
+	Prev Task: 15  	Manual	 54.02684563758389
+TASK 15 / 20 	Avg Acc: 62.10295274399238
+	Prev Task: 1  	Manual	 59.25925925925926
+	Prev Task: 2  	Manual	 59.55882352941177
+	Prev Task: 3  	Manual	 40.90909090909091
+	Prev Task: 4  	Manual	 47.75086505190311
+	Prev Task: 5  	Manual	 76.25418060200668
+	Prev Task: 6  	Manual	 61.95286195286195
+	Prev Task: 7  	Manual	 50.689655172413794
+	Prev Task: 8  	Manual	 65.20270270270271
+	Prev Task: 9  	Manual	 70.98976109215018
+	Prev Task: 10  	Manual	 58.19397993311037
+	Prev Task: 11  	Manual	 64.51612903225806
+	Prev Task: 12  	Manual	 31.010452961672474
+	Prev Task: 13  	Manual	 21.140939597315437
+	Prev Task: 14  	Manual	 65.33333333333333
+	Prev Task: 15  	Manual	 42.61744966442953
+	Prev Task: 16  	Manual	 57.986111111111114
+TASK 16 / 20 	Avg Acc: 54.585349744064416
+	Prev Task: 1  	Manual	 55.96707818930041
+	Prev Task: 2  	Manual	 62.5
+	Prev Task: 3  	Manual	 42.30769230769231
+	Prev Task: 4  	Manual	 44.29065743944636
+	Prev Task: 5  	Manual	 71.90635451505017
+	Prev Task: 6  	Manual	 52.18855218855219
+	Prev Task: 7  	Manual	 44.13793103448276
+	Prev Task: 8  	Manual	 47.63513513513514
+	Prev Task: 9  	Manual	 56.31399317406143
+	Prev Task: 10  	Manual	 64.21404682274247
+	Prev Task: 11  	Manual	 66.30824372759857
+	Prev Task: 12  	Manual	 28.222996515679444
+	Prev Task: 13  	Manual	 19.12751677852349
+	Prev Task: 14  	Manual	 57.666666666666664
+	Prev Task: 15  	Manual	 36.577181208053695
+	Prev Task: 16  	Manual	 45.833333333333336
+	Prev Task: 17  	Manual	 65.65656565656566
+TASK 17 / 20 	Avg Acc: 50.638467334875536
+	Prev Task: 1  	Manual	 54.32098765432099
+	Prev Task: 2  	Manual	 64.33823529411765
+	Prev Task: 3  	Manual	 39.51048951048951
+	Prev Task: 4  	Manual	 40.83044982698962
+	Prev Task: 5  	Manual	 57.85953177257525
+	Prev Task: 6  	Manual	 47.474747474747474
+	Prev Task: 7  	Manual	 41.03448275862069
+	Prev Task: 8  	Manual	 44.932432432432435
+	Prev Task: 9  	Manual	 47.44027303754266
+	Prev Task: 10  	Manual	 62.207357859531776
+	Prev Task: 11  	Manual	 58.422939068100355
+	Prev Task: 12  	Manual	 24.738675958188153
+	Prev Task: 13  	Manual	 22.14765100671141
+	Prev Task: 14  	Manual	 60.0
+	Prev Task: 15  	Manual	 35.23489932885906
+	Prev Task: 16  	Manual	 43.05555555555556
+	Prev Task: 17  	Manual	 61.61616161616162
+	Prev Task: 18  	Manual	 55.59322033898305
+TASK 18 / 20 	Avg Acc: 47.8198939163293
+	Prev Task: 1  	Manual	 60.90534979423868
+	Prev Task: 2  	Manual	 76.83823529411765
+	Prev Task: 3  	Manual	 52.7972027972028
+	Prev Task: 4  	Manual	 46.02076124567474
+	Prev Task: 5  	Manual	 82.94314381270902
+	Prev Task: 6  	Manual	 70.03367003367003
+	Prev Task: 7  	Manual	 50.689655172413794
+	Prev Task: 8  	Manual	 65.20270270270271
+	Prev Task: 9  	Manual	 78.49829351535836
+	Prev Task: 10  	Manual	 64.54849498327759
+	Prev Task: 11  	Manual	 70.25089605734767
+	Prev Task: 12  	Manual	 26.13240418118467
+	Prev Task: 13  	Manual	 30.536912751677853
+	Prev Task: 14  	Manual	 65.33333333333333
+	Prev Task: 15  	Manual	 46.644295302013425
+	Prev Task: 16  	Manual	 54.513888888888886
+	Prev Task: 17  	Manual	 48.148148148148145
+	Prev Task: 18  	Manual	 51.52542372881356
+	Prev Task: 19  	Manual	 79.16666666666667
+TASK 19 / 20 	Avg Acc: 58.985762021549434
+	Prev Task: 1  	Manual	 60.49382716049383
+	Prev Task: 2  	Manual	 69.48529411764706
+	Prev Task: 3  	Manual	 46.85314685314685
+	Prev Task: 4  	Manual	 47.75086505190311
+	Prev Task: 5  	Manual	 78.92976588628763
+	Prev Task: 6  	Manual	 70.37037037037037
+	Prev Task: 7  	Manual	 46.55172413793103
+	Prev Task: 8  	Manual	 63.851351351351354
+	Prev Task: 9  	Manual	 78.15699658703072
+	Prev Task: 10  	Manual	 57.85953177257525
+	Prev Task: 11  	Manual	 69.53405017921148
+	Prev Task: 12  	Manual	 30.662020905923345
+	Prev Task: 13  	Manual	 29.19463087248322
+	Prev Task: 14  	Manual	 65.33333333333333
+	Prev Task: 15  	Manual	 45.30201342281879
+	Prev Task: 16  	Manual	 57.291666666666664
+	Prev Task: 17  	Manual	 44.10774410774411
+	Prev Task: 18  	Manual	 44.40677966101695
+	Prev Task: 19  	Manual	 80.20833333333333
+	Prev Task: 20  	Manual	 61.0
+TASK 20 / 20 	Avg Acc: 57.36717228856342
+average accuracy = 57.36717228856342, forget = 0.11041198171358582, learning accuracy = 67.53154013498883
+
+Final Average accuracy =  56.20941528636521 +/- 2.509797062286859 forget =  0.11133464424482316 +/- 0.011188033745323669 learning accuracy =  66.46912664401489 +/- 1.357213794462862
+------------------- Experiment ended -----------------
 
 
-iitm@euclid:~/pranshu/research/mtl_ll/stable_cl$
+

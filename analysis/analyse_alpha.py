@@ -5,19 +5,22 @@ plt.style.use('ggplot')
 params = {'mathtext.default': 'regular'}
 plt.rcParams.update(params)
 
-dataset = 'cub'
-f = open(dataset+'.txt', 'r')
-dataset = {'cifar10_resnet': 'CIFAR-100 (10 tasks)', 'cifar10': 'CIFAR-100 (10 tasks)', 'cifar': 'Split-CIFAR100',
-           'imagenet': 'Split-miniImageNet', 'cub': 'Split-CUB', '5data': '5-dataset'}[dataset]
+dataset = 'rotate_eq'
+f = open(dataset + '.txt', 'r')
+
+dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'permute': 'Permute MNIST', 'cifar10_resnet': 'CIFAR-100 (10 tasks)',
+           'cifar10': 'CIFAR-100 (10 tasks)', 'cifar': 'Split-CIFAR100', 'imagenet': 'Split-miniImageNet',
+           'cub': 'Split-CUB', '5data': '5-dataset'}[dataset]
 # ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
 ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'TAG-RMSProp']
 
+n_tasks = 10
 lines = f.readlines()
 curr = 0
 valid = 0
-man_acc, rms_acc = np.zeros((20,20)), np.zeros((20,20))
-tasks = np.arange(1,21)
-corr = np.zeros((20,20))
+man_acc, rms_acc = np.zeros((n_tasks,n_tasks)), np.zeros((n_tasks,n_tasks))
+tasks = np.arange(1,n_tasks+1)
+corr = np.zeros((n_tasks,n_tasks))
 runs = -1
 
 la = []
@@ -27,26 +30,26 @@ for i, line in enumerate(lines):
 	while '' in l:
 		l.remove('')
 	if '>' in line:
-		if 'TAG-RMSProp' in line:
+		if 'TAG-1' in line:
 			valid = 2
 			print(valid)
-		elif 'Stable SGD' in line:
+		elif 'Naive RMSProp' in line:
 			valid = 1
 			print(valid)
 		else:
 			valid = 0
 	if valid>0:
 		if '>' in line:
-			if runs > 0 or i == len(lines) - 1:
-				man_acc_main /= runs
-				if valid==1:
-					rms_acc_prev /= runs
-				corr_main /= runs
+			# if runs > 0 or i == len(lines) - 1:
+			# 	man_acc_main /= runs
+			# 	if valid==1:
+			# 		rms_acc_prev /= runs
+			# 	corr_main /= runs
 			try:
-				man_acc_main = np.zeros((20, 20))
-				corr_main = np.zeros((20, 20))
+				man_acc_main = np.zeros((n_tasks, n_tasks))
+				corr_main = np.zeros((n_tasks, n_tasks))
 				if valid==1:
-					rms_acc_prev = np.zeros((20, 20))
+					rms_acc_prev = np.zeros((n_tasks, n_tasks))
 				runs = -1
 			except:
 				pass
@@ -64,11 +67,11 @@ for i, line in enumerate(lines):
 				if valid==2:
 					man_acc_main = []
 					corr_main = []
-					man_acc = np.zeros((20, 20))
-					corr = np.zeros((20, 20))
+					man_acc = np.zeros((n_tasks, n_tasks))
+					corr = np.zeros((n_tasks, n_tasks))
 				elif valid == 1:
 					rms_acc_prev = []
-					rms_acc = np.zeros((20, 20))
+					rms_acc = np.zeros((n_tasks, n_tasks))
 			continue
 		if line[:4]=='TASK':
 			curr += 1#int(line.split(' ')[1])
@@ -128,7 +131,7 @@ def plot_detailed(lim=5):
 		plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color = 'black', linestyle=':', alpha=alpha, label=r'$\min_{\tau}~~\alpha(t, \tau)$')
 
 		plt.xlabel('Tasks (t)')
-		plt.title(r'$\tau=$'+str(i+1)+' ('+dataset+')')
+		plt.title(r'$\tau=$' + str(i+1) +' (' + dataset_name + ')')
 		plt.ylabel('Accuracy\t\t\t' + r'$\alpha(t,\tau)$')
 		plt.legend()
 
@@ -137,17 +140,20 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 	# plot(10,rms_acc_prev, 'Naive RMSProp')
 	print(runs)
 	print(corr)
-	plt.xticks(tasks)
 	for i in corr_main:
-		print(corr_main.ix[i][1:])
 		plt.scatter(tasks[1:], corr_main.ix[i][1:], color=colors[i], label=r'$\alpha(t, '+str(i+1)+')$')
 	plt.plot(tasks[1:], corr_main.mean(axis=0)[1:], color = 'black', label=r'$E_{\tau}~~[\alpha(t, \tau)]$')
 	plt.plot(tasks[1:], corr_main.max(axis=0)[1:], color = 'black', linestyle=':',label=r'$\max_{\tau}~~\alpha(t, \tau)$')
 	plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color = 'black', linestyle=':',label=r'$\min_{\tau}~~\alpha(t, \tau)$')
-	plt.xlabel('Tasks (t)')
-	plt.title(dataset)
-	plt.ylabel('Accuracy\t\t\t\t'+r'$\alpha(t,\tau)$')
-	plt.legend(bbox_to_anchor=(1.01, 1))
+	if 'rotate' in dataset:
+		plt.xticks(tasks, [str(i)+'\n('+str((i-1)*30)+')' for i in tasks])
+		plt.xlabel('Tasks (Degrees)')
+	else:
+		plt.xticks(tasks)
+		plt.xlabel('Tasks (t)')
+	plt.title(dataset_name)
+	plt.ylabel(r'$\alpha(t,\tau)$')
+	plt.legend()#bbox_to_anchor=(1.01, 1))
 
 	for i in range(len(corr)):
 		plt.figure(2)
@@ -159,24 +165,32 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 	man_acc_main[man_acc_main == 0] = np.nan
 	man_acc_main = pd.DataFrame(man_acc_main)
 	plt.plot(tasks, man_acc_main.mean(axis=0), color='black', label='Mean')
-	plt.ylim(0,100)
-	plt.xticks(tasks)
-	plt.title('TAG-RMSProp ('+dataset+')')
-	plt.xlabel('Tasks (t)')
+	# plt.ylim(40,100)
+	if 'rotate' in dataset:
+		plt.xticks(tasks, [str(i)+'\n('+str((i-1)*30)+')' for i in tasks])
+		plt.xlabel('Tasks (Degrees)')
+	else:
+		plt.xticks(tasks)
+		plt.xlabel('Tasks (t)')
+	plt.title(r'TAG-RMSProp ($\alpha=1$) (' + dataset_name + ')')
 	plt.ylabel('Accuracy (%)')
-	plt.legend(bbox_to_anchor=(1.01, 1))
+	plt.legend()#bbox_to_anchor=(1.01, 1))
 
 	plt.figure(3)
 	rms_acc_prev[rms_acc_prev == 0] = np.nan
 	rms_acc_prev = pd.DataFrame(rms_acc_prev)
 	plt.plot(tasks, rms_acc_prev.mean(axis=0), color='black', label='Mean')
-	plt.ylim(0,100)
-	plt.xticks(tasks)
-	plt.title('Naive RMSProp ('+dataset+')')
-	plt.xlabel('Tasks (t)')
+	plt.ylim(40,100)
+	if 'rotate' in dataset:
+		plt.xticks(tasks, [str(i)+'\n('+str((i-1)*30)+')' for i in tasks])
+		plt.xlabel('Tasks (Degrees)')
+	else:
+		plt.xticks(tasks)
+		plt.xlabel('Tasks (t)')
+	plt.title('Naive RMSProp (' + dataset_name + ')')
 	plt.ylabel('Accuracy (%)')
-	plt.legend(bbox_to_anchor=(1.01, 1))
+	plt.legend()#bbox_to_anchor=(1.01, 1))
 
-# plot_means(man_acc_main, rms_acc_prev, corr_main)
-plot_detailed(range(10))
+plot_means(man_acc_main, rms_acc_prev, corr_main)
+# plot_detailed(range(10))
 plt.show()

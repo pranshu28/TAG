@@ -135,9 +135,10 @@ def get_permuted_mnist(task_id, batch_size):
     transforms = torchvision.transforms.Compose([torchvision.transforms.ToTensor(),
                 torchvision.transforms.Lambda(lambda x: x.view(-1)[idx_permute] ),
                 ])
-    mnist_train = torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms)
+    target_transform = torchvision.transforms.Compose([torchvision.transforms.Lambda(lambda y: y+(task_id-1)*10)])
+    mnist_train = torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms, target_transform=target_transform)
     train_loader = torch.utils.data.DataLoader(mnist_train, batch_size=batch_size, num_workers=4, pin_memory=True, shuffle=True)
-    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms, target_transform=target_transform),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
 
     return train_loader, test_loader
 
@@ -168,14 +169,13 @@ class RotationTransform:
         return TorchVisionFunc.rotate(x, self.angle, fill=(0,))
 
 
-def get_rotated_mnist(task_id, batch_size):
+def get_rotated_mnist(task_id, batch_size, per_task_rotation=10):
     """
     Returns the dataset for a single task of Rotation MNIST dataset
     :param task_id:
     :param batch_size:
     :return:
     """
-    per_task_rotation = 10
     rotation_degree = (task_id - 1)*per_task_rotation
     rotation_degree -= (np.random.random()*per_task_rotation)
 
@@ -183,9 +183,10 @@ def get_rotated_mnist(task_id, batch_size):
         RotationTransform(rotation_degree),
         torchvision.transforms.ToTensor(),
         ])
+    target_transform = torchvision.transforms.Compose([torchvision.transforms.Lambda(lambda y: y+(task_id-1)*10)])
 
-    train_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms), batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
-    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    train_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms, target_transform=target_transform), batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms, target_transform=target_transform),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
 
     return train_loader, test_loader
 
@@ -198,8 +199,10 @@ def get_rotated_mnist_tasks(num_tasks, batch_size):
     :return:
     """
     datasets = {}
+    per_task_rotation = {1:360, 2:180, 3: 120, 4: 90, 5:60, 6: 60, 7:45, 8:45, 9:30, 10:30}[num_tasks] if num_tasks<=10 else 10
+    print('per_task_rotation =', per_task_rotation)
     for task_id in range(1, num_tasks+1):
-        train_loader, test_loader = get_rotated_mnist(task_id, batch_size)
+        train_loader, test_loader = get_rotated_mnist(task_id, batch_size, per_task_rotation)
         datasets[task_id] = {'train': train_loader, 'test': test_loader}
     return datasets
 

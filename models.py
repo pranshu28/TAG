@@ -41,12 +41,13 @@ class MLP(nn.Module):
 	def __init__(self, hiddens, config):
 		super(MLP, self).__init__()
 		self.n_classes = config['classes']
+		self.total_classes = config['total_classes']
 		self.W1 = nn.Linear(784, hiddens)
 		self.relu = nn.ReLU(inplace=True)
 		self.dropout_1 = nn.Dropout(p=config['dropout'])
 		self.W2 = nn.Linear(hiddens, hiddens)
 		self.dropout_2 = nn.Dropout(p=config['dropout'])
-		self.W3 = nn.Linear(hiddens, 10)
+		self.W3 = nn.Linear(hiddens, self.total_classes)
 
 	def forward(self, x, task_id=None):
 		x = x.view(-1, 784)
@@ -57,14 +58,14 @@ class MLP(nn.Module):
 		out = self.relu(out)
 		out = self.dropout_2(out)
 		out = self.W3(out)
-		# if task_id is None:
-		# 	return out
-		# offset1 = int((task_id-1) * self.n_classes)
-		# offset2 = int(task_id * self.n_classes)
-		# if offset1 > 0:
-		# 	out[:, :offset1].data.fill_(-10e10)
-		# if offset2 < 200:
-		# 	out[:, offset2:200].data.fill_(-10e10)
+		if task_id is None:
+			return out
+		offset1 = int((task_id-1) * self.n_classes)
+		offset2 = int(task_id * self.n_classes)
+		if offset1 > 0:
+			out[:, :offset1].data.fill_(-10e10)
+		if offset2 < self.total_classes:
+			out[:, offset2:self.total_classes].data.fill_(-10e10)
 		return out
 
 

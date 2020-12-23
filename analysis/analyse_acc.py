@@ -56,7 +56,7 @@ def naive_plot(f=''):
 	plt.xticks([1.5, 6.5, 11.5, 16.5], dataset)
 
 def acc():
-	for dataset in ['permute']:# ['rotate','permute','cifar','imagenet','cub','5data']:  # 'cifar_5', 'imagenet_5','cub_5','5data_5'
+	for dataset in ['rotate_eq']:# ['rotate','permute','cifar','imagenet','cub','5data']:  # 'cifar_5', 'imagenet_5','cub_5','5data_5'
 		print('\n\n',dataset)
 		f = open(dataset+'.txt', 'r')
 		lines = f.readlines()
@@ -104,9 +104,9 @@ def acc():
 
 		def plot_means(f, dataset, exp, tasks, data, standard_dev, c):
 			plt.figure(f, figsize=(5,4))
-			inds = [0,4,9,14,19]#
+			inds = [0,4,9,14,19] if dataset in ['cifar','imagenet','cub'] else range(10)
 			plt.plot(tasks[inds], data[inds], color=c, label=exp.replace('_1', ''), marker='o', linewidth=2)
-			plt.fill_between(tasks[inds], data[inds] - standard_dev[inds], data[inds] + standard_dev[inds],color=c, alpha=0.2)
+			plt.fill_between(tasks[inds], data[inds] - standard_dev[inds], data[inds] + standard_dev[inds],color=c, alpha=0.1)
 			# plt.ylim(0,100)
 			fs = 10
 			plt.yticks(fontsize=fs)
@@ -116,26 +116,26 @@ def acc():
 			plt.ylabel('Accuracy (%)', fontsize=fs)
 			plt.legend(fontsize=8)#bbox_to_anchor=(1.01, 1))
 
-		dataset = {'rotate':'Rotated MNIST','permute':'Permute MNIST','cifar10_resnet':'CIFAR-100 (10 tasks)','cifar10':'CIFAR-100 (10 tasks)','cifar':'Split-CIFAR100', 'imagenet':'Split-miniImageNet', 'cub':'Split-CUB', '5data':'5-dataset'}[dataset]
+		dataset = {'rotate_eq': 'Rotated MNIST (30)','rotate':'Rotated MNIST','permute':'Permute MNIST','cifar10_resnet':'CIFAR-100 (10 tasks)','cifar10':'CIFAR-100 (10 tasks)','cifar':'Split-CIFAR100', 'imagenet':'Split-miniImageNet', 'cub':'Split-CUB', '5data':'5-dataset'}[dataset]
 
 		# ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'Plastic (Naive) Adagrad', 'Plastic (Naive) Adam', 'Manual Adagrad (Ours)', 'Manual RMSProp (Ours)', 'Manual Adam (Ours)']
 		# ls = ['Naive Adagrad', 'Naive RMSProp', 'Naive Adam', 'Naive SGD', 'TAG-Adagrad', 'TAG-RMSProp', 'TAG-Adam']
 
 		# ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM_1', 'ER_1', 'Stable SGD', 'Manual RMSProp (Ours)']
-		ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM_1', 'ER_1', 'Stable SGD', 'TAG-RMSProp']
+		ls = ['Naive SGD', 'Naive RMSProp', 'EWC', 'A-GEM_1', 'ER_1', 'Stable SGD', 'TAG-RMSProp']
 		colors = plt.cm.Dark2(np.linspace(0, 1, len(ls)))
 		for i,exp in enumerate(ls):
 			print(exp)
 			try:
 				content = np.array(final_res[exp].split(' '))[[5,7,11,13,18,20]].astype(float).round(2)
 				plot_means(1, dataset, exp, tasks, opt_data[exp], opt_data[exp+'_std'], colors[i])
-				print('\t\t', content[0], '(+/-', content[1], ')', content[2], '(+/-', content[3], ')', content[4], '(+/-', content[5], ')')
+				print('\t\t', content[0], '(±', content[1], ')', content[2], '(±', content[3], ')', content[4], '(±', content[5], ')')
 				print('\t\t$', content[0], '~(\pm', content[1], ')$ & $', content[2], '~(\pm', content[3], ')$ & $', content[4], '~(\pm', content[5], ')$')
 			except:
 				try:
 					content = np.array(final_res[exp].split(' '))[[5,7,11,13]].astype(float).round(2)
 					plot_means(1, dataset, exp, tasks, opt_data[exp], opt_data[exp+'_std'], colors[i])
-					print('\t\t', content[0], '(+/-', content[1], ')', content[2], '(+/-', content[3], ')')
+					print('\t\t', content[0], '(±', content[1], ')', content[2], '(±', content[3], ')')
 					print('\t\t$', content[0], '~(\pm', content[1], ')$ & $', content[2], '~(\pm', content[3], ')$')
 				except:
 					pass

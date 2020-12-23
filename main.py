@@ -1,9 +1,11 @@
+import random
 from tag_update import *
 from er import *
 from agem import *
+from ewc import *
 
 
-def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, lr=0.01, buffer=None):
+def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, lr=0.01, ALGO=None):
 	net = net.to(DEVICE)
 	net.train()
 	alpha_mean = {}
@@ -16,18 +18,23 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			pred = net(data)
 		net.zero_grad()
 
-		if buffer is not None:
+		###### AGEM / EWC / ER ######
+		if ALGO is not None:
 			if args.opt=='agem':
-				net = buffer.observe_agem(net, data, task_id, target)
+				net = ALGO.observe_agem(net, data, task_id, target)
 				continue
+			elif args.opt == 'ewc':
+				loss_ewc = args.lambd * ALGO.penalty(net)
+				loss_ewc.backward()
 			else:
 				if task_id > 0:
-					mem_x, mem_y, b_task_ids = buffer.sample(args.batch_size, exclude_task=None, pr=False)
+					mem_x, mem_y, b_task_ids = ALGO.sample(args.batch_size, exclude_task=None, pr=False)
 					mem_pred = net(mem_x, None)
 					mem_pred = apply_mask(mem_y, mem_pred, net.n_classes)
 					loss_mem = criterion(mem_pred, mem_y)
 					loss_mem.backward()
-				buffer.add_reservoir(data, target, None, task_id)
+				ALGO.add_reservoir(data, target, None, task_id)
+
 
 		loss = criterion(pred, target)
 		loss.backward()
@@ -64,9 +71,9 @@ def eval_single_epoch(net, loader, criterion, task_id=None):
 	return {'accuracy': avg_acc, 'loss': test_loss}
 
 
-def avg_runs_exp():
+def avg_runs_exp(runs):
 	all_scores = []
-	for seed in range(args.runs):
+	for seed in range(runs):
 		args.seed += seed
 		score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
 		all_scores += [[score, forget, learn_acc]]
@@ -77,17 +84,25 @@ def avg_runs_exp():
 	print('------------------- Experiment ended -----------------\n\n\n')
 
 
-def hyp_tag(lrs):
+def hyp_tag(lrs, runs):
 	bs = (3, 5)
 	for lr in lrs:
 		args.lr = lr
 		for b in bs:
 			args.b = b
 			print(args.lr, args.b)
-			avg_runs_exp()
+			avg_runs_exp(runs)
 
 
-def hyp_stable():
+def hyp_ewc(ls, runs):
+	args.runs=1
+	for l in ls:
+		args.lambd =l
+		print(args.lambd)
+		avg_runs_exp(runs)
+
+
+def hyp_stable(runs):
 	dropouts = (0.0, 0.1, 0.25, 0.5)
 	lrs = (0.005, 0.001, 0.0005)
 	bs = (0.9, 0.8, 0.7, 0.6)
@@ -99,11 +114,11 @@ def hyp_stable():
 			for b in bs:
 				args.gamma = b
 				print(dropout, lr, b)
-				avg_runs_exp()
+				avg_runs_exp(runs)
 
 
 def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
-	buffer = None
+	ALGO = None
 
 	acc_db, loss_db = init_experiment(args)
 	model = get_benchmark_model(args)
@@ -122,11 +137,14 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 		if tag:
 			optimizer = tag_opt(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
 		elif args.opt == 'er':
-			buffer = ER(args)
+			ALGO = ER(args)
 			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)  # if args.gamma!=1.0 else 0.0)
 		elif args.opt == 'agem':
 			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)  # if args.gamma!=1.0 else 0.0)
-			buffer = AGEM(model, optimizer, criterion, args)
+			ALGO = AGEM(model, optimizer, criterion, args)
+		elif args.opt == 'ewc':
+			sample_size = 200
+			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		else:
 			optimizer = opt[args.opt](model.parameters(), lr=args.lr)
 
@@ -139,13 +157,22 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 		train_loader = train_loaders[current_task_id-1]
 		lr = max(args.lr * args.gamma ** (current_task_id), 0.00005)
 
+		if args.opt == 'ewc' and current_task_id!=1:
+			old_tasks = []
+			for sub_task in range(current_task_id-1):
+				loader = torch.utils.data.DataLoader(train_loaders[sub_task].dataset, batch_size=sample_size, num_workers=0, shuffle=False)
+				old_tasks += next(iter(loader))[0]
+			old_tasks = random.sample(old_tasks, k=sample_size)
+			ALGO = EWC(model, old_tasks)
+
 		best_val_loss, overfit = np.inf, 0
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
+
 		for epoch in iterator:
 			if args.opt is None:
 				optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.8 if args.gamma != 1.0 else 0.0)
 
-			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, lr, buffer)
+			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, lr, ALGO)
 
 			if args.epochs_per_task>20 and val_loaders is not None:
 				val_loader = val_loaders[current_task_id - 1]
@@ -185,6 +212,8 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 				if verbose:
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
+		if avg_acc<=20:
+			break
 
 	if args.multi != 1:
 		# print(acc_db)
@@ -202,7 +231,7 @@ if __name__ == "__main__":
 	val_loaders = None
 
 	print("Loading {} tasks for {}".format(args.tasks, args.dataset))
-	if args.dataset in ['cifar100','cifar10'] :
+	if args.dataset in ['cifar100','cifar10']:
 		tasks = get_split_cifar100_tasks(args.tasks, args.batch_size)
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		if args.tasks == 10:
@@ -225,11 +254,14 @@ if __name__ == "__main__":
 		args.classes = 10
 	print("loaded all tasks!")
 
-	verbose = False
-	avg_runs_exp()
+	verbose = True
+	# if 'mnist' in args.dataset:
+	avg_runs_exp(args.runs)
+	# else:
+	# 	verbose=False
+	# 	hyp_ewc([0.1,1,10,100,1000], 1)
 
 	# if args.opt=='param':
 		# verbose = False
-		# args.runs = 1
 		# lrs = (0.00005, 0.000025, 0.00001)          #  (0.0005, 0.0025, 0.001, 0.005)
-		# hyp_tag(lrs)
+		# hyp_tag(lrs,1)

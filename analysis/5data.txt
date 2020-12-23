@@ -1,0 +1,1506 @@
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> Naive SGD
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=None
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 45.71
+TASK 1 / 5 	Avg Acc: 45.71
+	Prev Task: 1  	Manual	 28.22
+	Prev Task: 2  	Manual	 98.92
+TASK 2 / 5 	Avg Acc: 63.57
+	Prev Task: 1  	Manual	 10.79
+	Prev Task: 2  	Manual	 65.98
+	Prev Task: 3  	Manual	 82.87108174554395
+TASK 3 / 5 	Avg Acc: 53.213693915181324
+	Prev Task: 1  	Manual	 10.95
+	Prev Task: 2  	Manual	 47.33
+	Prev Task: 3  	Manual	 69.7679778733866
+	Prev Task: 4  	Manual	 94.23076923076923
+TASK 4 / 5 	Avg Acc: 55.56968677603896
+	Prev Task: 1  	Manual	 9.5
+	Prev Task: 2  	Manual	 24.06
+	Prev Task: 3  	Manual	 27.251075599262446
+	Prev Task: 4  	Manual	 67.41452991452991
+	Prev Task: 5  	Manual	 90.94
+TASK 5 / 5 	Avg Acc: 43.83312110275847
+average accuracy = 43.83312110275847, forget = 0.483765613656302, learning accuracy = 82.53437019526264
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 45.33
+TASK 1 / 5 	Avg Acc: 45.33
+	Prev Task: 1  	Manual	 18.77
+	Prev Task: 2  	Manual	 98.53
+TASK 2 / 5 	Avg Acc: 58.65
+	Prev Task: 1  	Manual	 11.62
+	Prev Task: 2  	Manual	 70.38
+	Prev Task: 3  	Manual	 91.51044867854948
+TASK 3 / 5 	Avg Acc: 57.83681622618316
+	Prev Task: 1  	Manual	 13.29
+	Prev Task: 2  	Manual	 70.9
+	Prev Task: 3  	Manual	 67.6859250153657
+	Prev Task: 4  	Manual	 92.94871794871794
+TASK 4 / 5 	Avg Acc: 61.20616074102091
+	Prev Task: 1  	Manual	 9.4
+	Prev Task: 2  	Manual	 30.21
+	Prev Task: 3  	Manual	 24.177934849416104
+	Prev Task: 4  	Manual	 69.01709401709402
+	Prev Task: 5  	Manual	 89.94
+TASK 5 / 5 	Avg Acc: 44.54900577330203
+average accuracy = 44.54900577330203, forget = 0.48878534440189325, learning accuracy = 83.6518333254535
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 19.3
+TASK 1 / 5 	Avg Acc: 19.3
+	Prev Task: 1  	Manual	 16.72
+	Prev Task: 2  	Manual	 98.78
+TASK 2 / 5 	Avg Acc: 57.75
+	Prev Task: 1  	Manual	 14.27
+	Prev Task: 2  	Manual	 65.22
+	Prev Task: 3  	Manual	 90.59618930547019
+TASK 3 / 5 	Avg Acc: 56.69539643515673
+	Prev Task: 1  	Manual	 13.5
+	Prev Task: 2  	Manual	 33.85
+	Prev Task: 3  	Manual	 71.18930547019053
+	Prev Task: 4  	Manual	 94.12393162393163
+TASK 4 / 5 	Avg Acc: 53.16580927353054
+	Prev Task: 1  	Manual	 13.85
+	Prev Task: 2  	Manual	 24.12
+	Prev Task: 3  	Manual	 27.274124154886294
+	Prev Task: 4  	Manual	 72.27564102564102
+	Prev Task: 5  	Manual	 90.19
+TASK 5 / 5 	Avg Acc: 45.54195303610547
+average accuracy = 45.54195303610546, forget = 0.4132008893721863, learning accuracy = 78.59802418588036
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 45.54
+TASK 1 / 5 	Avg Acc: 45.54
+	Prev Task: 1  	Manual	 21.12
+	Prev Task: 2  	Manual	 98.4
+TASK 2 / 5 	Avg Acc: 59.760000000000005
+	Prev Task: 1  	Manual	 11.89
+	Prev Task: 2  	Manual	 63.32
+	Prev Task: 3  	Manual	 85.95574677320221
+TASK 3 / 5 	Avg Acc: 53.7219155910674
+	Prev Task: 1  	Manual	 13.86
+	Prev Task: 2  	Manual	 52.12
+	Prev Task: 3  	Manual	 59.53441917639828
+	Prev Task: 4  	Manual	 92.84188034188034
+TASK 4 / 5 	Avg Acc: 54.58907487956965
+	Prev Task: 1  	Manual	 10.51
+	Prev Task: 2  	Manual	 34.43
+	Prev Task: 3  	Manual	 30.289643515673017
+	Prev Task: 4  	Manual	 73.77136752136752
+	Prev Task: 5  	Manual	 89.98
+TASK 5 / 5 	Avg Acc: 47.79620220740811
+average accuracy = 47.796202207408115, forget = 0.434341540195105, learning accuracy = 82.54352542301652
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 32.83
+TASK 1 / 5 	Avg Acc: 32.83
+	Prev Task: 1  	Manual	 14.03
+	Prev Task: 2  	Manual	 98.37
+TASK 2 / 5 	Avg Acc: 56.2
+	Prev Task: 1  	Manual	 12.27
+	Prev Task: 2  	Manual	 63.63
+	Prev Task: 3  	Manual	 89.01736324523664
+TASK 3 / 5 	Avg Acc: 54.97245441507888
+	Prev Task: 1  	Manual	 12.68
+	Prev Task: 2  	Manual	 50.55
+	Prev Task: 3  	Manual	 66.29532882606023
+	Prev Task: 4  	Manual	 91.29273504273505
+TASK 4 / 5 	Avg Acc: 55.204515967198816
+	Prev Task: 1  	Manual	 14.62
+	Prev Task: 2  	Manual	 28.03
+	Prev Task: 3  	Manual	 28.126920712968655
+	Prev Task: 4  	Manual	 55.876068376068375
+	Prev Task: 5  	Manual	 90.38
+TASK 5 / 5 	Avg Acc: 43.40659781780741
+average accuracy = 43.4065978178074, forget = 0.46214277299733664, learning accuracy = 80.37801965759434
+
+Final Average accuracy =  45.025375987476295 +/- 1.5628930124557217 forget =  0.4564472321245646 +/- 0.028925402116978288 learning accuracy =  81.54115455744147 +/- 1.8144469513518864
+------------------- Experiment ended -----------------
+
+
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.05
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=1
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 47.47
+TASK 1 / 5 	Avg Acc: 47.47
+	Prev Task: 1  	Manual	 29.17
+	Prev Task: 2  	Manual	 86.83
+TASK 2 / 5 	Avg Acc: 58.0
+	Prev Task: 1  	Manual	 12.47
+	Prev Task: 2  	Manual	 66.7
+	Prev Task: 3  	Manual	 75.71450522433928
+TASK 3 / 5 	Avg Acc: 51.6281684081131
+	Prev Task: 1  	Manual	 14.1
+	Prev Task: 2  	Manual	 50.36
+	Prev Task: 3  	Manual	 65.09680393362017
+	Prev Task: 4  	Manual	 91.93376068376068
+TASK 4 / 5 	Avg Acc: 55.37264115434521
+	Prev Task: 1  	Manual	 13.42
+	Prev Task: 2  	Manual	 49.4
+	Prev Task: 3  	Manual	 42.017516902274124
+	Prev Task: 4  	Manual	 73.07692307692308
+	Prev Task: 5  	Manual	 89.77
+TASK 5 / 5 	Avg Acc: 53.53688799583944
+average accuracy = 53.536887995839436, forget = 0.3100845648222569, learning accuracy = 78.34365318162
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 44.41
+TASK 1 / 5 	Avg Acc: 44.41
+	Prev Task: 1  	Manual	 19.7
+	Prev Task: 2  	Manual	 62.11
+TASK 2 / 5 	Avg Acc: 40.905
+	Prev Task: 1  	Manual	 13.77
+	Prev Task: 2  	Manual	 77.88
+	Prev Task: 3  	Manual	 80.44714197910264
+TASK 3 / 5 	Avg Acc: 57.365713993034205
+	Prev Task: 1  	Manual	 12.93
+	Prev Task: 2  	Manual	 34.24
+	Prev Task: 3  	Manual	 60.360325752919486
+	Prev Task: 4  	Manual	 91.82692307692308
+TASK 4 / 5 	Avg Acc: 49.83931220746064
+	Prev Task: 1  	Manual	 14.4
+	Prev Task: 2  	Manual	 52.99
+	Prev Task: 3  	Manual	 36.247695144437614
+	Prev Task: 4  	Manual	 75.42735042735043
+	Prev Task: 5  	Manual	 89.75
+TASK 5 / 5 	Avg Acc: 53.763009114357615
+average accuracy = 53.763009114357615, forget = 0.28874754871059416, learning accuracy = 73.70881301120514
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 36.7
+TASK 1 / 5 	Avg Acc: 36.7
+	Prev Task: 1  	Manual	 14.7
+	Prev Task: 2  	Manual	 91.81
+TASK 2 / 5 	Avg Acc: 53.255
+	Prev Task: 1  	Manual	 13.92
+	Prev Task: 2  	Manual	 66.14
+	Prev Task: 3  	Manual	 77.13967424708052
+TASK 3 / 5 	Avg Acc: 52.3998914156935
+	Prev Task: 1  	Manual	 13.78
+	Prev Task: 2  	Manual	 52.63
+	Prev Task: 3  	Manual	 76.93992009834051
+	Prev Task: 4  	Manual	 93.26923076923077
+TASK 4 / 5 	Avg Acc: 59.15478771689282
+	Prev Task: 1  	Manual	 14.84
+	Prev Task: 2  	Manual	 52.64
+	Prev Task: 3  	Manual	 46.77320221266134
+	Prev Task: 4  	Manual	 81.30341880341881
+	Prev Task: 5  	Manual	 90.27
+TASK 5 / 5 	Avg Acc: 57.16532420321603
+average accuracy = 57.16532420321603, forget = 0.2584057100005779, learning accuracy = 77.83778100326225
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 41.72
+TASK 1 / 5 	Avg Acc: 41.72
+	Prev Task: 1  	Manual	 26.99
+	Prev Task: 2  	Manual	 38.33
+TASK 2 / 5 	Avg Acc: 32.66
+	Prev Task: 1  	Manual	 18.54
+	Prev Task: 2  	Manual	 60.41
+	Prev Task: 3  	Manual	 88.69084204056546
+TASK 3 / 5 	Avg Acc: 55.880280680188484
+	Prev Task: 1  	Manual	 13.67
+	Prev Task: 2  	Manual	 48.11
+	Prev Task: 3  	Manual	 54.24477566072526
+	Prev Task: 4  	Manual	 92.52136752136752
+TASK 4 / 5 	Avg Acc: 52.136535795523194
+	Prev Task: 1  	Manual	 16.29
+	Prev Task: 2  	Manual	 30.91
+	Prev Task: 3  	Manual	 30.055316533497233
+	Prev Task: 4  	Manual	 68.91025641025641
+	Prev Task: 5  	Manual	 89.24
+TASK 5 / 5 	Avg Acc: 47.08111458875073
+average accuracy = 47.08111458875074, forget = 0.3429415915454483, learning accuracy = 70.1004419123866
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 27.94
+TASK 1 / 5 	Avg Acc: 27.94
+	Prev Task: 1  	Manual	 21.72
+	Prev Task: 2  	Manual	 77.28
+TASK 2 / 5 	Avg Acc: 49.5
+	Prev Task: 1  	Manual	 15.94
+	Prev Task: 2  	Manual	 70.7
+	Prev Task: 3  	Manual	 88.5640749846343
+TASK 3 / 5 	Avg Acc: 58.40135832821143
+	Prev Task: 1  	Manual	 13.18
+	Prev Task: 2  	Manual	 46.78
+	Prev Task: 3  	Manual	 65.5500921942225
+	Prev Task: 4  	Manual	 90.5448717948718
+TASK 4 / 5 	Avg Acc: 54.01374099727357
+	Prev Task: 1  	Manual	 16.84
+	Prev Task: 2  	Manual	 42.2
+	Prev Task: 3  	Manual	 29.717271051014137
+	Prev Task: 4  	Manual	 74.67948717948718
+	Prev Task: 5  	Manual	 89.53
+TASK 5 / 5 	Avg Acc: 50.59335164610027
+average accuracy = 50.59335164610026, forget = 0.3022304713725119, learning accuracy = 74.7717893559012
+
+Final Average accuracy =  52.427937509652814 +/- 3.3884875886767865 forget =  0.3004819772902778 +/- 0.027590559416904803 learning accuracy =  74.95249569287503 +/- 2.9982210631461963
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.05
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=1
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 32.76
+TASK 1 / 5 	Avg Acc: 32.76
+	Prev Task: 1  	Manual	 34.58
+	Prev Task: 2  	Manual	 98.68
+TASK 2 / 5 	Avg Acc: 66.63
+	Prev Task: 1  	Manual	 17.51
+	Prev Task: 2  	Manual	 70.6
+	Prev Task: 3  	Manual	 46.8500307314075
+TASK 3 / 5 	Avg Acc: 44.986676910469164
+	Prev Task: 1  	Manual	 17.42
+	Prev Task: 2  	Manual	 84.03
+	Prev Task: 3  	Manual	 66.88690842040566
+	Prev Task: 4  	Manual	 93.00213675213675
+TASK 4 / 5 	Avg Acc: 65.33476129313561
+	Prev Task: 1  	Manual	 16.95
+	Prev Task: 2  	Manual	 75.98
+	Prev Task: 3  	Manual	 34.17332513829133
+	Prev Task: 4  	Manual	 74.51923076923077
+	Prev Task: 5  	Manual	 90.04
+TASK 5 / 5 	Avg Acc: 58.33251118150442
+average accuracy = 58.33251118150442, forget = 0.22881622316255076, learning accuracy = 72.26643349670886
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 42.94
+TASK 1 / 5 	Avg Acc: 42.94
+	Prev Task: 1  	Manual	 37.68
+	Prev Task: 2  	Manual	 98.49
+TASK 2 / 5 	Avg Acc: 68.085
+	Prev Task: 1  	Manual	 22.32
+	Prev Task: 2  	Manual	 78.85
+	Prev Task: 3  	Manual	 88.39121081745544
+TASK 3 / 5 	Avg Acc: 63.187070272485144
+	Prev Task: 1  	Manual	 19.35
+	Prev Task: 2  	Manual	 68.45
+	Prev Task: 3  	Manual	 67.32867240319607
+	Prev Task: 4  	Manual	 92.68162393162393
+TASK 4 / 5 	Avg Acc: 61.952574083705
+	Prev Task: 1  	Manual	 18.82
+	Prev Task: 2  	Manual	 59.32
+	Prev Task: 3  	Manual	 55.051475107559924
+	Prev Task: 4  	Manual	 71.9017094017094
+	Prev Task: 5  	Manual	 89.58
+TASK 5 / 5 	Avg Acc: 58.934636901853864
+average accuracy = 58.934636901853864, forget = 0.2935241255995251, learning accuracy = 82.41656694981587
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 26.43
+TASK 1 / 5 	Avg Acc: 26.43
+	Prev Task: 1  	Manual	 35.06
+	Prev Task: 2  	Manual	 98.49
+TASK 2 / 5 	Avg Acc: 66.775
+	Prev Task: 1  	Manual	 18.06
+	Prev Task: 2  	Manual	 74.8
+	Prev Task: 3  	Manual	 89.37077443146896
+TASK 3 / 5 	Avg Acc: 60.743591477156315
+	Prev Task: 1  	Manual	 15.97
+	Prev Task: 2  	Manual	 74.32
+	Prev Task: 3  	Manual	 76.27535341118623
+	Prev Task: 4  	Manual	 92.57478632478633
+TASK 4 / 5 	Avg Acc: 64.78503493399313
+	Prev Task: 1  	Manual	 16.1
+	Prev Task: 2  	Manual	 55.66
+	Prev Task: 3  	Manual	 53.130762138905965
+	Prev Task: 4  	Manual	 65.7051282051282
+	Prev Task: 5  	Manual	 89.07
+TASK 5 / 5 	Avg Acc: 55.93317806880683
+average accuracy = 55.93317806880683, forget = 0.3122491760305528, learning accuracy = 79.18711215125106
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 40.16
+TASK 1 / 5 	Avg Acc: 40.16
+	Prev Task: 1  	Manual	 34.75
+	Prev Task: 2  	Manual	 98.58
+TASK 2 / 5 	Avg Acc: 66.66499999999999
+	Prev Task: 1  	Manual	 19.48
+	Prev Task: 2  	Manual	 81.68
+	Prev Task: 3  	Manual	 83.48955132145052
+TASK 3 / 5 	Avg Acc: 61.54985044048351
+	Prev Task: 1  	Manual	 13.92
+	Prev Task: 2  	Manual	 75.73
+	Prev Task: 3  	Manual	 64.77028272894898
+	Prev Task: 4  	Manual	 90.86538461538461
+TASK 4 / 5 	Avg Acc: 61.3214168360834
+	Prev Task: 1  	Manual	 15.17
+	Prev Task: 2  	Manual	 59.77
+	Prev Task: 3  	Manual	 52.519975414874004
+	Prev Task: 4  	Manual	 75.96153846153847
+	Prev Task: 5  	Manual	 89.21
+TASK 5 / 5 	Avg Acc: 58.52630277528249
+average accuracy = 58.52630277528249, forget = 0.27418355515105663, learning accuracy = 80.46098718736701
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 28.97
+TASK 1 / 5 	Avg Acc: 28.97
+	Prev Task: 1  	Manual	 34.63
+	Prev Task: 2  	Manual	 98.77
+TASK 2 / 5 	Avg Acc: 66.7
+	Prev Task: 1  	Manual	 17.48
+	Prev Task: 2  	Manual	 68.82
+	Prev Task: 3  	Manual	 88.36047940995698
+TASK 3 / 5 	Avg Acc: 58.22015980331899
+	Prev Task: 1  	Manual	 16.58
+	Prev Task: 2  	Manual	 61.98
+	Prev Task: 3  	Manual	 69.19560540872772
+	Prev Task: 4  	Manual	 87.3931623931624
+TASK 4 / 5 	Avg Acc: 58.78719195047253
+	Prev Task: 1  	Manual	 21.01
+	Prev Task: 2  	Manual	 58.23
+	Prev Task: 3  	Manual	 53.975875845113706
+	Prev Task: 4  	Manual	 69.65811965811966
+	Prev Task: 5  	Manual	 88.2
+TASK 5 / 5 	Avg Acc: 58.21479910064667
+average accuracy = 58.21479910064668, forget = 0.26569911574971505, learning accuracy = 78.33872836062388
+
+Final Average accuracy =  57.988285605618856 +/- 1.0562490093840182 forget =  0.27489443913868006 +/- 0.028109439345902137 learning accuracy =  78.53396562915333 +/- 3.421540065602213
+------------------- Experiment ended -----------------
+
+
+ >>>>>>>> Naive Adam
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=adam
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 60.95
+TASK 1 / 5 	Avg Acc: 60.95
+	Prev Task: 1  	Manual	 22.39
+	Prev Task: 2  	Manual	 98.65
+TASK 2 / 5 	Avg Acc: 60.52
+	Prev Task: 1  	Manual	 9.12
+	Prev Task: 2  	Manual	 66.52
+	Prev Task: 3  	Manual	 91.70251997541487
+TASK 3 / 5 	Avg Acc: 55.78083999180495
+	Prev Task: 1  	Manual	 12.13
+	Prev Task: 2  	Manual	 61.57
+	Prev Task: 3  	Manual	 67.45159803318992
+	Prev Task: 4  	Manual	 94.81837606837607
+TASK 4 / 5 	Avg Acc: 58.9924935253915
+	Prev Task: 1  	Manual	 12.0
+	Prev Task: 2  	Manual	 44.0
+	Prev Task: 3  	Manual	 31.611094038106945
+	Prev Task: 4  	Manual	 79.5405982905983
+	Prev Task: 5  	Manual	 91.64
+TASK 5 / 5 	Avg Acc: 51.75833846574105
+average accuracy = 51.75833846574104, forget = 0.4474230092877143, learning accuracy = 87.55217920875819
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 60.35
+TASK 1 / 5 	Avg Acc: 60.35
+	Prev Task: 1  	Manual	 14.26
+	Prev Task: 2  	Manual	 98.82
+TASK 2 / 5 	Avg Acc: 56.54
+	Prev Task: 1  	Manual	 13.12
+	Prev Task: 2  	Manual	 68.39
+	Prev Task: 3  	Manual	 91.62569145666872
+TASK 3 / 5 	Avg Acc: 57.7118971522229
+	Prev Task: 1  	Manual	 17.25
+	Prev Task: 2  	Manual	 66.8
+	Prev Task: 3  	Manual	 65.89966195451751
+	Prev Task: 4  	Manual	 95.08547008547009
+TASK 4 / 5 	Avg Acc: 61.258783009996904
+	Prev Task: 1  	Manual	 11.55
+	Prev Task: 2  	Manual	 36.56
+	Prev Task: 3  	Manual	 41.17240319606638
+	Prev Task: 4  	Manual	 74.8931623931624
+	Prev Task: 5  	Manual	 90.75
+TASK 5 / 5 	Avg Acc: 50.98511311784575
+average accuracy = 50.985113117845756, forget = 0.45426398988227507, learning accuracy = 87.32623230842776
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 58.87
+TASK 1 / 5 	Avg Acc: 58.87
+	Prev Task: 1  	Manual	 19.88
+	Prev Task: 2  	Manual	 98.7
+TASK 2 / 5 	Avg Acc: 59.29
+	Prev Task: 1  	Manual	 11.01
+	Prev Task: 2  	Manual	 72.53
+	Prev Task: 3  	Manual	 91.48355869698833
+TASK 3 / 5 	Avg Acc: 58.341186232329434
+	Prev Task: 1  	Manual	 14.41
+	Prev Task: 2  	Manual	 61.51
+	Prev Task: 3  	Manual	 72.43008604794099
+	Prev Task: 4  	Manual	 94.23076923076923
+TASK 4 / 5 	Avg Acc: 60.64521381967755
+	Prev Task: 1  	Manual	 14.95
+	Prev Task: 2  	Manual	 26.71
+	Prev Task: 3  	Manual	 34.484480639213274
+	Prev Task: 4  	Manual	 77.9380341880342
+	Prev Task: 5  	Manual	 89.97
+TASK 5 / 5 	Avg Acc: 48.810502965449494
+average accuracy = 48.81050296544949, forget = 0.47300453275127524, learning accuracy = 86.65086558555151
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 62.49
+TASK 1 / 5 	Avg Acc: 62.49
+	Prev Task: 1  	Manual	 10.68
+	Prev Task: 2  	Manual	 98.79
+TASK 2 / 5 	Avg Acc: 54.735
+	Prev Task: 1  	Manual	 13.08
+	Prev Task: 2  	Manual	 68.87
+	Prev Task: 3  	Manual	 90.65765212046712
+TASK 3 / 5 	Avg Acc: 57.53588404015571
+	Prev Task: 1  	Manual	 14.08
+	Prev Task: 2  	Manual	 71.05
+	Prev Task: 3  	Manual	 75.05377996312231
+	Prev Task: 4  	Manual	 94.81837606837607
+TASK 4 / 5 	Avg Acc: 63.75053900787459
+	Prev Task: 1  	Manual	 13.85
+	Prev Task: 2  	Manual	 26.89
+	Prev Task: 3  	Manual	 22.637523048555625
+	Prev Task: 4  	Manual	 55.12820512820513
+	Prev Task: 5  	Manual	 90.6
+TASK 5 / 5 	Avg Acc: 41.821145635352146
+average accuracy = 41.82114563535215, forget = 0.5706257500302061, learning accuracy = 87.47120563776863
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 62.46
+TASK 1 / 5 	Avg Acc: 62.46
+	Prev Task: 1  	Manual	 14.09
+	Prev Task: 2  	Manual	 98.75
+TASK 2 / 5 	Avg Acc: 56.42
+	Prev Task: 1  	Manual	 12.37
+	Prev Task: 2  	Manual	 76.8
+	Prev Task: 3  	Manual	 92.14812538414259
+TASK 3 / 5 	Avg Acc: 60.43937512804753
+	Prev Task: 1  	Manual	 10.96
+	Prev Task: 2  	Manual	 64.16
+	Prev Task: 3  	Manual	 69.54517516902274
+	Prev Task: 4  	Manual	 95.03205128205128
+TASK 4 / 5 	Avg Acc: 59.924306612768504
+	Prev Task: 1  	Manual	 11.98
+	Prev Task: 2  	Manual	 36.96
+	Prev Task: 3  	Manual	 29.840196681007992
+	Prev Task: 4  	Manual	 70.77991452991454
+	Prev Task: 5  	Manual	 90.22
+TASK 5 / 5 	Avg Acc: 47.9560222421845
+average accuracy = 47.9560222421845, forget = 0.4970751636381784, learning accuracy = 87.72203533323878
+
+Final Average accuracy =  48.26622448531459 +/- 3.5076693494744084 forget =  0.4884784891179298 +/- 0.04453695767757306 learning accuracy =  87.34450361474896 +/- 0.3696431548490624
+------------------- Experiment ended -----------------
+
+ >>>>>>>> TAG-Adam
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=param
+  tag-opt=adam
+  b=5
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 60.89    	 1.0
+TASK 1 / 5 	Avg Acc: 60.89
+	Prev Task: 1  	Manual	 30.22    	 1.479
+	Prev Task: 2  	Manual	 98.69    	 0.007
+TASK 2 / 5 	Avg Acc: 64.455
+	Prev Task: 1  	Manual	 13.82    	 1.493
+	Prev Task: 2  	Manual	 70.64    	 1.502
+	Prev Task: 3  	Manual	 90.41948371235402    	 0.007
+TASK 3 / 5 	Avg Acc: 58.29316123745134
+	Prev Task: 1  	Manual	 16.0    	 1.332
+	Prev Task: 2  	Manual	 86.39    	 1.347
+	Prev Task: 3  	Manual	 81.14628149969269    	 2.022
+	Prev Task: 4  	Manual	 93.58974358974359    	 0.007
+TASK 4 / 5 	Avg Acc: 69.28150627235907
+	Prev Task: 1  	Manual	 18.76    	 1.433
+	Prev Task: 2  	Manual	 72.27    	 1.411
+	Prev Task: 3  	Manual	 62.57682851874616    	 1.73
+	Prev Task: 4  	Manual	 80.82264957264957    	 1.455
+	Prev Task: 5  	Manual	 90.23    	 0.007
+TASK 5 / 5 	Avg Acc: 64.93189561827916
+average accuracy = 64.93189561827914, forget = 0.2728993730267547, learning accuracy = 86.76384546041952
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 61.46    	 1.0
+TASK 1 / 5 	Avg Acc: 61.46
+	Prev Task: 1  	Manual	 27.38    	 1.56
+	Prev Task: 2  	Manual	 98.9    	 0.007
+TASK 2 / 5 	Avg Acc: 63.14
+	Prev Task: 1  	Manual	 11.14    	 1.517
+	Prev Task: 2  	Manual	 87.12    	 1.366
+	Prev Task: 3  	Manual	 91.44898586355255    	 0.007
+TASK 3 / 5 	Avg Acc: 63.236328621184185
+	Prev Task: 1  	Manual	 15.22    	 1.424
+	Prev Task: 2  	Manual	 79.77    	 1.191
+	Prev Task: 3  	Manual	 78.17685925015365    	 1.835
+	Prev Task: 4  	Manual	 93.26923076923077    	 0.007
+TASK 4 / 5 	Avg Acc: 66.60902250484611
+	Prev Task: 1  	Manual	 15.38    	 1.513
+	Prev Task: 2  	Manual	 81.18    	 1.33
+	Prev Task: 3  	Manual	 55.87738168408113    	 1.757
+	Prev Task: 4  	Manual	 82.42521367521367    	 1.656
+	Prev Task: 5  	Manual	 89.74    	 0.007
+TASK 5 / 5 	Avg Acc: 64.92051907185896
+average accuracy = 64.92051907185896, forget = 0.2755390531837213, learning accuracy = 86.96364332655666
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 57.54    	 1.0
+TASK 1 / 5 	Avg Acc: 57.54
+	Prev Task: 1  	Manual	 25.13    	 1.552
+	Prev Task: 2  	Manual	 98.79    	 0.007
+TASK 2 / 5 	Avg Acc: 61.96
+	Prev Task: 1  	Manual	 15.02    	 1.559
+	Prev Task: 2  	Manual	 92.15    	 1.438
+	Prev Task: 3  	Manual	 91.18008604794099    	 0.007
+TASK 3 / 5 	Avg Acc: 66.11669534931366
+	Prev Task: 1  	Manual	 19.31    	 1.504
+	Prev Task: 2  	Manual	 87.99    	 1.445
+	Prev Task: 3  	Manual	 80.76982175783651    	 2.05
+	Prev Task: 4  	Manual	 93.6431623931624    	 0.007
+TASK 4 / 5 	Avg Acc: 70.42824603774973
+	Prev Task: 1  	Manual	 17.24    	 1.394
+	Prev Task: 2  	Manual	 77.59    	 1.34
+	Prev Task: 3  	Manual	 60.5139827904118    	 1.662
+	Prev Task: 4  	Manual	 80.55555555555556    	 1.519
+	Prev Task: 5  	Manual	 89.79    	 0.007
+TASK 5 / 5 	Avg Acc: 65.13790766919347
+average accuracy = 65.13790766919348, forget = 0.26313427523784005, learning accuracy = 86.18864968822069
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 61.58    	 1.0
+TASK 1 / 5 	Avg Acc: 61.58
+	Prev Task: 1  	Manual	 14.21    	 1.482
+	Prev Task: 2  	Manual	 98.7    	 0.007
+TASK 2 / 5 	Avg Acc: 56.455
+	Prev Task: 1  	Manual	 19.16    	 1.485
+	Prev Task: 2  	Manual	 82.79    	 1.36
+	Prev Task: 3  	Manual	 90.52704363859864    	 0.007
+TASK 3 / 5 	Avg Acc: 64.15901454619954
+	Prev Task: 1  	Manual	 20.58    	 1.328
+	Prev Task: 2  	Manual	 90.03    	 1.401
+	Prev Task: 3  	Manual	 81.24231714812538    	 1.509
+	Prev Task: 4  	Manual	 94.01709401709402    	 0.007
+TASK 4 / 5 	Avg Acc: 71.46735279130485
+	Prev Task: 1  	Manual	 17.06    	 1.338
+	Prev Task: 2  	Manual	 66.16    	 1.361
+	Prev Task: 3  	Manual	 47.34557467732022    	 1.672
+	Prev Task: 4  	Manual	 78.1517094017094    	 1.783
+	Prev Task: 5  	Manual	 90.37    	 0.007
+TASK 5 / 5 	Avg Acc: 59.817456815805926
+average accuracy = 59.817456815805926, forget = 0.3402671339416577, learning accuracy = 87.03882753113854
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 64.11    	 1.0
+TASK 1 / 5 	Avg Acc: 64.11
+	Prev Task: 1  	Manual	 23.37    	 1.37
+	Prev Task: 2  	Manual	 98.6    	 0.007
+TASK 2 / 5 	Avg Acc: 60.985
+	Prev Task: 1  	Manual	 17.67    	 1.388
+	Prev Task: 2  	Manual	 88.54    	 1.563
+	Prev Task: 3  	Manual	 90.14674247080517    	 0.007
+TASK 3 / 5 	Avg Acc: 65.45224749026839
+	Prev Task: 1  	Manual	 18.38    	 1.429
+	Prev Task: 2  	Manual	 80.11    	 1.463
+	Prev Task: 3  	Manual	 80.2819606637984    	 1.555
+	Prev Task: 4  	Manual	 94.44444444444444    	 0.007
+TASK 4 / 5 	Avg Acc: 68.30410127706071
+	Prev Task: 1  	Manual	 19.94    	 1.393
+	Prev Task: 2  	Manual	 70.39    	 1.486
+	Prev Task: 3  	Manual	 60.64459127228027    	 1.558
+	Prev Task: 4  	Manual	 88.83547008547009    	 1.39
+	Prev Task: 5  	Manual	 90.57    	 0.007
+TASK 5 / 5 	Avg Acc: 66.07601227155007
+average accuracy = 66.07601227155007, forget = 0.2687278138937481, learning accuracy = 87.57423738304992
+
+Final Average accuracy =  64.17675828933753 +/- 2.220715904552424 forget =  0.2841135298567444 +/- 0.0283878692240465 learning accuracy =  86.90584067787708 +/- 0.44772901676031573
+------------------- Experiment ended -----------------
+
+
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> Naive RMSProp
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=rms
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 59.82
+TASK 1 / 5 	Avg Acc: 59.82
+	Prev Task: 1  	Manual	 16.22
+	Prev Task: 2  	Manual	 98.85
+TASK 2 / 5 	Avg Acc: 57.535
+	Prev Task: 1  	Manual	 13.25
+	Prev Task: 2  	Manual	 69.44
+	Prev Task: 3  	Manual	 77.64290104486786
+TASK 3 / 5 	Avg Acc: 53.44430034828929
+	Prev Task: 1  	Manual	 11.83
+	Prev Task: 2  	Manual	 71.78
+	Prev Task: 3  	Manual	 65.62307928703135
+	Prev Task: 4  	Manual	 94.60470085470085
+TASK 4 / 5 	Avg Acc: 60.95944503543305
+	Prev Task: 1  	Manual	 12.9
+	Prev Task: 2  	Manual	 43.4
+	Prev Task: 3  	Manual	 20.42102028272895
+	Prev Task: 4  	Manual	 78.2051282051282
+	Prev Task: 5  	Manual	 90.69
+TASK 5 / 5 	Avg Acc: 49.12322969757143
+average accuracy = 49.12322969757143, forget = 0.43997863352927896, learning accuracy = 84.32152037991374
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 43.15
+TASK 1 / 5 	Avg Acc: 43.15
+	Prev Task: 1  	Manual	 14.98
+	Prev Task: 2  	Manual	 98.57
+TASK 2 / 5 	Avg Acc: 56.775
+	Prev Task: 1  	Manual	 11.13
+	Prev Task: 2  	Manual	 64.43
+	Prev Task: 3  	Manual	 91.50276582667486
+TASK 3 / 5 	Avg Acc: 55.68758860889162
+	Prev Task: 1  	Manual	 12.37
+	Prev Task: 2  	Manual	 71.52
+	Prev Task: 3  	Manual	 56.59956976029502
+	Prev Task: 4  	Manual	 93.26923076923077
+TASK 4 / 5 	Avg Acc: 58.43970013238145
+	Prev Task: 1  	Manual	 10.01
+	Prev Task: 2  	Manual	 40.76
+	Prev Task: 3  	Manual	 20.36339889366933
+	Prev Task: 4  	Manual	 73.77136752136752
+	Prev Task: 5  	Manual	 91.25
+TASK 5 / 5 	Avg Acc: 47.230953283007366
+average accuracy = 47.230953283007366, forget = 0.45396807545217194, learning accuracy = 83.54839931918113
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 45.06
+TASK 1 / 5 	Avg Acc: 45.06
+	Prev Task: 1  	Manual	 14.11
+	Prev Task: 2  	Manual	 98.64
+TASK 2 / 5 	Avg Acc: 56.375
+	Prev Task: 1  	Manual	 10.92
+	Prev Task: 2  	Manual	 58.54
+	Prev Task: 3  	Manual	 91.54118008604794
+TASK 3 / 5 	Avg Acc: 53.66706002868265
+	Prev Task: 1  	Manual	 11.83
+	Prev Task: 2  	Manual	 47.85
+	Prev Task: 3  	Manual	 59.20789797172711
+	Prev Task: 4  	Manual	 92.3076923076923
+TASK 4 / 5 	Avg Acc: 52.79889756985486
+	Prev Task: 1  	Manual	 9.78
+	Prev Task: 2  	Manual	 26.7
+	Prev Task: 3  	Manual	 26.363706207744315
+	Prev Task: 4  	Manual	 66.88034188034187
+	Prev Task: 5  	Manual	 90.4
+TASK 5 / 5 	Avg Acc: 44.02480961761724
+average accuracy = 44.02480961761724, forget = 0.49456206076413517, learning accuracy = 83.58977447874804
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 52.28
+TASK 1 / 5 	Avg Acc: 52.28
+	Prev Task: 1  	Manual	 19.16
+	Prev Task: 2  	Manual	 98.66
+TASK 2 / 5 	Avg Acc: 58.91
+	Prev Task: 1  	Manual	 12.53
+	Prev Task: 2  	Manual	 85.76
+	Prev Task: 3  	Manual	 90.80746773202213
+TASK 3 / 5 	Avg Acc: 63.03248924400738
+	Prev Task: 1  	Manual	 13.42
+	Prev Task: 2  	Manual	 55.95
+	Prev Task: 3  	Manual	 59.05424093423479
+	Prev Task: 4  	Manual	 75.32051282051282
+TASK 4 / 5 	Avg Acc: 50.936188438686905
+	Prev Task: 1  	Manual	 11.4
+	Prev Task: 2  	Manual	 33.57
+	Prev Task: 3  	Manual	 32.57145052243393
+	Prev Task: 4  	Manual	 71.9551282051282
+	Prev Task: 5  	Manual	 90.92
+TASK 5 / 5 	Avg Acc: 48.08331574551242
+average accuracy = 48.08331574551242, forget = 0.418928504562432, learning accuracy = 81.597596110507
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 53.12
+TASK 1 / 5 	Avg Acc: 53.12
+	Prev Task: 1  	Manual	 17.71
+	Prev Task: 2  	Manual	 98.45
+TASK 2 / 5 	Avg Acc: 58.08
+	Prev Task: 1  	Manual	 10.96
+	Prev Task: 2  	Manual	 64.16
+	Prev Task: 3  	Manual	 87.6459741856177
+TASK 3 / 5 	Avg Acc: 54.255324728539236
+	Prev Task: 1  	Manual	 9.05
+	Prev Task: 2  	Manual	 67.7
+	Prev Task: 3  	Manual	 66.94068838352797
+	Prev Task: 4  	Manual	 93.42948717948718
+TASK 4 / 5 	Avg Acc: 59.28004389075379
+	Prev Task: 1  	Manual	 8.1
+	Prev Task: 2  	Manual	 22.77
+	Prev Task: 3  	Manual	 29.943915181315305
+	Prev Task: 4  	Manual	 78.73931623931624
+	Prev Task: 5  	Manual	 89.84
+TASK 5 / 5 	Avg Acc: 45.878646284126305
+average accuracy = 45.878646284126305, forget = 0.4827305748611833, learning accuracy = 84.49709227302098
+
+Final Average accuracy =  46.86819092556696 +/- 1.775237481525694 forget =  0.4580335698338403 +/- 0.027626030501595723 learning accuracy =  83.51087651227418 +/- 1.0293726004538186
+------------------- Experiment ended -----------------
+
+ >>>>>>>> Naive Adagrad
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=adagrad
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 57.9
+TASK 1 / 5 	Avg Acc: 57.9
+	Prev Task: 1  	Manual	 20.24
+	Prev Task: 2  	Manual	 98.71
+TASK 2 / 5 	Avg Acc: 59.474999999999994
+	Prev Task: 1  	Manual	 21.85
+	Prev Task: 2  	Manual	 62.88
+	Prev Task: 3  	Manual	 87.99170251997542
+TASK 3 / 5 	Avg Acc: 57.57390083999181
+	Prev Task: 1  	Manual	 13.25
+	Prev Task: 2  	Manual	 66.63
+	Prev Task: 3  	Manual	 53.35740626920713
+	Prev Task: 4  	Manual	 92.3076923076923
+TASK 4 / 5 	Avg Acc: 56.386274644224855
+	Prev Task: 1  	Manual	 16.22
+	Prev Task: 2  	Manual	 54.99
+	Prev Task: 3  	Manual	 55.43945912722803
+	Prev Task: 4  	Manual	 75.48076923076923
+	Prev Task: 5  	Manual	 89.44
+TASK 5 / 5 	Avg Acc: 58.31404567159945
+average accuracy = 58.31404567159946, forget = 0.3369479161741762, learning accuracy = 85.26987896553354
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 55.66
+TASK 1 / 5 	Avg Acc: 55.66
+	Prev Task: 1  	Manual	 20.38
+	Prev Task: 2  	Manual	 98.8
+TASK 2 / 5 	Avg Acc: 59.589999999999996
+	Prev Task: 1  	Manual	 14.8
+	Prev Task: 2  	Manual	 62.65
+	Prev Task: 3  	Manual	 87.34634296250768
+TASK 3 / 5 	Avg Acc: 54.93211432083589
+	Prev Task: 1  	Manual	 18.32
+	Prev Task: 2  	Manual	 59.36
+	Prev Task: 3  	Manual	 68.14305470190534
+	Prev Task: 4  	Manual	 91.55982905982906
+TASK 4 / 5 	Avg Acc: 59.345720940433594
+	Prev Task: 1  	Manual	 13.92
+	Prev Task: 2  	Manual	 32.06
+	Prev Task: 3  	Manual	 42.85110633066994
+	Prev Task: 4  	Manual	 64.85042735042735
+	Prev Task: 5  	Manual	 88.98
+TASK 5 / 5 	Avg Acc: 48.53230673621946
+average accuracy = 48.53230673621946, forget = 0.4492115958530986, learning accuracy = 84.46923440446734
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 51.39
+TASK 1 / 5 	Avg Acc: 51.39
+	Prev Task: 1  	Manual	 28.81
+	Prev Task: 2  	Manual	 98.7
+TASK 2 / 5 	Avg Acc: 63.755
+	Prev Task: 1  	Manual	 12.22
+	Prev Task: 2  	Manual	 72.46
+	Prev Task: 3  	Manual	 88.24139520590043
+TASK 3 / 5 	Avg Acc: 57.640465068633475
+	Prev Task: 1  	Manual	 10.37
+	Prev Task: 2  	Manual	 66.1
+	Prev Task: 3  	Manual	 65.01613398893669
+	Prev Task: 4  	Manual	 92.78846153846153
+TASK 4 / 5 	Avg Acc: 58.568648881849555
+	Prev Task: 1  	Manual	 13.73
+	Prev Task: 2  	Manual	 47.59
+	Prev Task: 3  	Manual	 59.78411186232329
+	Prev Task: 4  	Manual	 70.40598290598291
+	Prev Task: 5  	Manual	 90.03
+TASK 5 / 5 	Avg Acc: 56.30801895366125
+average accuracy = 56.30801895366123, forget = 0.3490244049401394, learning accuracy = 84.2299713488724
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 55.35
+TASK 1 / 5 	Avg Acc: 55.35
+	Prev Task: 1  	Manual	 22.07
+	Prev Task: 2  	Manual	 98.68
+TASK 2 / 5 	Avg Acc: 60.375
+	Prev Task: 1  	Manual	 13.87
+	Prev Task: 2  	Manual	 67.53
+	Prev Task: 3  	Manual	 86.60494775660726
+TASK 3 / 5 	Avg Acc: 56.00164925220242
+	Prev Task: 1  	Manual	 15.62
+	Prev Task: 2  	Manual	 41.9
+	Prev Task: 3  	Manual	 63.84065765212047
+	Prev Task: 4  	Manual	 91.55982905982906
+TASK 4 / 5 	Avg Acc: 53.230121677987384
+	Prev Task: 1  	Manual	 17.31
+	Prev Task: 2  	Manual	 32.91
+	Prev Task: 3  	Manual	 34.380762138905965
+	Prev Task: 4  	Manual	 63.995726495726494
+	Prev Task: 5  	Manual	 89.3
+TASK 5 / 5 	Avg Acc: 47.579297726926484
+average accuracy = 47.5792977269265, forget = 0.45899572045450976, learning accuracy = 84.29895536328726
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 57.18
+TASK 1 / 5 	Avg Acc: 57.18
+	Prev Task: 1  	Manual	 26.28
+	Prev Task: 2  	Manual	 98.73
+TASK 2 / 5 	Avg Acc: 62.505
+	Prev Task: 1  	Manual	 15.72
+	Prev Task: 2  	Manual	 76.75
+	Prev Task: 3  	Manual	 87.81883835279656
+TASK 3 / 5 	Avg Acc: 60.09627945093219
+	Prev Task: 1  	Manual	 12.15
+	Prev Task: 2  	Manual	 70.35
+	Prev Task: 3  	Manual	 57.21419791026429
+	Prev Task: 4  	Manual	 92.73504273504274
+TASK 4 / 5 	Avg Acc: 58.11231016132676
+	Prev Task: 1  	Manual	 12.28
+	Prev Task: 2  	Manual	 55.56
+	Prev Task: 3  	Manual	 33.48570989551322
+	Prev Task: 4  	Manual	 67.1474358974359
+	Prev Task: 5  	Manual	 89.63
+TASK 5 / 5 	Avg Acc: 51.62062915858982
+average accuracy = 51.62062915858983, forget = 0.4199768382372255, learning accuracy = 85.21877621756786
+
+Final Average accuracy =  52.4708596493993 +/- 4.219693908214778 forget =  0.4028312951318299 +/- 0.05066625241752072 learning accuracy =  84.69736325994567 +/- 0.45362374957214274
+------------------- Experiment ended -----------------
+
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> TAG-Adagrad
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=param
+  tag-opt=adagrad
+  b=5
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 57.72    	 1.0
+TASK 1 / 5 	Avg Acc: 57.72
+	Prev Task: 1  	Manual	 21.99    	 1.466
+	Prev Task: 2  	Manual	 98.71    	 0.007
+TASK 2 / 5 	Avg Acc: 60.349999999999994
+	Prev Task: 1  	Manual	 23.59    	 1.417
+	Prev Task: 2  	Manual	 75.27    	 1.342
+	Prev Task: 3  	Manual	 86.93146896127843    	 0.007
+TASK 3 / 5 	Avg Acc: 61.93048965375948
+	Prev Task: 1  	Manual	 20.81    	 1.289
+	Prev Task: 2  	Manual	 76.46    	 1.42
+	Prev Task: 3  	Manual	 73.91671788567916    	 1.753
+	Prev Task: 4  	Manual	 93.96367521367522    	 0.007
+TASK 4 / 5 	Avg Acc: 66.2875982748386
+	Prev Task: 1  	Manual	 16.16    	 1.318
+	Prev Task: 2  	Manual	 71.12    	 1.367
+	Prev Task: 3  	Manual	 57.052858020897354    	 1.922
+	Prev Task: 4  	Manual	 87.6068376068376    	 1.8
+	Prev Task: 5  	Manual	 90.4    	 0.007
+TASK 5 / 5 	Avg Acc: 64.46793912554699
+average accuracy = 64.46793912554699, forget = 0.26346362136804674, learning accuracy = 85.54502883499075
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 56.46    	 1.0
+TASK 1 / 5 	Avg Acc: 56.46
+	Prev Task: 1  	Manual	 16.54    	 1.563
+	Prev Task: 2  	Manual	 98.76    	 0.007
+TASK 2 / 5 	Avg Acc: 57.650000000000006
+	Prev Task: 1  	Manual	 15.02    	 1.619
+	Prev Task: 2  	Manual	 71.68    	 1.29
+	Prev Task: 3  	Manual	 88.20682237246466    	 0.007
+TASK 3 / 5 	Avg Acc: 58.30227412415489
+	Prev Task: 1  	Manual	 12.68    	 1.419
+	Prev Task: 2  	Manual	 88.84    	 1.334
+	Prev Task: 3  	Manual	 66.27612169637369    	 1.462
+	Prev Task: 4  	Manual	 93.75    	 0.007
+TASK 4 / 5 	Avg Acc: 65.38653042409342
+	Prev Task: 1  	Manual	 11.69    	 1.376
+	Prev Task: 2  	Manual	 72.67    	 1.492
+	Prev Task: 3  	Manual	 37.69975414874001    	 1.761
+	Prev Task: 4  	Manual	 80.12820512820512    	 1.387
+	Prev Task: 5  	Manual	 89.77    	 0.007
+TASK 5 / 5 	Avg Acc: 58.39159185538903
+average accuracy = 58.391591855389024, forget = 0.33747215773879885, learning accuracy = 85.38936447449292
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 55.47    	 1.0
+TASK 1 / 5 	Avg Acc: 55.47
+	Prev Task: 1  	Manual	 25.42    	 1.41
+	Prev Task: 2  	Manual	 98.72    	 0.007
+TASK 2 / 5 	Avg Acc: 62.07
+	Prev Task: 1  	Manual	 16.79    	 1.342
+	Prev Task: 2  	Manual	 66.55    	 1.347
+	Prev Task: 3  	Manual	 88.24907805777505    	 0.007
+TASK 3 / 5 	Avg Acc: 57.196359352591685
+	Prev Task: 1  	Manual	 15.5    	 1.159
+	Prev Task: 2  	Manual	 78.62    	 1.445
+	Prev Task: 3  	Manual	 66.3721573448064    	 1.565
+	Prev Task: 4  	Manual	 93.8568376068376    	 0.007
+TASK 4 / 5 	Avg Acc: 63.587248737911
+	Prev Task: 1  	Manual	 16.4    	 1.312
+	Prev Task: 2  	Manual	 65.52    	 1.289
+	Prev Task: 3  	Manual	 43.75768285187461    	 1.626
+	Prev Task: 4  	Manual	 83.97435897435898    	 1.77
+	Prev Task: 5  	Manual	 89.82    	 0.007
+TASK 5 / 5 	Avg Acc: 59.89440836524672
+average accuracy = 59.89440836524672, forget = 0.3166096845959477, learning accuracy = 85.22318313292253
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 56.76    	 1.0
+TASK 1 / 5 	Avg Acc: 56.76
+	Prev Task: 1  	Manual	 29.55    	 1.397
+	Prev Task: 2  	Manual	 98.89    	 0.007
+TASK 2 / 5 	Avg Acc: 64.22
+	Prev Task: 1  	Manual	 14.77    	 1.499
+	Prev Task: 2  	Manual	 76.15    	 1.335
+	Prev Task: 3  	Manual	 89.94698832206515    	 0.007
+TASK 3 / 5 	Avg Acc: 60.288996107355054
+	Prev Task: 1  	Manual	 20.38    	 1.51
+	Prev Task: 2  	Manual	 82.24    	 1.258
+	Prev Task: 3  	Manual	 75.55700676090964    	 1.614
+	Prev Task: 4  	Manual	 92.3076923076923    	 0.007
+TASK 4 / 5 	Avg Acc: 67.62117476715049
+	Prev Task: 1  	Manual	 18.62    	 1.328
+	Prev Task: 2  	Manual	 62.59    	 1.298
+	Prev Task: 3  	Manual	 60.47940995697603    	 1.548
+	Prev Task: 4  	Manual	 80.07478632478633    	 1.78
+	Prev Task: 5  	Manual	 90.03    	 0.007
+TASK 5 / 5 	Avg Acc: 62.358839256352475
+average accuracy = 62.35883925635246, forget = 0.2903512108699877, learning accuracy = 85.5869361259515
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 55.5    	 1.0
+TASK 1 / 5 	Avg Acc: 55.5
+	Prev Task: 1  	Manual	 26.15    	 1.362
+	Prev Task: 2  	Manual	 98.95    	 0.007
+TASK 2 / 5 	Avg Acc: 62.55
+	Prev Task: 1  	Manual	 21.24    	 1.407
+	Prev Task: 2  	Manual	 84.19    	 1.382
+	Prev Task: 3  	Manual	 89.30931161647203    	 0.007
+TASK 3 / 5 	Avg Acc: 64.91310387215734
+	Prev Task: 1  	Manual	 15.59    	 1.308
+	Prev Task: 2  	Manual	 78.14    	 1.364
+	Prev Task: 3  	Manual	 72.64904732636755    	 1.493
+	Prev Task: 4  	Manual	 93.8568376068376    	 0.007
+TASK 4 / 5 	Avg Acc: 65.05897123330129
+	Prev Task: 1  	Manual	 19.18    	 1.267
+	Prev Task: 2  	Manual	 70.16    	 1.426
+	Prev Task: 3  	Manual	 59.196373693915184    	 1.619
+	Prev Task: 4  	Manual	 79.86111111111111    	 1.429
+	Prev Task: 5  	Manual	 88.72    	 0.007
+TASK 5 / 5 	Avg Acc: 63.423496961005256
+average accuracy = 63.423496961005256, forget = 0.2730466610457084, learning accuracy = 85.26722984466191
+
+Final Average accuracy =  61.7072551127081 +/- 2.2481752761987437 forget =  0.29618866712369785 +/- 0.027429551627783506 learning accuracy =  85.40234848260391 +/- 0.1448834941228473
+------------------- Experiment ended -----------------
+
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> Stable SGD
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.05
+  learning rate decay(gamma)=0.8
+  dropout prob=0.1
+  optimizer opt=None
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 53.68
+TASK 1 / 5 	Avg Acc: 53.68
+	Prev Task: 1  	Manual	 18.21
+	Prev Task: 2  	Manual	 98.75
+TASK 2 / 5 	Avg Acc: 58.480000000000004
+	Prev Task: 1  	Manual	 12.86
+	Prev Task: 2  	Manual	 70.36
+	Prev Task: 3  	Manual	 85.43331284572834
+TASK 3 / 5 	Avg Acc: 56.21777094857611
+	Prev Task: 1  	Manual	 12.01
+	Prev Task: 2  	Manual	 61.27
+	Prev Task: 3  	Manual	 74.82713583282114
+	Prev Task: 4  	Manual	 93.00213675213675
+TASK 4 / 5 	Avg Acc: 60.27731814623947
+	Prev Task: 1  	Manual	 12.91
+	Prev Task: 2  	Manual	 44.97
+	Prev Task: 3  	Manual	 40.2120467117394
+	Prev Task: 4  	Manual	 81.46367521367522
+	Prev Task: 5  	Manual	 88.84
+TASK 5 / 5 	Avg Acc: 53.67914438508292
+average accuracy = 53.67914438508292, forget = 0.37827431918112625, learning accuracy = 83.94108991957303
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 52.15
+TASK 1 / 5 	Avg Acc: 52.15
+	Prev Task: 1  	Manual	 19.85
+	Prev Task: 2  	Manual	 98.62
+TASK 2 / 5 	Avg Acc: 59.235
+	Prev Task: 1  	Manual	 13.78
+	Prev Task: 2  	Manual	 87.09
+	Prev Task: 3  	Manual	 88.89827904118009
+TASK 3 / 5 	Avg Acc: 63.2560930137267
+	Prev Task: 1  	Manual	 13.11
+	Prev Task: 2  	Manual	 74.6
+	Prev Task: 3  	Manual	 74.8540258143823
+	Prev Task: 4  	Manual	 92.57478632478633
+TASK 4 / 5 	Avg Acc: 63.78470303479216
+	Prev Task: 1  	Manual	 12.29
+	Prev Task: 2  	Manual	 48.38
+	Prev Task: 3  	Manual	 46.089428395820526
+	Prev Task: 4  	Manual	 83.17307692307692
+	Prev Task: 5  	Manual	 87.59
+TASK 5 / 5 	Avg Acc: 55.504501063779486
+average accuracy = 55.50450106377948, forget = 0.3557764001176724, learning accuracy = 83.96661307319327
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 56.71
+TASK 1 / 5 	Avg Acc: 56.71
+	Prev Task: 1  	Manual	 25.47
+	Prev Task: 2  	Manual	 98.86
+TASK 2 / 5 	Avg Acc: 62.165
+	Prev Task: 1  	Manual	 10.7
+	Prev Task: 2  	Manual	 84.67
+	Prev Task: 3  	Manual	 88.84449907805778
+TASK 3 / 5 	Avg Acc: 61.40483302601926
+	Prev Task: 1  	Manual	 13.35
+	Prev Task: 2  	Manual	 77.81
+	Prev Task: 3  	Manual	 73.4519053472649
+	Prev Task: 4  	Manual	 92.62820512820512
+TASK 4 / 5 	Avg Acc: 64.31002761886751
+	Prev Task: 1  	Manual	 14.22
+	Prev Task: 2  	Manual	 52.83
+	Prev Task: 3  	Manual	 38.92901044867855
+	Prev Task: 4  	Manual	 65.91880341880342
+	Prev Task: 5  	Manual	 88.35
+TASK 5 / 5 	Avg Acc: 52.04956277349639
+average accuracy = 52.04956277349638, forget = 0.41286222584695237, learning accuracy = 85.07854084125259
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 50.65
+TASK 1 / 5 	Avg Acc: 50.65
+	Prev Task: 1  	Manual	 19.88
+	Prev Task: 2  	Manual	 98.95
+TASK 2 / 5 	Avg Acc: 59.415
+	Prev Task: 1  	Manual	 12.45
+	Prev Task: 2  	Manual	 77.09
+	Prev Task: 3  	Manual	 90.02765826674862
+TASK 3 / 5 	Avg Acc: 59.85588608891621
+	Prev Task: 1  	Manual	 14.08
+	Prev Task: 2  	Manual	 56.69
+	Prev Task: 3  	Manual	 69.6757836508912
+	Prev Task: 4  	Manual	 93.32264957264957
+TASK 4 / 5 	Avg Acc: 58.44210830588519
+	Prev Task: 1  	Manual	 12.24
+	Prev Task: 2  	Manual	 37.53
+	Prev Task: 3  	Manual	 42.90872771972956
+	Prev Task: 4  	Manual	 76.6025641025641
+	Prev Task: 5  	Manual	 87.95
+TASK 5 / 5 	Avg Acc: 51.44625836445874
+average accuracy = 51.44625836445873, forget = 0.4091725400427613, learning accuracy = 84.18006156787963
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 55.07
+TASK 1 / 5 	Avg Acc: 55.07
+	Prev Task: 1  	Manual	 13.89
+	Prev Task: 2  	Manual	 98.78
+TASK 2 / 5 	Avg Acc: 56.335
+	Prev Task: 1  	Manual	 11.15
+	Prev Task: 2  	Manual	 88.11
+	Prev Task: 3  	Manual	 90.11216963736939
+TASK 3 / 5 	Avg Acc: 63.1240565457898
+	Prev Task: 1  	Manual	 13.66
+	Prev Task: 2  	Manual	 76.64
+	Prev Task: 3  	Manual	 69.01889981561156
+	Prev Task: 4  	Manual	 93.21581196581197
+TASK 4 / 5 	Avg Acc: 63.133677945355885
+	Prev Task: 1  	Manual	 10.89
+	Prev Task: 2  	Manual	 54.87
+	Prev Task: 3  	Manual	 21.527350952673633
+	Prev Task: 4  	Manual	 67.57478632478633
+	Prev Task: 5  	Manual	 88.85
+TASK 5 / 5 	Avg Acc: 48.74242745549199
+average accuracy = 48.74242745549199, forget = 0.4557896108143035, learning accuracy = 85.20559632063627
+
+Final Average accuracy =  52.28437880846191 +/- 2.2635177131472553 forget =  0.4023750192005632 +/- 0.03394578451580133 learning accuracy =  84.47438034450695 +/- 0.5529080449755885
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (5data) ***********************
+ >>>>>>>> TAG-RMSProp
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.0005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=param
+  tag-opt=rms
+  b=5
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 60.04
+TASK 2 / 5 	Avg Acc: 58.31
+TASK 3 / 5 	Avg Acc: 59.62245031755788
+TASK 4 / 5 	Avg Acc: 66.11526188675082
+TASK 5 / 5 	Avg Acc: 64.2144956739634
+average accuracy = 64.2144956739634, forget = 0.28243846350842355, learning accuracy = 86.80957275463729
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 55.8
+TASK 2 / 5 	Avg Acc: 59.51
+TASK 3 / 5 	Avg Acc: 55.426576521204666
+TASK 4 / 5 	Avg Acc: 61.30472471750745
+TASK 5 / 5 	Avg Acc: 59.14711578648763
+average accuracy = 59.14711578648763, forget = 0.3306834535010165, learning accuracy = 85.60179206656895
+
+------------------- Experiment-1237 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 45.56
+TASK 2 / 5 	Avg Acc: 58.4
+TASK 3 / 5 	Avg Acc: 60.45070477361196
+TASK 4 / 5 	Avg Acc: 68.13709862680514
+TASK 5 / 5 	Avg Acc: 60.08152526541956
+average accuracy = 60.08152526541954, forget = 0.2968571601552855, learning accuracy = 83.8300980778424
+
+------------------- Experiment-1240 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 51.87
+TASK 2 / 5 	Avg Acc: 59.015
+TASK 3 / 5 	Avg Acc: 62.77517312026224
+TASK 4 / 5 	Avg Acc: 66.66550739655074
+TASK 5 / 5 	Avg Acc: 61.44815179739335
+average accuracy = 61.44815179739335, forget = 0.29264096076360985, learning accuracy = 84.85942865848213
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 55.17
+TASK 2 / 5 	Avg Acc: 62.25
+TASK 3 / 5 	Avg Acc: 63.551208768694934
+TASK 4 / 5 	Avg Acc: 65.49232104865018
+TASK 5 / 5 	Avg Acc: 61.900607431222056
+average accuracy = 61.900607431222056, forget = 0.2937457036441671, learning accuracy = 85.40026372275543
+
+Final Average accuracy =  61.358379190897196 +/- 1.7308676287350242 forget =  0.29927314831450047 +/- 0.016434046607633108 learning accuracy =  85.30023105605724 +/- 0.9731038657700332
+------------------- Experiment ended -----------------
+
+
+ >>>>>>>> EWC
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=ewc
+  lambda=1
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1234 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 44.38
+TASK 1 / 5 	Avg Acc: 44.38
+	Prev Task: 1  	Manual	 25.43
+	Prev Task: 2  	Manual	 98.27
+TASK 2 / 5 	Avg Acc: 61.849999999999994
+	Prev Task: 1  	Manual	 13.85
+	Prev Task: 2  	Manual	 53.68
+	Prev Task: 3  	Manual	 82.57145052243392
+TASK 3 / 5 	Avg Acc: 50.03381684081131
+	Prev Task: 1  	Manual	 15.11
+	Prev Task: 2  	Manual	 48.96
+	Prev Task: 3  	Manual	 56.223110018438845
+	Prev Task: 4  	Manual	 93.26923076923077
+TASK 4 / 5 	Avg Acc: 53.3905851969174
+	Prev Task: 1  	Manual	 11.89
+	Prev Task: 2  	Manual	 35.91
+	Prev Task: 3  	Manual	 38.302858020897354
+	Prev Task: 4  	Manual	 55.876068376068375
+	Prev Task: 5  	Manual	 86.2
+TASK 5 / 5 	Avg Acc: 45.63578527939315
+average accuracy = 45.63578527939315, forget = 0.4412793872367475, learning accuracy = 80.93813625833295
+
+------------------- Experiment-1235 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 48.69
+TASK 1 / 5 	Avg Acc: 48.69
+	Prev Task: 1  	Manual	 30.77
+	Prev Task: 2  	Manual	 98.78
+TASK 2 / 5 	Avg Acc: 64.775
+	Prev Task: 1  	Manual	 14.89
+	Prev Task: 2  	Manual	 35.58
+	Prev Task: 3  	Manual	 76.17547633681623
+TASK 3 / 5 	Avg Acc: 42.21515877893874
+	Prev Task: 1  	Manual	 15.23
+	Prev Task: 2  	Manual	 61.19
+	Prev Task: 3  	Manual	 54.44068838352796
+	Prev Task: 4  	Manual	 91.82692307692308
+TASK 4 / 5 	Avg Acc: 55.671902865112756
+	Prev Task: 1  	Manual	 11.97
+	Prev Task: 2  	Manual	 40.59
+	Prev Task: 3  	Manual	 32.64059618930547
+	Prev Task: 4  	Manual	 58.86752136752137
+	Prev Task: 5  	Manual	 87.81
+TASK 5 / 5 	Avg Acc: 46.375623511365376
+average accuracy = 46.37562351136537, forget = 0.42851070464228114, learning accuracy = 80.65647988274786
+
+------------------- Experiment-1244 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 52.5
+TASK 1 / 5 	Avg Acc: 52.5
+	Prev Task: 1  	Manual	 25.35
+	Prev Task: 2  	Manual	 98.6
+TASK 2 / 5 	Avg Acc: 61.974999999999994
+	Prev Task: 1  	Manual	 14.17
+	Prev Task: 2  	Manual	 60.06
+	Prev Task: 3  	Manual	 86.10172095881991
+TASK 3 / 5 	Avg Acc: 53.443906986273305
+	Prev Task: 1  	Manual	 13.47
+	Prev Task: 2  	Manual	 55.44
+	Prev Task: 3  	Manual	 55.33574062692071
+	Prev Task: 4  	Manual	 93.8568376068376
+TASK 4 / 5 	Avg Acc: 54.52564455843958
+	Prev Task: 1  	Manual	 12.44
+	Prev Task: 2  	Manual	 26.85
+	Prev Task: 3  	Manual	 25.653042409342348
+	Prev Task: 4  	Manual	 64.85042735042735
+	Prev Task: 5  	Manual	 88.49
+TASK 5 / 5 	Avg Acc: 43.65669395195394
+average accuracy = 43.65669395195395, forget = 0.5031627220147196, learning accuracy = 83.9097117131315
+
+Final Average accuracy =  45.222700914237485 +/- 1.1477872935384084 forget =  0.45765093796458273 +/- 0.032601141895842387 learning accuracy =  81.834775951404097 +/- 1.4717000124455561
+------------------- Experiment ended -----------------
+
