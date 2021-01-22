@@ -253,6 +253,7 @@ def get_split_cifar100_tasks(num_tasks, batch_size):
 
     # convention: tasks starts from 1 not 0 !
     # task_id = 1 (i.e., first task) => start_class = 0, end_class = 4
+    # normalize = transforms.Normalize(mean=[0.507, 0.487, 0.441], std=[0.267, 0.256, 0.276])
     cifar_transforms = torchvision.transforms.Compose([torchvision.transforms.ToTensor(),])
     cifar_train = torchvision.datasets.CIFAR100('./data/', train=True, download=True, transform=cifar_transforms)
     cifar_test = torchvision.datasets.CIFAR100('./data/', train=False, download=True, transform=cifar_transforms)

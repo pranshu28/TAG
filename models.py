@@ -1,6 +1,6 @@
+import numpy as np
 import torch
 import torch.nn as nn
-import numpy as np
 from torch.nn.functional import relu, avg_pool2d
 from torch.nn import functional as F
 import torchvision.models as models
@@ -24,7 +24,7 @@ class ResNet18_CUB(nn.Module):
 		if task_id is None:
 			return out
 		t = task_id
-		offset1 = int((t-1) * self.n_classes)
+		offset1 = int((t - 1) * self.n_classes)
 		offset2 = int(t * self.n_classes)
 		if offset1 > 0:
 			out[:, :offset1].data.fill_(-10e10)
@@ -33,11 +33,11 @@ class ResNet18_CUB(nn.Module):
 		return out
 
 
-
 class MLP(nn.Module):
 	"""
 	Two layer MLP for MNIST benchmarks.
 	"""
+
 	def __init__(self, hiddens, config):
 		super(MLP, self).__init__()
 		self.n_classes = config['classes']
@@ -60,7 +60,7 @@ class MLP(nn.Module):
 		out = self.W3(out)
 		if task_id is None:
 			return out
-		offset1 = int((task_id-1) * self.n_classes)
+		offset1 = int((task_id - 1) * self.n_classes)
 		offset2 = int(task_id * self.n_classes)
 		if offset1 > 0:
 			out[:, :offset1].data.fill_(-10e10)
@@ -85,18 +85,18 @@ class BasicBlock(nn.Module):
 		if stride != 1 or in_planes != self.expansion * planes:
 			self.shortcut = nn.Sequential(
 				nn.Conv2d(in_planes, self.expansion * planes, kernel_size=1,
-						  stride=stride, bias=False),
+				          stride=stride, bias=False),
 			)
 
 		self.bn1 = nn.Sequential(
 			nn.BatchNorm2d(planes),
 			nn.Dropout(p=config['dropout'])
-			)
+		)
 
 		self.bn2 = nn.Sequential(
 			nn.BatchNorm2d(planes),
 			nn.Dropout(p=config['dropout'])
-			)
+		)
 
 	def forward(self, x):
 		out = self.conv1(x)
@@ -107,7 +107,6 @@ class BasicBlock(nn.Module):
 		out = relu(out)
 		out = self.bn2(out)
 		return out
-
 
 
 class ResNet(nn.Module):
@@ -149,7 +148,7 @@ class ResNet(nn.Module):
 		out = self.linear(out)
 		if task_id is None:
 			return out
-		offset1 = int((task_id-1) * self.n_classes)
+		offset1 = int((task_id - 1) * self.n_classes)
 		offset2 = int(task_id * self.n_classes)
 		if offset1 > 0:
 			out[:, :offset1].data.fill_(-10e10)
@@ -165,31 +164,31 @@ def ResNet18(nclasses=100, nf=20, config={}):
 
 class AlexNet(torch.nn.Module):
 	def __init__(self, config):
-		super(AlexNet,self).__init__()
+		super(AlexNet, self).__init__()
 
 		ncha, size, _ = config['input_size']
 		self.n_classes = config['classes']
 		self.total_classes = config['total_classes']
-		self.conv1=torch.nn.Conv2d(ncha,64,kernel_size=size//8)
+		self.conv1 = torch.nn.Conv2d(ncha, 64, kernel_size=size // 8)
 		self.bn1 = nn.BatchNorm2d(64)
-		s=self.compute_conv_output_size(size,size//8)
-		s=s//2
-		self.conv2=torch.nn.Conv2d(64,128,kernel_size=size//10)
+		s = self.compute_conv_output_size(size, size // 8)
+		s = s // 2
+		self.conv2 = torch.nn.Conv2d(64, 128, kernel_size=size // 10)
 		self.bn2 = nn.BatchNorm2d(128)
-		s=self.compute_conv_output_size(s,size//10)
-		s=s//2
-		self.conv3=torch.nn.Conv2d(128,256,kernel_size=2)
+		s = self.compute_conv_output_size(s, size // 10)
+		s = s // 2
+		self.conv3 = torch.nn.Conv2d(128, 256, kernel_size=2)
 		self.bn3 = nn.BatchNorm2d(256)
-		s=self.compute_conv_output_size(s,2)
-		s=s//2
-		self.maxpool=torch.nn.MaxPool2d(2)
-		self.relu=torch.nn.ReLU()
+		s = self.compute_conv_output_size(s, 2)
+		s = s // 2
+		self.maxpool = torch.nn.MaxPool2d(2)
+		self.relu = torch.nn.ReLU()
 
-		self.drop1=torch.nn.Dropout(0.2)
-		self.drop2=torch.nn.Dropout(0.5)
-		self.fc1=torch.nn.Linear(256*s*s,2048)
+		self.drop1 = torch.nn.Dropout(0.2)
+		self.drop2 = torch.nn.Dropout(0.5)
+		self.fc1 = torch.nn.Linear(256 * s * s, 2048)
 		self.bn4 = nn.BatchNorm1d(2048)
-		self.fc2=torch.nn.Linear(2048,2048)
+		self.fc2 = torch.nn.Linear(2048, 2048)
 		self.bn5 = nn.BatchNorm1d(2048)
 		self.linear = nn.Linear(2048, self.total_classes)
 
@@ -197,19 +196,71 @@ class AlexNet(torch.nn.Module):
 		return int(np.floor((Lin + 2 * padding - dilation * (kernel_size - 1) - 1) / float(stride) + 1))
 
 	def forward(self, x, task_id):
-		h=self.maxpool(self.drop1(self.relu((self.conv1(x)))))
-		h=self.maxpool(self.drop1(self.relu((self.conv2(h)))))
-		h=self.maxpool(self.drop2(self.relu((self.conv3(h)))))
-		h=h.view(x.size(0),-1)
-		h=self.drop2(self.relu((self.fc1(h))))
-		h=self.drop2(self.relu((self.fc2(h))))
-		out=self.linear(h)
+		h = self.maxpool(self.drop1(self.relu((self.conv1(x)))))
+		h = self.maxpool(self.drop1(self.relu((self.conv2(h)))))
+		h = self.maxpool(self.drop2(self.relu((self.conv3(h)))))
+		h = h.view(x.size(0), -1)
+		h = self.drop2(self.relu((self.fc1(h))))
+		h = self.drop2(self.relu((self.fc2(h))))
+		out = self.linear(h)
 		if task_id is None:
 			return out
-		offset1 = int((task_id-1) * self.n_classes)
+		offset1 = int((task_id - 1) * self.n_classes)
 		offset2 = int(task_id * self.n_classes)
 		if offset1 > 0:
 			out[:, :offset1].data.fill_(-10e10)
 		if offset2 < self.total_classes:
 			out[:, offset2:self.total_classes].data.fill_(-10e10)
 		return out
+
+
+class LeNet(nn.Module):
+	def __init__(self, out_dim, classes_per_task, in_channel=1, img_sz=32, hidden_dim=500):
+		super(LeNet, self).__init__()
+		feat_map_sz = img_sz // 4
+		self.n_feat = 50 * feat_map_sz * feat_map_sz
+		self.hidden_dim = hidden_dim
+		self.n_classes =  classes_per_task
+		self.total_classes = out_dim
+		self.linear = nn.Sequential(
+			nn.Conv2d(in_channel, 20, 5, padding=2),
+			nn.BatchNorm2d(20),
+			nn.ReLU(inplace=True),
+			nn.MaxPool2d(2, 2),
+			nn.Conv2d(20, 50, 5, padding=2),
+			nn.BatchNorm2d(50),
+			nn.ReLU(inplace=True),
+			nn.MaxPool2d(2, 2),
+			nn.Flatten(),
+			nn.Linear(self.n_feat, hidden_dim),
+			# nn.BatchNorm1d(hidden_dim),
+			nn.ReLU(inplace=True),
+		)
+
+		self.last = nn.Linear(hidden_dim, out_dim)  # Subject to be replaced dependent on task
+
+	def features(self, x):
+		# x = self.conv(x)
+		# x = self.linear(x.view(-1, self.n_feat))
+		return self.linear(x)
+
+	def logits(self, x):
+		x = self.last(x)
+		return x
+
+	def forward(self, x, task_id=None):
+		x = self.features(x)
+		out = self.logits(x)
+		if task_id is None:
+			return out
+		offset1 = int((task_id - 1) * self.n_classes)
+		offset2 = int(task_id * self.n_classes)
+		if offset1 > 0:
+			out[:, :offset1].data.fill_(-10e10)
+		if offset2 < self.total_classes:
+			out[:, offset2:self.total_classes].data.fill_(-10e10)
+		return out
+
+
+def LeNetC(hidden_dim, classes_per_task, out_dim=100):  # LeNet with color input
+	return LeNet(out_dim=out_dim, classes_per_task=classes_per_task, in_channel=3, img_sz=32, hidden_dim=hidden_dim)

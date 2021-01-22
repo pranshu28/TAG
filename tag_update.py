@@ -63,7 +63,7 @@ class tag_opt():
 			self.v_t[task][name] = self.beta2 * self.v_t[task][name] + (1 - self.beta2) * dw ** 2
 		else:
 			self.v_t[task][name] = self.v_t[task][name] + dw ** 2
-		if task<0:
+		if task>0:
 			alpha_add = []
 			for t in range(task):
 				corr = torch.dot(self.m_t[task][name].reshape(-1) / torch.norm(self.m_t[task][name]), self.m_t_norms[t][name])

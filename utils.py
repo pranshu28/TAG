@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 from models import *
 from data_utils import *
 
-import seaborn as sns
+# import seaborn as sns
 import matplotlib.pyplot as plt
 
 
@@ -37,7 +37,7 @@ def parse_arguments():
 	parser.add_argument('--hiddens', default=256, type=int, help='num of hidden neurons in each layer of a 2-layer MLP')
 	parser.add_argument('--compute-eigenspectrum', default=False, type=bool, help='compute eigenvalues/eigenvectors?')
 	parser.add_argument('--b', default=None, type=int, help='b')
-	parser.add_argument('--seed', default=1234, type=int, help='random seed')
+	parser.add_argument('--seed', default=0, type=int, help='random seed')
 	parser.add_argument('--runs', default=3, type=int, help='# runs')
 	parser.add_argument('--tag-opt', default='rms', type=str, help='tag opt')
 	parser.add_argument('--mem-size', default=1, type=int, help='mem')
@@ -50,6 +50,8 @@ def parse_arguments():
 		  "learning_rate="+str(args.lr)+"\n  learning rate decay(gamma)="+str(args.gamma)+"\n  dropout prob="+str(args.dropout)+"\n  optimizer opt="+str(args.opt))
 	if args.opt=='er' or args.opt=='agem':
 		print("  mem="+str(args.mem_size))
+	elif args.opt == 'ogd':
+		print("  mem=" + str(args.mem_size))
 	elif args.opt=='param':
 		print("  tag-opt="+str(args.tag_opt))
 		print("  b="+str(args.b))
@@ -57,17 +59,20 @@ def parse_arguments():
 		print("  lambda="+str(args.lambd))
 	return args
 
+def set_seeds(seed):
+	os.environ['PYTHONHASHSEED'] = str(seed)
+	np.random.seed(seed)
+	torch.manual_seed(seed)
+	torch.cuda.manual_seed(seed)
+	torch.cuda.manual_seed_all(seed)
+	torch.backends.cudnn.benchmark = False
+	torch.backends.cudnn.deterministic = True
 
 def init_experiment(args):
 	print('\n------------------- Experiment-'+str(args.seed)+' started -----------------')
 	# 1. setup seed for reproducibility
-	torch.manual_seed(args.seed)
-	np.random.seed(args.seed)
-	
-	# 2. create directory to save results
-	# Path(EXPERIMENT_DIRECTORY).mkdir(parents=True, exist_ok=True)
-	# print("The results will be saved in {}\n".format(EXPERIMENT_DIRECTORY))
-	
+	set_seeds(args.seed)
+
 	# 3. create data structures to store metrics
 	loss_db = {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
 	acc_db =  {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
@@ -121,6 +126,8 @@ def get_benchmark_model(args):
 	elif 'cifar' in args.dataset:
 		if args.tasks==10:
 			return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
+		# if args.opt == 'ogd':
+		# return LeNetC(hidden_dim=256, classes_per_task=int(100 / args.tasks), out_dim = 100)
 		return ResNet18(config={'input_size': (3, 32, 32), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	elif 'imagenet' in args.dataset:
 		# if args.epochs_per_task!=1:
@@ -163,7 +170,7 @@ def save_checkpoint(model, time, manual, prev_task_id, metrics, imp):
 		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'])
 
 
-def visualize_result(df, filename):
-	ax = sns.lineplot(data=df,  dashes=False)
-	ax.figure.savefig(filename, dpi=250)
-	plt.close()
+# def visualize_result(df, filename):
+# 	ax = sns.lineplot(data=df,  dashes=False)
+# 	ax.figure.savefig(filename, dpi=250)
+# 	plt.close()
