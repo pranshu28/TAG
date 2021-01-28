@@ -31,8 +31,8 @@ if [ $1 = "cifar" ]; then
 ##    echo " >>>>>>>> A-GEM "
 ##    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 10
 
-    echo " >>>>>>>> TAG-A-GEM "
-    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
+#    echo " >>>>>>>> TAG-A-GEM "
+#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> ER "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
@@ -43,8 +43,8 @@ if [ $1 = "cifar" ]; then
 ###    echo " >>>>>>>> ER "
 ###    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 
-    echo " >>>>>>>> TAG-ER "
-    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
+#    echo " >>>>>>>> TAG-ER "
+#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> Stable SGD "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 0.9 --batch-size 10 --dropout 0.1 --runs 5
@@ -107,8 +107,8 @@ elif [ $1 = "imagenet" ]; then
 ###    echo " >>>>>>>> ER "
 ###    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 
-    echo " >>>>>>>> TAG-ER "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
+#    echo " >>>>>>>> TAG-ER "
+#    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> Stable SGD "
 #    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 0.9 --batch-size 10 --dropout 0.0 --runs 5
@@ -158,8 +158,8 @@ elif [ $1 = "cub" ]; then
 ##    echo " >>>>>>>> A-GEM "
 ##    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 5
 
-    echo " >>>>>>>> TAG-A-GEM "
-    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
+#    echo " >>>>>>>> TAG-A-GEM "
+#    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> ER "
 #    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
@@ -171,7 +171,7 @@ elif [ $1 = "cub" ]; then
 ###    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 
     echo " >>>>>>>> TAG-ER "
-    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 10 --b 5 --tag-opt 'rms'
+    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.000025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> Stable SGD "
 #    python3 -m main --dataset cub --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 0.9 --batch-size 10 --dropout 0.0 --runs 5
@@ -222,8 +222,8 @@ elif [ $1 = "5data" ]; then
 #    echo " >>>>>>>> A-GEM "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 5
 
-    echo " >>>>>>>> TAG-A-GEM "
-    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
+#    echo " >>>>>>>> TAG-A-GEM "
+#    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> ER "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
@@ -234,9 +234,8 @@ elif [ $1 = "5data" ]; then
 #    echo " >>>>>>>> ER "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'er' --mem-size 10
 
-    echo " >>>>>>>> TAG-ER "
-    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
-
+#    echo " >>>>>>>> TAG-ER "
+#    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
 
 #    echo " >>>>>>>> Stable SGD "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.1 --gamma 0.8 --batch-size 64 --dropout 0.1 --runs 5
