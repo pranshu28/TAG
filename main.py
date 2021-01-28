@@ -22,17 +22,16 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 
 		###### EWC / OGD / AGEM / ER ######
 		if ALGO is not None:
-			if args.opt == 'ewc':
+			if 'ewc' in args.opt:
 				loss_ewc = args.lambd * ALGO.penalty(net)
 				loss_ewc.backward()
-			elif args.opt == 'ogd':
+			elif 'ogd' in args.opt:
 				loss = criterion(pred, target)
 				loss.backward()
 				net = ALGO.optimizer_step(net, lr, task_id, batch_idx, optimizer)
 				continue
-			elif args.opt=='agem':
+			elif 'agem' in args.opt:
 				net = ALGO.observe_agem(net, data, task_id, target)
-				continue
 			else:
 				if task_id > 0:
 					mem_x, mem_y, b_task_ids = ALGO.sample(args.batch_size, exclude_task=None, pr=False)
@@ -42,8 +41,10 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 					loss_mem.backward()
 				ALGO.add_reservoir(data, target, None, task_id)
 
-		loss = criterion(pred, target)
-		loss.backward()
+		if 'agem' not in args.opt:
+			loss = criterion(pred, target)
+			loss.backward()
+
 		if tag:
 			optimizer.step(net, task_id, batch_idx, lr=lr)
 			if task_id > 0:
@@ -77,18 +78,23 @@ def eval_single_epoch(net, loader, criterion, task_id=None):
 
 def avg_runs_exp(runs):
 	all_scores = []
-	r=0
-	while r<runs:
+	r = 0
+	attempts = 0
+	while r<runs and attempts<5:
 		args.seed += 1
 		score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
 		if score!=0:
 			all_scores += [[score, forget, learn_acc]]
 			r+=1
+			attempts = 0
+		attempts += 1
 	all_scores = np.array(all_scores)
-	print('\nFinal Average accuracy = ', all_scores.mean(axis=0)[0], '+/-', all_scores.std(axis=0)[0],
-	      'forget = ', all_scores.mean(axis=0)[1], '+/-', all_scores.std(axis=0)[1],
-	      'learning accuracy = ', all_scores.mean(axis=0)[2], '+/-', all_scores.std(axis=0)[2])
+	if len(all_scores)>0:
+		print('\nFinal Average accuracy = ', all_scores.mean(axis=0)[0], '+/-', all_scores.std(axis=0)[0],
+		      'forget = ', all_scores.mean(axis=0)[1], '+/-', all_scores.std(axis=0)[1],
+		      'learning accuracy = ', all_scores.mean(axis=0)[2], '+/-', all_scores.std(axis=0)[2])
 	print('------------------- Experiment ended -----------------\n\n\n')
+	return all_scores.mean(axis=0)[0]
 
 
 def hyp_tag(lrs, runs):
@@ -122,10 +128,11 @@ def hyp_ewc(ls, bs):
 
 
 def hyp_stable():
+	args.runs = 2
 	dropouts = (0.0, 0.1, 0.25, 0.5)
-	lrs = (0.05, 0.01)#, 0.005)
+	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
 	bs = (0.9, 0.8, 0.7, 0.6)
-	args.runs = 1
+	best_hyp, best_acc = 0, []
 	for dropout in dropouts:
 		args.dropout = dropout
 		for lr in lrs:
@@ -133,7 +140,11 @@ def hyp_stable():
 			for b in bs:
 				args.gamma = b
 				print(dropout, lr, b)
-				avg_runs_exp(args.runs)
+				acc = avg_runs_exp(args.runs)
+				if acc>best_acc:
+					best_acc = acc
+					best_hyp = [dropout, lr, b]
+	print('Best [dropout, lr, b]:', best_hyp)
 
 
 def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
@@ -144,28 +155,31 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 
 	criterion = nn.CrossEntropyLoss().to(DEVICE)
 	time = 0
-	tag = args.opt == 'param'
+	tag = 'tag' in args.opt
 
 	if args.opt is not None:
 		opt = {'rms': torch.optim.RMSprop, 'adagrad': torch.optim.Adagrad, 'adam': torch.optim.Adam}
+		if args.opt in opt:
+			optimizer = opt[args.opt](model.parameters(), lr=args.lr)
 		if tag:
 			optimizer = tag_opt(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
-		elif args.opt == 'er':
+		if 'er' in args.opt:
 			ALGO = ER(args)
-			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)  # if args.gamma!=1.0 else 0.0)
-		elif args.opt == 'agem':
-			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)  # if args.gamma!=1.0 else 0.0)
+			if not tag:
+				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+		if 'agem' in args.opt:
+			if not tag:
+				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 			ALGO = AGEM(model, optimizer, criterion, args)
-		elif args.opt == 'ewc':
+		if 'ewc' in args.opt:
 			sample_size = 200
-			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
-		elif args.opt == 'ogd':
+			if not tag:
+				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+		if 'ogd' in args.opt:
 			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 			ALGO = OGD(args, model, optimizer)
-		else:
-			optimizer = opt[args.opt](model.parameters(), lr=args.lr)
 
-	continuum = np.tile(np.arange(1, args.tasks + 1), 5) if args.multi == 1 else np.arange(1, args.tasks + 1)
+	continuum = np.tile(np.arange(1, args.tasks + 1), 6) if args.multi == 1 else np.arange(1, args.tasks + 1)
 
 	tasks_done = []
 	print(continuum)
@@ -175,7 +189,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 		train_loader = train_loaders[current_task_id-1]
 		lr = max(args.lr * args.gamma ** (current_task_id), 0.00005)
 
-		if args.opt == 'ewc' and current_task_id!=1:
+		if 'ewc' in args.opt and current_task_id!=1:
 			old_tasks = []
 			for sub_task in range(current_task_id-1):
 				loader = torch.utils.data.DataLoader(train_loaders[sub_task].dataset, batch_size=sample_size, num_workers=0, shuffle=False)
@@ -213,7 +227,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 
 		if tag:
 			optimizer.update_all(current_task_id-1)
-		elif args.opt=='ogd':
+		elif 'ogd' in args.opt:
 			ALGO._update_mem(current_task_id, train_loader)
 
 		time += 1
@@ -280,11 +294,11 @@ if __name__ == "__main__":
 	print("loaded all tasks!")
 
 	verbose = False
-	# args.seed = 5
-	# score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
+	# args.seed = 3
 	avg_runs_exp(args.runs)
+	# score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
+
 	# hyp_ewc([0.1, 0.05, 0.01, 0.001], [50,100,200])
 	# hyp_ogd([1, 10, 20], [32,64, 256])
 	# hyp_stable()
-	# lrs = (0.00005, 0.000025, 0.00001)    #  (0.0005, 0.0025, 0.001, 0.005)
-	# hyp_tag(lrs,1)
+	# hyp_tag((0.00005, 0.000025, 0.00001,1)

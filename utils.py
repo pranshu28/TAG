@@ -48,14 +48,14 @@ def parse_arguments():
 	print("Parameters:\n  benchmark="+str(args.dataset)+"\n  num_tasks="+str(args.tasks)+"\n  "+
 		  "runs="+str(args.runs)+"\n  epochs-per-task="+str(args.epochs_per_task)+"\n  batch_size="+str(args.batch_size)+"\n  "+
 		  "learning_rate="+str(args.lr)+"\n  learning rate decay(gamma)="+str(args.gamma)+"\n  dropout prob="+str(args.dropout)+"\n  optimizer opt="+str(args.opt))
-	if args.opt=='er' or args.opt=='agem':
+	if 'er' in args.opt or 'agem' in args.opt:
 		print("  mem="+str(args.mem_size))
-	elif args.opt == 'ogd':
+	if 'ogd' in args.opt:
 		print("  mem=" + str(args.mem_size))
-	elif args.opt=='param':
+	if 'tag' in args.opt:
 		print("  tag-opt="+str(args.tag_opt))
 		print("  b="+str(args.b))
-	elif args.opt=='ewc':
+	if 'ewc' in args.opt:
 		print("  lambda="+str(args.lambd))
 	return args
 

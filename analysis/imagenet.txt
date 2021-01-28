@@ -3106,7 +3106,7 @@ Final Average accuracy =  57.20166666666667 +/- 1.3677780034298943 forget =  0.0
 ------------------- Experiment ended -----------------
 
 
-
+************************ replicating experiment (mini-imagenet) ***********************
  >>>>>>>> TAG-Adagrad
 Parameters:
   benchmark=imagenet
@@ -3114,7 +3114,7 @@ Parameters:
   runs=5
   epochs-per-task=1
   batch_size=10
-  learning_rate=0.005
+  learning_rate=0.001
   learning rate decay(gamma)=1.0
   dropout prob=0.0
   optimizer opt=param
@@ -3126,1176 +3126,129 @@ loaded all tasks!
 
 ------------------- Experiment-1 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 54.333333333333336    	 1.0
-TASK 1 / 20 	Avg Acc: 54.333333333333336
-	Prev Task: 1  	Manual	 28.166666666666668    	 1.537
-	Prev Task: 2  	Manual	 55.166666666666664    	 0.007
-TASK 2 / 20 	Avg Acc: 41.666666666666664
-	Prev Task: 1  	Manual	 25.666666666666668    	 1.483
-	Prev Task: 2  	Manual	 43.833333333333336    	 1.735
-	Prev Task: 3  	Manual	 46.666666666666664    	 0.007
-TASK 3 / 20 	Avg Acc: 38.72222222222222
-	Prev Task: 1  	Manual	 22.333333333333332    	 1.327
-	Prev Task: 2  	Manual	 42.5    	 1.599
-	Prev Task: 3  	Manual	 45.5    	 1.628
-	Prev Task: 4  	Manual	 59.666666666666664    	 0.007
-TASK 4 / 20 	Avg Acc: 42.5
-	Prev Task: 1  	Manual	 25.5    	 1.268
-	Prev Task: 2  	Manual	 46.333333333333336    	 1.428
-	Prev Task: 3  	Manual	 42.333333333333336    	 1.681
-	Prev Task: 4  	Manual	 50.833333333333336    	 1.795
-	Prev Task: 5  	Manual	 63.333333333333336    	 0.007
-TASK 5 / 20 	Avg Acc: 45.66666666666667
-	Prev Task: 1  	Manual	 25.166666666666668    	 1.322
-	Prev Task: 2  	Manual	 37.5    	 1.494
-	Prev Task: 3  	Manual	 44.5    	 1.76
-	Prev Task: 4  	Manual	 51.0    	 1.514
-	Prev Task: 5  	Manual	 62.0    	 2.117
-	Prev Task: 6  	Manual	 58.666666666666664    	 0.007
-TASK 6 / 20 	Avg Acc: 46.47222222222222
-	Prev Task: 1  	Manual	 24.833333333333332    	 1.429
-	Prev Task: 2  	Manual	 42.833333333333336    	 1.567
-	Prev Task: 3  	Manual	 36.5    	 1.479
-	Prev Task: 4  	Manual	 41.833333333333336    	 1.432
-	Prev Task: 5  	Manual	 53.0    	 1.808
-	Prev Task: 6  	Manual	 54.166666666666664    	 1.353
-	Prev Task: 7  	Manual	 58.666666666666664    	 0.007
-TASK 7 / 20 	Avg Acc: 44.54761904761905
-	Prev Task: 1  	Manual	 25.333333333333332    	 1.372
-	Prev Task: 2  	Manual	 39.333333333333336    	 1.373
-	Prev Task: 3  	Manual	 39.5    	 1.492
-	Prev Task: 4  	Manual	 46.5    	 1.687
-	Prev Task: 5  	Manual	 59.0    	 1.633
-	Prev Task: 6  	Manual	 54.333333333333336    	 1.571
-	Prev Task: 7  	Manual	 56.333333333333336    	 1.527
-	Prev Task: 8  	Manual	 52.666666666666664    	 0.007
-TASK 8 / 20 	Avg Acc: 46.625
-	Prev Task: 1  	Manual	 24.833333333333332    	 1.364
-	Prev Task: 2  	Manual	 45.833333333333336    	 1.402
-	Prev Task: 3  	Manual	 42.5    	 1.709
-	Prev Task: 4  	Manual	 46.666666666666664    	 1.589
-	Prev Task: 5  	Manual	 57.666666666666664    	 1.885
-	Prev Task: 6  	Manual	 54.166666666666664    	 1.621
-	Prev Task: 7  	Manual	 50.666666666666664    	 1.67
-	Prev Task: 8  	Manual	 50.166666666666664    	 1.693
-	Prev Task: 9  	Manual	 67.16666666666667    	 0.007
-TASK 9 / 20 	Avg Acc: 48.851851851851855
-	Prev Task: 1  	Manual	 26.666666666666668    	 1.351
-	Prev Task: 2  	Manual	 48.333333333333336    	 1.456
-	Prev Task: 3  	Manual	 33.166666666666664    	 1.805
-	Prev Task: 4  	Manual	 43.0    	 1.47
-	Prev Task: 5  	Manual	 53.666666666666664    	 1.737
-	Prev Task: 6  	Manual	 51.333333333333336    	 2.048
-	Prev Task: 7  	Manual	 53.0    	 1.479
-	Prev Task: 8  	Manual	 47.666666666666664    	 1.713
-	Prev Task: 9  	Manual	 61.5    	 1.499
-	Prev Task: 10  	Manual	 67.16666666666667    	 0.007
-TASK 10 / 20 	Avg Acc: 48.550000000000004
-	Prev Task: 1  	Manual	 21.166666666666668    	 1.345
-	Prev Task: 2  	Manual	 43.833333333333336    	 1.602
-	Prev Task: 3  	Manual	 35.5    	 1.55
-	Prev Task: 4  	Manual	 38.5    	 1.56
-	Prev Task: 5  	Manual	 53.0    	 1.425
-	Prev Task: 6  	Manual	 53.333333333333336    	 1.43
-	Prev Task: 7  	Manual	 48.5    	 1.591
-	Prev Task: 8  	Manual	 45.0    	 1.556
-	Prev Task: 9  	Manual	 62.833333333333336    	 1.61
-	Prev Task: 10  	Manual	 56.833333333333336    	 2.053
-	Prev Task: 11  	Manual	 57.0    	 0.007
-TASK 11 / 20 	Avg Acc: 46.86363636363636
-	Prev Task: 1  	Manual	 19.0    	 1.409
-	Prev Task: 2  	Manual	 47.833333333333336    	 1.614
-	Prev Task: 3  	Manual	 34.666666666666664    	 1.346
-	Prev Task: 4  	Manual	 31.333333333333332    	 1.692
-	Prev Task: 5  	Manual	 48.833333333333336    	 1.525
-	Prev Task: 6  	Manual	 53.5    	 1.932
-	Prev Task: 7  	Manual	 43.833333333333336    	 1.384
-	Prev Task: 8  	Manual	 48.333333333333336    	 1.36
-	Prev Task: 9  	Manual	 61.666666666666664    	 1.355
-	Prev Task: 10  	Manual	 62.0    	 1.864
-	Prev Task: 11  	Manual	 50.333333333333336    	 1.709
-	Prev Task: 12  	Manual	 73.16666666666667    	 0.007
-TASK 12 / 20 	Avg Acc: 47.87499999999999
-	Prev Task: 1  	Manual	 19.333333333333332    	 1.295
-	Prev Task: 2  	Manual	 43.166666666666664    	 1.547
-	Prev Task: 3  	Manual	 36.833333333333336    	 1.546
-	Prev Task: 4  	Manual	 36.0    	 1.712
-	Prev Task: 5  	Manual	 44.666666666666664    	 1.753
-	Prev Task: 6  	Manual	 47.0    	 1.653
-	Prev Task: 7  	Manual	 42.0    	 1.531
-	Prev Task: 8  	Manual	 46.333333333333336    	 1.669
-	Prev Task: 9  	Manual	 57.333333333333336    	 1.575
-	Prev Task: 10  	Manual	 55.5    	 1.485
-	Prev Task: 11  	Manual	 49.166666666666664    	 1.567
-	Prev Task: 12  	Manual	 65.33333333333333    	 1.716
-	Prev Task: 13  	Manual	 68.66666666666667    	 0.007
-TASK 13 / 20 	Avg Acc: 47.02564102564102
-	Prev Task: 1  	Manual	 18.833333333333332    	 1.27
-	Prev Task: 2  	Manual	 42.666666666666664    	 1.263
-	Prev Task: 3  	Manual	 33.666666666666664    	 1.765
-	Prev Task: 4  	Manual	 35.166666666666664    	 1.687
-	Prev Task: 5  	Manual	 52.333333333333336    	 1.835
-	Prev Task: 6  	Manual	 49.166666666666664    	 1.863
-	Prev Task: 7  	Manual	 43.166666666666664    	 1.467
-	Prev Task: 8  	Manual	 42.666666666666664    	 1.626
-	Prev Task: 9  	Manual	 60.0    	 1.499
-	Prev Task: 10  	Manual	 61.833333333333336    	 1.62
-	Prev Task: 11  	Manual	 52.0    	 1.77
-	Prev Task: 12  	Manual	 66.5    	 1.568
-	Prev Task: 13  	Manual	 58.666666666666664    	 2.064
-	Prev Task: 14  	Manual	 65.5    	 0.007
-TASK 14 / 20 	Avg Acc: 48.726190476190474
-	Prev Task: 1  	Manual	 20.833333333333332    	 1.434
-	Prev Task: 2  	Manual	 41.666666666666664    	 1.452
-	Prev Task: 3  	Manual	 34.666666666666664    	 1.641
-	Prev Task: 4  	Manual	 33.833333333333336    	 1.468
-	Prev Task: 5  	Manual	 52.166666666666664    	 1.847
-	Prev Task: 6  	Manual	 49.0    	 1.518
-	Prev Task: 7  	Manual	 47.0    	 1.598
-	Prev Task: 8  	Manual	 42.833333333333336    	 1.628
-	Prev Task: 9  	Manual	 60.666666666666664    	 1.359
-	Prev Task: 10  	Manual	 64.16666666666667    	 1.891
-	Prev Task: 11  	Manual	 55.166666666666664    	 2.075
-	Prev Task: 12  	Manual	 66.33333333333333    	 1.73
-	Prev Task: 13  	Manual	 55.666666666666664    	 1.726
-	Prev Task: 14  	Manual	 61.833333333333336    	 1.599
-	Prev Task: 15  	Manual	 61.0    	 0.007
-TASK 15 / 20 	Avg Acc: 49.78888888888889
-	Prev Task: 1  	Manual	 18.166666666666668    	 1.539
-	Prev Task: 2  	Manual	 40.333333333333336    	 1.541
-	Prev Task: 3  	Manual	 33.833333333333336    	 1.448
-	Prev Task: 4  	Manual	 28.666666666666668    	 1.662
-	Prev Task: 5  	Manual	 49.333333333333336    	 1.488
-	Prev Task: 6  	Manual	 47.333333333333336    	 1.639
-	Prev Task: 7  	Manual	 48.666666666666664    	 1.44
-	Prev Task: 8  	Manual	 43.5    	 1.5
-	Prev Task: 9  	Manual	 60.666666666666664    	 1.468
-	Prev Task: 10  	Manual	 58.5    	 1.546
-	Prev Task: 11  	Manual	 52.166666666666664    	 1.716
-	Prev Task: 12  	Manual	 63.166666666666664    	 1.875
-	Prev Task: 13  	Manual	 61.333333333333336    	 1.795
-	Prev Task: 14  	Manual	 54.5    	 1.766
-	Prev Task: 15  	Manual	 55.0    	 1.72
-	Prev Task: 16  	Manual	 60.166666666666664    	 0.007
-TASK 16 / 20 	Avg Acc: 48.458333333333336
-	Prev Task: 1  	Manual	 20.333333333333332    	 1.307
-	Prev Task: 2  	Manual	 37.0    	 1.581
-	Prev Task: 3  	Manual	 32.0    	 1.579
-	Prev Task: 4  	Manual	 33.166666666666664    	 1.692
-	Prev Task: 5  	Manual	 49.166666666666664    	 1.584
-	Prev Task: 6  	Manual	 53.333333333333336    	 1.782
-	Prev Task: 7  	Manual	 50.166666666666664    	 1.428
-	Prev Task: 8  	Manual	 42.666666666666664    	 1.611
-	Prev Task: 9  	Manual	 59.666666666666664    	 1.498
-	Prev Task: 10  	Manual	 57.666666666666664    	 1.753
-	Prev Task: 11  	Manual	 54.666666666666664    	 1.66
-	Prev Task: 12  	Manual	 65.5    	 1.636
-	Prev Task: 13  	Manual	 60.0    	 1.624
-	Prev Task: 14  	Manual	 51.666666666666664    	 1.69
-	Prev Task: 15  	Manual	 54.333333333333336    	 2.147
-	Prev Task: 16  	Manual	 58.666666666666664    	 1.962
-	Prev Task: 17  	Manual	 70.83333333333333    	 0.007
-TASK 17 / 20 	Avg Acc: 50.049019607843135
-	Prev Task: 1  	Manual	 23.666666666666668    	 1.445
-	Prev Task: 2  	Manual	 41.166666666666664    	 1.615
-	Prev Task: 3  	Manual	 29.0    	 1.742
-	Prev Task: 4  	Manual	 37.0    	 1.521
-	Prev Task: 5  	Manual	 51.5    	 1.935
-	Prev Task: 6  	Manual	 45.833333333333336    	 2.032
-	Prev Task: 7  	Manual	 49.0    	 1.364
-	Prev Task: 8  	Manual	 42.333333333333336    	 1.649
-	Prev Task: 9  	Manual	 54.5    	 1.553
-	Prev Task: 10  	Manual	 62.0    	 1.618
-	Prev Task: 11  	Manual	 51.666666666666664    	 1.654
-	Prev Task: 12  	Manual	 64.66666666666667    	 1.526
-	Prev Task: 13  	Manual	 52.833333333333336    	 1.815
-	Prev Task: 14  	Manual	 60.666666666666664    	 1.719
-	Prev Task: 15  	Manual	 54.666666666666664    	 1.544
-	Prev Task: 16  	Manual	 55.5    	 1.755
-	Prev Task: 17  	Manual	 63.0    	 1.619
-	Prev Task: 18  	Manual	 65.16666666666667    	 0.007
-TASK 18 / 20 	Avg Acc: 50.23148148148148
-	Prev Task: 1  	Manual	 22.666666666666668    	 1.404
-	Prev Task: 2  	Manual	 38.166666666666664    	 1.771
-	Prev Task: 3  	Manual	 27.333333333333332    	 1.48
-	Prev Task: 4  	Manual	 32.166666666666664    	 1.748
-	Prev Task: 5  	Manual	 52.5    	 1.624
-	Prev Task: 6  	Manual	 49.666666666666664    	 2.018
-	Prev Task: 7  	Manual	 47.333333333333336    	 1.322
-	Prev Task: 8  	Manual	 45.666666666666664    	 1.647
-	Prev Task: 9  	Manual	 58.5    	 1.516
-	Prev Task: 10  	Manual	 62.5    	 1.426
-	Prev Task: 11  	Manual	 44.166666666666664    	 1.599
-	Prev Task: 12  	Manual	 61.5    	 1.583
-	Prev Task: 13  	Manual	 52.0    	 1.78
-	Prev Task: 14  	Manual	 56.5    	 1.918
-	Prev Task: 15  	Manual	 54.5    	 2.101
-	Prev Task: 16  	Manual	 60.0    	 2.014
-	Prev Task: 17  	Manual	 63.666666666666664    	 1.936
-	Prev Task: 18  	Manual	 54.0    	 1.616
-	Prev Task: 19  	Manual	 64.5    	 0.007
-TASK 19 / 20 	Avg Acc: 49.85964912280702
-	Prev Task: 1  	Manual	 21.333333333333332    	 1.318
-	Prev Task: 2  	Manual	 32.333333333333336    	 1.433
-	Prev Task: 3  	Manual	 28.166666666666668    	 1.538
-	Prev Task: 4  	Manual	 35.166666666666664    	 1.631
-	Prev Task: 5  	Manual	 50.333333333333336    	 1.433
-	Prev Task: 6  	Manual	 52.5    	 1.455
-	Prev Task: 7  	Manual	 48.5    	 1.513
-	Prev Task: 8  	Manual	 46.0    	 1.413
-	Prev Task: 9  	Manual	 61.333333333333336    	 1.448
-	Prev Task: 10  	Manual	 60.0    	 1.619
-	Prev Task: 11  	Manual	 45.833333333333336    	 1.631
-	Prev Task: 12  	Manual	 61.666666666666664    	 1.598
-	Prev Task: 13  	Manual	 51.666666666666664    	 1.96
-	Prev Task: 14  	Manual	 56.5    	 1.792
-	Prev Task: 15  	Manual	 52.166666666666664    	 1.58
-	Prev Task: 16  	Manual	 57.5    	 1.752
-	Prev Task: 17  	Manual	 62.833333333333336    	 1.694
-	Prev Task: 18  	Manual	 54.333333333333336    	 1.816
-	Prev Task: 19  	Manual	 62.833333333333336    	 1.613
-	Prev Task: 20  	Manual	 67.16666666666667    	 0.007
-TASK 20 / 20 	Avg Acc: 50.40833333333334
-average accuracy = 50.40833333333334, forget = 0.12026315789473685, learning accuracy = 61.833333333333336
+TASK 1 / 20 	Avg Acc: 54.0
+TASK 2 / 20 	Avg Acc: 57.58333333333333
+TASK 3 / 20 	Avg Acc: 52.33333333333333
+TASK 4 / 20 	Avg Acc: 56.666666666666664
+TASK 5 / 20 	Avg Acc: 56.233333333333334
+TASK 6 / 20 	Avg Acc: 53.666666666666664
+TASK 7 / 20 	Avg Acc: 52.738095238095234
+TASK 8 / 20 	Avg Acc: 50.75
+TASK 9 / 20 	Avg Acc: 52.01851851851852
+TASK 10 / 20 	Avg Acc: 54.39999999999999
+TASK 11 / 20 	Avg Acc: 51.45454545454545
+TASK 12 / 20 	Avg Acc: 55.80555555555556
+TASK 13 / 20 	Avg Acc: 53.243589743589745
+TASK 14 / 20 	Avg Acc: 55.22619047619048
+TASK 15 / 20 	Avg Acc: 54.24444444444445
+TASK 16 / 20 	Avg Acc: 54.84375000000001
+TASK 17 / 20 	Avg Acc: 55.57843137254902
+TASK 18 / 20 	Avg Acc: 54.87962962962963
+TASK 19 / 20 	Avg Acc: 55.69298245614034
+TASK 20 / 20 	Avg Acc: 56.333333333333336
+average accuracy = 56.33333333333333, forget = 0.052719298245614034, learning accuracy = 61.05833333333332
 
 ------------------- Experiment-2 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 58.5    	 1.0
-TASK 1 / 20 	Avg Acc: 58.5
-	Prev Task: 1  	Manual	 27.5    	 1.487
-	Prev Task: 2  	Manual	 56.0    	 0.007
-TASK 2 / 20 	Avg Acc: 41.75
-	Prev Task: 1  	Manual	 23.333333333333332    	 1.48
-	Prev Task: 2  	Manual	 45.166666666666664    	 1.711
-	Prev Task: 3  	Manual	 46.0    	 0.007
-TASK 3 / 20 	Avg Acc: 38.166666666666664
-	Prev Task: 1  	Manual	 28.333333333333332    	 1.45
-	Prev Task: 2  	Manual	 47.666666666666664    	 1.664
-	Prev Task: 3  	Manual	 41.333333333333336    	 1.727
-	Prev Task: 4  	Manual	 57.666666666666664    	 0.007
-TASK 4 / 20 	Avg Acc: 43.75
-	Prev Task: 1  	Manual	 18.333333333333332    	 1.409
-	Prev Task: 2  	Manual	 43.333333333333336    	 1.626
-	Prev Task: 3  	Manual	 33.333333333333336    	 1.47
-	Prev Task: 4  	Manual	 49.0    	 1.978
-	Prev Task: 5  	Manual	 62.833333333333336    	 0.007
-TASK 5 / 20 	Avg Acc: 41.36666666666667
-	Prev Task: 1  	Manual	 26.166666666666668    	 1.416
-	Prev Task: 2  	Manual	 40.166666666666664    	 1.736
-	Prev Task: 3  	Manual	 34.5    	 1.669
-	Prev Task: 4  	Manual	 45.666666666666664    	 1.793
-	Prev Task: 5  	Manual	 49.5    	 1.406
-	Prev Task: 6  	Manual	 55.0    	 0.007
-TASK 6 / 20 	Avg Acc: 41.833333333333336
-	Prev Task: 1  	Manual	 22.833333333333332    	 1.442
-	Prev Task: 2  	Manual	 40.0    	 1.512
-	Prev Task: 3  	Manual	 33.333333333333336    	 1.353
-	Prev Task: 4  	Manual	 42.666666666666664    	 1.914
-	Prev Task: 5  	Manual	 48.666666666666664    	 1.546
-	Prev Task: 6  	Manual	 54.833333333333336    	 1.717
-	Prev Task: 7  	Manual	 53.0    	 0.007
-TASK 7 / 20 	Avg Acc: 42.19047619047619
-	Prev Task: 1  	Manual	 22.5    	 1.457
-	Prev Task: 2  	Manual	 36.833333333333336    	 1.429
-	Prev Task: 3  	Manual	 32.0    	 1.408
-	Prev Task: 4  	Manual	 42.333333333333336    	 1.624
-	Prev Task: 5  	Manual	 50.666666666666664    	 1.62
-	Prev Task: 6  	Manual	 52.833333333333336    	 1.466
-	Prev Task: 7  	Manual	 52.5    	 1.556
-	Prev Task: 8  	Manual	 52.833333333333336    	 0.007
-TASK 8 / 20 	Avg Acc: 42.8125
-	Prev Task: 1  	Manual	 22.5    	 1.322
-	Prev Task: 2  	Manual	 40.166666666666664    	 1.41
-	Prev Task: 3  	Manual	 31.333333333333332    	 1.812
-	Prev Task: 4  	Manual	 40.5    	 1.624
-	Prev Task: 5  	Manual	 44.0    	 1.475
-	Prev Task: 6  	Manual	 53.0    	 1.942
-	Prev Task: 7  	Manual	 49.166666666666664    	 1.465
-	Prev Task: 8  	Manual	 49.5    	 1.421
-	Prev Task: 9  	Manual	 63.0    	 0.007
-TASK 9 / 20 	Avg Acc: 43.68518518518519
-	Prev Task: 1  	Manual	 22.333333333333332    	 1.305
-	Prev Task: 2  	Manual	 41.333333333333336    	 1.496
-	Prev Task: 3  	Manual	 28.833333333333332    	 1.412
-	Prev Task: 4  	Manual	 39.833333333333336    	 1.637
-	Prev Task: 5  	Manual	 42.333333333333336    	 1.475
-	Prev Task: 6  	Manual	 47.0    	 1.499
-	Prev Task: 7  	Manual	 48.333333333333336    	 1.342
-	Prev Task: 8  	Manual	 48.833333333333336    	 1.469
-	Prev Task: 9  	Manual	 58.666666666666664    	 1.566
-	Prev Task: 10  	Manual	 66.66666666666667    	 0.007
-TASK 10 / 20 	Avg Acc: 44.416666666666664
-	Prev Task: 1  	Manual	 22.833333333333332    	 1.444
-	Prev Task: 2  	Manual	 37.0    	 1.512
-	Prev Task: 3  	Manual	 33.166666666666664    	 1.465
-	Prev Task: 4  	Manual	 42.166666666666664    	 1.686
-	Prev Task: 5  	Manual	 46.333333333333336    	 1.461
-	Prev Task: 6  	Manual	 48.0    	 1.695
-	Prev Task: 7  	Manual	 51.833333333333336    	 1.504
-	Prev Task: 8  	Manual	 44.833333333333336    	 1.651
-	Prev Task: 9  	Manual	 61.833333333333336    	 1.78
-	Prev Task: 10  	Manual	 62.0    	 1.592
-	Prev Task: 11  	Manual	 61.666666666666664    	 0.007
-TASK 11 / 20 	Avg Acc: 46.515151515151516
-	Prev Task: 1  	Manual	 24.166666666666668    	 1.358
-	Prev Task: 2  	Manual	 39.0    	 1.334
-	Prev Task: 3  	Manual	 29.0    	 1.328
-	Prev Task: 4  	Manual	 38.0    	 1.565
-	Prev Task: 5  	Manual	 43.833333333333336    	 1.329
-	Prev Task: 6  	Manual	 53.0    	 1.579
-	Prev Task: 7  	Manual	 49.166666666666664    	 1.304
-	Prev Task: 8  	Manual	 44.333333333333336    	 1.438
-	Prev Task: 9  	Manual	 57.5    	 1.643
-	Prev Task: 10  	Manual	 63.5    	 1.371
-	Prev Task: 11  	Manual	 58.666666666666664    	 1.67
-	Prev Task: 12  	Manual	 72.0    	 0.007
-TASK 12 / 20 	Avg Acc: 47.68055555555556
-	Prev Task: 1  	Manual	 24.0    	 1.339
-	Prev Task: 2  	Manual	 32.833333333333336    	 1.488
-	Prev Task: 3  	Manual	 29.333333333333332    	 1.454
-	Prev Task: 4  	Manual	 37.666666666666664    	 1.747
-	Prev Task: 5  	Manual	 41.5    	 1.562
-	Prev Task: 6  	Manual	 50.0    	 1.844
-	Prev Task: 7  	Manual	 49.0    	 1.403
-	Prev Task: 8  	Manual	 44.666666666666664    	 1.536
-	Prev Task: 9  	Manual	 58.666666666666664    	 1.459
-	Prev Task: 10  	Manual	 59.5    	 1.605
-	Prev Task: 11  	Manual	 58.833333333333336    	 1.827
-	Prev Task: 12  	Manual	 68.5    	 1.581
-	Prev Task: 13  	Manual	 65.5    	 0.007
-TASK 13 / 20 	Avg Acc: 47.69230769230769
-	Prev Task: 1  	Manual	 23.666666666666668    	 1.307
-	Prev Task: 2  	Manual	 34.333333333333336    	 1.463
-	Prev Task: 3  	Manual	 29.0    	 1.46
-	Prev Task: 4  	Manual	 40.333333333333336    	 1.482
-	Prev Task: 5  	Manual	 46.5    	 1.459
-	Prev Task: 6  	Manual	 50.5    	 1.544
-	Prev Task: 7  	Manual	 49.833333333333336    	 1.401
-	Prev Task: 8  	Manual	 44.333333333333336    	 1.584
-	Prev Task: 9  	Manual	 60.166666666666664    	 1.525
-	Prev Task: 10  	Manual	 58.666666666666664    	 1.709
-	Prev Task: 11  	Manual	 61.0    	 1.375
-	Prev Task: 12  	Manual	 66.33333333333333    	 1.471
-	Prev Task: 13  	Manual	 62.666666666666664    	 1.711
-	Prev Task: 14  	Manual	 64.0    	 0.007
-TASK 14 / 20 	Avg Acc: 49.38095238095238
-	Prev Task: 1  	Manual	 22.666666666666668    	 1.326
-	Prev Task: 2  	Manual	 32.666666666666664    	 1.563
-	Prev Task: 3  	Manual	 30.666666666666668    	 1.43
-	Prev Task: 4  	Manual	 42.5    	 1.815
-	Prev Task: 5  	Manual	 46.5    	 1.316
-	Prev Task: 6  	Manual	 48.833333333333336    	 1.455
-	Prev Task: 7  	Manual	 47.666666666666664    	 1.33
-	Prev Task: 8  	Manual	 44.833333333333336    	 1.434
-	Prev Task: 9  	Manual	 56.333333333333336    	 1.506
-	Prev Task: 10  	Manual	 57.666666666666664    	 1.467
-	Prev Task: 11  	Manual	 58.666666666666664    	 1.358
-	Prev Task: 12  	Manual	 64.5    	 1.638
-	Prev Task: 13  	Manual	 60.833333333333336    	 1.612
-	Prev Task: 14  	Manual	 57.5    	 1.69
-	Prev Task: 15  	Manual	 60.333333333333336    	 0.007
-TASK 15 / 20 	Avg Acc: 48.81111111111112
-	Prev Task: 1  	Manual	 24.333333333333332    	 1.308
-	Prev Task: 2  	Manual	 36.0    	 1.451
-	Prev Task: 3  	Manual	 30.333333333333332    	 1.655
-	Prev Task: 4  	Manual	 36.833333333333336    	 1.499
-	Prev Task: 5  	Manual	 41.166666666666664    	 1.549
-	Prev Task: 6  	Manual	 47.333333333333336    	 1.582
-	Prev Task: 7  	Manual	 50.333333333333336    	 1.509
-	Prev Task: 8  	Manual	 44.166666666666664    	 1.444
-	Prev Task: 9  	Manual	 56.833333333333336    	 1.545
-	Prev Task: 10  	Manual	 63.833333333333336    	 1.319
-	Prev Task: 11  	Manual	 54.0    	 1.452
-	Prev Task: 12  	Manual	 67.5    	 1.78
-	Prev Task: 13  	Manual	 58.166666666666664    	 1.439
-	Prev Task: 14  	Manual	 53.0    	 1.649
-	Prev Task: 15  	Manual	 55.166666666666664    	 1.729
-	Prev Task: 16  	Manual	 60.666666666666664    	 0.007
-TASK 16 / 20 	Avg Acc: 48.72916666666666
-	Prev Task: 1  	Manual	 25.0    	 1.341
-	Prev Task: 2  	Manual	 37.333333333333336    	 1.478
-	Prev Task: 3  	Manual	 28.166666666666668    	 1.44
-	Prev Task: 4  	Manual	 40.666666666666664    	 1.485
-	Prev Task: 5  	Manual	 40.833333333333336    	 1.439
-	Prev Task: 6  	Manual	 51.333333333333336    	 1.499
-	Prev Task: 7  	Manual	 50.166666666666664    	 1.513
-	Prev Task: 8  	Manual	 44.5    	 1.681
-	Prev Task: 9  	Manual	 57.833333333333336    	 1.504
-	Prev Task: 10  	Manual	 59.0    	 1.514
-	Prev Task: 11  	Manual	 60.0    	 1.484
-	Prev Task: 12  	Manual	 65.33333333333333    	 1.505
-	Prev Task: 13  	Manual	 55.5    	 1.734
-	Prev Task: 14  	Manual	 50.833333333333336    	 1.485
-	Prev Task: 15  	Manual	 60.833333333333336    	 1.516
-	Prev Task: 16  	Manual	 61.333333333333336    	 1.438
-	Prev Task: 17  	Manual	 71.0    	 0.007
-TASK 17 / 20 	Avg Acc: 50.5686274509804
-	Prev Task: 1  	Manual	 22.5    	 1.356
-	Prev Task: 2  	Manual	 36.5    	 1.322
-	Prev Task: 3  	Manual	 32.0    	 1.382
-	Prev Task: 4  	Manual	 46.833333333333336    	 1.548
-	Prev Task: 5  	Manual	 44.833333333333336    	 1.61
-	Prev Task: 6  	Manual	 49.0    	 1.69
-	Prev Task: 7  	Manual	 50.0    	 1.477
-	Prev Task: 8  	Manual	 44.166666666666664    	 1.521
-	Prev Task: 9  	Manual	 59.166666666666664    	 1.363
-	Prev Task: 10  	Manual	 57.333333333333336    	 1.437
-	Prev Task: 11  	Manual	 56.666666666666664    	 1.713
-	Prev Task: 12  	Manual	 62.5    	 1.537
-	Prev Task: 13  	Manual	 56.833333333333336    	 1.547
-	Prev Task: 14  	Manual	 59.0    	 1.351
-	Prev Task: 15  	Manual	 58.5    	 1.565
-	Prev Task: 16  	Manual	 58.5    	 1.388
-	Prev Task: 17  	Manual	 67.5    	 1.413
-	Prev Task: 18  	Manual	 63.833333333333336    	 0.007
-TASK 18 / 20 	Avg Acc: 51.42592592592593
-	Prev Task: 1  	Manual	 22.0    	 1.365
-	Prev Task: 2  	Manual	 36.0    	 1.289
-	Prev Task: 3  	Manual	 27.333333333333332    	 1.32
-	Prev Task: 4  	Manual	 38.333333333333336    	 1.588
-	Prev Task: 5  	Manual	 40.0    	 1.559
-	Prev Task: 6  	Manual	 46.0    	 1.775
-	Prev Task: 7  	Manual	 48.333333333333336    	 1.532
-	Prev Task: 8  	Manual	 43.0    	 1.47
-	Prev Task: 9  	Manual	 59.666666666666664    	 1.586
-	Prev Task: 10  	Manual	 58.833333333333336    	 1.698
-	Prev Task: 11  	Manual	 56.333333333333336    	 1.512
-	Prev Task: 12  	Manual	 66.5    	 1.394
-	Prev Task: 13  	Manual	 51.333333333333336    	 1.58
-	Prev Task: 14  	Manual	 49.833333333333336    	 1.616
-	Prev Task: 15  	Manual	 58.5    	 1.786
-	Prev Task: 16  	Manual	 58.333333333333336    	 1.435
-	Prev Task: 17  	Manual	 66.0    	 1.973
-	Prev Task: 18  	Manual	 60.333333333333336    	 1.567
-	Prev Task: 19  	Manual	 63.833333333333336    	 0.007
-TASK 19 / 20 	Avg Acc: 50.026315789473685
-	Prev Task: 1  	Manual	 22.166666666666668    	 1.371
-	Prev Task: 2  	Manual	 36.5    	 1.443
-	Prev Task: 3  	Manual	 34.166666666666664    	 1.415
-	Prev Task: 4  	Manual	 40.666666666666664    	 1.412
-	Prev Task: 5  	Manual	 42.666666666666664    	 1.365
-	Prev Task: 6  	Manual	 50.5    	 1.424
-	Prev Task: 7  	Manual	 45.5    	 1.429
-	Prev Task: 8  	Manual	 44.166666666666664    	 1.512
-	Prev Task: 9  	Manual	 55.0    	 1.496
-	Prev Task: 10  	Manual	 60.166666666666664    	 1.474
-	Prev Task: 11  	Manual	 56.666666666666664    	 1.413
-	Prev Task: 12  	Manual	 66.0    	 1.735
-	Prev Task: 13  	Manual	 56.333333333333336    	 1.545
-	Prev Task: 14  	Manual	 51.666666666666664    	 1.363
-	Prev Task: 15  	Manual	 58.166666666666664    	 1.508
-	Prev Task: 16  	Manual	 55.833333333333336    	 1.437
-	Prev Task: 17  	Manual	 64.66666666666667    	 1.231
-	Prev Task: 18  	Manual	 60.833333333333336    	 1.67
-	Prev Task: 19  	Manual	 62.166666666666664    	 1.482
-	Prev Task: 20  	Manual	 62.0    	 0.007
-TASK 20 / 20 	Avg Acc: 51.291666666666664
-average accuracy = 51.291666666666664, forget = 0.10087719298245615, learning accuracy = 60.81666666666666
+TASK 1 / 20 	Avg Acc: 50.333333333333336
+TASK 2 / 20 	Avg Acc: 55.75
+TASK 3 / 20 	Avg Acc: 48.5
+TASK 4 / 20 	Avg Acc: 50.791666666666664
+TASK 5 / 20 	Avg Acc: 55.66666666666667
+TASK 6 / 20 	Avg Acc: 52.75
+TASK 7 / 20 	Avg Acc: 54.07142857142856
+TASK 8 / 20 	Avg Acc: 50.58333333333333
+TASK 9 / 20 	Avg Acc: 53.44444444444445
+TASK 10 / 20 	Avg Acc: 54.06666666666667
+TASK 11 / 20 	Avg Acc: 53.93939393939394
+TASK 12 / 20 	Avg Acc: 55.05555555555556
+TASK 13 / 20 	Avg Acc: 54.91025641025641
+TASK 14 / 20 	Avg Acc: 55.42857142857144
+TASK 15 / 20 	Avg Acc: 54.922222222222224
+TASK 16 / 20 	Avg Acc: 56.96875
+TASK 17 / 20 	Avg Acc: 57.50980392156863
+TASK 18 / 20 	Avg Acc: 54.85185185185185
+TASK 19 / 20 	Avg Acc: 54.798245614035096
+TASK 20 / 20 	Avg Acc: 57.37500000000001
+average accuracy = 57.375, forget = 0.049385964912280714, learning accuracy = 61.70833333333335
 
 ------------------- Experiment-3 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 49.833333333333336    	 1.0
-TASK 1 / 20 	Avg Acc: 49.833333333333336
-	Prev Task: 1  	Manual	 31.166666666666668    	 1.962
-	Prev Task: 2  	Manual	 60.166666666666664    	 0.007
-TASK 2 / 20 	Avg Acc: 45.666666666666664
-	Prev Task: 1  	Manual	 26.166666666666668    	 1.561
-	Prev Task: 2  	Manual	 46.0    	 1.877
-	Prev Task: 3  	Manual	 44.5    	 0.007
-TASK 3 / 20 	Avg Acc: 38.88888888888889
-	Prev Task: 1  	Manual	 27.833333333333332    	 1.539
-	Prev Task: 2  	Manual	 56.0    	 1.566
-	Prev Task: 3  	Manual	 45.0    	 2.632
-	Prev Task: 4  	Manual	 61.333333333333336    	 0.007
-TASK 4 / 20 	Avg Acc: 47.541666666666664
-	Prev Task: 1  	Manual	 32.0    	 1.659
-	Prev Task: 2  	Manual	 59.333333333333336    	 1.36
-	Prev Task: 3  	Manual	 40.5    	 1.993
-	Prev Task: 4  	Manual	 56.833333333333336    	 1.915
-	Prev Task: 5  	Manual	 60.5    	 0.007
-TASK 5 / 20 	Avg Acc: 49.833333333333336
-	Prev Task: 1  	Manual	 26.666666666666668    	 1.582
-	Prev Task: 2  	Manual	 53.166666666666664    	 1.486
-	Prev Task: 3  	Manual	 43.833333333333336    	 1.858
-	Prev Task: 4  	Manual	 56.666666666666664    	 1.275
-	Prev Task: 5  	Manual	 54.666666666666664    	 1.843
-	Prev Task: 6  	Manual	 54.666666666666664    	 0.007
-TASK 6 / 20 	Avg Acc: 48.277777777777786
-	Prev Task: 1  	Manual	 25.333333333333332    	 1.612
-	Prev Task: 2  	Manual	 45.5    	 1.46
-	Prev Task: 3  	Manual	 42.0    	 1.836
-	Prev Task: 4  	Manual	 49.833333333333336    	 1.405
-	Prev Task: 5  	Manual	 46.833333333333336    	 1.821
-	Prev Task: 6  	Manual	 50.166666666666664    	 1.518
-	Prev Task: 7  	Manual	 53.0    	 0.007
-TASK 7 / 20 	Avg Acc: 44.666666666666664
-	Prev Task: 1  	Manual	 24.5    	 1.496
-	Prev Task: 2  	Manual	 50.833333333333336    	 1.37
-	Prev Task: 3  	Manual	 42.5    	 1.845
-	Prev Task: 4  	Manual	 51.333333333333336    	 1.363
-	Prev Task: 5  	Manual	 51.833333333333336    	 1.61
-	Prev Task: 6  	Manual	 52.833333333333336    	 1.85
-	Prev Task: 7  	Manual	 54.166666666666664    	 1.689
-	Prev Task: 8  	Manual	 49.666666666666664    	 0.007
-TASK 8 / 20 	Avg Acc: 47.20833333333334
-	Prev Task: 1  	Manual	 23.666666666666668    	 1.493
-	Prev Task: 2  	Manual	 47.666666666666664    	 1.449
-	Prev Task: 3  	Manual	 40.0    	 2.027
-	Prev Task: 4  	Manual	 51.5    	 1.53
-	Prev Task: 5  	Manual	 48.5    	 1.638
-	Prev Task: 6  	Manual	 53.5    	 1.452
-	Prev Task: 7  	Manual	 55.0    	 1.477
-	Prev Task: 8  	Manual	 46.833333333333336    	 1.539
-	Prev Task: 9  	Manual	 67.0    	 0.007
-TASK 9 / 20 	Avg Acc: 48.18518518518518
-	Prev Task: 1  	Manual	 23.333333333333332    	 1.454
-	Prev Task: 2  	Manual	 49.5    	 1.349
-	Prev Task: 3  	Manual	 38.666666666666664    	 1.609
-	Prev Task: 4  	Manual	 46.166666666666664    	 1.461
-	Prev Task: 5  	Manual	 47.5    	 1.538
-	Prev Task: 6  	Manual	 50.0    	 1.386
-	Prev Task: 7  	Manual	 48.166666666666664    	 1.707
-	Prev Task: 8  	Manual	 45.5    	 1.726
-	Prev Task: 9  	Manual	 62.666666666666664    	 1.933
-	Prev Task: 10  	Manual	 63.5    	 0.007
-TASK 10 / 20 	Avg Acc: 47.5
-	Prev Task: 1  	Manual	 22.166666666666668    	 1.434
-	Prev Task: 2  	Manual	 45.0    	 1.352
-	Prev Task: 3  	Manual	 40.333333333333336    	 1.608
-	Prev Task: 4  	Manual	 46.666666666666664    	 1.391
-	Prev Task: 5  	Manual	 48.833333333333336    	 1.629
-	Prev Task: 6  	Manual	 49.5    	 1.706
-	Prev Task: 7  	Manual	 54.5    	 1.885
-	Prev Task: 8  	Manual	 45.5    	 1.573
-	Prev Task: 9  	Manual	 66.66666666666667    	 1.499
-	Prev Task: 10  	Manual	 54.5    	 1.943
-	Prev Task: 11  	Manual	 57.166666666666664    	 0.007
-TASK 11 / 20 	Avg Acc: 48.25757575757576
-	Prev Task: 1  	Manual	 25.333333333333332    	 1.44
-	Prev Task: 2  	Manual	 47.0    	 1.423
-	Prev Task: 3  	Manual	 40.666666666666664    	 1.513
-	Prev Task: 4  	Manual	 49.666666666666664    	 1.622
-	Prev Task: 5  	Manual	 47.666666666666664    	 1.357
-	Prev Task: 6  	Manual	 53.0    	 1.371
-	Prev Task: 7  	Manual	 52.333333333333336    	 1.643
-	Prev Task: 8  	Manual	 48.0    	 1.693
-	Prev Task: 9  	Manual	 62.666666666666664    	 2.163
-	Prev Task: 10  	Manual	 58.833333333333336    	 1.598
-	Prev Task: 11  	Manual	 53.166666666666664    	 1.575
-	Prev Task: 12  	Manual	 71.66666666666667    	 0.007
-TASK 12 / 20 	Avg Acc: 50.833333333333336
-	Prev Task: 1  	Manual	 27.166666666666668    	 1.49
-	Prev Task: 2  	Manual	 48.5    	 1.399
-	Prev Task: 3  	Manual	 34.833333333333336    	 1.512
-	Prev Task: 4  	Manual	 48.333333333333336    	 1.675
-	Prev Task: 5  	Manual	 52.833333333333336    	 1.768
-	Prev Task: 6  	Manual	 54.166666666666664    	 1.6
-	Prev Task: 7  	Manual	 49.5    	 1.525
-	Prev Task: 8  	Manual	 46.666666666666664    	 1.643
-	Prev Task: 9  	Manual	 60.166666666666664    	 1.776
-	Prev Task: 10  	Manual	 57.0    	 1.556
-	Prev Task: 11  	Manual	 51.333333333333336    	 1.524
-	Prev Task: 12  	Manual	 65.83333333333333    	 1.816
-	Prev Task: 13  	Manual	 62.166666666666664    	 0.007
-TASK 13 / 20 	Avg Acc: 50.65384615384616
-	Prev Task: 1  	Manual	 23.0    	 1.41
-	Prev Task: 2  	Manual	 48.166666666666664    	 1.421
-	Prev Task: 3  	Manual	 37.5    	 1.822
-	Prev Task: 4  	Manual	 46.5    	 1.255
-	Prev Task: 5  	Manual	 46.833333333333336    	 1.641
-	Prev Task: 6  	Manual	 52.333333333333336    	 1.414
-	Prev Task: 7  	Manual	 52.166666666666664    	 1.592
-	Prev Task: 8  	Manual	 46.333333333333336    	 1.773
-	Prev Task: 9  	Manual	 59.833333333333336    	 1.635
-	Prev Task: 10  	Manual	 55.333333333333336    	 1.697
-	Prev Task: 11  	Manual	 52.5    	 1.404
-	Prev Task: 12  	Manual	 70.33333333333333    	 1.711
-	Prev Task: 13  	Manual	 56.333333333333336    	 1.62
-	Prev Task: 14  	Manual	 63.333333333333336    	 0.007
-TASK 14 / 20 	Avg Acc: 50.75000000000001
-	Prev Task: 1  	Manual	 25.833333333333332    	 1.344
-	Prev Task: 2  	Manual	 45.666666666666664    	 1.345
-	Prev Task: 3  	Manual	 39.5    	 1.56
-	Prev Task: 4  	Manual	 48.333333333333336    	 1.58
-	Prev Task: 5  	Manual	 47.5    	 1.266
-	Prev Task: 6  	Manual	 52.333333333333336    	 1.508
-	Prev Task: 7  	Manual	 47.166666666666664    	 1.551
-	Prev Task: 8  	Manual	 46.333333333333336    	 1.646
-	Prev Task: 9  	Manual	 59.5    	 1.878
-	Prev Task: 10  	Manual	 55.5    	 1.466
-	Prev Task: 11  	Manual	 53.833333333333336    	 1.534
-	Prev Task: 12  	Manual	 68.5    	 1.482
-	Prev Task: 13  	Manual	 57.5    	 1.439
-	Prev Task: 14  	Manual	 60.0    	 1.898
-	Prev Task: 15  	Manual	 57.5    	 0.007
-TASK 15 / 20 	Avg Acc: 51.000000000000014
-	Prev Task: 1  	Manual	 27.166666666666668    	 1.496
-	Prev Task: 2  	Manual	 45.5    	 1.417
-	Prev Task: 3  	Manual	 36.666666666666664    	 1.828
-	Prev Task: 4  	Manual	 48.0    	 1.556
-	Prev Task: 5  	Manual	 53.5    	 2.056
-	Prev Task: 6  	Manual	 51.5    	 1.378
-	Prev Task: 7  	Manual	 57.333333333333336    	 1.682
-	Prev Task: 8  	Manual	 49.833333333333336    	 1.54
-	Prev Task: 9  	Manual	 64.16666666666667    	 1.504
-	Prev Task: 10  	Manual	 51.833333333333336    	 1.939
-	Prev Task: 11  	Manual	 58.666666666666664    	 1.8
-	Prev Task: 12  	Manual	 67.16666666666667    	 1.567
-	Prev Task: 13  	Manual	 60.0    	 1.741
-	Prev Task: 14  	Manual	 57.666666666666664    	 1.713
-	Prev Task: 15  	Manual	 58.0    	 1.542
-	Prev Task: 16  	Manual	 60.666666666666664    	 0.007
-TASK 16 / 20 	Avg Acc: 52.97916666666666
-	Prev Task: 1  	Manual	 21.333333333333332    	 1.396
-	Prev Task: 2  	Manual	 44.0    	 1.383
-	Prev Task: 3  	Manual	 38.0    	 1.539
-	Prev Task: 4  	Manual	 38.666666666666664    	 1.432
-	Prev Task: 5  	Manual	 43.666666666666664    	 1.682
-	Prev Task: 6  	Manual	 50.833333333333336    	 1.321
-	Prev Task: 7  	Manual	 50.0    	 1.519
-	Prev Task: 8  	Manual	 48.333333333333336    	 1.439
-	Prev Task: 9  	Manual	 61.666666666666664    	 1.806
-	Prev Task: 10  	Manual	 48.833333333333336    	 1.529
-	Prev Task: 11  	Manual	 56.5    	 1.38
-	Prev Task: 12  	Manual	 62.166666666666664    	 1.826
-	Prev Task: 13  	Manual	 55.0    	 1.859
-	Prev Task: 14  	Manual	 53.833333333333336    	 1.895
-	Prev Task: 15  	Manual	 53.0    	 1.631
-	Prev Task: 16  	Manual	 59.5    	 1.658
-	Prev Task: 17  	Manual	 69.33333333333333    	 0.007
-TASK 17 / 20 	Avg Acc: 50.27450980392157
-	Prev Task: 1  	Manual	 26.166666666666668    	 1.391
-	Prev Task: 2  	Manual	 43.5    	 1.467
-	Prev Task: 3  	Manual	 36.166666666666664    	 1.759
-	Prev Task: 4  	Manual	 42.833333333333336    	 1.343
-	Prev Task: 5  	Manual	 42.833333333333336    	 1.524
-	Prev Task: 6  	Manual	 46.0    	 1.537
-	Prev Task: 7  	Manual	 50.833333333333336    	 1.527
-	Prev Task: 8  	Manual	 44.166666666666664    	 1.449
-	Prev Task: 9  	Manual	 57.666666666666664    	 1.837
-	Prev Task: 10  	Manual	 55.166666666666664    	 1.439
-	Prev Task: 11  	Manual	 51.5    	 1.715
-	Prev Task: 12  	Manual	 67.83333333333333    	 1.749
-	Prev Task: 13  	Manual	 50.5    	 1.568
-	Prev Task: 14  	Manual	 59.0    	 1.776
-	Prev Task: 15  	Manual	 54.666666666666664    	 2.06
-	Prev Task: 16  	Manual	 54.833333333333336    	 1.493
-	Prev Task: 17  	Manual	 57.833333333333336    	 1.959
-	Prev Task: 18  	Manual	 62.833333333333336    	 0.007
-TASK 18 / 20 	Avg Acc: 50.24074074074074
-	Prev Task: 1  	Manual	 23.5    	 1.334
-	Prev Task: 2  	Manual	 41.5    	 1.456
-	Prev Task: 3  	Manual	 36.166666666666664    	 1.658
-	Prev Task: 4  	Manual	 36.833333333333336    	 1.259
-	Prev Task: 5  	Manual	 43.666666666666664    	 1.537
-	Prev Task: 6  	Manual	 43.5    	 1.429
-	Prev Task: 7  	Manual	 51.5    	 1.58
-	Prev Task: 8  	Manual	 45.5    	 1.647
-	Prev Task: 9  	Manual	 57.166666666666664    	 1.752
-	Prev Task: 10  	Manual	 53.0    	 1.571
-	Prev Task: 11  	Manual	 50.166666666666664    	 1.408
-	Prev Task: 12  	Manual	 62.666666666666664    	 1.659
-	Prev Task: 13  	Manual	 49.333333333333336    	 1.516
-	Prev Task: 14  	Manual	 56.166666666666664    	 1.851
-	Prev Task: 15  	Manual	 55.5    	 1.823
-	Prev Task: 16  	Manual	 61.333333333333336    	 1.627
-	Prev Task: 17  	Manual	 64.16666666666667    	 1.725
-	Prev Task: 18  	Manual	 56.666666666666664    	 1.686
-	Prev Task: 19  	Manual	 64.0    	 0.007
-TASK 19 / 20 	Avg Acc: 50.12280701754385
-	Prev Task: 1  	Manual	 22.666666666666668    	 1.337
-	Prev Task: 2  	Manual	 44.0    	 1.428
-	Prev Task: 3  	Manual	 35.833333333333336    	 1.794
-	Prev Task: 4  	Manual	 39.833333333333336    	 1.238
-	Prev Task: 5  	Manual	 45.0    	 1.422
-	Prev Task: 6  	Manual	 49.833333333333336    	 1.454
-	Prev Task: 7  	Manual	 53.833333333333336    	 1.588
-	Prev Task: 8  	Manual	 45.333333333333336    	 1.397
-	Prev Task: 9  	Manual	 59.5    	 1.437
-	Prev Task: 10  	Manual	 54.0    	 1.572
-	Prev Task: 11  	Manual	 50.833333333333336    	 1.487
-	Prev Task: 12  	Manual	 65.0    	 1.82
-	Prev Task: 13  	Manual	 53.5    	 1.439
-	Prev Task: 14  	Manual	 53.666666666666664    	 1.603
-	Prev Task: 15  	Manual	 52.5    	 1.697
-	Prev Task: 16  	Manual	 59.666666666666664    	 1.329
-	Prev Task: 17  	Manual	 67.33333333333333    	 1.754
-	Prev Task: 18  	Manual	 56.666666666666664    	 1.759
-	Prev Task: 19  	Manual	 60.833333333333336    	 1.597
-	Prev Task: 20  	Manual	 66.16666666666667    	 0.007
-TASK 20 / 20 	Avg Acc: 51.8
-average accuracy = 51.8, forget = 0.08982456140350877, learning accuracy = 59.95
+TASK 1 / 20 	Avg Acc: 46.5
+TASK 2 / 20 	Avg Acc: 56.25
+TASK 3 / 20 	Avg Acc: 51.22222222222222
+TASK 4 / 20 	Avg Acc: 55.5
+TASK 5 / 20 	Avg Acc: 54.233333333333334
+TASK 6 / 20 	Avg Acc: 52.61111111111111
+TASK 7 / 20 	Avg Acc: 52.69047619047619
+TASK 8 / 20 	Avg Acc: 51.75
+TASK 9 / 20 	Avg Acc: 53.851851851851855
+TASK 10 / 20 	Avg Acc: 52.81666666666666
+TASK 11 / 20 	Avg Acc: 50.53030303030303
+TASK 12 / 20 	Avg Acc: 55.625
+TASK 13 / 20 	Avg Acc: 53.282051282051285
+TASK 14 / 20 	Avg Acc: 54.80952380952381
+TASK 15 / 20 	Avg Acc: 54.25555555555556
+TASK 16 / 20 	Avg Acc: 55.59375000000001
+TASK 17 / 20 	Avg Acc: 55.598039215686285
+TASK 18 / 20 	Avg Acc: 54.81481481481481
+TASK 19 / 20 	Avg Acc: 55.77192982456139
+TASK 20 / 20 	Avg Acc: 57.35833333333334
+average accuracy = 57.358333333333334, forget = 0.04008771929824561, learning accuracy = 61.00833333333334
 
 ------------------- Experiment-4 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 55.666666666666664    	 1.0
-TASK 1 / 20 	Avg Acc: 55.666666666666664
-	Prev Task: 1  	Manual	 30.166666666666668    	 1.393
-	Prev Task: 2  	Manual	 60.333333333333336    	 0.007
-TASK 2 / 20 	Avg Acc: 45.25
-	Prev Task: 1  	Manual	 24.5    	 1.467
-	Prev Task: 2  	Manual	 56.0    	 1.622
-	Prev Task: 3  	Manual	 45.666666666666664    	 0.007
-TASK 3 / 20 	Avg Acc: 42.05555555555556
-	Prev Task: 1  	Manual	 21.333333333333332    	 1.456
-	Prev Task: 2  	Manual	 59.333333333333336    	 1.69
-	Prev Task: 3  	Manual	 45.333333333333336    	 2.017
-	Prev Task: 4  	Manual	 65.0    	 0.007
-TASK 4 / 20 	Avg Acc: 47.75
-	Prev Task: 1  	Manual	 21.833333333333332    	 1.469
-	Prev Task: 2  	Manual	 58.5    	 1.556
-	Prev Task: 3  	Manual	 43.0    	 1.723
-	Prev Task: 4  	Manual	 59.166666666666664    	 1.878
-	Prev Task: 5  	Manual	 62.666666666666664    	 0.007
-TASK 5 / 20 	Avg Acc: 49.03333333333333
-	Prev Task: 1  	Manual	 23.5    	 1.349
-	Prev Task: 2  	Manual	 55.333333333333336    	 1.72
-	Prev Task: 3  	Manual	 42.666666666666664    	 1.482
-	Prev Task: 4  	Manual	 58.166666666666664    	 1.509
-	Prev Task: 5  	Manual	 56.666666666666664    	 2.117
-	Prev Task: 6  	Manual	 53.166666666666664    	 0.007
-TASK 6 / 20 	Avg Acc: 48.25
-	Prev Task: 1  	Manual	 23.833333333333332    	 1.463
-	Prev Task: 2  	Manual	 55.333333333333336    	 1.654
-	Prev Task: 3  	Manual	 39.5    	 1.763
-	Prev Task: 4  	Manual	 49.166666666666664    	 1.567
-	Prev Task: 5  	Manual	 57.5    	 1.852
-	Prev Task: 6  	Manual	 53.0    	 1.241
-	Prev Task: 7  	Manual	 56.0    	 0.007
-TASK 7 / 20 	Avg Acc: 47.76190476190476
-	Prev Task: 1  	Manual	 26.166666666666668    	 1.32
-	Prev Task: 2  	Manual	 51.0    	 1.723
-	Prev Task: 3  	Manual	 35.5    	 1.437
-	Prev Task: 4  	Manual	 41.5    	 1.515
-	Prev Task: 5  	Manual	 50.166666666666664    	 1.765
-	Prev Task: 6  	Manual	 49.166666666666664    	 1.423
-	Prev Task: 7  	Manual	 53.0    	 1.869
-	Prev Task: 8  	Manual	 55.5    	 0.007
-TASK 8 / 20 	Avg Acc: 45.25
-	Prev Task: 1  	Manual	 24.166666666666668    	 1.482
-	Prev Task: 2  	Manual	 48.166666666666664    	 1.55
-	Prev Task: 3  	Manual	 30.833333333333332    	 1.599
-	Prev Task: 4  	Manual	 44.666666666666664    	 1.668
-	Prev Task: 5  	Manual	 52.333333333333336    	 1.444
-	Prev Task: 6  	Manual	 49.833333333333336    	 1.545
-	Prev Task: 7  	Manual	 55.166666666666664    	 1.792
-	Prev Task: 8  	Manual	 48.166666666666664    	 2.201
-	Prev Task: 9  	Manual	 64.33333333333333    	 0.007
-TASK 9 / 20 	Avg Acc: 46.4074074074074
-	Prev Task: 1  	Manual	 24.666666666666668    	 1.316
-	Prev Task: 2  	Manual	 50.0    	 1.524
-	Prev Task: 3  	Manual	 29.0    	 1.518
-	Prev Task: 4  	Manual	 39.5    	 1.392
-	Prev Task: 5  	Manual	 57.5    	 1.463
-	Prev Task: 6  	Manual	 50.0    	 1.566
-	Prev Task: 7  	Manual	 52.0    	 1.642
-	Prev Task: 8  	Manual	 48.0    	 2.09
-	Prev Task: 9  	Manual	 60.166666666666664    	 1.688
-	Prev Task: 10  	Manual	 68.83333333333333    	 0.007
-TASK 10 / 20 	Avg Acc: 47.96666666666666
-	Prev Task: 1  	Manual	 26.5    	 1.488
-	Prev Task: 2  	Manual	 47.333333333333336    	 1.295
-	Prev Task: 3  	Manual	 35.333333333333336    	 2.004
-	Prev Task: 4  	Manual	 41.166666666666664    	 1.602
-	Prev Task: 5  	Manual	 45.333333333333336    	 1.651
-	Prev Task: 6  	Manual	 47.833333333333336    	 1.561
-	Prev Task: 7  	Manual	 52.0    	 1.72
-	Prev Task: 8  	Manual	 47.5    	 1.867
-	Prev Task: 9  	Manual	 56.666666666666664    	 1.47
-	Prev Task: 10  	Manual	 62.333333333333336    	 1.858
-	Prev Task: 11  	Manual	 61.666666666666664    	 0.007
-TASK 11 / 20 	Avg Acc: 47.606060606060595
-	Prev Task: 1  	Manual	 23.333333333333332    	 1.387
-	Prev Task: 2  	Manual	 48.833333333333336    	 1.509
-	Prev Task: 3  	Manual	 32.333333333333336    	 1.3
-	Prev Task: 4  	Manual	 39.333333333333336    	 1.458
-	Prev Task: 5  	Manual	 51.166666666666664    	 1.632
-	Prev Task: 6  	Manual	 49.166666666666664    	 1.467
-	Prev Task: 7  	Manual	 51.5    	 1.77
-	Prev Task: 8  	Manual	 48.0    	 1.997
-	Prev Task: 9  	Manual	 57.5    	 1.564
-	Prev Task: 10  	Manual	 66.16666666666667    	 1.835
-	Prev Task: 11  	Manual	 56.5    	 1.853
-	Prev Task: 12  	Manual	 71.0    	 0.007
-TASK 12 / 20 	Avg Acc: 49.56944444444444
-	Prev Task: 1  	Manual	 21.666666666666668    	 1.5
-	Prev Task: 2  	Manual	 45.5    	 1.438
-	Prev Task: 3  	Manual	 33.333333333333336    	 1.648
-	Prev Task: 4  	Manual	 41.833333333333336    	 1.58
-	Prev Task: 5  	Manual	 48.833333333333336    	 1.655
-	Prev Task: 6  	Manual	 44.333333333333336    	 1.557
-	Prev Task: 7  	Manual	 49.166666666666664    	 1.654
-	Prev Task: 8  	Manual	 41.333333333333336    	 1.988
-	Prev Task: 9  	Manual	 53.833333333333336    	 1.367
-	Prev Task: 10  	Manual	 63.166666666666664    	 1.637
-	Prev Task: 11  	Manual	 49.333333333333336    	 1.536
-	Prev Task: 12  	Manual	 67.66666666666667    	 1.64
-	Prev Task: 13  	Manual	 69.33333333333333    	 0.007
-TASK 13 / 20 	Avg Acc: 48.41025641025641
-	Prev Task: 1  	Manual	 22.5    	 1.414
-	Prev Task: 2  	Manual	 47.166666666666664    	 1.357
-	Prev Task: 3  	Manual	 31.5    	 1.844
-	Prev Task: 4  	Manual	 40.833333333333336    	 1.368
-	Prev Task: 5  	Manual	 52.166666666666664    	 1.775
-	Prev Task: 6  	Manual	 41.666666666666664    	 1.582
-	Prev Task: 7  	Manual	 52.166666666666664    	 1.8
-	Prev Task: 8  	Manual	 43.5    	 2.254
-	Prev Task: 9  	Manual	 53.833333333333336    	 1.418
-	Prev Task: 10  	Manual	 62.666666666666664    	 1.724
-	Prev Task: 11  	Manual	 54.5    	 1.809
-	Prev Task: 12  	Manual	 67.33333333333333    	 1.797
-	Prev Task: 13  	Manual	 60.166666666666664    	 1.809
-	Prev Task: 14  	Manual	 66.66666666666667    	 0.007
-TASK 14 / 20 	Avg Acc: 49.76190476190476
-	Prev Task: 1  	Manual	 21.333333333333332    	 1.37
-	Prev Task: 2  	Manual	 41.833333333333336    	 1.571
-	Prev Task: 3  	Manual	 30.833333333333332    	 2.136
-	Prev Task: 4  	Manual	 41.0    	 1.738
-	Prev Task: 5  	Manual	 50.0    	 1.649
-	Prev Task: 6  	Manual	 48.0    	 1.422
-	Prev Task: 7  	Manual	 50.0    	 2.164
-	Prev Task: 8  	Manual	 43.666666666666664    	 1.569
-	Prev Task: 9  	Manual	 52.0    	 1.417
-	Prev Task: 10  	Manual	 57.333333333333336    	 1.939
-	Prev Task: 11  	Manual	 55.0    	 1.667
-	Prev Task: 12  	Manual	 66.16666666666667    	 1.807
-	Prev Task: 13  	Manual	 62.166666666666664    	 2.319
-	Prev Task: 14  	Manual	 63.166666666666664    	 1.578
-	Prev Task: 15  	Manual	 58.333333333333336    	 0.007
-TASK 15 / 20 	Avg Acc: 49.388888888888886
-	Prev Task: 1  	Manual	 22.833333333333332    	 1.291
-	Prev Task: 2  	Manual	 41.333333333333336    	 1.54
-	Prev Task: 3  	Manual	 28.833333333333332    	 1.634
-	Prev Task: 4  	Manual	 35.5    	 1.684
-	Prev Task: 5  	Manual	 50.166666666666664    	 1.7
-	Prev Task: 6  	Manual	 50.5    	 1.525
-	Prev Task: 7  	Manual	 52.0    	 1.879
-	Prev Task: 8  	Manual	 44.833333333333336    	 1.778
-	Prev Task: 9  	Manual	 57.333333333333336    	 1.584
-	Prev Task: 10  	Manual	 60.166666666666664    	 1.601
-	Prev Task: 11  	Manual	 54.0    	 1.931
-	Prev Task: 12  	Manual	 67.0    	 1.915
-	Prev Task: 13  	Manual	 65.0    	 1.771
-	Prev Task: 14  	Manual	 57.166666666666664    	 1.614
-	Prev Task: 15  	Manual	 57.5    	 1.774
-	Prev Task: 16  	Manual	 65.0    	 0.007
-TASK 16 / 20 	Avg Acc: 50.572916666666664
-	Prev Task: 1  	Manual	 25.333333333333332    	 1.335
-	Prev Task: 2  	Manual	 44.833333333333336    	 1.456
-	Prev Task: 3  	Manual	 27.833333333333332    	 1.549
-	Prev Task: 4  	Manual	 35.833333333333336    	 1.681
-	Prev Task: 5  	Manual	 50.666666666666664    	 1.392
-	Prev Task: 6  	Manual	 45.833333333333336    	 1.406
-	Prev Task: 7  	Manual	 51.5    	 1.396
-	Prev Task: 8  	Manual	 41.166666666666664    	 1.915
-	Prev Task: 9  	Manual	 57.666666666666664    	 1.386
-	Prev Task: 10  	Manual	 63.0    	 1.88
-	Prev Task: 11  	Manual	 53.166666666666664    	 1.862
-	Prev Task: 12  	Manual	 64.66666666666667    	 1.9
-	Prev Task: 13  	Manual	 64.0    	 1.605
-	Prev Task: 14  	Manual	 49.166666666666664    	 1.515
-	Prev Task: 15  	Manual	 52.0    	 1.599
-	Prev Task: 16  	Manual	 62.833333333333336    	 1.7
-	Prev Task: 17  	Manual	 73.66666666666667    	 0.007
-TASK 17 / 20 	Avg Acc: 50.774509803921575
-	Prev Task: 1  	Manual	 27.5    	 1.31
-	Prev Task: 2  	Manual	 47.333333333333336    	 1.453
-	Prev Task: 3  	Manual	 31.5    	 1.71
-	Prev Task: 4  	Manual	 43.666666666666664    	 1.483
-	Prev Task: 5  	Manual	 54.0    	 1.407
-	Prev Task: 6  	Manual	 47.333333333333336    	 1.542
-	Prev Task: 7  	Manual	 48.166666666666664    	 1.67
-	Prev Task: 8  	Manual	 41.166666666666664    	 1.847
-	Prev Task: 9  	Manual	 49.833333333333336    	 1.55
-	Prev Task: 10  	Manual	 65.33333333333333    	 1.47
-	Prev Task: 11  	Manual	 51.0    	 1.625
-	Prev Task: 12  	Manual	 66.66666666666667    	 1.532
-	Prev Task: 13  	Manual	 57.5    	 1.658
-	Prev Task: 14  	Manual	 62.0    	 1.439
-	Prev Task: 15  	Manual	 56.666666666666664    	 1.656
-	Prev Task: 16  	Manual	 57.666666666666664    	 1.779
-	Prev Task: 17  	Manual	 66.0    	 1.92
-	Prev Task: 18  	Manual	 65.5    	 0.007
-TASK 18 / 20 	Avg Acc: 52.15740740740739
-	Prev Task: 1  	Manual	 27.166666666666668    	 1.325
-	Prev Task: 2  	Manual	 41.333333333333336    	 1.429
-	Prev Task: 3  	Manual	 29.666666666666668    	 1.571
-	Prev Task: 4  	Manual	 34.833333333333336    	 1.431
-	Prev Task: 5  	Manual	 48.166666666666664    	 1.562
-	Prev Task: 6  	Manual	 48.0    	 1.54
-	Prev Task: 7  	Manual	 50.5    	 1.917
-	Prev Task: 8  	Manual	 41.833333333333336    	 1.772
-	Prev Task: 9  	Manual	 55.0    	 1.403
-	Prev Task: 10  	Manual	 62.166666666666664    	 1.639
-	Prev Task: 11  	Manual	 51.5    	 1.499
-	Prev Task: 12  	Manual	 63.666666666666664    	 1.787
-	Prev Task: 13  	Manual	 62.666666666666664    	 1.781
-	Prev Task: 14  	Manual	 56.0    	 1.594
-	Prev Task: 15  	Manual	 56.5    	 1.743
-	Prev Task: 16  	Manual	 61.333333333333336    	 1.99
-	Prev Task: 17  	Manual	 69.5    	 1.84
-	Prev Task: 18  	Manual	 58.0    	 1.626
-	Prev Task: 19  	Manual	 62.833333333333336    	 0.007
-TASK 19 / 20 	Avg Acc: 51.614035087719294
-	Prev Task: 1  	Manual	 25.166666666666668    	 1.329
-	Prev Task: 2  	Manual	 37.833333333333336    	 1.231
-	Prev Task: 3  	Manual	 28.166666666666668    	 1.614
-	Prev Task: 4  	Manual	 35.333333333333336    	 1.58
-	Prev Task: 5  	Manual	 47.0    	 1.63
-	Prev Task: 6  	Manual	 49.666666666666664    	 1.439
-	Prev Task: 7  	Manual	 50.5    	 1.473
-	Prev Task: 8  	Manual	 41.5    	 1.946
-	Prev Task: 9  	Manual	 55.0    	 1.608
-	Prev Task: 10  	Manual	 61.0    	 1.764
-	Prev Task: 11  	Manual	 51.5    	 1.547
-	Prev Task: 12  	Manual	 65.0    	 2.089
-	Prev Task: 13  	Manual	 64.83333333333333    	 1.672
-	Prev Task: 14  	Manual	 58.833333333333336    	 1.564
-	Prev Task: 15  	Manual	 58.833333333333336    	 1.454
-	Prev Task: 16  	Manual	 60.5    	 1.774
-	Prev Task: 17  	Manual	 69.33333333333333    	 1.908
-	Prev Task: 18  	Manual	 57.666666666666664    	 1.744
-	Prev Task: 19  	Manual	 63.0    	 2.159
-	Prev Task: 20  	Manual	 65.16666666666667    	 0.007
-TASK 20 / 20 	Avg Acc: 52.29166666666667
-average accuracy = 52.291666666666664, forget = 0.10587719298245615, learning accuracy = 62.31666666666668
+TASK 1 / 20 	Avg Acc: 48.666666666666664
+TASK 2 / 20 	Avg Acc: 54.916666666666664
+TASK 3 / 20 	Avg Acc: 49.77777777777777
+TASK 4 / 20 	Avg Acc: 54.08333333333334
+TASK 5 / 20 	Avg Acc: 54.46666666666666
+TASK 6 / 20 	Avg Acc: 54.30555555555556
+TASK 7 / 20 	Avg Acc: 53.02380952380953
+TASK 8 / 20 	Avg Acc: 50.625
+TASK 9 / 20 	Avg Acc: 52.27777777777777
+TASK 10 / 20 	Avg Acc: 53.78333333333334
+TASK 11 / 20 	Avg Acc: 53.18181818181819
+TASK 12 / 20 	Avg Acc: 57.02777777777778
+TASK 13 / 20 	Avg Acc: 55.61538461538462
+TASK 14 / 20 	Avg Acc: 56.07142857142857
+TASK 15 / 20 	Avg Acc: 56.43333333333333
+TASK 16 / 20 	Avg Acc: 56.65624999999999
+TASK 17 / 20 	Avg Acc: 56.88235294117648
+TASK 18 / 20 	Avg Acc: 57.00000000000001
+TASK 19 / 20 	Avg Acc: 56.35087719298246
+TASK 20 / 20 	Avg Acc: 57.61666666666667
+average accuracy = 57.616666666666674, forget = 0.049385964912280714, learning accuracy = 62.05
 
 ------------------- Experiment-5 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-	Prev Task: 1  	Manual	 62.166666666666664    	 1.0
-TASK 1 / 20 	Avg Acc: 62.166666666666664
-	Prev Task: 1  	Manual	 19.166666666666668    	 1.639
-	Prev Task: 2  	Manual	 57.333333333333336    	 0.007
-TASK 2 / 20 	Avg Acc: 38.25
-	Prev Task: 1  	Manual	 17.166666666666668    	 1.638
-	Prev Task: 2  	Manual	 46.333333333333336    	 1.789
-	Prev Task: 3  	Manual	 46.833333333333336    	 0.007
-TASK 3 / 20 	Avg Acc: 36.77777777777778
-	Prev Task: 1  	Manual	 21.166666666666668    	 1.491
-	Prev Task: 2  	Manual	 47.666666666666664    	 1.625
-	Prev Task: 3  	Manual	 49.5    	 1.683
-	Prev Task: 4  	Manual	 67.0    	 0.007
-TASK 4 / 20 	Avg Acc: 46.33333333333333
-	Prev Task: 1  	Manual	 17.333333333333332    	 1.479
-	Prev Task: 2  	Manual	 50.166666666666664    	 1.848
-	Prev Task: 3  	Manual	 43.666666666666664    	 1.605
-	Prev Task: 4  	Manual	 52.333333333333336    	 2.071
-	Prev Task: 5  	Manual	 63.666666666666664    	 0.007
-TASK 5 / 20 	Avg Acc: 45.43333333333334
-	Prev Task: 1  	Manual	 19.0    	 1.637
-	Prev Task: 2  	Manual	 45.333333333333336    	 1.88
-	Prev Task: 3  	Manual	 41.833333333333336    	 1.393
-	Prev Task: 4  	Manual	 53.5    	 2.252
-	Prev Task: 5  	Manual	 61.666666666666664    	 2.128
-	Prev Task: 6  	Manual	 52.833333333333336    	 0.007
-TASK 6 / 20 	Avg Acc: 45.69444444444445
-	Prev Task: 1  	Manual	 21.166666666666668    	 1.367
-	Prev Task: 2  	Manual	 43.5    	 1.69
-	Prev Task: 3  	Manual	 39.166666666666664    	 1.597
-	Prev Task: 4  	Manual	 48.5    	 2.027
-	Prev Task: 5  	Manual	 56.833333333333336    	 2.225
-	Prev Task: 6  	Manual	 49.666666666666664    	 2.432
-	Prev Task: 7  	Manual	 52.5    	 0.007
-TASK 7 / 20 	Avg Acc: 44.476190476190474
-	Prev Task: 1  	Manual	 18.5    	 1.6
-	Prev Task: 2  	Manual	 36.333333333333336    	 1.376
-	Prev Task: 3  	Manual	 40.0    	 1.514
-	Prev Task: 4  	Manual	 42.5    	 1.562
-	Prev Task: 5  	Manual	 55.0    	 1.786
-	Prev Task: 6  	Manual	 47.166666666666664    	 1.714
-	Prev Task: 7  	Manual	 47.5    	 2.16
-	Prev Task: 8  	Manual	 53.166666666666664    	 0.007
-TASK 8 / 20 	Avg Acc: 42.520833333333336
-	Prev Task: 1  	Manual	 23.0    	 1.402
-	Prev Task: 2  	Manual	 36.166666666666664    	 1.438
-	Prev Task: 3  	Manual	 42.5    	 1.615
-	Prev Task: 4  	Manual	 47.166666666666664    	 1.684
-	Prev Task: 5  	Manual	 55.0    	 1.87
-	Prev Task: 6  	Manual	 47.166666666666664    	 1.916
-	Prev Task: 7  	Manual	 51.666666666666664    	 2.412
-	Prev Task: 8  	Manual	 52.666666666666664    	 1.844
-	Prev Task: 9  	Manual	 63.333333333333336    	 0.007
-TASK 9 / 20 	Avg Acc: 46.51851851851852
-	Prev Task: 1  	Manual	 27.0    	 1.45
-	Prev Task: 2  	Manual	 37.5    	 1.545
-	Prev Task: 3  	Manual	 39.833333333333336    	 1.322
-	Prev Task: 4  	Manual	 50.166666666666664    	 1.78
-	Prev Task: 5  	Manual	 54.333333333333336    	 2.107
-	Prev Task: 6  	Manual	 49.0    	 2.144
-	Prev Task: 7  	Manual	 47.833333333333336    	 1.863
-	Prev Task: 8  	Manual	 50.833333333333336    	 1.534
-	Prev Task: 9  	Manual	 58.333333333333336    	 1.734
-	Prev Task: 10  	Manual	 68.66666666666667    	 0.007
-TASK 10 / 20 	Avg Acc: 48.35
-	Prev Task: 1  	Manual	 27.333333333333332    	 1.454
-	Prev Task: 2  	Manual	 35.166666666666664    	 1.581
-	Prev Task: 3  	Manual	 37.166666666666664    	 1.488
-	Prev Task: 4  	Manual	 53.166666666666664    	 1.657
-	Prev Task: 5  	Manual	 56.0    	 2.266
-	Prev Task: 6  	Manual	 46.166666666666664    	 2.059
-	Prev Task: 7  	Manual	 49.333333333333336    	 1.885
-	Prev Task: 8  	Manual	 48.0    	 1.811
-	Prev Task: 9  	Manual	 61.333333333333336    	 1.631
-	Prev Task: 10  	Manual	 58.5    	 1.687
-	Prev Task: 11  	Manual	 60.5    	 0.007
-TASK 11 / 20 	Avg Acc: 48.42424242424243
-	Prev Task: 1  	Manual	 25.0    	 1.524
-	Prev Task: 2  	Manual	 37.166666666666664    	 1.624
-	Prev Task: 3  	Manual	 37.166666666666664    	 1.26
-	Prev Task: 4  	Manual	 43.833333333333336    	 1.612
-	Prev Task: 5  	Manual	 55.5    	 2.054
-	Prev Task: 6  	Manual	 49.0    	 2.308
-	Prev Task: 7  	Manual	 46.666666666666664    	 2.556
-	Prev Task: 8  	Manual	 48.0    	 1.606
-	Prev Task: 9  	Manual	 55.666666666666664    	 1.796
-	Prev Task: 10  	Manual	 66.16666666666667    	 1.767
-	Prev Task: 11  	Manual	 54.166666666666664    	 1.99
-	Prev Task: 12  	Manual	 75.0    	 0.007
-TASK 12 / 20 	Avg Acc: 49.44444444444444
-	Prev Task: 1  	Manual	 22.333333333333332    	 1.469
-	Prev Task: 2  	Manual	 41.333333333333336    	 1.524
-	Prev Task: 3  	Manual	 41.166666666666664    	 1.359
-	Prev Task: 4  	Manual	 48.333333333333336    	 1.857
-	Prev Task: 5  	Manual	 53.833333333333336    	 1.821
-	Prev Task: 6  	Manual	 43.166666666666664    	 1.961
-	Prev Task: 7  	Manual	 50.0    	 1.946
-	Prev Task: 8  	Manual	 46.666666666666664    	 1.572
-	Prev Task: 9  	Manual	 55.166666666666664    	 1.564
-	Prev Task: 10  	Manual	 54.166666666666664    	 1.849
-	Prev Task: 11  	Manual	 59.0    	 2.369
-	Prev Task: 12  	Manual	 69.5    	 1.705
-	Prev Task: 13  	Manual	 63.666666666666664    	 0.007
-TASK 13 / 20 	Avg Acc: 49.871794871794876
-	Prev Task: 1  	Manual	 23.0    	 1.39
-	Prev Task: 2  	Manual	 39.5    	 1.456
-	Prev Task: 3  	Manual	 39.833333333333336    	 1.298
-	Prev Task: 4  	Manual	 50.333333333333336    	 1.811
-	Prev Task: 5  	Manual	 56.833333333333336    	 1.717
-	Prev Task: 6  	Manual	 46.333333333333336    	 1.785
-	Prev Task: 7  	Manual	 51.333333333333336    	 2.055
-	Prev Task: 8  	Manual	 46.333333333333336    	 1.854
-	Prev Task: 9  	Manual	 53.5    	 1.441
-	Prev Task: 10  	Manual	 60.333333333333336    	 1.749
-	Prev Task: 11  	Manual	 55.666666666666664    	 2.033
-	Prev Task: 12  	Manual	 70.33333333333333    	 1.59
-	Prev Task: 13  	Manual	 58.333333333333336    	 1.963
-	Prev Task: 14  	Manual	 64.0    	 0.007
-TASK 14 / 20 	Avg Acc: 51.11904761904762
-	Prev Task: 1  	Manual	 23.5    	 1.414
-	Prev Task: 2  	Manual	 35.0    	 1.599
-	Prev Task: 3  	Manual	 42.166666666666664    	 1.625
-	Prev Task: 4  	Manual	 47.333333333333336    	 1.514
-	Prev Task: 5  	Manual	 53.5    	 2.106
-	Prev Task: 6  	Manual	 46.666666666666664    	 2.426
-	Prev Task: 7  	Manual	 51.666666666666664    	 1.822
-	Prev Task: 8  	Manual	 46.833333333333336    	 1.597
-	Prev Task: 9  	Manual	 56.166666666666664    	 1.861
-	Prev Task: 10  	Manual	 54.166666666666664    	 1.551
-	Prev Task: 11  	Manual	 56.5    	 1.946
-	Prev Task: 12  	Manual	 73.16666666666667    	 1.664
-	Prev Task: 13  	Manual	 61.833333333333336    	 1.836
-	Prev Task: 14  	Manual	 62.5    	 2.342
-	Prev Task: 15  	Manual	 62.166666666666664    	 0.007
-TASK 15 / 20 	Avg Acc: 51.544444444444444
-	Prev Task: 1  	Manual	 24.333333333333332    	 1.504
-	Prev Task: 2  	Manual	 39.5    	 1.676
-	Prev Task: 3  	Manual	 36.5    	 1.487
-	Prev Task: 4  	Manual	 46.5    	 1.839
-	Prev Task: 5  	Manual	 56.166666666666664    	 1.554
-	Prev Task: 6  	Manual	 45.5    	 1.649
-	Prev Task: 7  	Manual	 51.666666666666664    	 1.795
-	Prev Task: 8  	Manual	 48.333333333333336    	 1.782
-	Prev Task: 9  	Manual	 55.5    	 1.856
-	Prev Task: 10  	Manual	 54.166666666666664    	 1.434
-	Prev Task: 11  	Manual	 55.0    	 2.12
-	Prev Task: 12  	Manual	 66.0    	 1.607
-	Prev Task: 13  	Manual	 59.166666666666664    	 2.122
-	Prev Task: 14  	Manual	 60.333333333333336    	 1.537
-	Prev Task: 15  	Manual	 57.0    	 1.697
-	Prev Task: 16  	Manual	 62.5    	 0.007
-TASK 16 / 20 	Avg Acc: 51.135416666666664
-	Prev Task: 1  	Manual	 23.5    	 1.328
-	Prev Task: 2  	Manual	 40.5    	 1.523
-	Prev Task: 3  	Manual	 39.5    	 1.46
-	Prev Task: 4  	Manual	 43.166666666666664    	 1.437
-	Prev Task: 5  	Manual	 52.333333333333336    	 2.299
-	Prev Task: 6  	Manual	 46.333333333333336    	 2.016
-	Prev Task: 7  	Manual	 49.333333333333336    	 1.635
-	Prev Task: 8  	Manual	 48.833333333333336    	 1.487
-	Prev Task: 9  	Manual	 56.5    	 1.86
-	Prev Task: 10  	Manual	 55.166666666666664    	 1.552
-	Prev Task: 11  	Manual	 57.333333333333336    	 1.756
-	Prev Task: 12  	Manual	 70.83333333333333    	 1.479
-	Prev Task: 13  	Manual	 56.166666666666664    	 1.778
-	Prev Task: 14  	Manual	 50.666666666666664    	 1.737
-	Prev Task: 15  	Manual	 54.666666666666664    	 1.576
-	Prev Task: 16  	Manual	 60.0    	 1.469
-	Prev Task: 17  	Manual	 72.66666666666667    	 0.007
-TASK 17 / 20 	Avg Acc: 51.61764705882353
-	Prev Task: 1  	Manual	 28.5    	 1.453
-	Prev Task: 2  	Manual	 36.666666666666664    	 1.549
-	Prev Task: 3  	Manual	 39.166666666666664    	 1.428
-	Prev Task: 4  	Manual	 46.333333333333336    	 1.793
-	Prev Task: 5  	Manual	 50.833333333333336    	 1.646
-	Prev Task: 6  	Manual	 43.666666666666664    	 1.519
-	Prev Task: 7  	Manual	 48.666666666666664    	 1.906
-	Prev Task: 8  	Manual	 44.833333333333336    	 1.387
-	Prev Task: 9  	Manual	 50.333333333333336    	 1.725
-	Prev Task: 10  	Manual	 55.833333333333336    	 1.535
-	Prev Task: 11  	Manual	 53.666666666666664    	 1.858
-	Prev Task: 12  	Manual	 69.66666666666667    	 1.389
-	Prev Task: 13  	Manual	 60.5    	 1.691
-	Prev Task: 14  	Manual	 61.166666666666664    	 1.393
-	Prev Task: 15  	Manual	 59.0    	 1.772
-	Prev Task: 16  	Manual	 58.166666666666664    	 1.801
-	Prev Task: 17  	Manual	 63.5    	 1.426
-	Prev Task: 18  	Manual	 61.5    	 0.007
-TASK 18 / 20 	Avg Acc: 51.77777777777777
-	Prev Task: 1  	Manual	 25.0    	 1.356
-	Prev Task: 2  	Manual	 38.833333333333336    	 1.35
-	Prev Task: 3  	Manual	 32.833333333333336    	 1.528
-	Prev Task: 4  	Manual	 42.5    	 1.584
-	Prev Task: 5  	Manual	 51.333333333333336    	 1.698
-	Prev Task: 6  	Manual	 43.833333333333336    	 1.96
-	Prev Task: 7  	Manual	 47.333333333333336    	 1.601
-	Prev Task: 8  	Manual	 47.333333333333336    	 1.971
-	Prev Task: 9  	Manual	 55.333333333333336    	 1.493
-	Prev Task: 10  	Manual	 60.0    	 1.64
-	Prev Task: 11  	Manual	 50.666666666666664    	 1.814
-	Prev Task: 12  	Manual	 68.5    	 2.015
-	Prev Task: 13  	Manual	 53.333333333333336    	 1.461
-	Prev Task: 14  	Manual	 58.5    	 2.072
-	Prev Task: 15  	Manual	 55.833333333333336    	 1.626
-	Prev Task: 16  	Manual	 57.5    	 1.571
-	Prev Task: 17  	Manual	 68.33333333333333    	 1.91
-	Prev Task: 18  	Manual	 58.166666666666664    	 1.714
-	Prev Task: 19  	Manual	 61.5    	 0.007
-TASK 19 / 20 	Avg Acc: 51.403508771929836
-	Prev Task: 1  	Manual	 28.0    	 1.398
-	Prev Task: 2  	Manual	 39.833333333333336    	 1.435
-	Prev Task: 3  	Manual	 37.166666666666664    	 1.4
-	Prev Task: 4  	Manual	 38.666666666666664    	 1.638
-	Prev Task: 5  	Manual	 49.0    	 1.599
-	Prev Task: 6  	Manual	 46.0    	 2.158
-	Prev Task: 7  	Manual	 45.833333333333336    	 2.04
-	Prev Task: 8  	Manual	 44.0    	 1.611
-	Prev Task: 9  	Manual	 57.166666666666664    	 1.677
-	Prev Task: 10  	Manual	 61.666666666666664    	 2.057
-	Prev Task: 11  	Manual	 48.166666666666664    	 1.972
-	Prev Task: 12  	Manual	 70.16666666666667    	 1.732
-	Prev Task: 13  	Manual	 58.166666666666664    	 1.647
-	Prev Task: 14  	Manual	 57.5    	 1.824
-	Prev Task: 15  	Manual	 59.666666666666664    	 1.665
-	Prev Task: 16  	Manual	 56.833333333333336    	 1.601
-	Prev Task: 17  	Manual	 66.0    	 1.545
-	Prev Task: 18  	Manual	 57.833333333333336    	 1.951
-	Prev Task: 19  	Manual	 61.166666666666664    	 1.464
-	Prev Task: 20  	Manual	 62.333333333333336    	 0.007
-TASK 20 / 20 	Avg Acc: 52.258333333333326
-average accuracy = 52.25833333333334, forget = 0.10043859649122808, learning accuracy = 61.666666666666664
+TASK 1 / 20 	Avg Acc: 47.5
+TASK 2 / 20 	Avg Acc: 52.75
+TASK 3 / 20 	Avg Acc: 48.94444444444444
+TASK 4 / 20 	Avg Acc: 51.375
+TASK 5 / 20 	Avg Acc: 55.733333333333334
+TASK 6 / 20 	Avg Acc: 54.166666666666664
+TASK 7 / 20 	Avg Acc: 53.30952380952381
+TASK 8 / 20 	Avg Acc: 50.333333333333336
+TASK 9 / 20 	Avg Acc: 53.2037037037037
+TASK 10 / 20 	Avg Acc: 53.60000000000001
+TASK 11 / 20 	Avg Acc: 51.86363636363636
+TASK 12 / 20 	Avg Acc: 55.41666666666667
+TASK 13 / 20 	Avg Acc: 54.717948717948715
+TASK 14 / 20 	Avg Acc: 55.416666666666664
+TASK 15 / 20 	Avg Acc: 55.27777777777778
+TASK 16 / 20 	Avg Acc: 55.427083333333336
+TASK 17 / 20 	Avg Acc: 56.03921568627451
+TASK 18 / 20 	Avg Acc: 55.29629629629629
+TASK 19 / 20 	Avg Acc: 55.37719298245614
+TASK 20 / 20 	Avg Acc: 56.25833333333334
+average accuracy = 56.258333333333326, forget = 0.0436842105263158, learning accuracy = 59.59166666666666
 
-Final Average accuracy =  51.61 +/- 0.7023452775443767 forget =  0.1034561403508772 +/- 0.009898624345198798 learning accuracy =  61.31666666666668 +/- 0.8375228023429857
+Final Average accuracy =  56.98833333333333 +/- 0.5732606543081282 forget =  0.047052631578947374 +/- 0.004535554287310027 learning accuracy =  61.083333333333336 +/- 0.8433728580988268
 ------------------- Experiment ended -----------------
+
+
+
 
 ************************ replicating experiment (mini-imagenet) ***********************
  >>>>>>>> Naive Adagrad
@@ -4858,6 +3811,1452 @@ TASK 20 / 20 	Avg Acc: 49.11666666666667
 average accuracy = 49.116666666666674, forget = 0.13140350877192986, learning accuracy = 61.333333333333336
 
 Final Average accuracy =  49.006666666666675 +/- 0.776359023476468 forget =  0.1328245614035088 +/- 0.01123004368621126 learning accuracy =  61.21 +/- 0.5075649931015928
+------------------- Experiment ended -----------------
+
+
+ >>>>>>>> Multi-task
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.01
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=None
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20  1  2  3  4
+  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20  1  2  3  4  5  6  7  8
+  9 10 11 12 13 14 15 16 17 18 19 20  1  2  3  4  5  6  7  8  9 10 11 12
+ 13 14 15 16 17 18 19 20  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+ 17 18 19 20]
+
+Final Average accuracy =  66.13833333333334 +/- 1.007232181111521 forget =  0.0 +/- 0.0 learning accuracy =  0.0 +/- 0.0
+------------------- Experiment ended -----------------
+
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=10
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 40.5
+TASK 2 / 20 	Avg Acc: 51.25
+TASK 3 / 20 	Avg Acc: 48.166666666666664
+TASK 4 / 20 	Avg Acc: 49.0
+TASK 5 / 20 	Avg Acc: 51.03333333333333
+TASK 6 / 20 	Avg Acc: 46.80555555555556
+TASK 7 / 20 	Avg Acc: 44.547619047619044
+TASK 8 / 20 	Avg Acc: 44.854166666666664
+TASK 9 / 20 	Avg Acc: 46.425925925925924
+TASK 10 / 20 	Avg Acc: 47.68333333333334
+TASK 11 / 20 	Avg Acc: 47.24242424242424
+TASK 12 / 20 	Avg Acc: 48.56944444444444
+TASK 13 / 20 	Avg Acc: 47.80769230769231
+TASK 14 / 20 	Avg Acc: 46.64285714285714
+TASK 15 / 20 	Avg Acc: 49.133333333333326
+TASK 16 / 20 	Avg Acc: 50.1875
+TASK 17 / 20 	Avg Acc: 49.20588235294118
+TASK 18 / 20 	Avg Acc: 51.9537037037037
+TASK 19 / 20 	Avg Acc: 51.13157894736842
+TASK 20 / 20 	Avg Acc: 51.141666666666666
+average accuracy = 51.141666666666666, forget = 0.09535087719298246, learning accuracy = 59.80833333333334
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 39.666666666666664
+TASK 2 / 20 	Avg Acc: 48.75
+TASK 3 / 20 	Avg Acc: 43.83333333333333
+TASK 4 / 20 	Avg Acc: 49.5
+TASK 5 / 20 	Avg Acc: 47.13333333333334
+TASK 6 / 20 	Avg Acc: 47.30555555555556
+TASK 7 / 20 	Avg Acc: 43.023809523809526
+TASK 8 / 20 	Avg Acc: 43.45833333333333
+TASK 9 / 20 	Avg Acc: 47.96296296296296
+TASK 10 / 20 	Avg Acc: 48.050000000000004
+TASK 11 / 20 	Avg Acc: 43.27272727272727
+TASK 12 / 20 	Avg Acc: 42.61111111111111
+TASK 13 / 20 	Avg Acc: 44.012820512820525
+TASK 14 / 20 	Avg Acc: 48.91666666666667
+TASK 15 / 20 	Avg Acc: 45.56666666666668
+TASK 16 / 20 	Avg Acc: 49.72916666666667
+TASK 17 / 20 	Avg Acc: 51.264705882352935
+TASK 18 / 20 	Avg Acc: 50.34259259259258
+TASK 19 / 20 	Avg Acc: 48.48245614035088
+TASK 20 / 20 	Avg Acc: 45.866666666666674
+average accuracy = 45.86666666666667, forget = 0.15122807017543857, learning accuracy = 59.78333333333334
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.166666666666664
+TASK 2 / 20 	Avg Acc: 54.91666666666667
+TASK 3 / 20 	Avg Acc: 48.833333333333336
+TASK 4 / 20 	Avg Acc: 54.625
+TASK 5 / 20 	Avg Acc: 54.4
+TASK 6 / 20 	Avg Acc: 46.888888888888886
+TASK 7 / 20 	Avg Acc: 48.14285714285714
+TASK 8 / 20 	Avg Acc: 46.083333333333336
+TASK 9 / 20 	Avg Acc: 43.90740740740741
+TASK 10 / 20 	Avg Acc: 47.43333333333333
+TASK 11 / 20 	Avg Acc: 49.72727272727272
+TASK 12 / 20 	Avg Acc: 49.833333333333336
+TASK 13 / 20 	Avg Acc: 48.70512820512821
+TASK 14 / 20 	Avg Acc: 51.33333333333333
+TASK 15 / 20 	Avg Acc: 51.11111111111111
+TASK 16 / 20 	Avg Acc: 50.916666666666664
+TASK 17 / 20 	Avg Acc: 51.56862745098039
+TASK 18 / 20 	Avg Acc: 53.97222222222222
+TASK 19 / 20 	Avg Acc: 50.9561403508772
+TASK 20 / 20 	Avg Acc: 51.95833333333333
+average accuracy = 51.95833333333333, forget = 0.10149122807017545, learning accuracy = 60.95
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 47.0
+TASK 2 / 20 	Avg Acc: 51.16666666666667
+TASK 3 / 20 	Avg Acc: 44.5
+TASK 4 / 20 	Avg Acc: 50.58333333333333
+TASK 5 / 20 	Avg Acc: 52.39999999999999
+TASK 6 / 20 	Avg Acc: 47.111111111111114
+TASK 7 / 20 	Avg Acc: 44.16666666666667
+TASK 8 / 20 	Avg Acc: 43.291666666666664
+TASK 9 / 20 	Avg Acc: 44.64814814814815
+TASK 10 / 20 	Avg Acc: 46.8
+TASK 11 / 20 	Avg Acc: 46.07575757575758
+TASK 12 / 20 	Avg Acc: 47.31944444444444
+TASK 13 / 20 	Avg Acc: 46.807692307692314
+TASK 14 / 20 	Avg Acc: 47.64285714285713
+TASK 15 / 20 	Avg Acc: 46.3
+TASK 16 / 20 	Avg Acc: 48.708333333333336
+TASK 17 / 20 	Avg Acc: 48.24509803921568
+TASK 18 / 20 	Avg Acc: 50.416666666666664
+TASK 19 / 20 	Avg Acc: 50.23684210526316
+TASK 20 / 20 	Avg Acc: 51.81666666666666
+average accuracy = 51.81666666666668, forget = 0.09964912280701753, learning accuracy = 61.283333333333324
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 43.5
+TASK 2 / 20 	Avg Acc: 47.166666666666664
+TASK 3 / 20 	Avg Acc: 45.77777777777778
+TASK 4 / 20 	Avg Acc: 52.41666666666667
+TASK 5 / 20 	Avg Acc: 48.266666666666666
+TASK 6 / 20 	Avg Acc: 48.0
+TASK 7 / 20 	Avg Acc: 45.57142857142857
+TASK 8 / 20 	Avg Acc: 42.83333333333333
+TASK 9 / 20 	Avg Acc: 46.574074074074076
+TASK 10 / 20 	Avg Acc: 45.199999999999996
+TASK 11 / 20 	Avg Acc: 44.27272727272727
+TASK 12 / 20 	Avg Acc: 43.68055555555556
+TASK 13 / 20 	Avg Acc: 47.65384615384616
+TASK 14 / 20 	Avg Acc: 40.32142857142857
+TASK 15 / 20 	Avg Acc: 46.34444444444444
+TASK 16 / 20 	Avg Acc: 46.677083333333336
+TASK 17 / 20 	Avg Acc: 47.882352941176464
+TASK 18 / 20 	Avg Acc: 49.2962962962963
+TASK 19 / 20 	Avg Acc: 49.122807017543856
+TASK 20 / 20 	Avg Acc: 48.08333333333333
+average accuracy = 48.083333333333336, forget = 0.1405263157894737, learning accuracy = 61.15
+
+Final Average accuracy =  49.773333333333326 +/- 2.4058227975753605 forget =  0.11764912280701753 +/- 0.02338033782869031 learning accuracy =  60.595000000000006 +/- 0.6611353870426199
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=5
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 40.5
+TASK 2 / 20 	Avg Acc: 49.58333333333333
+TASK 3 / 20 	Avg Acc: 48.0
+TASK 4 / 20 	Avg Acc: 51.66666666666667
+TASK 5 / 20 	Avg Acc: 49.4
+TASK 6 / 20 	Avg Acc: 49.138888888888886
+TASK 7 / 20 	Avg Acc: 47.38095238095238
+TASK 8 / 20 	Avg Acc: 45.33333333333334
+TASK 9 / 20 	Avg Acc: 47.59259259259259
+TASK 10 / 20 	Avg Acc: 50.05
+TASK 11 / 20 	Avg Acc: 48.93939393939393
+TASK 12 / 20 	Avg Acc: 47.31944444444444
+TASK 13 / 20 	Avg Acc: 48.79487179487179
+TASK 14 / 20 	Avg Acc: 50.0
+TASK 15 / 20 	Avg Acc: 48.23333333333334
+TASK 16 / 20 	Avg Acc: 46.927083333333336
+TASK 17 / 20 	Avg Acc: 47.4607843137255
+TASK 18 / 20 	Avg Acc: 50.842592592592595
+TASK 19 / 20 	Avg Acc: 49.921052631578945
+TASK 20 / 20 	Avg Acc: 50.391666666666666
+average accuracy = 50.391666666666666, forget = 0.10157894736842105, learning accuracy = 59.741666666666674
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 39.666666666666664
+TASK 2 / 20 	Avg Acc: 47.91666666666667
+TASK 3 / 20 	Avg Acc: 47.72222222222222
+TASK 4 / 20 	Avg Acc: 48.791666666666664
+TASK 5 / 20 	Avg Acc: 52.8
+TASK 6 / 20 	Avg Acc: 47.888888888888886
+TASK 7 / 20 	Avg Acc: 47.30952380952381
+TASK 8 / 20 	Avg Acc: 46.208333333333336
+TASK 9 / 20 	Avg Acc: 45.70370370370371
+TASK 10 / 20 	Avg Acc: 46.21666666666667
+TASK 11 / 20 	Avg Acc: 44.1060606060606
+TASK 12 / 20 	Avg Acc: 44.847222222222214
+TASK 13 / 20 	Avg Acc: 47.333333333333336
+TASK 14 / 20 	Avg Acc: 47.333333333333336
+TASK 15 / 20 	Avg Acc: 48.0111111111111
+TASK 16 / 20 	Avg Acc: 48.21875
+TASK 17 / 20 	Avg Acc: 47.33333333333334
+TASK 18 / 20 	Avg Acc: 49.55555555555554
+TASK 19 / 20 	Avg Acc: 48.31578947368422
+TASK 20 / 20 	Avg Acc: 45.93333333333334
+average accuracy = 45.93333333333332, forget = 0.14666666666666667, learning accuracy = 59.86666666666666
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.166666666666664
+TASK 2 / 20 	Avg Acc: 51.91666666666667
+TASK 3 / 20 	Avg Acc: 49.05555555555556
+TASK 4 / 20 	Avg Acc: 56.54166666666667
+TASK 5 / 20 	Avg Acc: 54.400000000000006
+TASK 6 / 20 	Avg Acc: 43.0
+TASK 7 / 20 	Avg Acc: 41.92857142857143
+TASK 8 / 20 	Avg Acc: 40.020833333333336
+TASK 9 / 20 	Avg Acc: 45.05555555555556
+TASK 10 / 20 	Avg Acc: 43.53333333333334
+TASK 11 / 20 	Avg Acc: 43.287878787878796
+TASK 12 / 20 	Avg Acc: 46.80555555555555
+TASK 13 / 20 	Avg Acc: 46.3076923076923
+TASK 14 / 20 	Avg Acc: 48.797619047619044
+TASK 15 / 20 	Avg Acc: 48.355555555555554
+TASK 16 / 20 	Avg Acc: 49.520833333333336
+TASK 17 / 20 	Avg Acc: 49.65686274509803
+TASK 18 / 20 	Avg Acc: 51.58333333333334
+TASK 19 / 20 	Avg Acc: 50.3859649122807
+TASK 20 / 20 	Avg Acc: 50.11666666666667
+average accuracy = 50.11666666666667, forget = 0.11315789473684214, learning accuracy = 60.1
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 47.0
+TASK 2 / 20 	Avg Acc: 48.833333333333336
+TASK 3 / 20 	Avg Acc: 46.88888888888889
+TASK 4 / 20 	Avg Acc: 50.625
+TASK 5 / 20 	Avg Acc: 48.8
+TASK 6 / 20 	Avg Acc: 47.0
+TASK 7 / 20 	Avg Acc: 42.92857142857143
+TASK 8 / 20 	Avg Acc: 43.0625
+TASK 9 / 20 	Avg Acc: 44.648148148148145
+TASK 10 / 20 	Avg Acc: 46.58333333333333
+TASK 11 / 20 	Avg Acc: 47.49999999999999
+TASK 12 / 20 	Avg Acc: 46.375
+TASK 13 / 20 	Avg Acc: 48.92307692307693
+TASK 14 / 20 	Avg Acc: 49.52380952380953
+TASK 15 / 20 	Avg Acc: 49.6
+TASK 16 / 20 	Avg Acc: 51.19791666666667
+TASK 17 / 20 	Avg Acc: 51.588235294117645
+TASK 18 / 20 	Avg Acc: 51.87962962962962
+TASK 19 / 20 	Avg Acc: 51.92105263157895
+TASK 20 / 20 	Avg Acc: 52.041666666666664
+average accuracy = 52.04166666666667, forget = 0.09456140350877192, learning accuracy = 60.96666666666666
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 43.5
+TASK 2 / 20 	Avg Acc: 46.666666666666664
+TASK 3 / 20 	Avg Acc: 44.22222222222223
+TASK 4 / 20 	Avg Acc: 53.20833333333333
+TASK 5 / 20 	Avg Acc: 50.166666666666664
+TASK 6 / 20 	Avg Acc: 44.02777777777778
+TASK 7 / 20 	Avg Acc: 42.738095238095234
+TASK 8 / 20 	Avg Acc: 42.68749999999999
+TASK 9 / 20 	Avg Acc: 44.51851851851852
+TASK 10 / 20 	Avg Acc: 47.91666666666666
+TASK 11 / 20 	Avg Acc: 48.59090909090909
+TASK 12 / 20 	Avg Acc: 46.69444444444444
+TASK 13 / 20 	Avg Acc: 46.5
+TASK 14 / 20 	Avg Acc: 43.547619047619044
+TASK 15 / 20 	Avg Acc: 47.65555555555555
+TASK 16 / 20 	Avg Acc: 49.239583333333336
+TASK 17 / 20 	Avg Acc: 48.54901960784313
+TASK 18 / 20 	Avg Acc: 51.212962962962976
+TASK 19 / 20 	Avg Acc: 49.69298245614036
+TASK 20 / 20 	Avg Acc: 49.141666666666666
+average accuracy = 49.141666666666666, forget = 0.13807017543859648, learning accuracy = 61.791666666666664
+
+Final Average accuracy =  49.525 +/- 2.0239469141040067 forget =  0.11880701754385965 +/- 0.020316486368073244 learning accuracy =  60.49333333333334 +/- 0.7774495339105778
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=5
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 41.833333333333336
+TASK 2 / 20 	Avg Acc: 52.083333333333336
+TASK 3 / 20 	Avg Acc: 48.611111111111114
+TASK 4 / 20 	Avg Acc: 57.25
+TASK 5 / 20 	Avg Acc: 55.6
+TASK 6 / 20 	Avg Acc: 55.41666666666667
+TASK 7 / 20 	Avg Acc: 53.69047619047619
+TASK 8 / 20 	Avg Acc: 51.875
+TASK 9 / 20 	Avg Acc: 54.92592592592593
+TASK 10 / 20 	Avg Acc: 54.58333333333334
+TASK 11 / 20 	Avg Acc: 54.87878787878788
+TASK 12 / 20 	Avg Acc: 55.76388888888889
+TASK 13 / 20 	Avg Acc: 55.666666666666664
+TASK 14 / 20 	Avg Acc: 55.86904761904761
+TASK 15 / 20 	Avg Acc: 55.56666666666666
+TASK 16 / 20 	Avg Acc: 57.52083333333333
+TASK 17 / 20 	Avg Acc: 55.33333333333333
+TASK 18 / 20 	Avg Acc: 58.27777777777778
+TASK 19 / 20 	Avg Acc: 57.035087719298254
+TASK 20 / 20 	Avg Acc: 58.65
+average accuracy = 58.65000000000001, forget = 0.0468421052631579, learning accuracy = 62.05833333333335
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 38.833333333333336
+TASK 2 / 20 	Avg Acc: 49.41666666666667
+TASK 3 / 20 	Avg Acc: 50.277777777777786
+TASK 4 / 20 	Avg Acc: 51.458333333333336
+TASK 5 / 20 	Avg Acc: 53.4
+TASK 6 / 20 	Avg Acc: 55.16666666666667
+TASK 7 / 20 	Avg Acc: 53.404761904761905
+TASK 8 / 20 	Avg Acc: 53.4375
+TASK 9 / 20 	Avg Acc: 55.055555555555564
+TASK 10 / 20 	Avg Acc: 54.05
+TASK 11 / 20 	Avg Acc: 55.04545454545454
+TASK 12 / 20 	Avg Acc: 55.20833333333333
+TASK 13 / 20 	Avg Acc: 55.03846153846154
+TASK 14 / 20 	Avg Acc: 55.48809523809523
+TASK 15 / 20 	Avg Acc: 55.58888888888889
+TASK 16 / 20 	Avg Acc: 56.208333333333336
+TASK 17 / 20 	Avg Acc: 57.36274509803921
+TASK 18 / 20 	Avg Acc: 56.63888888888889
+TASK 19 / 20 	Avg Acc: 57.49122807017543
+TASK 20 / 20 	Avg Acc: 56.199999999999996
+average accuracy = 56.2, forget = 0.06464912280701757, learning accuracy = 60.925
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 42.5
+TASK 2 / 20 	Avg Acc: 58.833333333333336
+TASK 3 / 20 	Avg Acc: 55.50000000000001
+TASK 4 / 20 	Avg Acc: 57.0
+TASK 5 / 20 	Avg Acc: 57.5
+TASK 6 / 20 	Avg Acc: 54.583333333333336
+TASK 7 / 20 	Avg Acc: 54.73809523809524
+TASK 8 / 20 	Avg Acc: 53.354166666666664
+TASK 9 / 20 	Avg Acc: 54.87037037037037
+TASK 10 / 20 	Avg Acc: 55.05
+TASK 11 / 20 	Avg Acc: 55.62121212121212
+TASK 12 / 20 	Avg Acc: 57.90277777777778
+TASK 13 / 20 	Avg Acc: 57.75641025641026
+TASK 14 / 20 	Avg Acc: 58.11904761904762
+TASK 15 / 20 	Avg Acc: 57.63333333333334
+TASK 16 / 20 	Avg Acc: 56.4375
+TASK 17 / 20 	Avg Acc: 58.41176470588235
+TASK 18 / 20 	Avg Acc: 58.08333333333333
+TASK 19 / 20 	Avg Acc: 58.23684210526315
+TASK 20 / 20 	Avg Acc: 58.63333333333332
+average accuracy = 58.633333333333326, forget = 0.04526315789473684, learning accuracy = 61.95
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 45.0
+TASK 2 / 20 	Avg Acc: 57.0
+TASK 3 / 20 	Avg Acc: 51.72222222222222
+TASK 4 / 20 	Avg Acc: 56.208333333333336
+TASK 5 / 20 	Avg Acc: 58.2
+TASK 6 / 20 	Avg Acc: 56.11111111111111
+TASK 7 / 20 	Avg Acc: 55.47619047619048
+TASK 8 / 20 	Avg Acc: 54.54166666666667
+TASK 9 / 20 	Avg Acc: 54.29629629629629
+TASK 10 / 20 	Avg Acc: 56.099999999999994
+TASK 11 / 20 	Avg Acc: 56.93939393939393
+TASK 12 / 20 	Avg Acc: 58.27777777777777
+TASK 13 / 20 	Avg Acc: 57.97435897435897
+TASK 14 / 20 	Avg Acc: 58.464285714285715
+TASK 15 / 20 	Avg Acc: 57.31111111111111
+TASK 16 / 20 	Avg Acc: 58.760416666666664
+TASK 17 / 20 	Avg Acc: 58.35294117647058
+TASK 18 / 20 	Avg Acc: 59.51851851851852
+TASK 19 / 20 	Avg Acc: 59.236842105263165
+TASK 20 / 20 	Avg Acc: 59.50833333333334
+average accuracy = 59.50833333333334, forget = 0.04807017543859649, learning accuracy = 62.86666666666666
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.666666666666664
+TASK 2 / 20 	Avg Acc: 49.66666666666667
+TASK 3 / 20 	Avg Acc: 51.166666666666664
+TASK 4 / 20 	Avg Acc: 57.0
+TASK 5 / 20 	Avg Acc: 54.0
+TASK 6 / 20 	Avg Acc: 54.58333333333334
+TASK 7 / 20 	Avg Acc: 54.54761904761905
+TASK 8 / 20 	Avg Acc: 55.458333333333336
+TASK 9 / 20 	Avg Acc: 55.62962962962963
+TASK 10 / 20 	Avg Acc: 57.3
+TASK 11 / 20 	Avg Acc: 57.439393939393945
+TASK 12 / 20 	Avg Acc: 58.75000000000001
+TASK 13 / 20 	Avg Acc: 58.1025641025641
+TASK 14 / 20 	Avg Acc: 58.11904761904761
+TASK 15 / 20 	Avg Acc: 57.71111111111112
+TASK 16 / 20 	Avg Acc: 57.9375
+TASK 17 / 20 	Avg Acc: 59.08823529411765
+TASK 18 / 20 	Avg Acc: 60.611111111111114
+TASK 19 / 20 	Avg Acc: 58.57017543859649
+TASK 20 / 20 	Avg Acc: 59.458333333333336
+average accuracy = 59.45833333333333, forget = 0.05964912280701754, learning accuracy = 63.408333333333324
+
+Final Average accuracy =  58.489999999999995 +/- 1.2053975830958563 forget =  0.05289473684210527 +/- 0.007770959505386007 learning accuracy =  62.24166666666666 +/- 0.8490026828906664
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=3
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 40.5
+TASK 2 / 20 	Avg Acc: 47.75
+TASK 3 / 20 	Avg Acc: 45.5
+TASK 4 / 20 	Avg Acc: 49.166666666666664
+TASK 5 / 20 	Avg Acc: 50.86666666666667
+TASK 6 / 20 	Avg Acc: 45.55555555555556
+TASK 7 / 20 	Avg Acc: 47.357142857142854
+TASK 8 / 20 	Avg Acc: 44.875
+TASK 9 / 20 	Avg Acc: 47.90740740740741
+TASK 10 / 20 	Avg Acc: 49.550000000000004
+TASK 11 / 20 	Avg Acc: 44.98484848484849
+TASK 12 / 20 	Avg Acc: 46.861111111111114
+TASK 13 / 20 	Avg Acc: 49.23076923076923
+TASK 14 / 20 	Avg Acc: 48.404761904761905
+TASK 15 / 20 	Avg Acc: 48.644444444444446
+TASK 16 / 20 	Avg Acc: 50.572916666666664
+TASK 17 / 20 	Avg Acc: 50.254901960784316
+TASK 18 / 20 	Avg Acc: 53.027777777777764
+TASK 19 / 20 	Avg Acc: 51.701754385964904
+TASK 20 / 20 	Avg Acc: 52.233333333333334
+average accuracy = 52.233333333333334, forget = 0.09605263157894736, learning accuracy = 61.35833333333333
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 39.666666666666664
+TASK 2 / 20 	Avg Acc: 47.083333333333336
+TASK 3 / 20 	Avg Acc: 46.33333333333333
+TASK 4 / 20 	Avg Acc: 49.458333333333336
+TASK 5 / 20 	Avg Acc: 52.866666666666674
+TASK 6 / 20 	Avg Acc: 47.55555555555556
+TASK 7 / 20 	Avg Acc: 44.23809523809524
+TASK 8 / 20 	Avg Acc: 44.604166666666664
+TASK 9 / 20 	Avg Acc: 45.74074074074074
+TASK 10 / 20 	Avg Acc: 47.54999999999999
+TASK 11 / 20 	Avg Acc: 44.36363636363637
+TASK 12 / 20 	Avg Acc: 48.80555555555556
+TASK 13 / 20 	Avg Acc: 48.57692307692307
+TASK 14 / 20 	Avg Acc: 47.785714285714285
+TASK 15 / 20 	Avg Acc: 46.888888888888886
+TASK 16 / 20 	Avg Acc: 48.95833333333333
+TASK 17 / 20 	Avg Acc: 51.37254901960784
+TASK 18 / 20 	Avg Acc: 49.69444444444444
+TASK 19 / 20 	Avg Acc: 49.01754385964912
+TASK 20 / 20 	Avg Acc: 48.40833333333334
+average accuracy = 48.40833333333334, forget = 0.12728070175438597, learning accuracy = 60.06666666666668
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.166666666666664
+TASK 2 / 20 	Avg Acc: 56.25
+TASK 3 / 20 	Avg Acc: 46.666666666666664
+TASK 4 / 20 	Avg Acc: 53.5
+TASK 5 / 20 	Avg Acc: 55.33333333333333
+TASK 6 / 20 	Avg Acc: 48.97222222222222
+TASK 7 / 20 	Avg Acc: 46.476190476190474
+TASK 8 / 20 	Avg Acc: 48.93750000000001
+TASK 9 / 20 	Avg Acc: 50.22222222222223
+TASK 10 / 20 	Avg Acc: 51.58333333333333
+TASK 11 / 20 	Avg Acc: 48.59090909090909
+TASK 12 / 20 	Avg Acc: 48.59722222222222
+TASK 13 / 20 	Avg Acc: 48.97435897435897
+TASK 14 / 20 	Avg Acc: 49.6547619047619
+TASK 15 / 20 	Avg Acc: 48.922222222222224
+TASK 16 / 20 	Avg Acc: 51.520833333333336
+TASK 17 / 20 	Avg Acc: 48.53921568627452
+TASK 18 / 20 	Avg Acc: 52.30555555555556
+TASK 19 / 20 	Avg Acc: 49.6140350877193
+TASK 20 / 20 	Avg Acc: 50.224999999999994
+average accuracy = 50.225, forget = 0.11491228070175438, learning accuracy = 60.608333333333334
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 47.0
+TASK 2 / 20 	Avg Acc: 48.583333333333336
+TASK 3 / 20 	Avg Acc: 45.44444444444444
+TASK 4 / 20 	Avg Acc: 52.375
+TASK 5 / 20 	Avg Acc: 51.166666666666664
+TASK 6 / 20 	Avg Acc: 44.97222222222222
+TASK 7 / 20 	Avg Acc: 42.857142857142854
+TASK 8 / 20 	Avg Acc: 41.333333333333336
+TASK 9 / 20 	Avg Acc: 45.87037037037038
+TASK 10 / 20 	Avg Acc: 47.28333333333333
+TASK 11 / 20 	Avg Acc: 47.909090909090914
+TASK 12 / 20 	Avg Acc: 47.91666666666666
+TASK 13 / 20 	Avg Acc: 49.794871794871796
+TASK 14 / 20 	Avg Acc: 47.71428571428571
+TASK 15 / 20 	Avg Acc: 47.24444444444445
+TASK 16 / 20 	Avg Acc: 49.927083333333336
+TASK 17 / 20 	Avg Acc: 50.254901960784316
+TASK 18 / 20 	Avg Acc: 50.78703703703704
+TASK 19 / 20 	Avg Acc: 51.65789473684211
+TASK 20 / 20 	Avg Acc: 50.575
+average accuracy = 50.575, forget = 0.10807017543859648, learning accuracy = 60.45833333333333
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 43.5
+TASK 2 / 20 	Avg Acc: 47.41666666666667
+TASK 3 / 20 	Avg Acc: 45.0
+TASK 4 / 20 	Avg Acc: 50.0
+TASK 5 / 20 	Avg Acc: 50.03333333333333
+TASK 6 / 20 	Avg Acc: 46.52777777777777
+TASK 7 / 20 	Avg Acc: 44.23809523809524
+TASK 8 / 20 	Avg Acc: 43.25
+TASK 9 / 20 	Avg Acc: 48.907407407407405
+TASK 10 / 20 	Avg Acc: 46.81666666666667
+TASK 11 / 20 	Avg Acc: 45.89393939393939
+TASK 12 / 20 	Avg Acc: 44.99999999999999
+TASK 13 / 20 	Avg Acc: 47.128205128205124
+TASK 14 / 20 	Avg Acc: 46.19047619047619
+TASK 15 / 20 	Avg Acc: 48.08888888888889
+TASK 16 / 20 	Avg Acc: 47.57291666666668
+TASK 17 / 20 	Avg Acc: 49.14705882352942
+TASK 18 / 20 	Avg Acc: 52.42592592592593
+TASK 19 / 20 	Avg Acc: 51.140350877192986
+TASK 20 / 20 	Avg Acc: 48.40833333333333
+average accuracy = 48.40833333333334, forget = 0.14754385964912278, learning accuracy = 62.275
+
+Final Average accuracy =  49.97 +/- 1.4443914520193832 forget =  0.11877192982456139 +/- 0.01758302645533539 learning accuracy =  60.95333333333333 +/- 0.7824392060161011
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=3
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 41.833333333333336
+TASK 2 / 20 	Avg Acc: 54.5
+TASK 3 / 20 	Avg Acc: 49.77777777777778
+TASK 4 / 20 	Avg Acc: 53.833333333333336
+TASK 5 / 20 	Avg Acc: 56.13333333333334
+TASK 6 / 20 	Avg Acc: 53.97222222222223
+TASK 7 / 20 	Avg Acc: 54.11904761904761
+TASK 8 / 20 	Avg Acc: 51.583333333333336
+TASK 9 / 20 	Avg Acc: 52.2037037037037
+TASK 10 / 20 	Avg Acc: 52.81666666666667
+TASK 11 / 20 	Avg Acc: 53.46969696969697
+TASK 12 / 20 	Avg Acc: 54.972222222222214
+TASK 13 / 20 	Avg Acc: 54.82051282051281
+TASK 14 / 20 	Avg Acc: 55.54761904761905
+TASK 15 / 20 	Avg Acc: 55.855555555555554
+TASK 16 / 20 	Avg Acc: 56.0
+TASK 17 / 20 	Avg Acc: 57.009803921568626
+TASK 18 / 20 	Avg Acc: 57.629629629629626
+TASK 19 / 20 	Avg Acc: 56.8859649122807
+TASK 20 / 20 	Avg Acc: 55.416666666666664
+average accuracy = 55.416666666666664, forget = 0.07087719298245615, learning accuracy = 60.93333333333334
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 38.833333333333336
+TASK 2 / 20 	Avg Acc: 51.166666666666664
+TASK 3 / 20 	Avg Acc: 49.888888888888886
+TASK 4 / 20 	Avg Acc: 55.75
+TASK 5 / 20 	Avg Acc: 54.93333333333334
+TASK 6 / 20 	Avg Acc: 51.41666666666667
+TASK 7 / 20 	Avg Acc: 52.166666666666664
+TASK 8 / 20 	Avg Acc: 52.22916666666667
+TASK 9 / 20 	Avg Acc: 53.68518518518518
+TASK 10 / 20 	Avg Acc: 54.78333333333333
+TASK 11 / 20 	Avg Acc: 53.16666666666667
+TASK 12 / 20 	Avg Acc: 54.19444444444445
+TASK 13 / 20 	Avg Acc: 55.80769230769231
+TASK 14 / 20 	Avg Acc: 55.29761904761906
+TASK 15 / 20 	Avg Acc: 55.77777777777777
+TASK 16 / 20 	Avg Acc: 55.97916666666668
+TASK 17 / 20 	Avg Acc: 56.75490196078431
+TASK 18 / 20 	Avg Acc: 56.58333333333332
+TASK 19 / 20 	Avg Acc: 56.421052631578945
+TASK 20 / 20 	Avg Acc: 56.975
+average accuracy = 56.975, forget = 0.060438596491228055, learning accuracy = 61.766666666666666
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 42.5
+TASK 2 / 20 	Avg Acc: 59.75
+TASK 3 / 20 	Avg Acc: 45.5
+TASK 4 / 20 	Avg Acc: 57.70833333333333
+TASK 5 / 20 	Avg Acc: 58.2
+TASK 6 / 20 	Avg Acc: 56.36111111111111
+TASK 7 / 20 	Avg Acc: 53.76190476190476
+TASK 8 / 20 	Avg Acc: 52.75
+TASK 9 / 20 	Avg Acc: 54.20370370370372
+TASK 10 / 20 	Avg Acc: 54.083333333333336
+TASK 11 / 20 	Avg Acc: 55.57575757575758
+TASK 12 / 20 	Avg Acc: 55.20833333333333
+TASK 13 / 20 	Avg Acc: 56.53846153846154
+TASK 14 / 20 	Avg Acc: 54.09523809523809
+TASK 15 / 20 	Avg Acc: 55.55555555555556
+TASK 16 / 20 	Avg Acc: 56.20833333333333
+TASK 17 / 20 	Avg Acc: 56.30392156862746
+TASK 18 / 20 	Avg Acc: 57.15740740740741
+TASK 19 / 20 	Avg Acc: 57.736842105263165
+TASK 20 / 20 	Avg Acc: 57.233333333333334
+average accuracy = 57.23333333333333, forget = 0.06078947368421054, learning accuracy = 61.39166666666667
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 45.0
+TASK 2 / 20 	Avg Acc: 57.5
+TASK 3 / 20 	Avg Acc: 55.77777777777777
+TASK 4 / 20 	Avg Acc: 59.125
+TASK 5 / 20 	Avg Acc: 58.3
+TASK 6 / 20 	Avg Acc: 53.22222222222222
+TASK 7 / 20 	Avg Acc: 52.80952380952381
+TASK 8 / 20 	Avg Acc: 51.02083333333333
+TASK 9 / 20 	Avg Acc: 52.59259259259259
+TASK 10 / 20 	Avg Acc: 55.71666666666666
+TASK 11 / 20 	Avg Acc: 55.60606060606061
+TASK 12 / 20 	Avg Acc: 57.09722222222222
+TASK 13 / 20 	Avg Acc: 57.64102564102565
+TASK 14 / 20 	Avg Acc: 57.202380952380956
+TASK 15 / 20 	Avg Acc: 56.52222222222222
+TASK 16 / 20 	Avg Acc: 56.00000000000001
+TASK 17 / 20 	Avg Acc: 57.029411764705884
+TASK 18 / 20 	Avg Acc: 57.99999999999999
+TASK 19 / 20 	Avg Acc: 56.99122807017544
+TASK 20 / 20 	Avg Acc: 58.333333333333336
+average accuracy = 58.33333333333333, forget = 0.0630701754385965, learning accuracy = 63.43333333333332
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.666666666666664
+TASK 2 / 20 	Avg Acc: 49.5
+TASK 3 / 20 	Avg Acc: 52.05555555555556
+TASK 4 / 20 	Avg Acc: 56.45833333333333
+TASK 5 / 20 	Avg Acc: 56.166666666666664
+TASK 6 / 20 	Avg Acc: 51.80555555555556
+TASK 7 / 20 	Avg Acc: 52.54761904761906
+TASK 8 / 20 	Avg Acc: 52.125
+TASK 9 / 20 	Avg Acc: 53.83333333333333
+TASK 10 / 20 	Avg Acc: 55.4
+TASK 11 / 20 	Avg Acc: 55.71212121212122
+TASK 12 / 20 	Avg Acc: 56.125
+TASK 13 / 20 	Avg Acc: 54.730769230769226
+TASK 14 / 20 	Avg Acc: 55.74999999999999
+TASK 15 / 20 	Avg Acc: 56.7111111111111
+TASK 16 / 20 	Avg Acc: 56.42708333333334
+TASK 17 / 20 	Avg Acc: 56.970588235294116
+TASK 18 / 20 	Avg Acc: 58.342592592592595
+TASK 19 / 20 	Avg Acc: 58.15789473684211
+TASK 20 / 20 	Avg Acc: 57.14999999999999
+average accuracy = 57.15, forget = 0.06991228070175441, learning accuracy = 62.925
+
+Final Average accuracy =  57.02166666666666 +/- 0.9338034530290018 forget =  0.06501754385964914 +/- 0.004492872505967479 learning accuracy =  62.089999999999996 +/- 0.9414734315009703
+------------------- Experiment ended -----------------
+
+
+
+iitm@euclid:~/pranshu/research/mtl_ll/tag$ bash replicate_experiment.sh imagenet
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=2
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 40.5
+TASK 2 / 20 	Avg Acc: 47.33333333333333
+TASK 3 / 20 	Avg Acc: 44.77777777777778
+TASK 4 / 20 	Avg Acc: 46.625
+TASK 5 / 20 	Avg Acc: 53.7
+TASK 6 / 20 	Avg Acc: 49.583333333333336
+TASK 7 / 20 	Avg Acc: 48.07142857142856
+TASK 8 / 20 	Avg Acc: 47.27083333333334
+TASK 9 / 20 	Avg Acc: 49.833333333333336
+TASK 10 / 20 	Avg Acc: 48.86666666666666
+TASK 11 / 20 	Avg Acc: 49.242424242424235
+TASK 12 / 20 	Avg Acc: 48.76388888888889
+TASK 13 / 20 	Avg Acc: 48.58974358974359
+TASK 14 / 20 	Avg Acc: 50.17857142857143
+TASK 15 / 20 	Avg Acc: 50.822222222222216
+TASK 16 / 20 	Avg Acc: 52.5
+TASK 17 / 20 	Avg Acc: 52.67647058823528
+TASK 18 / 20 	Avg Acc: 54.407407407407405
+TASK 19 / 20 	Avg Acc: 52.201754385964904
+TASK 20 / 20 	Avg Acc: 52.54166666666667
+average accuracy = 52.54166666666667, forget = 0.08429824561403508, learning accuracy = 60.20833333333333
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 39.666666666666664
+TASK 2 / 20 	Avg Acc: 43.66666666666667
+TASK 3 / 20 	Avg Acc: 43.0
+TASK 4 / 20 	Avg Acc: 46.5
+TASK 5 / 20 	Avg Acc: 47.5
+TASK 6 / 20 	Avg Acc: 45.111111111111114
+TASK 7 / 20 	Avg Acc: 41.5
+TASK 8 / 20 	Avg Acc: 43.72916666666667
+TASK 9 / 20 	Avg Acc: 43.648148148148145
+TASK 10 / 20 	Avg Acc: 43.4
+TASK 11 / 20 	Avg Acc: 43.72727272727273
+TASK 12 / 20 	Avg Acc: 43.34722222222222
+TASK 13 / 20 	Avg Acc: 46.64102564102563
+TASK 14 / 20 	Avg Acc: 44.32142857142858
+TASK 15 / 20 	Avg Acc: 45.644444444444446
+TASK 16 / 20 	Avg Acc: 44.73958333333334
+TASK 17 / 20 	Avg Acc: 47.58823529411765
+TASK 18 / 20 	Avg Acc: 47.157407407407405
+TASK 19 / 20 	Avg Acc: 44.40350877192982
+TASK 20 / 20 	Avg Acc: 45.233333333333334
+average accuracy = 45.233333333333334, forget = 0.16043859649122805, learning accuracy = 60.35
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.166666666666664
+TASK 2 / 20 	Avg Acc: 52.75
+TASK 3 / 20 	Avg Acc: 48.88888888888889
+TASK 4 / 20 	Avg Acc: 50.20833333333334
+TASK 5 / 20 	Avg Acc: 50.93333333333334
+TASK 6 / 20 	Avg Acc: 43.02777777777778
+TASK 7 / 20 	Avg Acc: 41.11904761904762
+TASK 8 / 20 	Avg Acc: 42.0625
+TASK 9 / 20 	Avg Acc: 46.7037037037037
+TASK 10 / 20 	Avg Acc: 44.98333333333334
+TASK 11 / 20 	Avg Acc: 46.121212121212125
+TASK 12 / 20 	Avg Acc: 46.16666666666667
+TASK 13 / 20 	Avg Acc: 45.11538461538461
+TASK 14 / 20 	Avg Acc: 45.55952380952381
+TASK 15 / 20 	Avg Acc: 44.300000000000004
+TASK 16 / 20 	Avg Acc: 45.739583333333336
+TASK 17 / 20 	Avg Acc: 47.69607843137255
+TASK 18 / 20 	Avg Acc: 49.18518518518518
+TASK 19 / 20 	Avg Acc: 47.05263157894736
+TASK 20 / 20 	Avg Acc: 47.09166666666666
+average accuracy = 47.09166666666667, forget = 0.14140350877192984, learning accuracy = 60.075
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 47.0
+TASK 2 / 20 	Avg Acc: 49.25
+TASK 3 / 20 	Avg Acc: 44.666666666666664
+TASK 4 / 20 	Avg Acc: 51.375
+TASK 5 / 20 	Avg Acc: 50.06666666666667
+TASK 6 / 20 	Avg Acc: 45.91666666666667
+TASK 7 / 20 	Avg Acc: 44.66666666666667
+TASK 8 / 20 	Avg Acc: 45.39583333333333
+TASK 9 / 20 	Avg Acc: 45.48148148148148
+TASK 10 / 20 	Avg Acc: 47.50000000000001
+TASK 11 / 20 	Avg Acc: 48.78787878787878
+TASK 12 / 20 	Avg Acc: 46.88888888888889
+TASK 13 / 20 	Avg Acc: 45.820512820512825
+TASK 14 / 20 	Avg Acc: 46.75
+TASK 15 / 20 	Avg Acc: 49.2
+TASK 16 / 20 	Avg Acc: 47.677083333333336
+TASK 17 / 20 	Avg Acc: 49.76470588235294
+TASK 18 / 20 	Avg Acc: 51.157407407407405
+TASK 19 / 20 	Avg Acc: 50.228070175438596
+TASK 20 / 20 	Avg Acc: 51.599999999999994
+average accuracy = 51.6, forget = 0.11122807017543858, learning accuracy = 62.041666666666664
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 43.5
+TASK 2 / 20 	Avg Acc: 45.0
+TASK 3 / 20 	Avg Acc: 45.27777777777777
+TASK 4 / 20 	Avg Acc: 48.875
+TASK 5 / 20 	Avg Acc: 50.666666666666664
+TASK 6 / 20 	Avg Acc: 44.861111111111114
+TASK 7 / 20 	Avg Acc: 43.214285714285715
+TASK 8 / 20 	Avg Acc: 44.72916666666667
+TASK 9 / 20 	Avg Acc: 45.888888888888886
+TASK 10 / 20 	Avg Acc: 47.23333333333333
+TASK 11 / 20 	Avg Acc: 47.0
+TASK 12 / 20 	Avg Acc: 43.30555555555555
+TASK 13 / 20 	Avg Acc: 47.93589743589744
+TASK 14 / 20 	Avg Acc: 44.11904761904762
+TASK 15 / 20 	Avg Acc: 44.6
+TASK 16 / 20 	Avg Acc: 47.875
+TASK 17 / 20 	Avg Acc: 48.22549019607843
+TASK 18 / 20 	Avg Acc: 46.981481481481474
+TASK 19 / 20 	Avg Acc: 50.184210526315795
+TASK 20 / 20 	Avg Acc: 48.166666666666664
+average accuracy = 48.166666666666664, forget = 0.1494736842105263, learning accuracy = 62.24166666666666
+
+Final Average accuracy =  48.92666666666666 +/- 2.7495625914760424 forget =  0.12936842105263158 +/- 0.02783815291594652 learning accuracy =  60.98333333333333 +/- 0.9518695055287523
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=2
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 41.833333333333336
+TASK 2 / 20 	Avg Acc: 56.58333333333333
+TASK 3 / 20 	Avg Acc: 51.166666666666664
+TASK 4 / 20 	Avg Acc: 55.29166666666667
+TASK 5 / 20 	Avg Acc: 54.93333333333334
+TASK 6 / 20 	Avg Acc: 54.41666666666667
+TASK 7 / 20 	Avg Acc: 51.47619047619048
+TASK 8 / 20 	Avg Acc: 51.666666666666664
+TASK 9 / 20 	Avg Acc: 53.0
+TASK 10 / 20 	Avg Acc: 52.3
+TASK 11 / 20 	Avg Acc: 53.71212121212121
+TASK 12 / 20 	Avg Acc: 53.63888888888889
+TASK 13 / 20 	Avg Acc: 53.80769230769231
+TASK 14 / 20 	Avg Acc: 54.57142857142857
+TASK 15 / 20 	Avg Acc: 51.89999999999999
+TASK 16 / 20 	Avg Acc: 53.416666666666664
+TASK 17 / 20 	Avg Acc: 54.75490196078431
+TASK 18 / 20 	Avg Acc: 56.00925925925927
+TASK 19 / 20 	Avg Acc: 55.72807017543859
+TASK 20 / 20 	Avg Acc: 55.45
+average accuracy = 55.44999999999999, forget = 0.0799122807017544, learning accuracy = 62.30833333333332
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 38.833333333333336
+TASK 2 / 20 	Avg Acc: 52.58333333333333
+TASK 3 / 20 	Avg Acc: 47.611111111111114
+TASK 4 / 20 	Avg Acc: 50.041666666666664
+TASK 5 / 20 	Avg Acc: 55.03333333333334
+TASK 6 / 20 	Avg Acc: 52.08333333333333
+TASK 7 / 20 	Avg Acc: 52.523809523809526
+TASK 8 / 20 	Avg Acc: 51.4375
+TASK 9 / 20 	Avg Acc: 52.666666666666664
+TASK 10 / 20 	Avg Acc: 53.050000000000004
+TASK 11 / 20 	Avg Acc: 51.51515151515152
+TASK 12 / 20 	Avg Acc: 53.97222222222223
+TASK 13 / 20 	Avg Acc: 54.17948717948718
+TASK 14 / 20 	Avg Acc: 54.523809523809526
+TASK 15 / 20 	Avg Acc: 54.78888888888889
+TASK 16 / 20 	Avg Acc: 56.25000000000001
+TASK 17 / 20 	Avg Acc: 55.990196078431374
+TASK 18 / 20 	Avg Acc: 56.99074074074073
+TASK 19 / 20 	Avg Acc: 55.68421052631578
+TASK 20 / 20 	Avg Acc: 53.04166666666667
+average accuracy = 53.041666666666664, forget = 0.08859649122807019, learning accuracy = 60.39166666666665
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 42.5
+TASK 2 / 20 	Avg Acc: 55.33333333333333
+TASK 3 / 20 	Avg Acc: 51.11111111111111
+TASK 4 / 20 	Avg Acc: 57.583333333333336
+TASK 5 / 20 	Avg Acc: 58.4
+TASK 6 / 20 	Avg Acc: 54.83333333333333
+TASK 7 / 20 	Avg Acc: 50.88095238095238
+TASK 8 / 20 	Avg Acc: 48.416666666666664
+TASK 9 / 20 	Avg Acc: 49.5
+TASK 10 / 20 	Avg Acc: 51.71666666666666
+TASK 11 / 20 	Avg Acc: 50.86363636363636
+TASK 12 / 20 	Avg Acc: 53.81944444444444
+TASK 13 / 20 	Avg Acc: 53.66666666666667
+TASK 14 / 20 	Avg Acc: 54.38095238095239
+TASK 15 / 20 	Avg Acc: 53.288888888888884
+TASK 16 / 20 	Avg Acc: 53.333333333333336
+TASK 17 / 20 	Avg Acc: 54.06862745098038
+TASK 18 / 20 	Avg Acc: 54.7037037037037
+TASK 19 / 20 	Avg Acc: 54.82456140350877
+TASK 20 / 20 	Avg Acc: 54.49999999999999
+average accuracy = 54.5, forget = 0.08271929824561403, learning accuracy = 61.775
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 45.0
+TASK 2 / 20 	Avg Acc: 53.5
+TASK 3 / 20 	Avg Acc: 47.55555555555555
+TASK 4 / 20 	Avg Acc: 53.29166666666667
+TASK 5 / 20 	Avg Acc: 54.766666666666666
+TASK 6 / 20 	Avg Acc: 51.16666666666667
+TASK 7 / 20 	Avg Acc: 51.0952380952381
+TASK 8 / 20 	Avg Acc: 50.27083333333333
+TASK 9 / 20 	Avg Acc: 48.31481481481481
+TASK 10 / 20 	Avg Acc: 51.50000000000001
+TASK 11 / 20 	Avg Acc: 54.04545454545455
+TASK 12 / 20 	Avg Acc: 54.05555555555555
+TASK 13 / 20 	Avg Acc: 54.98717948717948
+TASK 14 / 20 	Avg Acc: 55.10714285714286
+TASK 15 / 20 	Avg Acc: 54.711111111111116
+TASK 16 / 20 	Avg Acc: 54.86458333333333
+TASK 17 / 20 	Avg Acc: 55.57843137254902
+TASK 18 / 20 	Avg Acc: 56.24074074074074
+TASK 19 / 20 	Avg Acc: 56.7719298245614
+TASK 20 / 20 	Avg Acc: 56.12499999999999
+average accuracy = 56.125, forget = 0.06666666666666668, learning accuracy = 61.858333333333334
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 44.666666666666664
+TASK 2 / 20 	Avg Acc: 50.0
+TASK 3 / 20 	Avg Acc: 53.22222222222222
+TASK 4 / 20 	Avg Acc: 56.0
+TASK 5 / 20 	Avg Acc: 56.36666666666666
+TASK 6 / 20 	Avg Acc: 51.97222222222223
+TASK 7 / 20 	Avg Acc: 52.904761904761905
+TASK 8 / 20 	Avg Acc: 52.208333333333336
+TASK 9 / 20 	Avg Acc: 53.611111111111114
+TASK 10 / 20 	Avg Acc: 55.33333333333333
+TASK 11 / 20 	Avg Acc: 55.196969696969695
+TASK 12 / 20 	Avg Acc: 55.56944444444444
+TASK 13 / 20 	Avg Acc: 55.55128205128206
+TASK 14 / 20 	Avg Acc: 55.238095238095234
+TASK 15 / 20 	Avg Acc: 54.67777777777778
+TASK 16 / 20 	Avg Acc: 55.197916666666664
+TASK 17 / 20 	Avg Acc: 56.49019607843137
+TASK 18 / 20 	Avg Acc: 56.64814814814815
+TASK 19 / 20 	Avg Acc: 56.02631578947367
+TASK 20 / 20 	Avg Acc: 55.99999999999999
+average accuracy = 56.0, forget = 0.08087719298245613, learning accuracy = 62.44166666666668
+
+Final Average accuracy =  55.02333333333333 +/- 1.1445935717294784 forget =  0.07975438596491229 +/- 0.007204825509243916 learning accuracy =  61.754999999999995 +/- 0.7276598717044233
+------------------- Experiment ended -----------------
+
+
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> TAG-EWC
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.0001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-ewc
+  tag-opt=rms
+  b=5
+  lambda=1
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.333333333333336
+TASK 2 / 20 	Avg Acc: 51.41666666666667
+TASK 3 / 20 	Avg Acc: 49.722222222222214
+TASK 4 / 20 	Avg Acc: 53.958333333333336
+TASK 5 / 20 	Avg Acc: 52.96666666666667
+TASK 6 / 20 	Avg Acc: 53.416666666666664
+TASK 7 / 20 	Avg Acc: 53.761904761904766
+TASK 8 / 20 	Avg Acc: 51.37500000000001
+TASK 9 / 20 	Avg Acc: 53.24074074074074
+TASK 10 / 20 	Avg Acc: 52.88333333333333
+TASK 11 / 20 	Avg Acc: 52.54545454545455
+TASK 12 / 20 	Avg Acc: 54.95833333333332
+TASK 13 / 20 	Avg Acc: 54.794871794871796
+TASK 14 / 20 	Avg Acc: 56.035714285714285
+TASK 15 / 20 	Avg Acc: 56.11111111111111
+TASK 16 / 20 	Avg Acc: 55.739583333333336
+TASK 17 / 20 	Avg Acc: 57.00000000000001
+TASK 18 / 20 	Avg Acc: 56.111111111111114
+TASK 19 / 20 	Avg Acc: 56.57894736842105
+TASK 20 / 20 	Avg Acc: 58.05
+average accuracy = 58.05, forget = 0.050614035087719306, learning accuracy = 62.708333333333336
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.666666666666664
+TASK 2 / 20 	Avg Acc: 52.08333333333333
+TASK 3 / 20 	Avg Acc: 50.833333333333336
+TASK 4 / 20 	Avg Acc: 50.833333333333336
+TASK 5 / 20 	Avg Acc: 52.86666666666666
+TASK 6 / 20 	Avg Acc: 50.33333333333333
+TASK 7 / 20 	Avg Acc: 52.42857142857143
+TASK 8 / 20 	Avg Acc: 51.791666666666664
+TASK 9 / 20 	Avg Acc: 53.6111111111111
+TASK 10 / 20 	Avg Acc: 53.63333333333333
+TASK 11 / 20 	Avg Acc: 53.93939393939394
+TASK 12 / 20 	Avg Acc: 55.638888888888886
+TASK 13 / 20 	Avg Acc: 54.65384615384616
+TASK 14 / 20 	Avg Acc: 56.67857142857142
+TASK 15 / 20 	Avg Acc: 56.12222222222223
+TASK 16 / 20 	Avg Acc: 56.08333333333333
+TASK 17 / 20 	Avg Acc: 57.40196078431372
+TASK 18 / 20 	Avg Acc: 56.62962962962963
+TASK 19 / 20 	Avg Acc: 55.46491228070177
+TASK 20 / 20 	Avg Acc: 58.125000000000014
+average accuracy = 58.124999999999986, forget = 0.04991228070175437, learning accuracy = 62.31666666666666
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 46.666666666666664
+TASK 2 / 20 	Avg Acc: 54.583333333333336
+TASK 3 / 20 	Avg Acc: 49.94444444444444
+TASK 4 / 20 	Avg Acc: 54.66666666666667
+TASK 5 / 20 	Avg Acc: 55.900000000000006
+TASK 6 / 20 	Avg Acc: 53.58333333333333
+TASK 7 / 20 	Avg Acc: 51.547619047619044
+TASK 8 / 20 	Avg Acc: 49.375
+TASK 9 / 20 	Avg Acc: 52.72222222222223
+TASK 10 / 20 	Avg Acc: 52.56666666666666
+TASK 11 / 20 	Avg Acc: 52.8030303030303
+TASK 12 / 20 	Avg Acc: 55.41666666666667
+TASK 13 / 20 	Avg Acc: 53.96153846153846
+TASK 14 / 20 	Avg Acc: 55.44047619047619
+TASK 15 / 20 	Avg Acc: 54.93333333333333
+TASK 16 / 20 	Avg Acc: 56.239583333333336
+TASK 17 / 20 	Avg Acc: 56.84313725490196
+TASK 18 / 20 	Avg Acc: 56.08333333333334
+TASK 19 / 20 	Avg Acc: 55.87719298245614
+TASK 20 / 20 	Avg Acc: 56.758333333333326
+average accuracy = 56.758333333333326, forget = 0.05894736842105263, learning accuracy = 62.03333333333334
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.5
+TASK 2 / 20 	Avg Acc: 55.83333333333333
+TASK 3 / 20 	Avg Acc: 48.83333333333333
+TASK 4 / 20 	Avg Acc: 51.125
+TASK 5 / 20 	Avg Acc: 54.23333333333333
+TASK 6 / 20 	Avg Acc: 52.47222222222222
+TASK 7 / 20 	Avg Acc: 52.952380952380956
+TASK 8 / 20 	Avg Acc: 51.1875
+TASK 9 / 20 	Avg Acc: 52.425925925925924
+TASK 10 / 20 	Avg Acc: 53.13333333333333
+TASK 11 / 20 	Avg Acc: 52.51515151515151
+TASK 12 / 20 	Avg Acc: 56.125
+TASK 13 / 20 	Avg Acc: 55.641025641025635
+TASK 14 / 20 	Avg Acc: 56.20238095238095
+TASK 15 / 20 	Avg Acc: 54.400000000000006
+TASK 16 / 20 	Avg Acc: 57.135416666666664
+TASK 17 / 20 	Avg Acc: 57.3921568627451
+TASK 18 / 20 	Avg Acc: 55.48148148148148
+TASK 19 / 20 	Avg Acc: 57.08771929824562
+TASK 20 / 20 	Avg Acc: 58.50833333333334
+average accuracy = 58.50833333333334, forget = 0.051666666666666666, learning accuracy = 62.94166666666666
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 49.0
+TASK 2 / 20 	Avg Acc: 54.083333333333336
+TASK 3 / 20 	Avg Acc: 46.44444444444444
+TASK 4 / 20 	Avg Acc: 53.54166666666667
+TASK 5 / 20 	Avg Acc: 55.16666666666667
+TASK 6 / 20 	Avg Acc: 53.638888888888886
+TASK 7 / 20 	Avg Acc: 54.16666666666666
+TASK 8 / 20 	Avg Acc: 51.79166666666667
+TASK 9 / 20 	Avg Acc: 54.092592592592595
+TASK 10 / 20 	Avg Acc: 52.96666666666667
+TASK 11 / 20 	Avg Acc: 54.36363636363637
+TASK 12 / 20 	Avg Acc: 55.98611111111111
+TASK 13 / 20 	Avg Acc: 54.346153846153854
+TASK 14 / 20 	Avg Acc: 55.94047619047618
+TASK 15 / 20 	Avg Acc: 55.222222222222214
+TASK 16 / 20 	Avg Acc: 53.82291666666667
+TASK 17 / 20 	Avg Acc: 56.2156862745098
+TASK 18 / 20 	Avg Acc: 55.638888888888886
+TASK 19 / 20 	Avg Acc: 54.96491228070176
+TASK 20 / 20 	Avg Acc: 56.80833333333334
+average accuracy = 56.80833333333332, forget = 0.0607017543859649, learning accuracy = 62.45
+
+Final Average accuracy =  57.65 +/- 0.7246838391096299 forget =  0.05436842105263158 +/- 0.004523935182475717 learning accuracy =  62.489999999999995 +/- 0.31364346354136097
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (mini-imagenet) ***********************
+ >>>>>>>> TAG-A-GEM
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.0001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-agem
+  mem=1
+  tag-opt=rms
+  b=5
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.166666666666664
+TASK 2 / 20 	Avg Acc: 57.916666666666664
+TASK 3 / 20 	Avg Acc: 52.33333333333333
+TASK 4 / 20 	Avg Acc: 53.958333333333336
+TASK 5 / 20 	Avg Acc: 55.66666666666667
+TASK 6 / 20 	Avg Acc: 53.30555555555556
+TASK 7 / 20 	Avg Acc: 52.19047619047619
+TASK 8 / 20 	Avg Acc: 51.64583333333333
+TASK 9 / 20 	Avg Acc: 52.27777777777777
+TASK 10 / 20 	Avg Acc: 54.599999999999994
+TASK 11 / 20 	Avg Acc: 52.3939393939394
+TASK 12 / 20 	Avg Acc: 55.52777777777777
+TASK 13 / 20 	Avg Acc: 54.02564102564103
+TASK 14 / 20 	Avg Acc: 56.011904761904766
+TASK 15 / 20 	Avg Acc: 55.89999999999999
+TASK 16 / 20 	Avg Acc: 56.44791666666667
+TASK 17 / 20 	Avg Acc: 56.117647058823536
+TASK 18 / 20 	Avg Acc: 56.69444444444445
+TASK 19 / 20 	Avg Acc: 56.92982456140351
+TASK 20 / 20 	Avg Acc: 57.45833333333333
+average accuracy = 57.45833333333333, forget = 0.05350877192982455, learning accuracy = 62.3
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.166666666666664
+TASK 2 / 20 	Avg Acc: 53.833333333333336
+TASK 3 / 20 	Avg Acc: 48.44444444444444
+TASK 4 / 20 	Avg Acc: 52.041666666666664
+TASK 5 / 20 	Avg Acc: 53.733333333333334
+TASK 6 / 20 	Avg Acc: 53.388888888888886
+TASK 7 / 20 	Avg Acc: 53.047619047619044
+TASK 8 / 20 	Avg Acc: 51.833333333333336
+TASK 9 / 20 	Avg Acc: 54.31481481481481
+TASK 10 / 20 	Avg Acc: 53.55
+TASK 11 / 20 	Avg Acc: 56.06060606060606
+TASK 12 / 20 	Avg Acc: 56.277777777777786
+TASK 13 / 20 	Avg Acc: 57.3974358974359
+TASK 14 / 20 	Avg Acc: 58.261904761904766
+TASK 15 / 20 	Avg Acc: 58.72222222222222
+TASK 16 / 20 	Avg Acc: 58.46875
+TASK 17 / 20 	Avg Acc: 59.382352941176464
+TASK 18 / 20 	Avg Acc: 59.3611111111111
+TASK 19 / 20 	Avg Acc: 59.078947368421055
+TASK 20 / 20 	Avg Acc: 59.42499999999999
+average accuracy = 59.42500000000001, forget = 0.043859649122807015, learning accuracy = 62.82500000000001
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 46.5
+TASK 2 / 20 	Avg Acc: 54.66666666666667
+TASK 3 / 20 	Avg Acc: 50.94444444444444
+TASK 4 / 20 	Avg Acc: 55.125
+TASK 5 / 20 	Avg Acc: 54.93333333333334
+TASK 6 / 20 	Avg Acc: 54.72222222222222
+TASK 7 / 20 	Avg Acc: 54.595238095238095
+TASK 8 / 20 	Avg Acc: 54.041666666666664
+TASK 9 / 20 	Avg Acc: 55.370370370370374
+TASK 10 / 20 	Avg Acc: 55.63333333333333
+TASK 11 / 20 	Avg Acc: 54.07575757575757
+TASK 12 / 20 	Avg Acc: 56.9861111111111
+TASK 13 / 20 	Avg Acc: 56.93589743589743
+TASK 14 / 20 	Avg Acc: 57.74999999999999
+TASK 15 / 20 	Avg Acc: 57.68888888888888
+TASK 16 / 20 	Avg Acc: 57.97916666666666
+TASK 17 / 20 	Avg Acc: 57.50980392156863
+TASK 18 / 20 	Avg Acc: 58.26851851851851
+TASK 19 / 20 	Avg Acc: 58.25438596491229
+TASK 20 / 20 	Avg Acc: 59.04166666666666
+average accuracy = 59.04166666666667, forget = 0.03666666666666666, learning accuracy = 62.3
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 51.166666666666664
+TASK 2 / 20 	Avg Acc: 53.0
+TASK 3 / 20 	Avg Acc: 48.61111111111111
+TASK 4 / 20 	Avg Acc: 53.625
+TASK 5 / 20 	Avg Acc: 53.233333333333334
+TASK 6 / 20 	Avg Acc: 53.52777777777777
+TASK 7 / 20 	Avg Acc: 53.35714285714286
+TASK 8 / 20 	Avg Acc: 52.62500000000001
+TASK 9 / 20 	Avg Acc: 52.574074074074076
+TASK 10 / 20 	Avg Acc: 54.91666666666666
+TASK 11 / 20 	Avg Acc: 54.34848484848484
+TASK 12 / 20 	Avg Acc: 58.04166666666667
+TASK 13 / 20 	Avg Acc: 56.807692307692314
+TASK 14 / 20 	Avg Acc: 57.464285714285715
+TASK 15 / 20 	Avg Acc: 57.92222222222222
+TASK 16 / 20 	Avg Acc: 57.322916666666664
+TASK 17 / 20 	Avg Acc: 59.48039215686275
+TASK 18 / 20 	Avg Acc: 58.916666666666664
+TASK 19 / 20 	Avg Acc: 58.82456140350878
+TASK 20 / 20 	Avg Acc: 60.141666666666666
+average accuracy = 60.141666666666666, forget = 0.03771929824561403, learning accuracy = 63.43333333333332
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 48.833333333333336
+TASK 2 / 20 	Avg Acc: 52.166666666666664
+TASK 3 / 20 	Avg Acc: 49.72222222222222
+TASK 4 / 20 	Avg Acc: 54.958333333333336
+TASK 5 / 20 	Avg Acc: 58.0
+TASK 6 / 20 	Avg Acc: 56.47222222222222
+TASK 7 / 20 	Avg Acc: 54.333333333333336
+TASK 8 / 20 	Avg Acc: 53.27083333333333
+TASK 9 / 20 	Avg Acc: 55.407407407407405
+TASK 10 / 20 	Avg Acc: 56.4
+TASK 11 / 20 	Avg Acc: 56.0
+TASK 12 / 20 	Avg Acc: 58.62500000000001
+TASK 13 / 20 	Avg Acc: 57.974358974358985
+TASK 14 / 20 	Avg Acc: 58.488095238095234
+TASK 15 / 20 	Avg Acc: 57.444444444444436
+TASK 16 / 20 	Avg Acc: 57.8125
+TASK 17 / 20 	Avg Acc: 57.568627450980394
+TASK 18 / 20 	Avg Acc: 59.351851851851855
+TASK 19 / 20 	Avg Acc: 58.49122807017544
+TASK 20 / 20 	Avg Acc: 58.74166666666666
+average accuracy = 58.74166666666666, forget = 0.04, learning accuracy = 61.79166666666665
+
+Final Average accuracy =  58.961666666666666 +/- 0.8856510474096347 forget =  0.04235087719298246 +/- 0.006100219735785684 learning accuracy =  62.529999999999994 +/- 0.5574894119572561
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> TAG-ER
+Parameters:
+  benchmark=imagenet
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.0001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-er
+  mem=1
+  tag-opt=rms
+  b=5
+CUDA: True
+Loading 20 tasks for imagenet
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.333333333333336
+TASK 2 / 20 	Avg Acc: 56.0
+TASK 3 / 20 	Avg Acc: 51.16666666666667
+TASK 4 / 20 	Avg Acc: 55.5
+TASK 5 / 20 	Avg Acc: 56.233333333333334
+TASK 6 / 20 	Avg Acc: 55.13888888888889
+TASK 7 / 20 	Avg Acc: 53.30952380952381
+TASK 8 / 20 	Avg Acc: 53.604166666666664
+TASK 9 / 20 	Avg Acc: 54.185185185185176
+TASK 10 / 20 	Avg Acc: 55.300000000000004
+TASK 11 / 20 	Avg Acc: 54.5
+TASK 12 / 20 	Avg Acc: 56.08333333333333
+TASK 13 / 20 	Avg Acc: 55.628205128205124
+TASK 14 / 20 	Avg Acc: 56.809523809523796
+TASK 15 / 20 	Avg Acc: 56.94444444444444
+TASK 16 / 20 	Avg Acc: 57.18750000000001
+TASK 17 / 20 	Avg Acc: 56.80392156862745
+TASK 18 / 20 	Avg Acc: 57.9537037037037
+TASK 19 / 20 	Avg Acc: 57.403508771929815
+TASK 20 / 20 	Avg Acc: 57.59166666666667
+average accuracy = 57.591666666666676, forget = 0.049298245614035084, learning accuracy = 61.966666666666676
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.666666666666664
+TASK 2 / 20 	Avg Acc: 54.25
+TASK 3 / 20 	Avg Acc: 51.5
+TASK 4 / 20 	Avg Acc: 55.666666666666664
+TASK 5 / 20 	Avg Acc: 57.46666666666666
+TASK 6 / 20 	Avg Acc: 56.083333333333336
+TASK 7 / 20 	Avg Acc: 56.5
+TASK 8 / 20 	Avg Acc: 54.3125
+TASK 9 / 20 	Avg Acc: 57.01851851851852
+TASK 10 / 20 	Avg Acc: 57.416666666666664
+TASK 11 / 20 	Avg Acc: 57.21212121212122
+TASK 12 / 20 	Avg Acc: 59.263888888888886
+TASK 13 / 20 	Avg Acc: 58.53846153846154
+TASK 14 / 20 	Avg Acc: 59.66666666666667
+TASK 15 / 20 	Avg Acc: 59.4
+TASK 16 / 20 	Avg Acc: 58.958333333333336
+TASK 17 / 20 	Avg Acc: 60.22549019607843
+TASK 18 / 20 	Avg Acc: 59.37962962962963
+TASK 19 / 20 	Avg Acc: 59.92105263157895
+TASK 20 / 20 	Avg Acc: 60.283333333333324
+average accuracy = 60.28333333333334, forget = 0.031491228070175445, learning accuracy = 62.983333333333334
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 46.666666666666664
+TASK 2 / 20 	Avg Acc: 54.5
+TASK 3 / 20 	Avg Acc: 51.72222222222223
+TASK 4 / 20 	Avg Acc: 54.83333333333333
+TASK 5 / 20 	Avg Acc: 55.8
+TASK 6 / 20 	Avg Acc: 55.52777777777778
+TASK 7 / 20 	Avg Acc: 55.07142857142857
+TASK 8 / 20 	Avg Acc: 53.52083333333332
+TASK 9 / 20 	Avg Acc: 55.351851851851855
+TASK 10 / 20 	Avg Acc: 56.06666666666667
+TASK 11 / 20 	Avg Acc: 54.87878787878788
+TASK 12 / 20 	Avg Acc: 57.55555555555556
+TASK 13 / 20 	Avg Acc: 57.97435897435897
+TASK 14 / 20 	Avg Acc: 57.76190476190477
+TASK 15 / 20 	Avg Acc: 57.577777777777776
+TASK 16 / 20 	Avg Acc: 57.33333333333333
+TASK 17 / 20 	Avg Acc: 58.294117647058826
+TASK 18 / 20 	Avg Acc: 57.71296296296297
+TASK 19 / 20 	Avg Acc: 57.74561403508772
+TASK 20 / 20 	Avg Acc: 58.51666666666667
+average accuracy = 58.516666666666666, forget = 0.04289473684210525, learning accuracy = 62.18333333333334
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.5
+TASK 2 / 20 	Avg Acc: 55.08333333333333
+TASK 3 / 20 	Avg Acc: 53.111111111111114
+TASK 4 / 20 	Avg Acc: 56.75
+TASK 5 / 20 	Avg Acc: 58.5
+TASK 6 / 20 	Avg Acc: 54.833333333333336
+TASK 7 / 20 	Avg Acc: 55.28571428571429
+TASK 8 / 20 	Avg Acc: 54.291666666666664
+TASK 9 / 20 	Avg Acc: 55.27777777777778
+TASK 10 / 20 	Avg Acc: 56.89999999999999
+TASK 11 / 20 	Avg Acc: 57.121212121212125
+TASK 12 / 20 	Avg Acc: 57.94444444444444
+TASK 13 / 20 	Avg Acc: 57.57692307692308
+TASK 14 / 20 	Avg Acc: 58.78571428571429
+TASK 15 / 20 	Avg Acc: 58.69999999999999
+TASK 16 / 20 	Avg Acc: 58.32291666666667
+TASK 17 / 20 	Avg Acc: 59.28431372549019
+TASK 18 / 20 	Avg Acc: 59.370370370370374
+TASK 19 / 20 	Avg Acc: 59.666666666666664
+TASK 20 / 20 	Avg Acc: 60.166666666666664
+average accuracy = 60.16666666666667, forget = 0.03219298245614036, learning accuracy = 62.59166666666666
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 49.0
+TASK 2 / 20 	Avg Acc: 52.41666666666667
+TASK 3 / 20 	Avg Acc: 52.72222222222223
+TASK 4 / 20 	Avg Acc: 55.0
+TASK 5 / 20 	Avg Acc: 56.733333333333334
+TASK 6 / 20 	Avg Acc: 54.19444444444444
+TASK 7 / 20 	Avg Acc: 55.54761904761904
+TASK 8 / 20 	Avg Acc: 54.04166666666667
+TASK 9 / 20 	Avg Acc: 55.666666666666664
+TASK 10 / 20 	Avg Acc: 55.5
+TASK 11 / 20 	Avg Acc: 55.75757575757576
+TASK 12 / 20 	Avg Acc: 56.69444444444444
+TASK 13 / 20 	Avg Acc: 57.93589743589743
+TASK 14 / 20 	Avg Acc: 58.345238095238095
+TASK 15 / 20 	Avg Acc: 57.55555555555555
+TASK 16 / 20 	Avg Acc: 57.93749999999999
+TASK 17 / 20 	Avg Acc: 58.8921568627451
+TASK 18 / 20 	Avg Acc: 58.638888888888886
+TASK 19 / 20 	Avg Acc: 58.780701754385966
+TASK 20 / 20 	Avg Acc: 58.008333333333326
+average accuracy = 58.00833333333335, forget = 0.043157894736842124, learning accuracy = 61.891666666666666
+
+Final Average accuracy =  58.913333333333334 +/- 1.110938042076753 forget =  0.039807017543859645 +/- 0.00689886488626864 learning accuracy =  62.32333333333334 +/- 0.4100609710762515
 ------------------- Experiment ended -----------------
 
 

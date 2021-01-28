@@ -602,7 +602,7 @@ Parameters:
   batch_size=10
   learning_rate=0.1
   learning rate decay(gamma)=0.9
-  dropout prob=0.0
+  dropout prob=0.1
   optimizer opt=None
 CUDA: True
 Loading 20 tasks for cifar100
@@ -612,126 +612,127 @@ loaded all tasks!
 
 ------------------- Experiment-1 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-TASK 1 / 20 	Avg Acc: 57.0
-TASK 2 / 20 	Avg Acc: 48.8
-TASK 3 / 20 	Avg Acc: 46.86666666666667
-TASK 4 / 20 	Avg Acc: 44.85
-TASK 5 / 20 	Avg Acc: 48.760000000000005
-TASK 6 / 20 	Avg Acc: 52.63333333333333
-TASK 7 / 20 	Avg Acc: 50.0
-TASK 8 / 20 	Avg Acc: 53.075
-TASK 9 / 20 	Avg Acc: 50.91111111111111
-TASK 10 / 20 	Avg Acc: 52.2
-TASK 11 / 20 	Avg Acc: 56.34545454545455
-TASK 12 / 20 	Avg Acc: 55.85
-TASK 13 / 20 	Avg Acc: 57.276923076923076
-TASK 14 / 20 	Avg Acc: 52.25714285714286
-TASK 15 / 20 	Avg Acc: 57.14666666666667
-TASK 16 / 20 	Avg Acc: 55.2
-TASK 17 / 20 	Avg Acc: 56.11764705882353
-TASK 18 / 20 	Avg Acc: 54.87777777777777
-TASK 19 / 20 	Avg Acc: 58.06315789473685
-TASK 20 / 20 	Avg Acc: 58.34
-average accuracy = 58.339999999999996, forget = 0.09252631578947368, learning accuracy = 66.99999999999999
+TASK 1 / 20 	Avg Acc: 53.6
+TASK 2 / 20 	Avg Acc: 47.1
+TASK 3 / 20 	Avg Acc: 45.33333333333333
+TASK 4 / 20 	Avg Acc: 44.3
+TASK 5 / 20 	Avg Acc: 49.160000000000004
+TASK 6 / 20 	Avg Acc: 49.96666666666666
+TASK 7 / 20 	Avg Acc: 53.25714285714286
+TASK 8 / 20 	Avg Acc: 52.025
+TASK 9 / 20 	Avg Acc: 51.62222222222222
+TASK 10 / 20 	Avg Acc: 53.38
+TASK 11 / 20 	Avg Acc: 52.3090909090909
+TASK 12 / 20 	Avg Acc: 56.06666666666667
+TASK 13 / 20 	Avg Acc: 55.32307692307692
+TASK 14 / 20 	Avg Acc: 55.67142857142858
+TASK 15 / 20 	Avg Acc: 55.34666666666667
+TASK 16 / 20 	Avg Acc: 58.325
+TASK 17 / 20 	Avg Acc: 54.21176470588235
+TASK 18 / 20 	Avg Acc: 55.87777777777777
+TASK 19 / 20 	Avg Acc: 55.37894736842105
+TASK 20 / 20 	Avg Acc: 58.34000000000001
+average accuracy = 58.339999999999996, forget = 0.08084210526315791, learning accuracy = 65.43
 
 ------------------- Experiment-2 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-TASK 1 / 20 	Avg Acc: 62.8
-TASK 2 / 20 	Avg Acc: 47.0
-TASK 3 / 20 	Avg Acc: 49.0
-TASK 4 / 20 	Avg Acc: 44.75
-TASK 5 / 20 	Avg Acc: 53.08
-TASK 6 / 20 	Avg Acc: 46.46666666666667
-TASK 7 / 20 	Avg Acc: 44.57142857142857
-TASK 8 / 20 	Avg Acc: 48.650000000000006
-TASK 9 / 20 	Avg Acc: 42.17777777777778
-TASK 10 / 20 	Avg Acc: 50.98
-TASK 11 / 20 	Avg Acc: 53.29090909090909
-TASK 12 / 20 	Avg Acc: 52.43333333333334
-TASK 13 / 20 	Avg Acc: 54.93846153846154
-TASK 14 / 20 	Avg Acc: 53.32857142857142
-TASK 15 / 20 	Avg Acc: 54.06666666666667
-TASK 16 / 20 	Avg Acc: 54.65
-TASK 17 / 20 	Avg Acc: 53.90588235294117
-TASK 18 / 20 	Avg Acc: 51.16666666666667
-TASK 19 / 20 	Avg Acc: 52.32631578947368
-TASK 20 / 20 	Avg Acc: 54.63999999999999
-average accuracy = 54.64, forget = 0.13621052631578945, learning accuracy = 67.26
+TASK 1 / 20 	Avg Acc: 53.8
+TASK 2 / 20 	Avg Acc: 43.0
+TASK 3 / 20 	Avg Acc: 42.8
+TASK 4 / 20 	Avg Acc: 42.3
+TASK 5 / 20 	Avg Acc: 44.92
+TASK 6 / 20 	Avg Acc: 29.733333333333334
+TASK 7 / 20 	Avg Acc: 39.285714285714285
+TASK 8 / 20 	Avg Acc: 44.975
+TASK 9 / 20 	Avg Acc: 47.0
+TASK 10 / 20 	Avg Acc: 47.779999999999994
+TASK 11 / 20 	Avg Acc: 47.43636363636364
+TASK 12 / 20 	Avg Acc: 49.733333333333334
+TASK 13 / 20 	Avg Acc: 50.261538461538464
+TASK 14 / 20 	Avg Acc: 49.52857142857143
+TASK 15 / 20 	Avg Acc: 51.559999999999995
+TASK 16 / 20 	Avg Acc: 52.5875
+TASK 17 / 20 	Avg Acc: 50.29411764705882
+TASK 18 / 20 	Avg Acc: 51.1888888888889
+TASK 19 / 20 	Avg Acc: 53.1578947368421
+TASK 20 / 20 	Avg Acc: 55.33999999999999
+average accuracy = 55.339999999999996, forget = 0.09410526315789473, learning accuracy = 63.269999999999996
 
 ------------------- Experiment-3 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-TASK 1 / 20 	Avg Acc: 55.6
-TASK 2 / 20 	Avg Acc: 50.3
-TASK 3 / 20 	Avg Acc: 49.2
-TASK 4 / 20 	Avg Acc: 48.550000000000004
-TASK 5 / 20 	Avg Acc: 51.4
-TASK 6 / 20 	Avg Acc: 49.53333333333333
-TASK 7 / 20 	Avg Acc: 53.2
-TASK 8 / 20 	Avg Acc: 45.125
-TASK 9 / 20 	Avg Acc: 49.2
-TASK 10 / 20 	Avg Acc: 51.959999999999994
-TASK 11 / 20 	Avg Acc: 48.763636363636365
-TASK 12 / 20 	Avg Acc: 55.71666666666666
-TASK 13 / 20 	Avg Acc: 53.73846153846153
-TASK 14 / 20 	Avg Acc: 53.400000000000006
-TASK 15 / 20 	Avg Acc: 55.85333333333334
-TASK 16 / 20 	Avg Acc: 56.96249999999999
-TASK 17 / 20 	Avg Acc: 53.07058823529412
-TASK 18 / 20 	Avg Acc: 53.64444444444443
-TASK 19 / 20 	Avg Acc: 56.14736842105264
-TASK 20 / 20 	Avg Acc: 58.68
-average accuracy = 58.68000000000002, forget = 0.09231578947368418, learning accuracy = 66.9
+TASK 1 / 20 	Avg Acc: 59.4
+TASK 2 / 20 	Avg Acc: 48.9
+TASK 3 / 20 	Avg Acc: 49.66666666666667
+TASK 4 / 20 	Avg Acc: 45.5
+TASK 5 / 20 	Avg Acc: 52.08
+TASK 6 / 20 	Avg Acc: 50.76666666666666
+TASK 7 / 20 	Avg Acc: 48.82857142857143
+TASK 8 / 20 	Avg Acc: 47.925
+TASK 9 / 20 	Avg Acc: 51.44444444444444
+TASK 10 / 20 	Avg Acc: 52.800000000000004
+TASK 11 / 20 	Avg Acc: 49.56363636363638
+TASK 12 / 20 	Avg Acc: 54.933333333333344
+TASK 13 / 20 	Avg Acc: 55.169230769230765
+TASK 14 / 20 	Avg Acc: 53.51428571428572
+TASK 15 / 20 	Avg Acc: 55.61333333333333
+TASK 16 / 20 	Avg Acc: 56.35
+TASK 17 / 20 	Avg Acc: 50.77647058823529
+TASK 18 / 20 	Avg Acc: 54.93333333333333
+TASK 19 / 20 	Avg Acc: 55.98947368421052
+TASK 20 / 20 	Avg Acc: 57.92999999999999
+average accuracy = 57.92999999999999, forget = 0.0856842105263158, learning accuracy = 65.82
 
 ------------------- Experiment-4 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-TASK 1 / 20 	Avg Acc: 60.4
-TASK 2 / 20 	Avg Acc: 47.6
-TASK 3 / 20 	Avg Acc: 43.86666666666667
-TASK 4 / 20 	Avg Acc: 44.9
-TASK 5 / 20 	Avg Acc: 51.2
-TASK 6 / 20 	Avg Acc: 48.6
-TASK 7 / 20 	Avg Acc: 47.57142857142857
-TASK 8 / 20 	Avg Acc: 49.775000000000006
-TASK 9 / 20 	Avg Acc: 47.15555555555555
-TASK 10 / 20 	Avg Acc: 47.47999999999999
-TASK 11 / 20 	Avg Acc: 50.54545454545455
-TASK 12 / 20 	Avg Acc: 49.63333333333333
-TASK 13 / 20 	Avg Acc: 45.56923076923078
-TASK 14 / 20 	Avg Acc: 48.41428571428571
-TASK 15 / 20 	Avg Acc: 52.64
-TASK 16 / 20 	Avg Acc: 55.612500000000004
-TASK 17 / 20 	Avg Acc: 54.76470588235294
-TASK 18 / 20 	Avg Acc: 53.67777777777778
-TASK 19 / 20 	Avg Acc: 55.978947368421046
-TASK 20 / 20 	Avg Acc: 56.480000000000004
-average accuracy = 56.48, forget = 0.12810526315789472, learning accuracy = 68.03
+TASK 1 / 20 	Avg Acc: 52.4
+TASK 2 / 20 	Avg Acc: 50.900000000000006
+TASK 3 / 20 	Avg Acc: 46.06666666666667
+TASK 4 / 20 	Avg Acc: 35.8
+TASK 5 / 20 	Avg Acc: 51.879999999999995
+TASK 6 / 20 	Avg Acc: 55.733333333333334
+TASK 7 / 20 	Avg Acc: 52.114285714285714
+TASK 8 / 20 	Avg Acc: 52.199999999999996
+TASK 9 / 20 	Avg Acc: 51.177777777777784
+TASK 10 / 20 	Avg Acc: 53.699999999999996
+TASK 11 / 20 	Avg Acc: 51.45454545454545
+TASK 12 / 20 	Avg Acc: 54.53333333333334
+TASK 13 / 20 	Avg Acc: 55.353846153846156
+TASK 14 / 20 	Avg Acc: 53.17142857142857
+TASK 15 / 20 	Avg Acc: 54.56
+TASK 16 / 20 	Avg Acc: 55.112500000000004
+TASK 17 / 20 	Avg Acc: 52.72941176470588
+TASK 18 / 20 	Avg Acc: 54.855555555555554
+TASK 19 / 20 	Avg Acc: 56.631578947368425
+TASK 20 / 20 	Avg Acc: 57.15
+average accuracy = 57.15, forget = 0.0870526315789474, learning accuracy = 64.36
 
 ------------------- Experiment-5 started -----------------
 [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
-TASK 1 / 20 	Avg Acc: 46.4
-TASK 2 / 20 	Avg Acc: 38.1
-TASK 3 / 20 	Avg Acc: 42.0
-TASK 4 / 20 	Avg Acc: 46.4
-TASK 5 / 20 	Avg Acc: 50.400000000000006
-TASK 6 / 20 	Avg Acc: 49.26666666666667
-TASK 7 / 20 	Avg Acc: 52.22857142857143
-TASK 8 / 20 	Avg Acc: 51.95
-TASK 9 / 20 	Avg Acc: 49.75555555555556
-TASK 10 / 20 	Avg Acc: 46.74
-TASK 11 / 20 	Avg Acc: 50.45454545454545
-TASK 12 / 20 	Avg Acc: 51.24999999999999
-TASK 13 / 20 	Avg Acc: 53.33846153846154
-TASK 14 / 20 	Avg Acc: 50.614285714285714
-TASK 15 / 20 	Avg Acc: 52.29333333333333
-TASK 16 / 20 	Avg Acc: 54.20000000000001
-TASK 17 / 20 	Avg Acc: 52.36470588235294
-TASK 18 / 20 	Avg Acc: 53.32222222222222
-TASK 19 / 20 	Avg Acc: 54.82105263157895
-TASK 20 / 20 	Avg Acc: 55.66000000000001
-average accuracy = 55.660000000000004, forget = 0.10736842105263157, learning accuracy = 65.6
+TASK 1 / 20 	Avg Acc: 47.0
+TASK 2 / 20 	Avg Acc: 44.400000000000006
+TASK 3 / 20 	Avg Acc: 47.2
+TASK 4 / 20 	Avg Acc: 43.650000000000006
+TASK 5 / 20 	Avg Acc: 46.75999999999999
+TASK 6 / 20 	Avg Acc: 48.1
+TASK 7 / 20 	Avg Acc: 45.228571428571435
+TASK 8 / 20 	Avg Acc: 40.824999999999996
+TASK 9 / 20 	Avg Acc: 46.15555555555556
+TASK 10 / 20 	Avg Acc: 48.06
+TASK 11 / 20 	Avg Acc: 48.690909090909095
+TASK 12 / 20 	Avg Acc: 48.53333333333333
+TASK 13 / 20 	Avg Acc: 49.23076923076923
+TASK 14 / 20 	Avg Acc: 50.6
+TASK 15 / 20 	Avg Acc: 50.57333333333333
+TASK 16 / 20 	Avg Acc: 53.699999999999996
+TASK 17 / 20 	Avg Acc: 49.870588235294115
+TASK 18 / 20 	Avg Acc: 51.2888888888889
+TASK 19 / 20 	Avg Acc: 51.315789473684205
+TASK 20 / 20 	Avg Acc: 56.42000000000001
+average accuracy = 56.42, forget = 0.08273684210526318, learning accuracy = 64.24000000000001
 
-Final Average accuracy =  56.760000000000005 +/- 1.5469712343802686 forget =  0.11130526315789473 +/- 0.018062446311588102 learning accuracy =  66.958 +/- 0.786089053479314
+Final Average accuracy =  57.036 +/- 1.0741061400066556 forget =  0.08608421052631579 +/- 0.004563324831524212 learning accuracy =  64.624 +/- 0.9089026350495414
 ------------------- Experiment ended -----------------
+
 
 ************************ replicating experiment (Split CIFAR-100) ***********************
  >>>>>>>> Naive RMSProp
@@ -3832,6 +3833,1461 @@ average accuracy = 54.88000000000001, forget = 0.10063157894736842, learning acc
 
 
 Final Average accuracy =  51.224000000000004 +/- 2.8173647261226251 forget =  0.15418947368421054 +/- 0.031444161474886344 learning accuracy =  64.623999999999995 +/- 2.2578627061892012
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (Split CIFAR-100) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=10
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.6
+TASK 2 / 20 	Avg Acc: 45.5
+TASK 3 / 20 	Avg Acc: 44.46666666666666
+TASK 4 / 20 	Avg Acc: 47.7
+TASK 5 / 20 	Avg Acc: 51.8
+TASK 6 / 20 	Avg Acc: 49.266666666666666
+TASK 7 / 20 	Avg Acc: 50.25714285714285
+TASK 8 / 20 	Avg Acc: 49.45
+TASK 9 / 20 	Avg Acc: 46.6
+TASK 10 / 20 	Avg Acc: 48.6
+TASK 11 / 20 	Avg Acc: 46.18181818181819
+TASK 12 / 20 	Avg Acc: 51.25
+TASK 13 / 20 	Avg Acc: 51.41538461538462
+TASK 14 / 20 	Avg Acc: 50.28571428571429
+TASK 15 / 20 	Avg Acc: 54.61333333333333
+TASK 16 / 20 	Avg Acc: 52.7125
+TASK 17 / 20 	Avg Acc: 50.35294117647059
+TASK 18 / 20 	Avg Acc: 52.67777777777778
+TASK 19 / 20 	Avg Acc: 54.968421052631584
+TASK 20 / 20 	Avg Acc: 54.24000000000001
+average accuracy = 54.239999999999995, forget = 0.14357894736842106, learning accuracy = 67.66
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 58.2
+TASK 2 / 20 	Avg Acc: 54.9
+TASK 3 / 20 	Avg Acc: 42.6
+TASK 4 / 20 	Avg Acc: 47.849999999999994
+TASK 5 / 20 	Avg Acc: 53.44
+TASK 6 / 20 	Avg Acc: 51.7
+TASK 7 / 20 	Avg Acc: 49.71428571428571
+TASK 8 / 20 	Avg Acc: 50.599999999999994
+TASK 9 / 20 	Avg Acc: 47.044444444444444
+TASK 10 / 20 	Avg Acc: 53.3
+TASK 11 / 20 	Avg Acc: 48.18181818181818
+TASK 12 / 20 	Avg Acc: 51.233333333333334
+TASK 13 / 20 	Avg Acc: 49.323076923076925
+TASK 14 / 20 	Avg Acc: 51.4
+TASK 15 / 20 	Avg Acc: 51.26666666666666
+TASK 16 / 20 	Avg Acc: 52.324999999999996
+TASK 17 / 20 	Avg Acc: 49.62352941176471
+TASK 18 / 20 	Avg Acc: 51.56666666666666
+TASK 19 / 20 	Avg Acc: 50.83157894736842
+TASK 20 / 20 	Avg Acc: 56.499999999999986
+average accuracy = 56.5, forget = 0.1369473684210526, learning accuracy = 69.10999999999999
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 52.6
+TASK 2 / 20 	Avg Acc: 51.5
+TASK 3 / 20 	Avg Acc: 47.333333333333336
+TASK 4 / 20 	Avg Acc: 53.349999999999994
+TASK 5 / 20 	Avg Acc: 57.04
+TASK 6 / 20 	Avg Acc: 53.333333333333336
+TASK 7 / 20 	Avg Acc: 54.65714285714286
+TASK 8 / 20 	Avg Acc: 53.050000000000004
+TASK 9 / 20 	Avg Acc: 49.86666666666667
+TASK 10 / 20 	Avg Acc: 53.36
+TASK 11 / 20 	Avg Acc: 51.763636363636365
+TASK 12 / 20 	Avg Acc: 56.833333333333336
+TASK 13 / 20 	Avg Acc: 56.138461538461534
+TASK 14 / 20 	Avg Acc: 52.97142857142857
+TASK 15 / 20 	Avg Acc: 54.0
+TASK 16 / 20 	Avg Acc: 53.91250000000001
+TASK 17 / 20 	Avg Acc: 52.64705882352942
+TASK 18 / 20 	Avg Acc: 55.37777777777778
+TASK 19 / 20 	Avg Acc: 58.65263157894737
+TASK 20 / 20 	Avg Acc: 60.099999999999994
+average accuracy = 60.09999999999999, forget = 0.09863157894736842, learning accuracy = 68.9
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 50.9
+TASK 3 / 20 	Avg Acc: 46.266666666666666
+TASK 4 / 20 	Avg Acc: 48.599999999999994
+TASK 5 / 20 	Avg Acc: 55.88
+TASK 6 / 20 	Avg Acc: 51.96666666666666
+TASK 7 / 20 	Avg Acc: 52.28571428571428
+TASK 8 / 20 	Avg Acc: 51.625
+TASK 9 / 20 	Avg Acc: 50.644444444444446
+TASK 10 / 20 	Avg Acc: 52.800000000000004
+TASK 11 / 20 	Avg Acc: 50.98181818181818
+TASK 12 / 20 	Avg Acc: 53.516666666666666
+TASK 13 / 20 	Avg Acc: 54.76923076923076
+TASK 14 / 20 	Avg Acc: 52.94285714285715
+TASK 15 / 20 	Avg Acc: 55.74666666666666
+TASK 16 / 20 	Avg Acc: 57.825
+TASK 17 / 20 	Avg Acc: 55.74117647058823
+TASK 18 / 20 	Avg Acc: 54.17777777777778
+TASK 19 / 20 	Avg Acc: 56.06315789473685
+TASK 20 / 20 	Avg Acc: 55.83
+average accuracy = 55.83, forget = 0.1522105263157895, learning accuracy = 70.22
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.8
+TASK 2 / 20 	Avg Acc: 48.6
+TASK 3 / 20 	Avg Acc: 48.266666666666666
+TASK 4 / 20 	Avg Acc: 49.6
+TASK 5 / 20 	Avg Acc: 51.4
+TASK 6 / 20 	Avg Acc: 49.73333333333333
+TASK 7 / 20 	Avg Acc: 51.599999999999994
+TASK 8 / 20 	Avg Acc: 48.675
+TASK 9 / 20 	Avg Acc: 52.64444444444444
+TASK 10 / 20 	Avg Acc: 51.88
+TASK 11 / 20 	Avg Acc: 51.25454545454546
+TASK 12 / 20 	Avg Acc: 51.46666666666667
+TASK 13 / 20 	Avg Acc: 53.430769230769236
+TASK 14 / 20 	Avg Acc: 47.82857142857143
+TASK 15 / 20 	Avg Acc: 54.29333333333334
+TASK 16 / 20 	Avg Acc: 47.525
+TASK 17 / 20 	Avg Acc: 49.329411764705874
+TASK 18 / 20 	Avg Acc: 51.777777777777786
+TASK 19 / 20 	Avg Acc: 52.85263157894737
+TASK 20 / 20 	Avg Acc: 56.720000000000006
+average accuracy = 56.71999999999999, forget = 0.11578947368421055, learning accuracy = 67.70000000000002
+
+Final Average accuracy =  56.67799999999998 +/- 1.9186703729405914 forget =  0.1294315789473684 +/- 0.01954616383783844 learning accuracy =  68.718 +/- 0.9590078206146141
+------------------- Experiment ended -----------------
+
+
+************************ replicating experiment (Split CIFAR-100) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=5
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.6
+TASK 2 / 20 	Avg Acc: 52.3
+TASK 3 / 20 	Avg Acc: 48.266666666666666
+TASK 4 / 20 	Avg Acc: 49.2
+TASK 5 / 20 	Avg Acc: 52.68
+TASK 6 / 20 	Avg Acc: 44.63333333333333
+TASK 7 / 20 	Avg Acc: 51.31428571428572
+TASK 8 / 20 	Avg Acc: 50.125
+TASK 9 / 20 	Avg Acc: 47.64444444444444
+TASK 10 / 20 	Avg Acc: 50.52
+TASK 11 / 20 	Avg Acc: 49.127272727272725
+TASK 12 / 20 	Avg Acc: 53.43333333333332
+TASK 13 / 20 	Avg Acc: 53.32307692307692
+TASK 14 / 20 	Avg Acc: 49.21428571428571
+TASK 15 / 20 	Avg Acc: 52.73333333333333
+TASK 16 / 20 	Avg Acc: 52.15
+TASK 17 / 20 	Avg Acc: 53.62352941176471
+TASK 18 / 20 	Avg Acc: 53.06666666666666
+TASK 19 / 20 	Avg Acc: 53.17894736842105
+TASK 20 / 20 	Avg Acc: 54.209999999999994
+average accuracy = 54.21, forget = 0.1583157894736842, learning accuracy = 69.25
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 58.2
+TASK 2 / 20 	Avg Acc: 47.6
+TASK 3 / 20 	Avg Acc: 44.86666666666667
+TASK 4 / 20 	Avg Acc: 49.75
+TASK 5 / 20 	Avg Acc: 51.2
+TASK 6 / 20 	Avg Acc: 54.06666666666666
+TASK 7 / 20 	Avg Acc: 47.400000000000006
+TASK 8 / 20 	Avg Acc: 50.95
+TASK 9 / 20 	Avg Acc: 51.644444444444446
+TASK 10 / 20 	Avg Acc: 54.56
+TASK 11 / 20 	Avg Acc: 49.963636363636375
+TASK 12 / 20 	Avg Acc: 55.083333333333336
+TASK 13 / 20 	Avg Acc: 53.261538461538464
+TASK 14 / 20 	Avg Acc: 52.65714285714285
+TASK 15 / 20 	Avg Acc: 53.10666666666667
+TASK 16 / 20 	Avg Acc: 55.849999999999994
+TASK 17 / 20 	Avg Acc: 55.14117647058823
+TASK 18 / 20 	Avg Acc: 54.61111111111111
+TASK 19 / 20 	Avg Acc: 56.76842105263158
+TASK 20 / 20 	Avg Acc: 55.04
+average accuracy = 55.04, forget = 0.16, learning accuracy = 69.61
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 52.6
+TASK 2 / 20 	Avg Acc: 54.0
+TASK 3 / 20 	Avg Acc: 47.8
+TASK 4 / 20 	Avg Acc: 51.9
+TASK 5 / 20 	Avg Acc: 52.52
+TASK 6 / 20 	Avg Acc: 54.366666666666674
+TASK 7 / 20 	Avg Acc: 53.05714285714286
+TASK 8 / 20 	Avg Acc: 44.050000000000004
+TASK 9 / 20 	Avg Acc: 53.666666666666664
+TASK 10 / 20 	Avg Acc: 54.14000000000001
+TASK 11 / 20 	Avg Acc: 51.800000000000004
+TASK 12 / 20 	Avg Acc: 54.95
+TASK 13 / 20 	Avg Acc: 54.93846153846154
+TASK 14 / 20 	Avg Acc: 54.18571428571428
+TASK 15 / 20 	Avg Acc: 53.63999999999999
+TASK 16 / 20 	Avg Acc: 48.287499999999994
+TASK 17 / 20 	Avg Acc: 49.90588235294118
+TASK 18 / 20 	Avg Acc: 52.55555555555556
+TASK 19 / 20 	Avg Acc: 53.810526315789474
+TASK 20 / 20 	Avg Acc: 57.17999999999999
+average accuracy = 57.17999999999999, forget = 0.1250526315789474, learning accuracy = 68.52000000000001
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 51.4
+TASK 3 / 20 	Avg Acc: 49.13333333333334
+TASK 4 / 20 	Avg Acc: 48.2
+TASK 5 / 20 	Avg Acc: 56.08
+TASK 6 / 20 	Avg Acc: 48.199999999999996
+TASK 7 / 20 	Avg Acc: 48.94285714285714
+TASK 8 / 20 	Avg Acc: 48.87499999999999
+TASK 9 / 20 	Avg Acc: 50.68888888888889
+TASK 10 / 20 	Avg Acc: 51.580000000000005
+TASK 11 / 20 	Avg Acc: 50.236363636363635
+TASK 12 / 20 	Avg Acc: 50.38333333333334
+TASK 13 / 20 	Avg Acc: 53.307692307692314
+TASK 14 / 20 	Avg Acc: 50.37142857142857
+TASK 15 / 20 	Avg Acc: 54.69333333333333
+TASK 16 / 20 	Avg Acc: 53.03750000000001
+TASK 17 / 20 	Avg Acc: 52.1764705882353
+TASK 18 / 20 	Avg Acc: 53.74444444444445
+TASK 19 / 20 	Avg Acc: 56.07368421052632
+TASK 20 / 20 	Avg Acc: 56.93999999999999
+average accuracy = 56.94, forget = 0.13768421052631577, learning accuracy = 69.35
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.8
+TASK 2 / 20 	Avg Acc: 50.400000000000006
+TASK 3 / 20 	Avg Acc: 49.0
+TASK 4 / 20 	Avg Acc: 48.7
+TASK 5 / 20 	Avg Acc: 50.92
+TASK 6 / 20 	Avg Acc: 50.3
+TASK 7 / 20 	Avg Acc: 54.25714285714285
+TASK 8 / 20 	Avg Acc: 50.824999999999996
+TASK 9 / 20 	Avg Acc: 49.37777777777778
+TASK 10 / 20 	Avg Acc: 49.6
+TASK 11 / 20 	Avg Acc: 51.81818181818182
+TASK 12 / 20 	Avg Acc: 50.4
+TASK 13 / 20 	Avg Acc: 53.538461538461526
+TASK 14 / 20 	Avg Acc: 52.44285714285714
+TASK 15 / 20 	Avg Acc: 54.093333333333334
+TASK 16 / 20 	Avg Acc: 52.675
+TASK 17 / 20 	Avg Acc: 48.2
+TASK 18 / 20 	Avg Acc: 52.55555555555555
+TASK 19 / 20 	Avg Acc: 52.305263157894736
+TASK 20 / 20 	Avg Acc: 55.330000000000005
+average accuracy = 55.330000000000005, forget = 0.1345263157894737, learning accuracy = 68.11
+
+Final Average accuracy =  55.739999999999995 +/- 1.141279983176781 forget =  0.14311578947368422 +/- 0.013752638628716939 learning accuracy =  68.968 +/- 0.561155949803615
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=5
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.4
+TASK 2 / 20 	Avg Acc: 53.5
+TASK 3 / 20 	Avg Acc: 58.53333333333334
+TASK 4 / 20 	Avg Acc: 57.95
+TASK 5 / 20 	Avg Acc: 63.64
+TASK 6 / 20 	Avg Acc: 59.36666666666667
+TASK 7 / 20 	Avg Acc: 61.171428571428564
+TASK 8 / 20 	Avg Acc: 60.574999999999996
+TASK 9 / 20 	Avg Acc: 61.57777777777778
+TASK 10 / 20 	Avg Acc: 63.06000000000001
+TASK 11 / 20 	Avg Acc: 62.25454545454546
+TASK 12 / 20 	Avg Acc: 63.56666666666668
+TASK 13 / 20 	Avg Acc: 64.49230769230769
+TASK 14 / 20 	Avg Acc: 64.34285714285714
+TASK 15 / 20 	Avg Acc: 65.78666666666666
+TASK 16 / 20 	Avg Acc: 65.275
+TASK 17 / 20 	Avg Acc: 65.6705882352941
+TASK 18 / 20 	Avg Acc: 65.74444444444443
+TASK 19 / 20 	Avg Acc: 67.39999999999999
+TASK 20 / 20 	Avg Acc: 62.95000000000001
+average accuracy = 62.94999999999999, forget = 0.09021052631578948, learning accuracy = 70.01
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 57.4
+TASK 2 / 20 	Avg Acc: 60.7
+TASK 3 / 20 	Avg Acc: 59.266666666666666
+TASK 4 / 20 	Avg Acc: 60.25
+TASK 5 / 20 	Avg Acc: 62.88
+TASK 6 / 20 	Avg Acc: 63.8
+TASK 7 / 20 	Avg Acc: 64.97142857142858
+TASK 8 / 20 	Avg Acc: 61.62500000000001
+TASK 9 / 20 	Avg Acc: 59.044444444444444
+TASK 10 / 20 	Avg Acc: 64.69999999999999
+TASK 11 / 20 	Avg Acc: 66.03636363636363
+TASK 12 / 20 	Avg Acc: 66.46666666666667
+TASK 13 / 20 	Avg Acc: 67.46153846153845
+TASK 14 / 20 	Avg Acc: 64.87142857142857
+TASK 15 / 20 	Avg Acc: 67.65333333333335
+TASK 16 / 20 	Avg Acc: 65.0125
+TASK 17 / 20 	Avg Acc: 67.23529411764706
+TASK 18 / 20 	Avg Acc: 66.42222222222222
+TASK 19 / 20 	Avg Acc: 67.28421052631579
+TASK 20 / 20 	Avg Acc: 66.2
+average accuracy = 66.2, forget = 0.07231578947368422, learning accuracy = 71.91
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 53.2
+TASK 2 / 20 	Avg Acc: 57.5
+TASK 3 / 20 	Avg Acc: 61.8
+TASK 4 / 20 	Avg Acc: 61.0
+TASK 5 / 20 	Avg Acc: 62.64
+TASK 6 / 20 	Avg Acc: 62.53333333333333
+TASK 7 / 20 	Avg Acc: 63.4
+TASK 8 / 20 	Avg Acc: 58.175000000000004
+TASK 9 / 20 	Avg Acc: 62.488888888888894
+TASK 10 / 20 	Avg Acc: 63.20000000000001
+TASK 11 / 20 	Avg Acc: 65.41818181818182
+TASK 12 / 20 	Avg Acc: 63.55
+TASK 13 / 20 	Avg Acc: 66.98461538461538
+TASK 14 / 20 	Avg Acc: 62.85714285714287
+TASK 15 / 20 	Avg Acc: 64.56
+TASK 16 / 20 	Avg Acc: 64.7125
+TASK 17 / 20 	Avg Acc: 66.50588235294117
+TASK 18 / 20 	Avg Acc: 64.22222222222223
+TASK 19 / 20 	Avg Acc: 66.13684210526317
+TASK 20 / 20 	Avg Acc: 66.00000000000001
+average accuracy = 66.0, forget = 0.06389473684210527, learning accuracy = 70.57
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.6
+TASK 2 / 20 	Avg Acc: 62.8
+TASK 3 / 20 	Avg Acc: 59.66666666666667
+TASK 4 / 20 	Avg Acc: 60.95
+TASK 5 / 20 	Avg Acc: 62.68
+TASK 6 / 20 	Avg Acc: 64.83333333333334
+TASK 7 / 20 	Avg Acc: 63.342857142857135
+TASK 8 / 20 	Avg Acc: 64.5
+TASK 9 / 20 	Avg Acc: 64.06666666666666
+TASK 10 / 20 	Avg Acc: 64.06
+TASK 11 / 20 	Avg Acc: 63.581818181818186
+TASK 12 / 20 	Avg Acc: 64.38333333333334
+TASK 13 / 20 	Avg Acc: 66.46153846153845
+TASK 14 / 20 	Avg Acc: 64.05714285714286
+TASK 15 / 20 	Avg Acc: 66.88000000000001
+TASK 16 / 20 	Avg Acc: 65.22500000000001
+TASK 17 / 20 	Avg Acc: 65.28235294117647
+TASK 18 / 20 	Avg Acc: 64.61111111111111
+TASK 19 / 20 	Avg Acc: 66.53684210526315
+TASK 20 / 20 	Avg Acc: 67.30000000000001
+average accuracy = 67.3, forget = 0.06810526315789472, learning accuracy = 72.53
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 53.400000000000006
+TASK 3 / 20 	Avg Acc: 57.66666666666667
+TASK 4 / 20 	Avg Acc: 60.55
+TASK 5 / 20 	Avg Acc: 61.56
+TASK 6 / 20 	Avg Acc: 62.13333333333333
+TASK 7 / 20 	Avg Acc: 62.31428571428572
+TASK 8 / 20 	Avg Acc: 62.925000000000004
+TASK 9 / 20 	Avg Acc: 61.68888888888889
+TASK 10 / 20 	Avg Acc: 60.98
+TASK 11 / 20 	Avg Acc: 62.181818181818166
+TASK 12 / 20 	Avg Acc: 64.71666666666667
+TASK 13 / 20 	Avg Acc: 65.63076923076923
+TASK 14 / 20 	Avg Acc: 63.585714285714296
+TASK 15 / 20 	Avg Acc: 65.78666666666668
+TASK 16 / 20 	Avg Acc: 62.675
+TASK 17 / 20 	Avg Acc: 63.588235294117645
+TASK 18 / 20 	Avg Acc: 64.0111111111111
+TASK 19 / 20 	Avg Acc: 65.2
+TASK 20 / 20 	Avg Acc: 66.26999999999998
+average accuracy = 66.27000000000001, forget = 0.05421052631578946, learning accuracy = 69.55
+
+Final Average accuracy =  65.744 +/- 1.4681771010338003 forget =  0.06974736842105263 +/- 0.011863227945433683 learning accuracy =  70.914 +/- 1.13132842269608
+------------------- Experiment ended -----------------
+
+ >>>>>>>> Multi-task
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.01
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=None
+CUDA: True
+
+Final Average accuracy =  67.748 +/- 0.583554 forget =  0.06974736842105263 +/- 0.011863227945433683 learning accuracy =  70.914 +/- 1.13132842269608
+------------------- Experiment ended -----------------
+
+************************ replicating experiment (Split CIFAR-100) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=3
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.6
+TASK 2 / 20 	Avg Acc: 51.8
+TASK 3 / 20 	Avg Acc: 48.266666666666666
+TASK 4 / 20 	Avg Acc: 47.650000000000006
+TASK 5 / 20 	Avg Acc: 52.52
+TASK 6 / 20 	Avg Acc: 48.1
+TASK 7 / 20 	Avg Acc: 50.942857142857136
+TASK 8 / 20 	Avg Acc: 52.35
+TASK 9 / 20 	Avg Acc: 49.17777777777778
+TASK 10 / 20 	Avg Acc: 48.08
+TASK 11 / 20 	Avg Acc: 53.090909090909086
+TASK 12 / 20 	Avg Acc: 52.78333333333333
+TASK 13 / 20 	Avg Acc: 52.86153846153846
+TASK 14 / 20 	Avg Acc: 52.59999999999999
+TASK 15 / 20 	Avg Acc: 53.06666666666666
+TASK 16 / 20 	Avg Acc: 55.0
+TASK 17 / 20 	Avg Acc: 52.34117647058824
+TASK 18 / 20 	Avg Acc: 52.42222222222223
+TASK 19 / 20 	Avg Acc: 52.83157894736841
+TASK 20 / 20 	Avg Acc: 55.41
+average accuracy = 55.410000000000004, forget = 0.1288421052631579, learning accuracy = 67.28999999999999
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 58.2
+TASK 2 / 20 	Avg Acc: 48.599999999999994
+TASK 3 / 20 	Avg Acc: 44.53333333333333
+TASK 4 / 20 	Avg Acc: 46.55
+TASK 5 / 20 	Avg Acc: 53.03999999999999
+TASK 6 / 20 	Avg Acc: 53.36666666666667
+TASK 7 / 20 	Avg Acc: 48.77142857142857
+TASK 8 / 20 	Avg Acc: 50.50000000000001
+TASK 9 / 20 	Avg Acc: 47.68888888888888
+TASK 10 / 20 	Avg Acc: 49.5
+TASK 11 / 20 	Avg Acc: 48.345454545454544
+TASK 12 / 20 	Avg Acc: 53.483333333333334
+TASK 13 / 20 	Avg Acc: 52.6923076923077
+TASK 14 / 20 	Avg Acc: 50.61428571428572
+TASK 15 / 20 	Avg Acc: 52.760000000000005
+TASK 16 / 20 	Avg Acc: 51.7875
+TASK 17 / 20 	Avg Acc: 47.68235294117647
+TASK 18 / 20 	Avg Acc: 50.644444444444446
+TASK 19 / 20 	Avg Acc: 50.47368421052632
+TASK 20 / 20 	Avg Acc: 53.41
+average accuracy = 53.40999999999999, forget = 0.17410526315789476, learning accuracy = 69.5
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 52.6
+TASK 2 / 20 	Avg Acc: 53.3
+TASK 3 / 20 	Avg Acc: 53.46666666666667
+TASK 4 / 20 	Avg Acc: 49.65
+TASK 5 / 20 	Avg Acc: 55.63999999999999
+TASK 6 / 20 	Avg Acc: 53.56666666666666
+TASK 7 / 20 	Avg Acc: 55.17142857142857
+TASK 8 / 20 	Avg Acc: 50.025000000000006
+TASK 9 / 20 	Avg Acc: 52.28888888888889
+TASK 10 / 20 	Avg Acc: 53.98
+TASK 11 / 20 	Avg Acc: 52.290909090909096
+TASK 12 / 20 	Avg Acc: 54.7
+TASK 13 / 20 	Avg Acc: 56.15384615384616
+TASK 14 / 20 	Avg Acc: 53.385714285714286
+TASK 15 / 20 	Avg Acc: 51.77333333333333
+TASK 16 / 20 	Avg Acc: 55.7125
+TASK 17 / 20 	Avg Acc: 54.78823529411765
+TASK 18 / 20 	Avg Acc: 56.933333333333344
+TASK 19 / 20 	Avg Acc: 57.07368421052632
+TASK 20 / 20 	Avg Acc: 58.559999999999995
+average accuracy = 58.56000000000002, forget = 0.11094736842105261, learning accuracy = 69.07
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 47.6
+TASK 3 / 20 	Avg Acc: 47.86666666666667
+TASK 4 / 20 	Avg Acc: 50.45
+TASK 5 / 20 	Avg Acc: 53.480000000000004
+TASK 6 / 20 	Avg Acc: 48.53333333333333
+TASK 7 / 20 	Avg Acc: 46.6
+TASK 8 / 20 	Avg Acc: 52.1
+TASK 9 / 20 	Avg Acc: 49.644444444444446
+TASK 10 / 20 	Avg Acc: 51.28000000000001
+TASK 11 / 20 	Avg Acc: 49.8
+TASK 12 / 20 	Avg Acc: 50.33333333333333
+TASK 13 / 20 	Avg Acc: 52.738461538461536
+TASK 14 / 20 	Avg Acc: 53.88571428571428
+TASK 15 / 20 	Avg Acc: 53.973333333333336
+TASK 16 / 20 	Avg Acc: 54.92499999999999
+TASK 17 / 20 	Avg Acc: 56.11764705882353
+TASK 18 / 20 	Avg Acc: 54.43333333333332
+TASK 19 / 20 	Avg Acc: 54.6
+TASK 20 / 20 	Avg Acc: 56.53
+average accuracy = 56.53000000000001, forget = 0.1482105263157895, learning accuracy = 69.88999999999999
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.8
+TASK 2 / 20 	Avg Acc: 48.2
+TASK 3 / 20 	Avg Acc: 51.2
+TASK 4 / 20 	Avg Acc: 48.349999999999994
+TASK 5 / 20 	Avg Acc: 47.6
+TASK 6 / 20 	Avg Acc: 48.3
+TASK 7 / 20 	Avg Acc: 52.199999999999996
+TASK 8 / 20 	Avg Acc: 49.975
+TASK 9 / 20 	Avg Acc: 48.48888888888889
+TASK 10 / 20 	Avg Acc: 46.14
+TASK 11 / 20 	Avg Acc: 47.50909090909091
+TASK 12 / 20 	Avg Acc: 49.28333333333333
+TASK 13 / 20 	Avg Acc: 51.32307692307692
+TASK 14 / 20 	Avg Acc: 50.15714285714286
+TASK 15 / 20 	Avg Acc: 54.266666666666666
+TASK 16 / 20 	Avg Acc: 51.5
+TASK 17 / 20 	Avg Acc: 52.89411764705883
+TASK 18 / 20 	Avg Acc: 54.422222222222224
+TASK 19 / 20 	Avg Acc: 51.72631578947368
+TASK 20 / 20 	Avg Acc: 57.62
+average accuracy = 57.620000000000005, forget = 0.1013684210526316, learning accuracy = 67.25
+
+Final Average accuracy =  56.306 +/- 1.7914753696325354 forget =  0.13269473684210525 +/- 0.026171359448864374 learning accuracy =  68.6 +/- 1.116566164631544
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=3
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.4
+TASK 2 / 20 	Avg Acc: 49.900000000000006
+TASK 3 / 20 	Avg Acc: 57.53333333333333
+TASK 4 / 20 	Avg Acc: 58.75
+TASK 5 / 20 	Avg Acc: 63.32
+TASK 6 / 20 	Avg Acc: 59.26666666666666
+TASK 7 / 20 	Avg Acc: 56.2
+TASK 8 / 20 	Avg Acc: 59.3
+TASK 9 / 20 	Avg Acc: 61.22222222222223
+TASK 10 / 20 	Avg Acc: 61.39999999999999
+TASK 11 / 20 	Avg Acc: 61.236363636363635
+TASK 12 / 20 	Avg Acc: 63.050000000000004
+TASK 13 / 20 	Avg Acc: 63.938461538461524
+TASK 14 / 20 	Avg Acc: 62.19999999999999
+TASK 15 / 20 	Avg Acc: 63.46666666666667
+TASK 16 / 20 	Avg Acc: 63.4625
+TASK 17 / 20 	Avg Acc: 64.37647058823528
+TASK 18 / 20 	Avg Acc: 63.144444444444446
+TASK 19 / 20 	Avg Acc: 64.17894736842105
+TASK 20 / 20 	Avg Acc: 64.95
+average accuracy = 64.94999999999999, forget = 0.07631578947368424, learning accuracy = 70.3
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 57.4
+TASK 2 / 20 	Avg Acc: 55.8
+TASK 3 / 20 	Avg Acc: 57.8
+TASK 4 / 20 	Avg Acc: 58.7
+TASK 5 / 20 	Avg Acc: 59.80000000000001
+TASK 6 / 20 	Avg Acc: 59.966666666666676
+TASK 7 / 20 	Avg Acc: 62.34285714285715
+TASK 8 / 20 	Avg Acc: 62.72500000000001
+TASK 9 / 20 	Avg Acc: 60.644444444444446
+TASK 10 / 20 	Avg Acc: 60.9
+TASK 11 / 20 	Avg Acc: 60.472727272727276
+TASK 12 / 20 	Avg Acc: 63.9
+TASK 13 / 20 	Avg Acc: 62.8
+TASK 14 / 20 	Avg Acc: 62.05714285714286
+TASK 15 / 20 	Avg Acc: 64.24000000000001
+TASK 16 / 20 	Avg Acc: 61.86250000000001
+TASK 17 / 20 	Avg Acc: 64.52941176470588
+TASK 18 / 20 	Avg Acc: 63.111111111111114
+TASK 19 / 20 	Avg Acc: 62.97894736842106
+TASK 20 / 20 	Avg Acc: 65.17000000000002
+average accuracy = 65.17, forget = 0.07757894736842104, learning accuracy = 72.19999999999999
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 53.2
+TASK 2 / 20 	Avg Acc: 58.3
+TASK 3 / 20 	Avg Acc: 60.66666666666667
+TASK 4 / 20 	Avg Acc: 61.400000000000006
+TASK 5 / 20 	Avg Acc: 61.96000000000001
+TASK 6 / 20 	Avg Acc: 56.400000000000006
+TASK 7 / 20 	Avg Acc: 62.885714285714286
+TASK 8 / 20 	Avg Acc: 63.099999999999994
+TASK 9 / 20 	Avg Acc: 60.33333333333333
+TASK 10 / 20 	Avg Acc: 63.46
+TASK 11 / 20 	Avg Acc: 63.50909090909091
+TASK 12 / 20 	Avg Acc: 61.93333333333335
+TASK 13 / 20 	Avg Acc: 65.06153846153846
+TASK 14 / 20 	Avg Acc: 62.08571428571428
+TASK 15 / 20 	Avg Acc: 63.41333333333333
+TASK 16 / 20 	Avg Acc: 62.887499999999996
+TASK 17 / 20 	Avg Acc: 63.51764705882353
+TASK 18 / 20 	Avg Acc: 61.68888888888888
+TASK 19 / 20 	Avg Acc: 64.65263157894738
+TASK 20 / 20 	Avg Acc: 65.86
+average accuracy = 65.86, forget = 0.06231578947368419, learning accuracy = 70.29
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.6
+TASK 2 / 20 	Avg Acc: 57.5
+TASK 3 / 20 	Avg Acc: 59.2
+TASK 4 / 20 	Avg Acc: 56.05
+TASK 5 / 20 	Avg Acc: 61.760000000000005
+TASK 6 / 20 	Avg Acc: 60.53333333333333
+TASK 7 / 20 	Avg Acc: 59.74285714285713
+TASK 8 / 20 	Avg Acc: 61.325
+TASK 9 / 20 	Avg Acc: 60.911111111111104
+TASK 10 / 20 	Avg Acc: 63.000000000000014
+TASK 11 / 20 	Avg Acc: 63.709090909090904
+TASK 12 / 20 	Avg Acc: 64.85000000000001
+TASK 13 / 20 	Avg Acc: 64.84615384615385
+TASK 14 / 20 	Avg Acc: 63.51428571428572
+TASK 15 / 20 	Avg Acc: 64.90666666666667
+TASK 16 / 20 	Avg Acc: 65.125
+TASK 17 / 20 	Avg Acc: 64.82352941176471
+TASK 18 / 20 	Avg Acc: 63.14444444444445
+TASK 19 / 20 	Avg Acc: 64.78947368421053
+TASK 20 / 20 	Avg Acc: 64.94999999999999
+average accuracy = 64.94999999999999, forget = 0.08421052631578947, learning accuracy = 72.56
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 54.5
+TASK 3 / 20 	Avg Acc: 55.93333333333333
+TASK 4 / 20 	Avg Acc: 60.75
+TASK 5 / 20 	Avg Acc: 62.120000000000005
+TASK 6 / 20 	Avg Acc: 61.5
+TASK 7 / 20 	Avg Acc: 58.74285714285715
+TASK 8 / 20 	Avg Acc: 58.8
+TASK 9 / 20 	Avg Acc: 58.711111111111116
+TASK 10 / 20 	Avg Acc: 60.42
+TASK 11 / 20 	Avg Acc: 62.81818181818181
+TASK 12 / 20 	Avg Acc: 61.06666666666666
+TASK 13 / 20 	Avg Acc: 61.7076923076923
+TASK 14 / 20 	Avg Acc: 60.35714285714286
+TASK 15 / 20 	Avg Acc: 60.18666666666666
+TASK 16 / 20 	Avg Acc: 60.00000000000001
+TASK 17 / 20 	Avg Acc: 60.55294117647058
+TASK 18 / 20 	Avg Acc: 63.39999999999999
+TASK 19 / 20 	Avg Acc: 63.29473684210526
+TASK 20 / 20 	Avg Acc: 65.03999999999999
+average accuracy = 65.03999999999999, forget = 0.06568421052631578, learning accuracy = 70.43999999999998
+
+Final Average accuracy =  65.194 +/- 0.34261348484845505 forget =  0.07322105263157894 +/- 0.008063075442755573 learning accuracy =  71.158 +/- 1.0056321395023133
+------------------- Experiment ended -----------------
+
+
+
+iitm@euclid:~/pranshu/research/mtl_ll/tag$ bash replicate_experiment.sh cifar
+************************ replicating experiment (Split CIFAR-100) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=2
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 54.6
+TASK 2 / 20 	Avg Acc: 50.8
+TASK 3 / 20 	Avg Acc: 40.53333333333333
+TASK 4 / 20 	Avg Acc: 46.199999999999996
+TASK 5 / 20 	Avg Acc: 53.00000000000001
+TASK 6 / 20 	Avg Acc: 46.7
+TASK 7 / 20 	Avg Acc: 48.25714285714286
+TASK 8 / 20 	Avg Acc: 48.425
+TASK 9 / 20 	Avg Acc: 49.62222222222223
+TASK 10 / 20 	Avg Acc: 49.46
+TASK 11 / 20 	Avg Acc: 49.83636363636364
+TASK 12 / 20 	Avg Acc: 52.150000000000006
+TASK 13 / 20 	Avg Acc: 54.13846153846154
+TASK 14 / 20 	Avg Acc: 47.57142857142857
+TASK 15 / 20 	Avg Acc: 54.839999999999996
+TASK 16 / 20 	Avg Acc: 53.68750000000001
+TASK 17 / 20 	Avg Acc: 50.10588235294117
+TASK 18 / 20 	Avg Acc: 49.866666666666674
+TASK 19 / 20 	Avg Acc: 51.34736842105263
+TASK 20 / 20 	Avg Acc: 55.38999999999999
+average accuracy = 55.39, forget = 0.14010526315789476, learning accuracy = 68.30999999999999
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 58.2
+TASK 2 / 20 	Avg Acc: 48.7
+TASK 3 / 20 	Avg Acc: 50.13333333333334
+TASK 4 / 20 	Avg Acc: 50.15
+TASK 5 / 20 	Avg Acc: 51.04
+TASK 6 / 20 	Avg Acc: 51.766666666666666
+TASK 7 / 20 	Avg Acc: 49.114285714285714
+TASK 8 / 20 	Avg Acc: 53.82500000000001
+TASK 9 / 20 	Avg Acc: 47.71111111111111
+TASK 10 / 20 	Avg Acc: 50.93999999999999
+TASK 11 / 20 	Avg Acc: 45.65454545454546
+TASK 12 / 20 	Avg Acc: 46.11666666666667
+TASK 13 / 20 	Avg Acc: 51.12307692307692
+TASK 14 / 20 	Avg Acc: 47.94285714285714
+TASK 15 / 20 	Avg Acc: 49.66666666666667
+TASK 16 / 20 	Avg Acc: 50.375
+TASK 17 / 20 	Avg Acc: 50.811764705882354
+TASK 18 / 20 	Avg Acc: 52.94444444444446
+TASK 19 / 20 	Avg Acc: 51.621052631578955
+TASK 20 / 20 	Avg Acc: 53.8
+average accuracy = 53.8, forget = 0.17273684210526316, learning accuracy = 69.77000000000001
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 52.6
+TASK 2 / 20 	Avg Acc: 48.5
+TASK 3 / 20 	Avg Acc: 52.13333333333334
+TASK 4 / 20 	Avg Acc: 52.449999999999996
+TASK 5 / 20 	Avg Acc: 53.08
+TASK 6 / 20 	Avg Acc: 51.93333333333333
+TASK 7 / 20 	Avg Acc: 50.88571428571428
+TASK 8 / 20 	Avg Acc: 48.775
+TASK 9 / 20 	Avg Acc: 45.400000000000006
+TASK 10 / 20 	Avg Acc: 51.4
+TASK 11 / 20 	Avg Acc: 52.43636363636364
+TASK 12 / 20 	Avg Acc: 54.75
+TASK 13 / 20 	Avg Acc: 52.36923076923077
+TASK 14 / 20 	Avg Acc: 49.3
+TASK 15 / 20 	Avg Acc: 50.72
+TASK 16 / 20 	Avg Acc: 50.800000000000004
+TASK 17 / 20 	Avg Acc: 51.61176470588235
+TASK 18 / 20 	Avg Acc: 50.78888888888889
+TASK 19 / 20 	Avg Acc: 52.0
+TASK 20 / 20 	Avg Acc: 55.39000000000001
+average accuracy = 55.39, forget = 0.13, learning accuracy = 67.36999999999999
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 51.2
+TASK 3 / 20 	Avg Acc: 49.733333333333334
+TASK 4 / 20 	Avg Acc: 47.25
+TASK 5 / 20 	Avg Acc: 51.760000000000005
+TASK 6 / 20 	Avg Acc: 49.23333333333333
+TASK 7 / 20 	Avg Acc: 47.74285714285715
+TASK 8 / 20 	Avg Acc: 41.975
+TASK 9 / 20 	Avg Acc: 51.75555555555556
+TASK 10 / 20 	Avg Acc: 51.9
+TASK 11 / 20 	Avg Acc: 51.36363636363636
+TASK 12 / 20 	Avg Acc: 53.78333333333333
+TASK 13 / 20 	Avg Acc: 54.87692307692308
+TASK 14 / 20 	Avg Acc: 54.028571428571425
+TASK 15 / 20 	Avg Acc: 55.41333333333333
+TASK 16 / 20 	Avg Acc: 56.050000000000004
+TASK 17 / 20 	Avg Acc: 51.64705882352942
+TASK 18 / 20 	Avg Acc: 51.699999999999996
+TASK 19 / 20 	Avg Acc: 54.87368421052631
+TASK 20 / 20 	Avg Acc: 56.61000000000001
+average accuracy = 56.61, forget = 0.14073684210526316, learning accuracy = 69.20000000000002
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.8
+TASK 2 / 20 	Avg Acc: 53.7
+TASK 3 / 20 	Avg Acc: 47.93333333333334
+TASK 4 / 20 	Avg Acc: 49.60000000000001
+TASK 5 / 20 	Avg Acc: 43.52
+TASK 6 / 20 	Avg Acc: 39.76666666666667
+TASK 7 / 20 	Avg Acc: 49.4
+TASK 8 / 20 	Avg Acc: 49.95
+TASK 9 / 20 	Avg Acc: 48.02222222222222
+TASK 10 / 20 	Avg Acc: 44.519999999999996
+TASK 11 / 20 	Avg Acc: 44.418181818181814
+TASK 12 / 20 	Avg Acc: 48.58333333333333
+TASK 13 / 20 	Avg Acc: 50.13846153846154
+TASK 14 / 20 	Avg Acc: 45.54285714285714
+TASK 15 / 20 	Avg Acc: 51.81333333333334
+TASK 16 / 20 	Avg Acc: 47.0125
+TASK 17 / 20 	Avg Acc: 50.6235294117647
+TASK 18 / 20 	Avg Acc: 51.344444444444456
+TASK 19 / 20 	Avg Acc: 51.915789473684214
+TASK 20 / 20 	Avg Acc: 46.31999999999999
+average accuracy = 46.32, forget = 0.21410526315789472, learning accuracy = 66.36
+
+Final Average accuracy =  53.501999999999995 +/- 3.7002345871579547 forget =  0.15953684210526314 +/- 0.03083959752693391 learning accuracy =  68.202 +/- 1.2289410075345424
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=2
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 50.4
+TASK 2 / 20 	Avg Acc: 60.0
+TASK 3 / 20 	Avg Acc: 54.53333333333333
+TASK 4 / 20 	Avg Acc: 55.349999999999994
+TASK 5 / 20 	Avg Acc: 58.64
+TASK 6 / 20 	Avg Acc: 57.2
+TASK 7 / 20 	Avg Acc: 58.48571428571429
+TASK 8 / 20 	Avg Acc: 57.075
+TASK 9 / 20 	Avg Acc: 57.177777777777784
+TASK 10 / 20 	Avg Acc: 57.68
+TASK 11 / 20 	Avg Acc: 58.836363636363636
+TASK 12 / 20 	Avg Acc: 59.233333333333334
+TASK 13 / 20 	Avg Acc: 60.56923076923077
+TASK 14 / 20 	Avg Acc: 58.50000000000001
+TASK 15 / 20 	Avg Acc: 61.84
+TASK 16 / 20 	Avg Acc: 60.3125
+TASK 17 / 20 	Avg Acc: 60.01176470588236
+TASK 18 / 20 	Avg Acc: 59.277777777777786
+TASK 19 / 20 	Avg Acc: 58.22105263157895
+TASK 20 / 20 	Avg Acc: 60.739999999999995
+average accuracy = 60.74000000000001, forget = 0.09978947368421051, learning accuracy = 69.46000000000001
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 57.4
+TASK 2 / 20 	Avg Acc: 46.5
+TASK 3 / 20 	Avg Acc: 55.733333333333334
+TASK 4 / 20 	Avg Acc: 54.65
+TASK 5 / 20 	Avg Acc: 61.32
+TASK 6 / 20 	Avg Acc: 61.36666666666666
+TASK 7 / 20 	Avg Acc: 62.08571428571429
+TASK 8 / 20 	Avg Acc: 61.60000000000001
+TASK 9 / 20 	Avg Acc: 60.0
+TASK 10 / 20 	Avg Acc: 61.28
+TASK 11 / 20 	Avg Acc: 61.909090909090914
+TASK 12 / 20 	Avg Acc: 61.8
+TASK 13 / 20 	Avg Acc: 64.36923076923075
+TASK 14 / 20 	Avg Acc: 63.057142857142864
+TASK 15 / 20 	Avg Acc: 63.94666666666667
+TASK 16 / 20 	Avg Acc: 64.18749999999999
+TASK 17 / 20 	Avg Acc: 63.16470588235293
+TASK 18 / 20 	Avg Acc: 63.17777777777776
+TASK 19 / 20 	Avg Acc: 64.33684210526314
+TASK 20 / 20 	Avg Acc: 65.99999999999999
+average accuracy = 66.0, forget = 0.06747368421052631, learning accuracy = 71.10000000000001
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 53.2
+TASK 2 / 20 	Avg Acc: 57.1
+TASK 3 / 20 	Avg Acc: 56.93333333333333
+TASK 4 / 20 	Avg Acc: 57.849999999999994
+TASK 5 / 20 	Avg Acc: 59.56
+TASK 6 / 20 	Avg Acc: 59.63333333333334
+TASK 7 / 20 	Avg Acc: 61.42857142857142
+TASK 8 / 20 	Avg Acc: 61.400000000000006
+TASK 9 / 20 	Avg Acc: 59.288888888888884
+TASK 10 / 20 	Avg Acc: 62.18
+TASK 11 / 20 	Avg Acc: 60.27272727272727
+TASK 12 / 20 	Avg Acc: 62.133333333333326
+TASK 13 / 20 	Avg Acc: 63.800000000000004
+TASK 14 / 20 	Avg Acc: 62.62857142857143
+TASK 15 / 20 	Avg Acc: 61.46666666666667
+TASK 16 / 20 	Avg Acc: 61.01249999999999
+TASK 17 / 20 	Avg Acc: 63.44705882352941
+TASK 18 / 20 	Avg Acc: 63.155555555555544
+TASK 19 / 20 	Avg Acc: 62.98947368421054
+TASK 20 / 20 	Avg Acc: 64.21
+average accuracy = 64.21000000000001, forget = 0.08031578947368426, learning accuracy = 70.77000000000001
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.6
+TASK 2 / 20 	Avg Acc: 54.9
+TASK 3 / 20 	Avg Acc: 54.733333333333334
+TASK 4 / 20 	Avg Acc: 58.3
+TASK 5 / 20 	Avg Acc: 61.92
+TASK 6 / 20 	Avg Acc: 61.13333333333333
+TASK 7 / 20 	Avg Acc: 60.48571428571428
+TASK 8 / 20 	Avg Acc: 60.875
+TASK 9 / 20 	Avg Acc: 62.08888888888888
+TASK 10 / 20 	Avg Acc: 62.32
+TASK 11 / 20 	Avg Acc: 62.18181818181817
+TASK 12 / 20 	Avg Acc: 63.31666666666666
+TASK 13 / 20 	Avg Acc: 63.16923076923077
+TASK 14 / 20 	Avg Acc: 63.37142857142857
+TASK 15 / 20 	Avg Acc: 64.78666666666668
+TASK 16 / 20 	Avg Acc: 64.0375
+TASK 17 / 20 	Avg Acc: 62.7764705882353
+TASK 18 / 20 	Avg Acc: 62.766666666666666
+TASK 19 / 20 	Avg Acc: 60.642105263157895
+TASK 20 / 20 	Avg Acc: 63.779999999999994
+average accuracy = 63.78000000000001, forget = 0.09115789473684208, learning accuracy = 72.18999999999998
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 55.4
+TASK 2 / 20 	Avg Acc: 57.7
+TASK 3 / 20 	Avg Acc: 56.0
+TASK 4 / 20 	Avg Acc: 56.5
+TASK 5 / 20 	Avg Acc: 54.599999999999994
+TASK 6 / 20 	Avg Acc: 60.43333333333333
+TASK 7 / 20 	Avg Acc: 60.0
+TASK 8 / 20 	Avg Acc: 56.8
+TASK 9 / 20 	Avg Acc: 58.17777777777779
+TASK 10 / 20 	Avg Acc: 55.199999999999996
+TASK 11 / 20 	Avg Acc: 60.581818181818186
+TASK 12 / 20 	Avg Acc: 59.733333333333334
+TASK 13 / 20 	Avg Acc: 62.44615384615385
+TASK 14 / 20 	Avg Acc: 59.54285714285715
+TASK 15 / 20 	Avg Acc: 61.84
+TASK 16 / 20 	Avg Acc: 61.55
+TASK 17 / 20 	Avg Acc: 60.17647058823529
+TASK 18 / 20 	Avg Acc: 61.84444444444445
+TASK 19 / 20 	Avg Acc: 61.547368421052624
+TASK 20 / 20 	Avg Acc: 61.290000000000006
+average accuracy = 61.29, forget = 0.10421052631578948, learning accuracy = 70.24999999999999
+
+Final Average accuracy =  63.20400000000001 +/- 1.944022633613096 forget =  0.08858947368421052 +/- 0.013344545608859263 learning accuracy =  70.75399999999999 +/- 0.9066995092090823
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> TAG-EWC
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.00025
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-ewc
+  tag-opt=rms
+  b=5
+  lambda=1
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 64.6
+TASK 2 / 20 	Avg Acc: 53.0
+TASK 3 / 20 	Avg Acc: 50.6
+TASK 4 / 20 	Avg Acc: 53.9
+TASK 5 / 20 	Avg Acc: 54.56
+TASK 6 / 20 	Avg Acc: 54.3
+TASK 7 / 20 	Avg Acc: 54.31428571428572
+TASK 8 / 20 	Avg Acc: 55.300000000000004
+TASK 9 / 20 	Avg Acc: 57.13333333333333
+TASK 10 / 20 	Avg Acc: 58.08
+TASK 11 / 20 	Avg Acc: 57.836363636363636
+TASK 12 / 20 	Avg Acc: 59.3
+TASK 13 / 20 	Avg Acc: 61.53846153846153
+TASK 14 / 20 	Avg Acc: 56.385714285714286
+TASK 15 / 20 	Avg Acc: 60.066666666666656
+TASK 16 / 20 	Avg Acc: 57.31249999999999
+TASK 17 / 20 	Avg Acc: 60.682352941176475
+TASK 18 / 20 	Avg Acc: 60.16666666666667
+TASK 19 / 20 	Avg Acc: 63.957894736842114
+TASK 20 / 20 	Avg Acc: 62.27999999999999
+average accuracy = 62.279999999999994, forget = 0.09631578947368424, learning accuracy = 71.35000000000002
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 66.2
+TASK 2 / 20 	Avg Acc: 55.4
+TASK 3 / 20 	Avg Acc: 54.13333333333334
+TASK 4 / 20 	Avg Acc: 56.25
+TASK 5 / 20 	Avg Acc: 56.480000000000004
+TASK 6 / 20 	Avg Acc: 56.53333333333333
+TASK 7 / 20 	Avg Acc: 56.22857142857143
+TASK 8 / 20 	Avg Acc: 58.025000000000006
+TASK 9 / 20 	Avg Acc: 56.4
+TASK 10 / 20 	Avg Acc: 56.940000000000005
+TASK 11 / 20 	Avg Acc: 57.45454545454545
+TASK 12 / 20 	Avg Acc: 58.78333333333333
+TASK 13 / 20 	Avg Acc: 58.73846153846154
+TASK 14 / 20 	Avg Acc: 58.642857142857146
+TASK 15 / 20 	Avg Acc: 59.76
+TASK 16 / 20 	Avg Acc: 58.512499999999996
+TASK 17 / 20 	Avg Acc: 60.10588235294117
+TASK 18 / 20 	Avg Acc: 60.977777777777774
+TASK 19 / 20 	Avg Acc: 62.673684210526325
+TASK 20 / 20 	Avg Acc: 62.910000000000004
+average accuracy = 62.91000000000001, forget = 0.10894736842105264, learning accuracy = 73.26
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 70.6
+TASK 2 / 20 	Avg Acc: 51.8
+TASK 3 / 20 	Avg Acc: 54.400000000000006
+TASK 4 / 20 	Avg Acc: 53.849999999999994
+TASK 5 / 20 	Avg Acc: 59.2
+TASK 6 / 20 	Avg Acc: 56.2
+TASK 7 / 20 	Avg Acc: 54.08571428571428
+TASK 8 / 20 	Avg Acc: 56.175
+TASK 9 / 20 	Avg Acc: 55.911111111111104
+TASK 10 / 20 	Avg Acc: 57.82
+TASK 11 / 20 	Avg Acc: 59.654545454545456
+TASK 12 / 20 	Avg Acc: 60.21666666666667
+TASK 13 / 20 	Avg Acc: 61.307692307692314
+TASK 14 / 20 	Avg Acc: 59.6
+TASK 15 / 20 	Avg Acc: 61.04
+TASK 16 / 20 	Avg Acc: 60.6625
+TASK 17 / 20 	Avg Acc: 59.51764705882353
+TASK 18 / 20 	Avg Acc: 57.52222222222222
+TASK 19 / 20 	Avg Acc: 61.61052631578948
+TASK 20 / 20 	Avg Acc: 62.10999999999999
+average accuracy = 62.10999999999999, forget = 0.10694736842105262, learning accuracy = 72.27
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 66.8
+TASK 2 / 20 	Avg Acc: 49.6
+TASK 3 / 20 	Avg Acc: 56.06666666666666
+TASK 4 / 20 	Avg Acc: 53.2
+TASK 5 / 20 	Avg Acc: 57.76
+TASK 6 / 20 	Avg Acc: 60.03333333333334
+TASK 7 / 20 	Avg Acc: 52.17142857142858
+TASK 8 / 20 	Avg Acc: 57.425
+TASK 9 / 20 	Avg Acc: 56.7111111111111
+TASK 10 / 20 	Avg Acc: 59.05999999999999
+TASK 11 / 20 	Avg Acc: 57.418181818181814
+TASK 12 / 20 	Avg Acc: 59.13333333333333
+TASK 13 / 20 	Avg Acc: 59.2
+TASK 14 / 20 	Avg Acc: 58.58571428571428
+TASK 15 / 20 	Avg Acc: 59.653333333333336
+TASK 16 / 20 	Avg Acc: 57.487500000000004
+TASK 17 / 20 	Avg Acc: 56.8235294117647
+TASK 18 / 20 	Avg Acc: 59.62222222222223
+TASK 19 / 20 	Avg Acc: 62.61052631578948
+TASK 20 / 20 	Avg Acc: 62.66
+average accuracy = 62.660000000000004, forget = 0.09852631578947368, learning accuracy = 71.84
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 60.8
+TASK 2 / 20 	Avg Acc: 48.9
+TASK 3 / 20 	Avg Acc: 52.599999999999994
+TASK 4 / 20 	Avg Acc: 50.150000000000006
+TASK 5 / 20 	Avg Acc: 55.2
+TASK 6 / 20 	Avg Acc: 52.56666666666667
+TASK 7 / 20 	Avg Acc: 52.25714285714285
+TASK 8 / 20 	Avg Acc: 57.474999999999994
+TASK 9 / 20 	Avg Acc: 55.022222222222226
+TASK 10 / 20 	Avg Acc: 56.74000000000001
+TASK 11 / 20 	Avg Acc: 58.472727272727276
+TASK 12 / 20 	Avg Acc: 59.98333333333334
+TASK 13 / 20 	Avg Acc: 60.63076923076924
+TASK 14 / 20 	Avg Acc: 57.81428571428571
+TASK 15 / 20 	Avg Acc: 60.306666666666665
+TASK 16 / 20 	Avg Acc: 58.7
+TASK 17 / 20 	Avg Acc: 59.141176470588235
+TASK 18 / 20 	Avg Acc: 59.74444444444444
+TASK 19 / 20 	Avg Acc: 63.263157894736835
+TASK 20 / 20 	Avg Acc: 62.809999999999995
+average accuracy = 62.81, forget = 0.08168421052631579, learning accuracy = 70.51
+
+Final Average accuracy =  62.553999999999995 +/- 0.30845421054024197 forget =  0.0984842105263158 +/- 0.009675190307132174 learning accuracy =  71.846 +/- 0.9176186571773675
+------------------- Experiment ended -----------------
+
+
+
+*********************** replicating experiment (Split CIFAR-100) ***********************
+ >>>>>>>> TAG-A-GEM
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.00025
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-agem
+  mem=1
+  tag-opt=rms
+  b=5
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 63.8
+TASK 2 / 20 	Avg Acc: 52.4
+TASK 3 / 20 	Avg Acc: 52.8
+TASK 4 / 20 	Avg Acc: 53.05
+TASK 5 / 20 	Avg Acc: 56.92
+TASK 6 / 20 	Avg Acc: 56.866666666666674
+TASK 7 / 20 	Avg Acc: 58.114285714285714
+TASK 8 / 20 	Avg Acc: 58.875
+TASK 9 / 20 	Avg Acc: 59.955555555555556
+TASK 10 / 20 	Avg Acc: 60.61999999999999
+TASK 11 / 20 	Avg Acc: 60.61818181818182
+TASK 12 / 20 	Avg Acc: 62.31666666666666
+TASK 13 / 20 	Avg Acc: 63.107692307692304
+TASK 14 / 20 	Avg Acc: 60.58571428571428
+TASK 15 / 20 	Avg Acc: 64.4
+TASK 16 / 20 	Avg Acc: 61.92499999999999
+TASK 17 / 20 	Avg Acc: 62.69411764705882
+TASK 18 / 20 	Avg Acc: 63.76666666666667
+TASK 19 / 20 	Avg Acc: 65.32631578947368
+TASK 20 / 20 	Avg Acc: 63.01
+average accuracy = 63.010000000000005, forget = 0.08494736842105263, learning accuracy = 71.0
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 67.4
+TASK 2 / 20 	Avg Acc: 57.0
+TASK 3 / 20 	Avg Acc: 59.06666666666668
+TASK 4 / 20 	Avg Acc: 56.5
+TASK 5 / 20 	Avg Acc: 61.96
+TASK 6 / 20 	Avg Acc: 62.866666666666674
+TASK 7 / 20 	Avg Acc: 59.62857142857143
+TASK 8 / 20 	Avg Acc: 61.325
+TASK 9 / 20 	Avg Acc: 61.377777777777766
+TASK 10 / 20 	Avg Acc: 61.58
+TASK 11 / 20 	Avg Acc: 62.92727272727272
+TASK 12 / 20 	Avg Acc: 64.1
+TASK 13 / 20 	Avg Acc: 63.892307692307696
+TASK 14 / 20 	Avg Acc: 64.55714285714286
+TASK 15 / 20 	Avg Acc: 65.69333333333334
+TASK 16 / 20 	Avg Acc: 65.75
+TASK 17 / 20 	Avg Acc: 65.74117647058824
+TASK 18 / 20 	Avg Acc: 66.0
+TASK 19 / 20 	Avg Acc: 65.92631578947368
+TASK 20 / 20 	Avg Acc: 65.63000000000001
+average accuracy = 65.63000000000001, forget = 0.07273684210526318, learning accuracy = 72.34
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 71.4
+TASK 2 / 20 	Avg Acc: 57.8
+TASK 3 / 20 	Avg Acc: 56.39999999999999
+TASK 4 / 20 	Avg Acc: 52.89999999999999
+TASK 5 / 20 	Avg Acc: 57.16
+TASK 6 / 20 	Avg Acc: 56.63333333333333
+TASK 7 / 20 	Avg Acc: 58.62857142857143
+TASK 8 / 20 	Avg Acc: 58.925000000000004
+TASK 9 / 20 	Avg Acc: 59.08888888888889
+TASK 10 / 20 	Avg Acc: 60.03999999999999
+TASK 11 / 20 	Avg Acc: 60.963636363636354
+TASK 12 / 20 	Avg Acc: 62.416666666666664
+TASK 13 / 20 	Avg Acc: 63.66153846153846
+TASK 14 / 20 	Avg Acc: 63.54285714285714
+TASK 15 / 20 	Avg Acc: 63.84000000000001
+TASK 16 / 20 	Avg Acc: 61.012499999999996
+TASK 17 / 20 	Avg Acc: 63.10588235294118
+TASK 18 / 20 	Avg Acc: 63.13333333333333
+TASK 19 / 20 	Avg Acc: 65.2421052631579
+TASK 20 / 20 	Avg Acc: 65.3
+average accuracy = 65.30000000000001, forget = 0.06926315789473683, learning accuracy = 71.80999999999999
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 67.8
+TASK 2 / 20 	Avg Acc: 57.4
+TASK 3 / 20 	Avg Acc: 52.8
+TASK 4 / 20 	Avg Acc: 54.35
+TASK 5 / 20 	Avg Acc: 58.760000000000005
+TASK 6 / 20 	Avg Acc: 59.400000000000006
+TASK 7 / 20 	Avg Acc: 59.114285714285714
+TASK 8 / 20 	Avg Acc: 62.599999999999994
+TASK 9 / 20 	Avg Acc: 59.488888888888894
+TASK 10 / 20 	Avg Acc: 61.44
+TASK 11 / 20 	Avg Acc: 59.509090909090915
+TASK 12 / 20 	Avg Acc: 61.41666666666667
+TASK 13 / 20 	Avg Acc: 61.92307692307691
+TASK 14 / 20 	Avg Acc: 62.771428571428565
+TASK 15 / 20 	Avg Acc: 64.13333333333334
+TASK 16 / 20 	Avg Acc: 64.2125
+TASK 17 / 20 	Avg Acc: 64.45882352941176
+TASK 18 / 20 	Avg Acc: 64.08888888888887
+TASK 19 / 20 	Avg Acc: 64.81052631578947
+TASK 20 / 20 	Avg Acc: 65.67000000000002
+average accuracy = 65.67, forget = 0.06399999999999999, learning accuracy = 71.63999999999999
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 61.2
+TASK 2 / 20 	Avg Acc: 57.5
+TASK 3 / 20 	Avg Acc: 57.06666666666666
+TASK 4 / 20 	Avg Acc: 55.849999999999994
+TASK 5 / 20 	Avg Acc: 60.64
+TASK 6 / 20 	Avg Acc: 58.2
+TASK 7 / 20 	Avg Acc: 58.25714285714286
+TASK 8 / 20 	Avg Acc: 59.975
+TASK 9 / 20 	Avg Acc: 59.75555555555556
+TASK 10 / 20 	Avg Acc: 59.580000000000005
+TASK 11 / 20 	Avg Acc: 60.763636363636365
+TASK 12 / 20 	Avg Acc: 61.93333333333332
+TASK 13 / 20 	Avg Acc: 62.69230769230769
+TASK 14 / 20 	Avg Acc: 61.05714285714285
+TASK 15 / 20 	Avg Acc: 60.786666666666655
+TASK 16 / 20 	Avg Acc: 61.275000000000006
+TASK 17 / 20 	Avg Acc: 62.05882352941177
+TASK 18 / 20 	Avg Acc: 62.87777777777777
+TASK 19 / 20 	Avg Acc: 63.31578947368422
+TASK 20 / 20 	Avg Acc: 64.39
+average accuracy = 64.39000000000001, forget = 0.07210526315789473, learning accuracy = 71.21000000000001
+
+Final Average accuracy =  64.8 +/- 1.0067770358922574 forget =  0.07261052631578947 +/- 0.006896592759453812 learning accuracy =  71.6 +/- 0.4701914503688881
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> TAG-ER
+Parameters:
+  benchmark=cifar100
+  num_tasks=20
+  runs=5
+  epochs-per-task=1
+  batch_size=10
+  learning_rate=0.00025
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag-er
+  mem=1
+  tag-opt=rms
+  b=5
+CUDA: True
+Loading 20 tasks for cifar100
+Files already downloaded and verified
+Files already downloaded and verified
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 64.6
+TASK 2 / 20 	Avg Acc: 50.2
+TASK 3 / 20 	Avg Acc: 56.93333333333332
+TASK 4 / 20 	Avg Acc: 59.75
+TASK 5 / 20 	Avg Acc: 63.92
+TASK 6 / 20 	Avg Acc: 62.166666666666664
+TASK 7 / 20 	Avg Acc: 62.94285714285714
+TASK 8 / 20 	Avg Acc: 62.0
+TASK 9 / 20 	Avg Acc: 62.26666666666666
+TASK 10 / 20 	Avg Acc: 63.300000000000004
+TASK 11 / 20 	Avg Acc: 63.527272727272724
+TASK 12 / 20 	Avg Acc: 65.18333333333334
+TASK 13 / 20 	Avg Acc: 65.3076923076923
+TASK 14 / 20 	Avg Acc: 63.6
+TASK 15 / 20 	Avg Acc: 65.01333333333334
+TASK 16 / 20 	Avg Acc: 65.1875
+TASK 17 / 20 	Avg Acc: 64.71764705882353
+TASK 18 / 20 	Avg Acc: 65.55555555555556
+TASK 19 / 20 	Avg Acc: 65.60000000000001
+TASK 20 / 20 	Avg Acc: 66.27000000000001
+average accuracy = 66.27000000000001, forget = 0.05673684210526317, learning accuracy = 71.17
+
+------------------- Experiment-2 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 66.2
+TASK 2 / 20 	Avg Acc: 59.800000000000004
+TASK 3 / 20 	Avg Acc: 60.33333333333333
+TASK 4 / 20 	Avg Acc: 61.35000000000001
+TASK 5 / 20 	Avg Acc: 63.480000000000004
+TASK 6 / 20 	Avg Acc: 62.333333333333336
+TASK 7 / 20 	Avg Acc: 62.8
+TASK 8 / 20 	Avg Acc: 64.02499999999999
+TASK 9 / 20 	Avg Acc: 62.77777777777777
+TASK 10 / 20 	Avg Acc: 64.32
+TASK 11 / 20 	Avg Acc: 63.92727272727272
+TASK 12 / 20 	Avg Acc: 64.80000000000001
+TASK 13 / 20 	Avg Acc: 65.2
+TASK 14 / 20 	Avg Acc: 64.98571428571428
+TASK 15 / 20 	Avg Acc: 65.46666666666667
+TASK 16 / 20 	Avg Acc: 65.525
+TASK 17 / 20 	Avg Acc: 65.43529411764706
+TASK 18 / 20 	Avg Acc: 64.86666666666666
+TASK 19 / 20 	Avg Acc: 66.36842105263159
+TASK 20 / 20 	Avg Acc: 66.69
+average accuracy = 66.68999999999998, forget = 0.05778947368421052, learning accuracy = 72.00999999999999
+
+------------------- Experiment-3 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 70.6
+TASK 2 / 20 	Avg Acc: 61.3
+TASK 3 / 20 	Avg Acc: 61.733333333333334
+TASK 4 / 20 	Avg Acc: 61.0
+TASK 5 / 20 	Avg Acc: 64.0
+TASK 6 / 20 	Avg Acc: 63.33333333333333
+TASK 7 / 20 	Avg Acc: 63.885714285714286
+TASK 8 / 20 	Avg Acc: 63.025000000000006
+TASK 9 / 20 	Avg Acc: 62.68888888888888
+TASK 10 / 20 	Avg Acc: 64.51999999999998
+TASK 11 / 20 	Avg Acc: 63.41818181818182
+TASK 12 / 20 	Avg Acc: 65.36666666666667
+TASK 13 / 20 	Avg Acc: 65.4
+TASK 14 / 20 	Avg Acc: 65.21428571428572
+TASK 15 / 20 	Avg Acc: 65.25333333333333
+TASK 16 / 20 	Avg Acc: 64.0125
+TASK 17 / 20 	Avg Acc: 64.35294117647058
+TASK 18 / 20 	Avg Acc: 65.53333333333333
+TASK 19 / 20 	Avg Acc: 66.10526315789474
+TASK 20 / 20 	Avg Acc: 66.2
+average accuracy = 66.2, forget = 0.057999999999999996, learning accuracy = 71.42999999999999
+
+------------------- Experiment-4 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 66.8
+TASK 2 / 20 	Avg Acc: 61.099999999999994
+TASK 3 / 20 	Avg Acc: 60.6
+TASK 4 / 20 	Avg Acc: 60.599999999999994
+TASK 5 / 20 	Avg Acc: 62.88
+TASK 6 / 20 	Avg Acc: 61.533333333333324
+TASK 7 / 20 	Avg Acc: 61.457142857142856
+TASK 8 / 20 	Avg Acc: 62.55
+TASK 9 / 20 	Avg Acc: 62.37777777777777
+TASK 10 / 20 	Avg Acc: 63.099999999999994
+TASK 11 / 20 	Avg Acc: 63.145454545454555
+TASK 12 / 20 	Avg Acc: 64.53333333333333
+TASK 13 / 20 	Avg Acc: 65.76923076923076
+TASK 14 / 20 	Avg Acc: 65.45714285714286
+TASK 15 / 20 	Avg Acc: 66.69333333333333
+TASK 16 / 20 	Avg Acc: 65.69999999999999
+TASK 17 / 20 	Avg Acc: 65.31764705882352
+TASK 18 / 20 	Avg Acc: 65.08888888888889
+TASK 19 / 20 	Avg Acc: 65.36842105263158
+TASK 20 / 20 	Avg Acc: 66.38999999999999
+average accuracy = 66.39, forget = 0.06536842105263158, learning accuracy = 72.19000000000001
+
+------------------- Experiment-5 started -----------------
+[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+TASK 1 / 20 	Avg Acc: 60.8
+TASK 2 / 20 	Avg Acc: 59.3
+TASK 3 / 20 	Avg Acc: 62.133333333333326
+TASK 4 / 20 	Avg Acc: 61.55
+TASK 5 / 20 	Avg Acc: 63.28
+TASK 6 / 20 	Avg Acc: 63.43333333333334
+TASK 7 / 20 	Avg Acc: 63.885714285714286
+TASK 8 / 20 	Avg Acc: 62.724999999999994
+TASK 9 / 20 	Avg Acc: 62.644444444444446
+TASK 10 / 20 	Avg Acc: 62.46
+TASK 11 / 20 	Avg Acc: 63.32727272727273
+TASK 12 / 20 	Avg Acc: 64.26666666666667
+TASK 13 / 20 	Avg Acc: 64.12307692307692
+TASK 14 / 20 	Avg Acc: 64.05714285714285
+TASK 15 / 20 	Avg Acc: 65.05333333333334
+TASK 16 / 20 	Avg Acc: 64.6625
+TASK 17 / 20 	Avg Acc: 65.83529411764705
+TASK 18 / 20 	Avg Acc: 65.0
+TASK 19 / 20 	Avg Acc: 66.66315789473684
+TASK 20 / 20 	Avg Acc: 67.27000000000001
+average accuracy = 67.27000000000001, forget = 0.04273684210526316, learning accuracy = 70.96000000000001
+
+Final Average accuracy =  66.564 +/- 0.3907735917382345 forget =  0.05612631578947369 +/- 0.007366736649580048 learning accuracy =  71.55199999999999 +/- 0.47499052622131277
 ------------------- Experiment ended -----------------
 
 

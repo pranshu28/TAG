@@ -6,7 +6,7 @@ plt.style.use('ggplot')
 params = {'mathtext.default': 'regular'}
 plt.rcParams.update(params)
 
-dataset = 'cub'
+dataset = '5data'
 f = open(dataset + '.txt', 'r')
 
 dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'permute': 'Permute MNIST',
@@ -16,7 +16,7 @@ dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'p
 # ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
 ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'TAG-RMSProp']
 
-n_tasks = 20
+n_tasks = 5
 lines = f.readlines()
 curr = 0
 valid = 2

@@ -120,5 +120,5 @@ class AGEM(nn.Module):
 			if dotp<0:
 				self.grads[:, 0] -= (dotp / torch.dot(self.grads[:, 1], self.grads[:, 1])) * self.grads[:, 1]
 				overwrite_grad(net.parameters, self.grads[:, 0], self.grad_dims)
-		self.opt.step()
+		# self.opt.step()
 		return net
