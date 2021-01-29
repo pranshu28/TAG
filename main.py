@@ -6,7 +6,7 @@ from ewc import *
 from ogd import *
 
 
-def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, lr=0.01, ALGO=None):
+def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, ALGO=None):
 	net = net.to(DEVICE)
 	net.zero_grad()
 	net.train()
@@ -28,7 +28,7 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			elif 'ogd' in args.opt:
 				loss = criterion(pred, target)
 				loss.backward()
-				net = ALGO.optimizer_step(net, lr, task_id, batch_idx, optimizer)
+				net = ALGO.optimizer_step(optimizer)
 				continue
 			elif 'agem' in args.opt:
 				net = ALGO.observe_agem(net, data, task_id, target)
@@ -46,7 +46,7 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			loss.backward()
 
 		if tag:
-			optimizer.step(net, task_id, batch_idx, lr=lr)
+			optimizer.step(net, task_id, batch_idx)
 			if task_id > 0:
 				alpha_mean = store_alpha(optimizer, task_id, batch_idx, alpha_mean)
 		else:
@@ -157,7 +157,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 	time = 0
 	tag = 'tag' in args.opt
 
-	if args.opt is not None:
+	if args.opt != '':
 		opt = {'rms': torch.optim.RMSprop, 'adagrad': torch.optim.Adagrad, 'adam': torch.optim.Adam}
 		if args.opt in opt:
 			optimizer = opt[args.opt](model.parameters(), lr=args.lr)
@@ -187,7 +187,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 
 	for current_task_id in (continuum):  # range(1, args.tasks+1)
 		train_loader = train_loaders[current_task_id-1]
-		lr = max(args.lr * args.gamma ** (current_task_id), 0.00005)
+		lr = max(args.lr * (args.gamma ** current_task_id), 0.00005)
 
 		if 'ewc' in args.opt and current_task_id!=1:
 			old_tasks = []
@@ -201,10 +201,11 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
 
 		for epoch in iterator:
-			if args.opt is None:
-				optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.8 if args.gamma != 1.0 else 0.0)
 
-			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, lr, ALGO)
+			if args.opt == '':
+				optimizer = torch.optim.SGD(model.parameters(), lr=lr)
+
+			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, ALGO)
 
 			if args.epochs_per_task>20 and val_loaders is not None:
 				val_loader = val_loaders[current_task_id - 1]

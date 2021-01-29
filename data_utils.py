@@ -111,7 +111,7 @@ def get_5_datasets_tasks(num_tasks, batch_size):
     data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'notMNIST',  torchvision.datasets.FashionMNIST]
     for task_id, DATA in enumerate(data_list):
         print('Loading Task/Dataset:', task_id)
-        train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=True)
+        train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=False)
         datasets[task_id] = {'train': train_loader, 'test': test_loader, 'val':val_loader}
     return datasets
 

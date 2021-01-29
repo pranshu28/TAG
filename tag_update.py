@@ -48,7 +48,7 @@ class tag_opt():
 		denom = torch.sqrt(self.v[name]) + 1e-8
 		return - (lr * dw / denom)
 
-	def update_tag(self, name, dw, task, lr=None):
+	def update_tag(self, name, dw, task):
 		bias_corr1, bias_corr2 = 1, 1
 		eq = {1:'n,nh->h', 2:'n,nhw->hw', 3:'n,nhwc->hwc', 4: 'n,nhwvd->hwvd', 5:'n,nhwzxc->hwzxc'}[len(dw.shape)]
 		new_v = None
@@ -79,9 +79,9 @@ class tag_opt():
 			new_v = self.v_t[t][name].unsqueeze(0) if t==0 else torch.cat((new_v, self.v_t[t][name].unsqueeze(0)), dim=0)
 		new_v = self.v_t[task][name].unsqueeze(0) if new_v is None else torch.cat((new_v, self.v_t[task][name].unsqueeze(0)), dim=0)
 		denom = (torch.sqrt(torch.einsum(eq, alpha_add_.float(), new_v))/ math.sqrt(bias_corr2)) + 1e-8
-		return - (lr * numer / denom)
+		return - (self.lr * numer / denom)
 
-	def step(self, model, task, iters, lr=None):
+	def step(self, model, task, iters):
 		self.iters = iters
 		state_dict = model.state_dict()
 		for i, (name, param) in enumerate(state_dict.items()):
@@ -92,7 +92,7 @@ class tag_opt():
 					break
 			if v.grad is None:
 				continue
-			update = self.update_tag(name, v.grad, task, self.lr if lr is None else lr)
+			update = self.update_tag(name, v.grad, task)
 			state_dict[name].data.copy_(param + update.reshape(param.shape))
 		return state_dict
 

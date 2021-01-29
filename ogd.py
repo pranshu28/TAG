@@ -142,7 +142,7 @@ class OGD():
         else :
             return tensor
 
-    def optimizer_step(self, model, lr, task_id, batch_idx, optimizer):
+    def optimizer_step(self, optimizer):
         cur_param = parameters_to_vector(self.model.parameters())
         grad_vec = parameters_to_grad_vector(self.model.parameters())
         # if self.do_ogd:

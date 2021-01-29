@@ -99,6 +99,7 @@ def get_split_cub_(args):
 	# all_data, all_label = _CUB_read_img_from_file('data/CUB_200_2011/images', 'data/CUB_200_2011/images.txt', 224, 224)
 	train_img, train_label = _CUB_read_img_from_file('data/CUB_200_2011/images', 'data/CUB_200_2011/CUB_train_list.txt', 224, 224)
 	test_img, test_label = _CUB_read_img_from_file('data/CUB_200_2011/images', 'data/CUB_200_2011/CUB_test_list.txt', 224, 224)
+	print(train_img.shape, test_img.shape)
 	train_ds, test_ds = [], []
 	current_train, current_test = None, None
 

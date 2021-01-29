@@ -30,7 +30,7 @@ def parse_arguments():
 	parser.add_argument('--epochs-per-task', default=1, type=int, help='epochs per task')
 	parser.add_argument('--dataset', default='rot-mnist', type=str, help='dataset. options: rot-mnist, perm-mnist, cifar100')
 	parser.add_argument('--batch-size', default=10, type=int, help='batch-size')
-	parser.add_argument('--opt', default=None, type=str, help='Manual adagrad')
+	parser.add_argument('--opt', default='', type=str, help='Manual adagrad')
 	parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
 	parser.add_argument('--gamma', default=0.4, type=float, help='learning rate decay. Use 1.0 for no decay')
 	parser.add_argument('--dropout', default=0.25, type=float, help='dropout probability. Use 0.0 for no dropout')
@@ -48,6 +48,8 @@ def parse_arguments():
 	print("Parameters:\n  benchmark="+str(args.dataset)+"\n  num_tasks="+str(args.tasks)+"\n  "+
 		  "runs="+str(args.runs)+"\n  epochs-per-task="+str(args.epochs_per_task)+"\n  batch_size="+str(args.batch_size)+"\n  "+
 		  "learning_rate="+str(args.lr)+"\n  learning rate decay(gamma)="+str(args.gamma)+"\n  dropout prob="+str(args.dropout)+"\n  optimizer opt="+str(args.opt))
+	if args.opt=='':
+		return args
 	if 'er' in args.opt or 'agem' in args.opt:
 		print("  mem="+str(args.mem_size))
 	if 'ogd' in args.opt:
