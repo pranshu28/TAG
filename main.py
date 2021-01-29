@@ -201,7 +201,6 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
 
 		for epoch in iterator:
-
 			if args.opt == '':
 				optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
@@ -221,7 +220,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 
 			############ Analysis Part #############
 			imp = [1.0]
-			if verbose and tag:
+			if tag and args.tag_opt=='rms':
 				mat = np.array([alpha_mean[i] for i in alpha_mean])
 				if current_task_id != 1 and alpha_mean != {}:
 					imp = np.round(mat.mean(axis=0), 3)
@@ -243,7 +242,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 			avg_acc += metrics['accuracy'] / len(tasks_done)
 			if args.multi !=1:
 				acc_db, loss_db = log_metrics(metrics, time, prev_task_id, acc_db, loss_db)
-				if verbose:
+				if (tag and args.tag_opt == 'rms') or args.opt=='rms': # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
 		if avg_acc<=20:

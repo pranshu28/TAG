@@ -39,15 +39,17 @@ def parse_arguments():
 	parser.add_argument('--b', default=None, type=int, help='b')
 	parser.add_argument('--seed', default=0, type=int, help='random seed')
 	parser.add_argument('--runs', default=3, type=int, help='# runs')
-	parser.add_argument('--tag-opt', default='rms', type=str, help='tag opt')
+	parser.add_argument('--tag-opt', default='adam', type=str, help='tag opt')
 	parser.add_argument('--mem-size', default=1, type=int, help='mem')
 	parser.add_argument('--multi', default=0, type=int, help='MTL')
 	parser.add_argument('--lambd', default=1, type=int, help='EWC')
 
 	args = parser.parse_args()
 	print("Parameters:\n  benchmark="+str(args.dataset)+"\n  num_tasks="+str(args.tasks)+"\n  "+
-		  "runs="+str(args.runs)+"\n  epochs-per-task="+str(args.epochs_per_task)+"\n  batch_size="+str(args.batch_size)+"\n  "+
-		  "learning_rate="+str(args.lr)+"\n  learning rate decay(gamma)="+str(args.gamma)+"\n  dropout prob="+str(args.dropout)+"\n  optimizer opt="+str(args.opt))
+		  "runs="+str(args.runs)+"\n  epochs-per-task="+str(args.epochs_per_task)+
+	      "\n  batch_size="+str(args.batch_size)+"\n  "+"learning_rate="+str(args.lr)+"\n  learning rate decay(gamma)="
+	      +str(args.gamma)+"\n  dropout prob="+str(args.dropout)+ "\n  optimizer opt="
+	      +(str(args.opt) if args.opt!='' else 'sgd'))
 	if args.opt=='':
 		return args
 	if 'er' in args.opt or 'agem' in args.opt:
