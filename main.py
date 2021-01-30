@@ -242,7 +242,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 			avg_acc += metrics['accuracy'] / len(tasks_done)
 			if args.multi !=1:
 				acc_db, loss_db = log_metrics(metrics, time, prev_task_id, acc_db, loss_db)
-				if (tag and args.tag_opt == 'rms') or args.opt=='rms': # verbose
+				if (tag and args.tag_opt == 'rms'):# or args.opt=='rms': # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
 		if avg_acc<=20:
@@ -294,9 +294,7 @@ if __name__ == "__main__":
 	print("loaded all tasks!")
 
 	verbose = False
-	# args.seed = 3
 	avg_runs_exp(args.runs)
-	# score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
 
 	# hyp_ewc([0.1, 0.05, 0.01, 0.001], [50,100,200])
 	# hyp_ogd([1, 10, 20], [32,64, 256])
