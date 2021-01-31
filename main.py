@@ -76,13 +76,13 @@ def eval_single_epoch(net, loader, criterion, task_id=None):
 	return {'accuracy': avg_acc, 'loss': test_loss}
 
 
-def avg_runs_exp(runs):
+def avg_runs_exp(runs, validate=False):
 	all_scores = []
 	r = 0
 	attempts = 0
 	while r<runs and attempts<5:
 		args.seed += 1
-		score, forget, learn_acc = continuum_run(args, train_loaders, test_loaders, val_loaders)
+		score, forget, learn_acc = continuum_run(args, train_loaders, val_loaders if validate else test_loaders)
 		if score!=0:
 			all_scores += [[score, forget, learn_acc]]
 			r+=1
@@ -97,41 +97,52 @@ def avg_runs_exp(runs):
 	return all_scores.mean(axis=0)[0]
 
 
-def hyp_tag(lrs, runs):
-	bs = (3, 5)
+def hyp_lr():
+	lrs = (0.1,   0.05,   0.01, 0.001)
+	best_hyp, best_acc = 0, 0
+	for lr in lrs:
+		print(args.lr)
+		acc = avg_runs_exp(args.runs, validate=True)
+		if acc > best_acc:
+			best_acc = acc
+			best_hyp = lr
+	print('Best [lr, b]:', best_hyp)
+
+def hyp_tag():
+	lrs = (0.00005, 0.000025, 0.00001)
+	bs = (1, 3, 5, 7)
+	best_hyp, best_acc = 0, []
 	for lr in lrs:
 		args.lr = lr
 		for b in bs:
 			args.b = b
 			print(args.lr, args.b)
-			avg_runs_exp(runs)
+			acc = avg_runs_exp(args.runs, validate=True)
+			if acc > best_acc:
+				best_acc = acc
+				best_hyp = [lr,b]
+	print('Best [lr, b]:', best_hyp)
 
 
-def hyp_ogd(ls, bs):
-	args.runs=2
-	for b in bs:
-		args.batch_size = b
-		for l in ls:
-			args.epochs_per_task =l
-			print(b, l)
-			avg_runs_exp(args.runs)
-
-
-def hyp_ewc(ls, bs):
-	args.runs=1
+def hyp_ewc():
+	ls, bs = (0.1, 0.05, 0.01, 0.001), (1, 10, 100)
+	best_hyp, best_acc = 0, []
 	for l in ls:
 		args.lr =l
 		for b in bs:
 			args.lambd = b
 			print(l, b)
-			avg_runs_exp(args.runs)
+			acc = avg_runs_exp(args.runs, validate=True)
+			if acc > best_acc:
+				best_acc = acc
+				best_hyp = [l,b]
+	print('Best [lr, lambd]:', best_hyp)
 
 
 def hyp_stable():
-	args.runs = 2
 	dropouts = (0.0, 0.1, 0.25, 0.5)
 	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
-	bs = (0.9, 0.8, 0.7, 0.6)
+	bs = (0.9, 0.8, 0.7)
 	best_hyp, best_acc = 0, []
 	for dropout in dropouts:
 		args.dropout = dropout
@@ -140,14 +151,14 @@ def hyp_stable():
 			for b in bs:
 				args.gamma = b
 				print(dropout, lr, b)
-				acc = avg_runs_exp(args.runs)
+				acc = avg_runs_exp(args.runs, validate=True)
 				if acc>best_acc:
 					best_acc = acc
 					best_hyp = [dropout, lr, b]
 	print('Best [dropout, lr, b]:', best_hyp)
 
 
-def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
+def continuum_run(args, train_loaders, test_loaders):
 	ALGO = None
 
 	acc_db, loss_db = init_experiment(args)
@@ -197,7 +208,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 			old_tasks = random.sample(old_tasks, k=sample_size)
 			ALGO = EWC(model, old_tasks)
 
-		best_val_loss, overfit = np.inf, 0
+		# best_val_loss, overfit = np.inf, 0
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
 
 		for epoch in iterator:
@@ -206,17 +217,17 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 
 			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, ALGO)
 
-			if args.epochs_per_task>20 and val_loaders is not None:
-				val_loader = val_loaders[current_task_id - 1]
-				metrics = eval_single_epoch(model, val_loader, criterion, current_task_id)
-				val_loss = metrics['loss']
-				if val_loss<best_val_loss:
-					best_val_loss = val_loss
-					overfit = 0
-				else:
-					overfit+=1
-					if overfit>=5:
-						break
+			# if args.epochs_per_task>20 and val_loaders is not None:
+			# 	val_loader = val_loaders[current_task_id - 1]
+			# 	metrics = eval_single_epoch(model, val_loader, criterion, current_task_id)
+			# 	val_loss = metrics['loss']
+			# 	if val_loss<best_val_loss:
+			# 		best_val_loss = val_loss
+			# 		overfit = 0
+			# 	else:
+			# 		overfit+=1
+			# 		if overfit>=5:
+			# 			break
 
 			############ Analysis Part #############
 			imp = [1.0]
@@ -242,7 +253,7 @@ def continuum_run(args, train_loaders, test_loaders, val_loaders=None):
 			avg_acc += metrics['accuracy'] / len(tasks_done)
 			if args.multi !=1:
 				acc_db, loss_db = log_metrics(metrics, time, prev_task_id, acc_db, loss_db)
-				if (tag and args.tag_opt == 'rms'):# or args.opt=='rms': # verbose
+				if (args.tag_opt == 'tag' and args.tag_opt == 'rms') or args.opt=='rms': # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
 		if avg_acc<=20:
@@ -265,25 +276,25 @@ if __name__ == "__main__":
 	np.random.seed(args.seed)
 	torch.manual_seed(args.seed)
 	torch.cuda.manual_seed(args.seed)
-	tasks=None
-	val_loaders = None
-	print('CUDA:', torch.cuda.is_available())
 
+	tasks=None
+	get_val = args.hyp_gs != ''
+
+	print('CUDA:', torch.cuda.is_available())
 	print("Loading {} tasks for {}".format(args.tasks, args.dataset))
 	if args.dataset in ['cifar100','cifar10']:
-		tasks = get_split_cifar100_tasks(args.tasks, args.batch_size)
+		tasks = get_split_cifar100_tasks(args.tasks, args.batch_size, get_val)
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
-		if args.tasks == 10:
-			val_loaders = [tasks[i]['val'] for i in tasks]
+		val_loaders = [tasks[i]['val'] for i in tasks]
 		args.classes = 100
 	elif args.dataset == 'imagenet':
-		train_loaders, test_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_miniimagenet(args), [True, False])]
+		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_miniimagenet(args, get_val), [True, False, False])]
 		args.classes = 100
 	elif args.dataset == 'cub':
-		train_loaders, test_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_split_cub_(args), [True, False])]
+		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_split_cub_(args, get_val), [True, False, False])]
 		args.classes = 200
 	elif args.dataset == '5data':
-		tasks = get_5_datasets_tasks(args.tasks, args.batch_size)
+		tasks = get_5_datasets_tasks(args.tasks, args.batch_size, get_val)
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		val_loaders = [tasks[i]['val'] for i in tasks]
 		args.classes = 50
@@ -292,11 +303,10 @@ if __name__ == "__main__":
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		args.classes = 10
 	print("loaded all tasks!")
-
 	verbose = False
-	avg_runs_exp(args.runs)
-
-	# hyp_ewc([0.1, 0.05, 0.01, 0.001], [50,100,200])
-	# hyp_ogd([1, 10, 20], [32,64, 256])
-	# hyp_stable()
-	# hyp_tag((0.00005, 0.000025, 0.00001,1)
+	if not get_val:
+		avg_runs_exp(args.runs)
+	else:
+		print('\n\nHyperparameter search',args.hyp_gs)
+		hyp_fun = {'ewc':hyp_ewc, 'tag':hyp_tag, 'stable':hyp_stable, 'lr':hyp_lr}
+		hyp_fun[args.hyp_gs]()

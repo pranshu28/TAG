@@ -43,7 +43,7 @@ class XYDataset(torch.utils.data.Dataset):
 """ Template Dataset for Continual Learning """
 class CLDataLoader(object):
 	def __init__(self, datasets_per_task, args, train=True):
-		bs = args.batch_size if train else 64
+		bs = args.batch_size if train else 256
 
 		self.datasets = datasets_per_task
 		self.loaders = [
@@ -57,7 +57,7 @@ class CLDataLoader(object):
 		return len(self.loaders)
 
 
-def get_split_cub_(args):
+def get_split_cub_(args, get_val=False):
 	args.n_classes = 200
 	args.n_classes_per_task = args.n_classes
 	args.use_conv = True
@@ -135,16 +135,17 @@ def get_split_cub_(args):
 		task_ids[task] = labels
 
 	task_ids = torch.from_numpy(np.stack(task_ids)).to(args.device).long()
-
-	# train_ds, val_ds = make_valid_from_train(train_ds)
-	train_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'cub', 'mask': y, 'task_ids': task_ids, 'transform': transform}), train_ds, masks)
-	# val_ds = map(lambda x, y: XYDataset(x[0], x[1] **{'source': 'cub', 'mask': y, 'task_ids': task_ids, 'transform': transform}), val_ds, masks)
 	test_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'cub', 'mask': y, 'task_ids': task_ids, 'transform': transform}), test_ds, masks)
+	if get_val:
+		train_ds, val_ds = make_valid_from_train(train_ds)
+		val_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'cub', 'mask': y, 'task_ids': task_ids, 'transform': transform}), val_ds, masks)
+	else:
+		val_ds = test_ds
+	train_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'cub', 'mask': y, 'task_ids': task_ids, 'transform': transform}), train_ds, masks)
+	return train_ds, test_ds, val_ds
 
-	return train_ds, test_ds
 
-
-def get_miniimagenet(args):
+def get_miniimagenet(args, get_val=False):
 	args.use_conv = True
 	args.n_classes = 100
 	# if args.multi == 1:
@@ -210,15 +211,18 @@ def get_miniimagenet(args):
 
 	task_ids = torch.from_numpy(np.stack(task_ids)).to(args.device).long()
 
-	# train_ds, val_ds = make_valid_from_train(train_ds)
-	train_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'imagenet', 'mask': y, 'task_ids': task_ids, 'transform': transform}), train_ds, masks)
-	# val_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'imagenet', 'mask': y, 'task_ids': task_ids, 'transform': transform}), val_ds, masks)
 	test_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'imagenet', 'mask': y, 'task_ids': task_ids, 'transform': transform}), test_ds, masks)
+	if get_val:
+		train_ds, val_ds = make_valid_from_train(train_ds)
+		val_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'imagenet', 'mask': y, 'task_ids': task_ids, 'transform': transform}), val_ds, masks)
+	else:
+		val_ds = test_ds
+	train_ds = map(lambda x, y: XYDataset(x[0], x[1], **{'source': 'imagenet', 'mask': y, 'task_ids': task_ids, 'transform': transform}), train_ds, masks)
 
-	return train_ds, test_ds
+	return train_ds, test_ds, val_ds
 
 
-def make_valid_from_train(dataset, cut=0.95):
+def make_valid_from_train(dataset, cut=0.9):
 	tr_ds, val_ds = [], []
 	for task_ds in dataset:
 		x_t, y_t = task_ds

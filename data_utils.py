@@ -1,6 +1,6 @@
 import torchvision
 import torchvision.transforms.functional as TorchVisionFunc
-from get_datasets import *
+from data_utils_2 import *
 from tqdm import tqdm
 import tarfile
 import os
@@ -87,20 +87,20 @@ def get_5_datasets(task_id, DATA, batch_size, get_val=False):
     if get_val:
         dataset_size = len(train_data)
         indices = list(range(dataset_size))
-        split = int(np.floor(0.05 * dataset_size))
+        split = int(np.floor(0.1 * dataset_size))
         np.random.shuffle(indices)
         train_indices, val_indices = indices[split:], indices[:split]
-        train_sampler = torch.utils.data.SubsetRandomSampler(train_indices)
-        valid_sampler = torch.utils.data.SubsetRandomSampler(val_indices)
-        train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=train_sampler, num_workers=4, pin_memory=True)
-        val_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=valid_sampler)
+        train_dataset = torch.utils.data.Subset(train_data, train_indices)
+        val_dataset = torch.utils.data.Subset(train_data, val_indices)
+        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size)
+        val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=256)
     else:
         train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
         val_loader = None
     return train_loader, test_loader, val_loader
 
 
-def get_5_datasets_tasks(num_tasks, batch_size):
+def get_5_datasets_tasks(num_tasks, batch_size, get_val=False):
     """
     Returns data loaders for all tasks of rotation MNIST dataset.
     :param num_tasks: number of tasks in the benchmark.
@@ -111,7 +111,8 @@ def get_5_datasets_tasks(num_tasks, batch_size):
     data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'notMNIST',  torchvision.datasets.FashionMNIST]
     for task_id, DATA in enumerate(data_list):
         print('Loading Task/Dataset:', task_id)
-        train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=False)
+        train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=get_val)
+        print(len(train_loader.dataset), len(test_loader.dataset), len(val_loader.dataset))
         datasets[task_id] = {'train': train_loader, 'test': test_loader, 'val':val_loader}
     return datasets
 
@@ -226,23 +227,23 @@ def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, ge
     target_test_idx = ((targets_test >= start_class) & (targets_test < end_class))
     train_data = torch.utils.data.dataset.Subset(cifar_train, np.where(target_train_idx==1)[0])
     train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True)
-    test_loader = torch.utils.data.DataLoader(torch.utils.data.dataset.Subset(cifar_test, np.where(target_test_idx==1)[0]), batch_size=batch_size)
+    test_loader = torch.utils.data.DataLoader(torch.utils.data.dataset.Subset(cifar_test, np.where(target_test_idx==1)[0]), batch_size=256)
     if get_val:
         dataset_size = len(train_loader.dataset)
         indices = list(range(dataset_size))
-        split = int(np.floor(0.05 * dataset_size))
+        split = int(np.floor(0.1 * dataset_size))
         np.random.shuffle(indices)
         train_indices, val_indices = indices[split:], indices[:split]
-        train_sampler = torch.utils.data.SubsetRandomSampler(train_indices)
-        valid_sampler = torch.utils.data.SubsetRandomSampler(val_indices)
-        train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=train_sampler)
-        val_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sampler=valid_sampler)
+        train_dataset = torch.utils.data.Subset(train_data, train_indices)
+        val_dataset = torch.utils.data.Subset(train_data, val_indices)
+        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size)
+        val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=256)
     else:
         val_loader = None
     return train_loader, test_loader, val_loader
 
 
-def get_split_cifar100_tasks(num_tasks, batch_size):
+def get_split_cifar100_tasks(num_tasks, batch_size, get_val=False):
     """
     Returns data loaders for all tasks of split CIFAR-100
     :param num_tasks:
@@ -260,6 +261,6 @@ def get_split_cifar100_tasks(num_tasks, batch_size):
     classes = int(100/num_tasks)
 
     for task_id in range(1, num_tasks+1):
-        train_loader, test_loader, val_loader = get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, num_tasks==10)
+        train_loader, test_loader, val_loader = get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, get_val=get_val)
         datasets[task_id] = {'train': train_loader, 'test': test_loader, 'val': val_loader}
     return datasets
