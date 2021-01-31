@@ -98,15 +98,17 @@ def avg_runs_exp(runs, validate=False):
 
 
 def hyp_lr():
-	lrs = (0.1,   0.05,   0.01, 0.001)
+	lrs = (0.1, 0.05, 0.01, 0.001)
 	best_hyp, best_acc = 0, 0
 	for lr in lrs:
+		args.lr = lr
 		print(args.lr)
 		acc = avg_runs_exp(args.runs, validate=True)
 		if acc > best_acc:
 			best_acc = acc
 			best_hyp = lr
 	print('Best [lr, b]:', best_hyp)
+
 
 def hyp_tag():
 	lrs = (0.00005, 0.000025, 0.00001)
@@ -256,6 +258,7 @@ def continuum_run(args, train_loaders, test_loaders):
 				if (args.tag_opt == 'tag' and args.tag_opt == 'rms') or args.opt=='rms': # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
+		# TODO: Weird EWC
 		if avg_acc<=20:
 			skip=1
 			break

@@ -191,11 +191,8 @@ elif [ $1 = "5data" ]; then
 #    echo " >>>>>>>> Multi-task "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --multi 1
 
-    echo " >>>>>>>> Naive SGD "
-    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 1 --hyp-gs 'lr'
-
-    echo " >>>>>>>> Naive SGD "
-    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5
+#    echo " >>>>>>>> Naive SGD "
+#    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5
 ###
 #    echo " >>>>>>>> EWC "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'ewc' --lambd 1

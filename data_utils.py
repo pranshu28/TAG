@@ -112,7 +112,6 @@ def get_5_datasets_tasks(num_tasks, batch_size, get_val=False):
     for task_id, DATA in enumerate(data_list):
         print('Loading Task/Dataset:', task_id)
         train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=get_val)
-        print(len(train_loader.dataset), len(test_loader.dataset), len(val_loader.dataset))
         datasets[task_id] = {'train': train_loader, 'test': test_loader, 'val':val_loader}
     return datasets
 
