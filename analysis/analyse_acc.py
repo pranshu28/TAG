@@ -187,10 +187,10 @@ def acc(dataset):
 		# print('\t\t', content[0], '(±', content[1], ')', content[2], '(±', content[3], ')', content[4], '(±', content[5], ')')
 
 
-# acc('cifar')
+acc('cifar')
 # acc('imagenet')
 # acc('cub')
-acc('5data_5')
+# acc('5data_5')
 
 # naive_plot('')
 # naive_plot('_f')

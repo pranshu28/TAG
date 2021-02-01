@@ -25,6 +25,7 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			if 'ewc' in args.opt:
 				loss_ewc = args.lambd * ALGO.penalty(net)
 				loss_ewc.backward()
+				torch.nn.utils.clip_grad_norm_(net.parameters(), 100)
 			elif 'ogd' in args.opt:
 				loss = criterion(pred, target)
 				loss.backward()
@@ -186,6 +187,7 @@ def continuum_run(args, train_loaders, test_loaders):
 			ALGO = AGEM(model, optimizer, criterion, args)
 		if 'ewc' in args.opt:
 			sample_size = 200
+			ALGO = EWC(model, criterion)
 			if not tag:
 				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		if 'ogd' in args.opt:
@@ -202,14 +204,6 @@ def continuum_run(args, train_loaders, test_loaders):
 		train_loader = train_loaders[current_task_id-1]
 		lr = max(args.lr * (args.gamma ** current_task_id), 0.00005)
 
-		if 'ewc' in args.opt and current_task_id!=1:
-			old_tasks = []
-			for sub_task in range(current_task_id-1):
-				loader = torch.utils.data.DataLoader(train_loaders[sub_task].dataset, batch_size=sample_size, num_workers=0, shuffle=False)
-				old_tasks += next(iter(loader))[0]
-			old_tasks = random.sample(old_tasks, k=sample_size)
-			ALGO = EWC(model, old_tasks)
-
 		# best_val_loss, overfit = np.inf, 0
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
 
@@ -219,7 +213,7 @@ def continuum_run(args, train_loaders, test_loaders):
 
 			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, ALGO)
 
-			# if args.epochs_per_task>20 and val_loaders is not None:
+			# if args.epochs_per_task>20 and test_loaders is not None:
 			# 	val_loader = val_loaders[current_task_id - 1]
 			# 	metrics = eval_single_epoch(model, val_loader, criterion, current_task_id)
 			# 	val_loss = metrics['loss']
@@ -240,8 +234,12 @@ def continuum_run(args, train_loaders, test_loaders):
 
 		if tag:
 			optimizer.update_all(current_task_id-1)
-		elif 'ogd' in args.opt:
+		if 'ogd' in args.opt:
 			ALGO._update_mem(current_task_id, train_loader)
+		if 'ewc' in args.opt:
+			loader = torch.utils.data.DataLoader(train_loader.dataset, batch_size=sample_size, shuffle=True)
+			ALGO.update(model, current_task_id, loader)
+
 
 		time += 1
 		if current_task_id not in tasks_done:
@@ -258,20 +256,20 @@ def continuum_run(args, train_loaders, test_loaders):
 				if (args.tag_opt == 'tag' and args.tag_opt == 'rms') or args.opt=='rms': # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
-		# TODO: Weird EWC
-		if avg_acc<=20:
-			skip=1
-			break
+		# if avg_acc<=20:
+		# 	skip=1
+		# 	break
 
 		torch.cuda.empty_cache()
 	if args.multi != 1:
-		if skip==1:
-			print('Aborting this run!!')
-			return 0., 0., 0.
+		# if skip==1:
+		# 	print('Aborting this run!!')
+		# 	return 0., 0., 0.
 		score, forget, learn_acc = end_experiment(args, acc_db, loss_db)
 	else:
 		score, forget, learn_acc = avg_acc, 0., 0.
 	return score, forget, learn_acc
+
 
 if __name__ == "__main__":
 	args = parse_arguments()

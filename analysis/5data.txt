@@ -97,6 +97,7 @@ Final Average accuracy =  46.48228322065151 +/- 3.620335053104335 forget =  0.47
 
 
  >>>>>>>> EWC
+************************ replicating experiment (5-dataset) ***********************
 Parameters:
   benchmark=5data
   num_tasks=5
@@ -107,7 +108,7 @@ Parameters:
   learning rate decay(gamma)=1.0
   dropout prob=0.0
   optimizer opt=ewc
-  lambda=1
+  lambda=100
 CUDA: True
 Loading 5 tasks for 5data
 Loading Task/Dataset: 0
@@ -124,69 +125,51 @@ loaded all tasks!
 ------------------- Experiment-1 started -----------------
 [1 2 3 4 5]
 TASK 1 / 5 	Avg Acc: 56.23
-TASK 2 / 5 	Avg Acc: 57.2
-TASK 3 / 5 	Avg Acc: 55.96147715632043
-TASK 4 / 5 	Avg Acc: 61.46017473563109
-TASK 5 / 5 	Avg Acc: 51.87298063133343
-average accuracy = 51.87298063133343, forget = 0.39999946180637636, learning accuracy = 83.87293757584354
+TASK 2 / 5 	Avg Acc: 63.775000000000006
+TASK 3 / 5 	Avg Acc: 50.724753124359765
+TASK 4 / 5 	Avg Acc: 60.594867618552314
+TASK 5 / 5 	Avg Acc: 47.03357548631796
+average accuracy = 47.03357548631796, forget = 0.4294390317768007, learning accuracy = 81.38869802846202
 
 ------------------- Experiment-2 started -----------------
 [1 2 3 4 5]
 TASK 1 / 5 	Avg Acc: 43.23
-TASK 2 / 5 	Avg Acc: 61.55
-TASK 3 / 5 	Avg Acc: 9.757305879942635
-Aborting this run!!
+TASK 2 / 5 	Avg Acc: 56.03
+TASK 3 / 5 	Avg Acc: 50.672415488629376
+TASK 4 / 5 	Avg Acc: 53.51060703722966
+TASK 5 / 5 	Avg Acc: 50.02494858661792
+average accuracy = 50.02494858661792, forget = 0.38648339558413314, learning accuracy = 80.94362023334858
 
 ------------------- Experiment-3 started -----------------
 [1 2 3 4 5]
 TASK 1 / 5 	Avg Acc: 50.52
-TASK 2 / 5 	Avg Acc: 60.375
-TASK 3 / 5 	Avg Acc: 36.1461094038107
-TASK 4 / 5 	Avg Acc: 51.108725408307464
-TASK 5 / 5 	Avg Acc: 55.04638839245846
-average accuracy = 55.04638839245846, forget = 0.24603239917734382, learning accuracy = 73.94993914655993
+TASK 2 / 5 	Avg Acc: 59.075
+TASK 3 / 5 	Avg Acc: 51.91947551731202
+TASK 4 / 5 	Avg Acc: 31.667446679694685
+TASK 5 / 5 	Avg Acc: 49.739629657646866
+average accuracy = 49.739629657646866, forget = 0.3554194990780578, learning accuracy = 74.85054001124192
 
 ------------------- Experiment-4 started -----------------
 [1 2 3 4 5]
 TASK 1 / 5 	Avg Acc: 53.39
-TASK 2 / 5 	Avg Acc: 63.69499999999999
-TASK 3 / 5 	Avg Acc: 54.41178447039541
-TASK 4 / 5 	Avg Acc: 58.8905396645286
-TASK 5 / 5 	Avg Acc: 48.27303769193996
-average accuracy = 48.27303769193996, forget = 0.43355447220777577, learning accuracy = 82.95739546856203
+TASK 2 / 5 	Avg Acc: 41.005
+TASK 3 / 5 	Avg Acc: 55.42345011268183
+TASK 4 / 5 	Avg Acc: 54.72877572113743
+TASK 5 / 5 	Avg Acc: 46.5724629253148
+average accuracy = 46.5724629253148, forget = 0.3935536362872257, learning accuracy = 76.99275382829286
 
 ------------------- Experiment-5 started -----------------
 [1 2 3 4 5]
 TASK 1 / 5 	Avg Acc: 50.0
-TASK 2 / 5 	Avg Acc: 9.9
-Aborting this run!!
+TASK 2 / 5 	Avg Acc: 61.615
+TASK 3 / 5 	Avg Acc: 61.41645769309568
+TASK 4 / 5 	Avg Acc: 59.97704193129823
+TASK 5 / 5 	Avg Acc: 49.531179718321695
+average accuracy = 49.531179718321695, forget = 0.42634757510808524, learning accuracy = 83.63898572696851
 
-------------------- Experiment-6 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 44.58
-TASK 2 / 5 	Avg Acc: 66.87
-TASK 3 / 5 	Avg Acc: 55.11554599467323
-TASK 4 / 5 	Avg Acc: 62.19701992025594
-TASK 5 / 5 	Avg Acc: 51.0295172910133
-average accuracy = 51.02951729101329, forget = 0.37982134677110096, learning accuracy = 81.41522503270137
-
-------------------- Experiment-7 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 38.76
-TASK 2 / 5 	Avg Acc: 10.05
-Aborting this run!!
-
-------------------- Experiment-8 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 51.19
-TASK 2 / 5 	Avg Acc: 61.050000000000004
-TASK 3 / 5 	Avg Acc: 55.50109813562794
-TASK 4 / 5 	Avg Acc: 56.46769267541855
-TASK 5 / 5 	Avg Acc: 44.95703206047521
-average accuracy = 44.95703206047521, forget = 0.4779558053467396, learning accuracy = 83.19349648821438
-
-Final Average accuracy =  50.235791213444074 +/- 3.4108630894901912 forget =  0.38747269706186727 +/- 0.07814287395199772 learning accuracy =  81.07779874237625 +/- 3.6535489820792906
+Final Average accuracy =  48.58035927484385 +/- 1.4669010501577886 forget =  0.3982486275668605 +/- 0.027412369622262 learning accuracy =  79.56291956566278 +/- 3.183281001193116
 ------------------- Experiment ended -----------------
+
 
 
 
