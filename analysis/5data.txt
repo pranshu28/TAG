@@ -173,6 +173,7 @@ Final Average accuracy =  48.58035927484385 +/- 1.4669010501577886 forget =  0.3
 
 
 
+************************ replicating experiment (5-dataset) ***********************
  >>>>>>>> TAG-EWC
 Parameters:
   benchmark=5data
@@ -186,7 +187,7 @@ Parameters:
   optimizer opt=tag-ewc
   tag-opt=rms
   b=5
-  lambda=1
+  lambda=100
 CUDA: True
 Loading 5 tasks for 5data
 Loading Task/Dataset: 0
@@ -202,129 +203,59 @@ loaded all tasks!
 
 ------------------- Experiment-1 started -----------------
 [1 2 3 4 5]
-	Prev Task: 1  	Manual	 57.1    	 1.0
 TASK 1 / 5 	Avg Acc: 57.1
-	Prev Task: 1  	Manual	 22.55    	 3.026
-	Prev Task: 2  	Manual	 98.93    	 0.007
-TASK 2 / 5 	Avg Acc: 60.74
-	Prev Task: 1  	Manual	 18.43    	 2.121
-	Prev Task: 2  	Manual	 78.09    	 1.332
-	Prev Task: 3  	Manual	 89.7779655808236    	 0.007
-TASK 3 / 5 	Avg Acc: 62.09932186027453
-	Prev Task: 1  	Manual	 21.05    	 1.299
-	Prev Task: 2  	Manual	 84.35    	 1.389
-	Prev Task: 3  	Manual	 67.27873386601107    	 1.757
-	Prev Task: 4  	Manual	 94.65811965811966    	 0.007
-TASK 4 / 5 	Avg Acc: 66.83421338103267
-	Prev Task: 1  	Manual	 16.81    	 1.444
-	Prev Task: 2  	Manual	 69.19    	 1.426
-	Prev Task: 3  	Manual	 56.37292562999385    	 1.924
-	Prev Task: 4  	Manual	 85.68376068376068    	 1.509
-	Prev Task: 5  	Manual	 89.69    	 0.007
-TASK 5 / 5 	Avg Acc: 63.54933726275091
-average accuracy = 63.54933726275091, forget = 0.2810234973129719, learning accuracy = 86.03121704778866
+TASK 2 / 5 	Avg Acc: 61.46
+TASK 3 / 5 	Avg Acc: 61.393138701085846
+TASK 4 / 5 	Avg Acc: 66.6480967540279
+TASK 5 / 5 	Avg Acc: 64.44080569870613
+average accuracy = 64.44080569870613, forget = 0.24829445193030011, learning accuracy = 84.30436185313015
 
 ------------------- Experiment-2 started -----------------
 [1 2 3 4 5]
-	Prev Task: 1  	Manual	 60.07    	 1.0
 TASK 1 / 5 	Avg Acc: 60.07
-	Prev Task: 1  	Manual	 26.47    	 2.62
-	Prev Task: 2  	Manual	 98.64    	 0.007
-TASK 2 / 5 	Avg Acc: 62.555
-	Prev Task: 1  	Manual	 18.15    	 2.236
-	Prev Task: 2  	Manual	 80.31    	 1.452
-	Prev Task: 3  	Manual	 89.49370006146282    	 0.007
-TASK 3 / 5 	Avg Acc: 62.65123335382094
-	Prev Task: 1  	Manual	 20.27    	 1.406
-	Prev Task: 2  	Manual	 80.86    	 1.368
-	Prev Task: 3  	Manual	 63.59480639213276    	 1.631
-	Prev Task: 4  	Manual	 93.10897435897436    	 0.007
-TASK 4 / 5 	Avg Acc: 64.45844518777679
-	Prev Task: 1  	Manual	 22.54    	 1.418
-	Prev Task: 2  	Manual	 65.7    	 1.331
-	Prev Task: 3  	Manual	 60.6100184388445    	 1.766
-	Prev Task: 4  	Manual	 83.01282051282051    	 1.581
-	Prev Task: 5  	Manual	 89.81    	 0.007
-TASK 5 / 5 	Avg Acc: 64.334567790333
-average accuracy = 64.33456779033301, forget = 0.27362458867193046, learning accuracy = 86.22453488408743
+TASK 2 / 5 	Avg Acc: 60.464999999999996
+TASK 3 / 5 	Avg Acc: 61.070678139725466
+TASK 4 / 5 	Avg Acc: 65.86502264143014
+TASK 5 / 5 	Avg Acc: 70.38563103399366
+average accuracy = 70.38563103399366, forget = 0.177321663934986, learning accuracy = 84.57136414879254
 
 ------------------- Experiment-3 started -----------------
 [1 2 3 4 5]
-	Prev Task: 1  	Manual	 54.62    	 1.0
 TASK 1 / 5 	Avg Acc: 54.62
-	Prev Task: 1  	Manual	 25.7    	 2.814
-	Prev Task: 2  	Manual	 98.57    	 0.007
-TASK 2 / 5 	Avg Acc: 62.135
-	Prev Task: 1  	Manual	 15.71    	 2.512
-	Prev Task: 2  	Manual	 67.94    	 1.473
-	Prev Task: 3  	Manual	 88.87138905961893    	 0.007
-TASK 3 / 5 	Avg Acc: 57.50712968653964
-	Prev Task: 1  	Manual	 17.96    	 1.437
-	Prev Task: 2  	Manual	 74.62    	 1.522
-	Prev Task: 3  	Manual	 66.44130301167793    	 1.683
-	Prev Task: 4  	Manual	 94.01709401709402    	 0.007
-TASK 4 / 5 	Avg Acc: 63.259599257192995
-	Prev Task: 1  	Manual	 20.41    	 1.736
-	Prev Task: 2  	Manual	 66.95    	 1.354
-	Prev Task: 3  	Manual	 62.18500307314075    	 1.961
-	Prev Task: 4  	Manual	 88.35470085470085    	 1.559
-	Prev Task: 5  	Manual	 90.36    	 0.007
-TASK 5 / 5 	Avg Acc: 65.65194078556833
-average accuracy = 65.65194078556831, forget = 0.24544694787217836, learning accuracy = 85.28769661534258
+TASK 2 / 5 	Avg Acc: 65.645
+TASK 3 / 5 	Avg Acc: 62.36671173939766
+TASK 4 / 5 	Avg Acc: 63.33836288276362
+TASK 5 / 5 	Avg Acc: 65.83664317421294
+average accuracy = 65.83664317421292, forget = 0.21591601631653876, learning accuracy = 83.10992447953603
 
 ------------------- Experiment-4 started -----------------
 [1 2 3 4 5]
-	Prev Task: 1  	Manual	 61.25    	 1.0
 TASK 1 / 5 	Avg Acc: 61.25
-	Prev Task: 1  	Manual	 29.88    	 2.934
-	Prev Task: 2  	Manual	 98.3    	 0.007
-TASK 2 / 5 	Avg Acc: 64.09
-	Prev Task: 1  	Manual	 16.73    	 2.951
-	Prev Task: 2  	Manual	 82.27    	 1.395
-	Prev Task: 3  	Manual	 88.39889366933005    	 0.007
-TASK 3 / 5 	Avg Acc: 62.46629788977668
-	Prev Task: 1  	Manual	 19.8    	 1.386
-	Prev Task: 2  	Manual	 76.9    	 1.522
-	Prev Task: 3  	Manual	 69.13414259373079    	 1.88
-	Prev Task: 4  	Manual	 92.1474358974359    	 0.007
-TASK 4 / 5 	Avg Acc: 64.49539462279168
-	Prev Task: 1  	Manual	 16.46    	 1.511
-	Prev Task: 2  	Manual	 75.38    	 1.394
-	Prev Task: 3  	Manual	 68.81914566687155    	 2.02
-	Prev Task: 4  	Manual	 82.7991452991453    	 1.723
-	Prev Task: 5  	Manual	 88.24    	 0.007
-TASK 5 / 5 	Avg Acc: 66.33965819320336
-average accuracy = 66.33965819320336, forget = 0.24159509650187277, learning accuracy = 85.66726591335319
+TASK 2 / 5 	Avg Acc: 62.14
+TASK 3 / 5 	Avg Acc: 65.75321655398484
+TASK 4 / 5 	Avg Acc: 68.94714678580998
+TASK 5 / 5 	Avg Acc: 63.47825322679779
+average accuracy = 63.47825322679779, forget = 0.27591839471734986, learning accuracy = 85.55172480418578
 
 ------------------- Experiment-5 started -----------------
 [1 2 3 4 5]
-	Prev Task: 1  	Manual	 59.67    	 1.0
 TASK 1 / 5 	Avg Acc: 59.67
-	Prev Task: 1  	Manual	 13.53    	 2.816
-	Prev Task: 2  	Manual	 98.85    	 0.007
-TASK 2 / 5 	Avg Acc: 56.19
-	Prev Task: 1  	Manual	 14.53    	 2.106
-	Prev Task: 2  	Manual	 79.96    	 1.384
-	Prev Task: 3  	Manual	 87.86493546404425    	 0.007
-TASK 3 / 5 	Avg Acc: 60.78497848801475
-	Prev Task: 1  	Manual	 14.35    	 1.499
-	Prev Task: 2  	Manual	 66.54    	 1.438
-	Prev Task: 3  	Manual	 72.46465888137676    	 2.259
-	Prev Task: 4  	Manual	 93.16239316239316    	 0.007
-TASK 4 / 5 	Avg Acc: 61.62926301094248
-	Prev Task: 1  	Manual	 17.83    	 1.544
-	Prev Task: 2  	Manual	 69.02    	 1.493
-	Prev Task: 3  	Manual	 66.03027043638599    	 2.149
-	Prev Task: 4  	Manual	 77.35042735042735    	 1.57
-	Prev Task: 5  	Manual	 89.76    	 0.007
-TASK 5 / 5 	Avg Acc: 63.99813955736266
-average accuracy = 63.99813955736266, forget = 0.27329157709906016, learning accuracy = 85.86146572528749
+TASK 2 / 5 	Avg Acc: 57.28
+TASK 3 / 5 	Avg Acc: 64.6719811514034
+TASK 4 / 5 	Avg Acc: 65.78903759475517
+TASK 5 / 5 	Avg Acc: 64.1940615783861
+average accuracy = 64.19406157838611, forget = 0.2537807555723659, learning accuracy = 84.49652202417539
 
-Final Average accuracy =  64.77472871784366 +/- 1.0504210450204525 forget =  0.26299634149160267 +/- 0.016185946774081902 learning accuracy =  85.81443603717186 +/- 0.32140327509956085
+Final Average accuracy =  65.66707894241934 +/- 2.4802407183965296 forget =  0.23424625649430814 +/- 0.03432760549860216 learning accuracy =  84.40677946196396 +/- 0.7795336933492422
 ------------------- Experiment ended -----------------
 
 
 
+iitm@euclid:~/pranshu/research/mtl_ll/tag$
+
+
+
+************************ replicating experiment (5-dataset) ***********************
  >>>>>>>> A-GEM
 Parameters:
   benchmark=5data
@@ -332,7 +263,7 @@ Parameters:
   runs=5
   epochs-per-task=1
   batch_size=64
-  learning_rate=0.05
+  learning_rate=0.1
   learning rate decay(gamma)=1.0
   dropout prob=0.0
   optimizer opt=agem
@@ -352,66 +283,66 @@ loaded all tasks!
 
 ------------------- Experiment-1 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 51.18
-TASK 2 / 5 	Avg Acc: 58.879999999999995
-TASK 3 / 5 	Avg Acc: 57.32473673427576
-TASK 4 / 5 	Avg Acc: 62.42710746536807
-TASK 5 / 5 	Avg Acc: 57.74559092031373
-average accuracy = 57.745590920313724, forget = 0.31795986977237745, learning accuracy = 83.18238050210391
+TASK 1 / 5 	Avg Acc: 55.91
+TASK 2 / 5 	Avg Acc: 56.82
+TASK 3 / 5 	Avg Acc: 58.77584101618521
+TASK 4 / 5 	Avg Acc: 68.2777786839603
+TASK 5 / 5 	Avg Acc: 59.42803429309883
+average accuracy = 59.428034293098825, forget = 0.31117436186363656, learning accuracy = 84.32198324218976
 
 ------------------- Experiment-2 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.06
-TASK 2 / 5 	Avg Acc: 57.09
-TASK 3 / 5 	Avg Acc: 56.201360376971934
-TASK 4 / 5 	Avg Acc: 60.37266002658136
-TASK 5 / 5 	Avg Acc: 54.41116433685825
-average accuracy = 54.411164336858256, forget = 0.3100794093003221, learning accuracy = 79.21751708088402
+TASK 1 / 5 	Avg Acc: 43.5
+TASK 2 / 5 	Avg Acc: 55.574999999999996
+TASK 3 / 5 	Avg Acc: 58.492679778733866
+TASK 4 / 5 	Avg Acc: 62.76764028756192
+TASK 5 / 5 	Avg Acc: 53.69516058605056
+average accuracy = 53.69516058605056, forget = 0.3430912747755556, learning accuracy = 81.14246256809503
 
 ------------------- Experiment-3 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 49.8
-TASK 2 / 5 	Avg Acc: 57.245
-TASK 3 / 5 	Avg Acc: 57.629934439664
-TASK 4 / 5 	Avg Acc: 60.85990867256079
-TASK 5 / 5 	Avg Acc: 52.70646372380607
-average accuracy = 52.70646372380607, forget = 0.3726174296986221, learning accuracy = 82.51585809969583
+TASK 1 / 5 	Avg Acc: 50.95
+TASK 2 / 5 	Avg Acc: 43.294999999999995
+TASK 3 / 5 	Avg Acc: 62.55627125589019
+TASK 4 / 5 	Avg Acc: 59.86783841320873
+TASK 5 / 5 	Avg Acc: 58.44283299449987
+average accuracy = 58.442832994499874, forget = 0.27719516899647506, learning accuracy = 79.17844651421788
 
 ------------------- Experiment-4 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.96
-TASK 2 / 5 	Avg Acc: 54.45
-TASK 3 / 5 	Avg Acc: 58.86749026838763
-TASK 4 / 5 	Avg Acc: 59.53113505271618
-TASK 5 / 5 	Avg Acc: 51.723172752536
-average accuracy = 51.723172752535994, forget = 0.3345126714523611, learning accuracy = 78.48418646872489
+TASK 1 / 5 	Avg Acc: 54.83
+TASK 2 / 5 	Avg Acc: 68.095
+TASK 3 / 5 	Avg Acc: 57.12301987297685
+TASK 4 / 5 	Avg Acc: 62.791769327954015
+TASK 5 / 5 	Avg Acc: 54.982012502692285
+average accuracy = 54.982012502692285, forget = 0.37261458678076687, learning accuracy = 84.79117944515363
 
 ------------------- Experiment-5 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 34.64
-TASK 2 / 5 	Avg Acc: 56.685
-TASK 3 / 5 	Avg Acc: 59.34165949600491
-TASK 4 / 5 	Avg Acc: 56.17583551342463
-TASK 5 / 5 	Avg Acc: 55.31468316181531
-average accuracy = 55.314683161815296, forget = 0.30790219729563617, learning accuracy = 79.94685894546619
+TASK 1 / 5 	Avg Acc: 49.95
+TASK 2 / 5 	Avg Acc: 60.81999999999999
+TASK 3 / 5 	Avg Acc: 59.434482687973784
+TASK 4 / 5 	Avg Acc: 56.93102017766431
+TASK 5 / 5 	Avg Acc: 52.95020323704159
+average accuracy = 52.95020323704159, forget = 0.3831607805514842, learning accuracy = 83.60306568116033
 
-Final Average accuracy =  54.38021497906586 +/- 2.1005361473345445 forget =  0.3286143155038638 +/- 0.02390446177692769 learning accuracy =  80.66936021937497 +/- 1.8509276740893847
+Final Average accuracy =  55.89964872267662 +/- 2.5814082909721123 forget =  0.33744723459358367 +/- 0.039189032607811224 learning accuracy =  82.60742749016332 +/- 2.126207995064878
 ------------------- Experiment ended -----------------
 
 
 
- >>>>>>>> A-GEM
+ >>>>>>>> ER
 Parameters:
   benchmark=5data
   num_tasks=5
   runs=5
   epochs-per-task=1
   batch_size=64
-  learning_rate=0.05
+  learning_rate=0.1
   learning rate decay(gamma)=1.0
   dropout prob=0.0
-  optimizer opt=agem
-  mem=10
+  optimizer opt=er
+  mem=1
 CUDA: True
 Loading 5 tasks for 5data
 Loading Task/Dataset: 0
@@ -427,126 +358,52 @@ loaded all tasks!
 
 ------------------- Experiment-1 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 51.18
-TASK 2 / 5 	Avg Acc: 59.71
-TASK 3 / 5 	Avg Acc: 64.95499078057775
-TASK 4 / 5 	Avg Acc: 67.33719184540789
-TASK 5 / 5 	Avg Acc: 61.13595744882039
-average accuracy = 61.135957448820385, forget = 0.28750056958168513, learning accuracy = 84.13600301535521
+TASK 1 / 5 	Avg Acc: 56.23
+TASK 2 / 5 	Avg Acc: 68.69500000000001
+TASK 3 / 5 	Avg Acc: 65.26842450317558
+TASK 4 / 5 	Avg Acc: 69.3947953997447
+TASK 5 / 5 	Avg Acc: 59.69663779490332
+average accuracy = 59.69663779490331, forget = 0.3240782882606023, learning accuracy = 85.62290085575151
 
 ------------------- Experiment-2 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.06
-TASK 2 / 5 	Avg Acc: 62.81999999999999
-TASK 3 / 5 	Avg Acc: 61.2279020692481
-TASK 4 / 5 	Avg Acc: 62.39110428190945
-TASK 5 / 5 	Avg Acc: 60.2182743552971
-average accuracy = 60.21827435529709, forget = 0.25839750274481377, learning accuracy = 80.8900745748822
+TASK 1 / 5 	Avg Acc: 43.23
+TASK 2 / 5 	Avg Acc: 68.27000000000001
+TASK 3 / 5 	Avg Acc: 58.55895922966606
+TASK 4 / 5 	Avg Acc: 67.24491204776238
+TASK 5 / 5 	Avg Acc: 62.003898990854125
+average accuracy = 62.003898990854125, forget = 0.25718490982827186, learning accuracy = 82.57869177711588
 
 ------------------- Experiment-3 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 49.8
-TASK 2 / 5 	Avg Acc: 59.685
-TASK 3 / 5 	Avg Acc: 61.47969063716451
-TASK 4 / 5 	Avg Acc: 63.19169252570144
-TASK 5 / 5 	Avg Acc: 54.95939213801291
-average accuracy = 54.959392138012916, forget = 0.3512586968569913, learning accuracy = 83.06008788657222
+TASK 1 / 5 	Avg Acc: 50.52
+TASK 2 / 5 	Avg Acc: 62.915
+TASK 3 / 5 	Avg Acc: 63.54722802704364
+TASK 4 / 5 	Avg Acc: 64.55968018323273
+TASK 5 / 5 	Avg Acc: 58.9278817287336
+average accuracy = 58.927881728733595, forget = 0.31151509030305896, learning accuracy = 83.84908895297832
 
 ------------------- Experiment-4 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.96
-TASK 2 / 5 	Avg Acc: 64.62
-TASK 3 / 5 	Avg Acc: 59.82659905757017
-TASK 4 / 5 	Avg Acc: 59.9556678696568
-TASK 5 / 5 	Avg Acc: 53.56107735384195
-average accuracy = 53.56107735384195, forget = 0.36686636788909377, learning accuracy = 82.91038678496946
+TASK 1 / 5 	Avg Acc: 53.39
+TASK 2 / 5 	Avg Acc: 67.12
+TASK 3 / 5 	Avg Acc: 64.53767260807211
+TASK 4 / 5 	Avg Acc: 67.03100080637113
+TASK 5 / 5 	Avg Acc: 60.818096606937424
+average accuracy = 60.818096606937424, forget = 0.3055215079139941, learning accuracy = 85.25981724005695
 
 ------------------- Experiment-5 started -----------------
 [1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 34.64
-TASK 2 / 5 	Avg Acc: 59.965
-TASK 3 / 5 	Avg Acc: 61.78637779143618
-TASK 4 / 5 	Avg Acc: 60.28227194406358
-TASK 5 / 5 	Avg Acc: 59.07589612258943
-average accuracy = 59.07589612258943, forget = 0.2584091746384463, learning accuracy = 79.74863009366513
+TASK 1 / 5 	Avg Acc: 50.0
+TASK 2 / 5 	Avg Acc: 63.59
+TASK 3 / 5 	Avg Acc: 63.85021511985249
+TASK 4 / 5 	Avg Acc: 70.9392316097479
+TASK 5 / 5 	Avg Acc: 66.455995902479
+average accuracy = 66.455995902479, forget = 0.221956365472607, learning accuracy = 84.21250514028756
 
-Final Average accuracy =  57.79011948371235 +/- 2.9880295840620565 forget =  0.304486462342206 +/- 0.04607542453265455 learning accuracy =  82.14903647108886 +/- 1.5940289120973234
+Final Average accuracy =  61.58050220478149 +/- 2.650143635168592 forget =  0.28405123235570684 +/- 0.03845769938436983 learning accuracy =  84.30460079323805 +/- 1.0812111813089333
 ------------------- Experiment ended -----------------
 
-
-
- >>>>>>>> A-GEM
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.05
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=agem
-  mem=5
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 51.18
-TASK 2 / 5 	Avg Acc: 58.375
-TASK 3 / 5 	Avg Acc: 62.15728948985863
-TASK 4 / 5 	Avg Acc: 60.77943997919721
-TASK 5 / 5 	Avg Acc: 64.44905906208794
-average accuracy = 64.44905906208795, forget = 0.24361066366707113, learning accuracy = 83.93791215545365
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.06
-TASK 2 / 5 	Avg Acc: 62.25
-TASK 3 / 5 	Avg Acc: 61.40554189715222
-TASK 4 / 5 	Avg Acc: 66.25777143450009
-TASK 5 / 5 	Avg Acc: 59.62613657352686
-average accuracy = 59.62613657352686, forget = 0.27952019893989777, learning accuracy = 81.98775248871868
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 49.8
-TASK 2 / 5 	Avg Acc: 59.57
-TASK 3 / 5 	Avg Acc: 56.62337840606433
-TASK 4 / 5 	Avg Acc: 61.57867874647377
-TASK 5 / 5 	Avg Acc: 54.99819845660043
-average accuracy = 54.99819845660043, forget = 0.3448952932354131, learning accuracy = 82.58982191543348
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.96
-TASK 2 / 5 	Avg Acc: 62.245000000000005
-TASK 3 / 5 	Avg Acc: 57.13977053882401
-TASK 4 / 5 	Avg Acc: 61.90010966121906
-TASK 5 / 5 	Avg Acc: 53.11153003535425
-average accuracy = 53.11153003535425, forget = 0.3713851365052349, learning accuracy = 82.82234095577304
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 34.64
-TASK 2 / 5 	Avg Acc: 61.230000000000004
-TASK 3 / 5 	Avg Acc: 62.002919483712354
-TASK 4 / 5 	Avg Acc: 59.69727692150096
-TASK 5 / 5 	Avg Acc: 56.93007764276971
-average accuracy = 56.93007764276971, forget = 0.29138951533681096, learning accuracy = 80.24123886971458
-
-Final Average accuracy =  57.823000354067844 +/- 3.95299186744574 forget =  0.3061601615368855 +/- 0.046032612499024385 learning accuracy =  82.31581327701869 +/- 1.2144413239799907
-------------------- Experiment ended -----------------
 
 
 
@@ -702,228 +559,6 @@ Final Average accuracy =  69.86609923775602 +/- 2.875879667152967 forget =  0.19
 
 
 
- >>>>>>>> ER
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.05
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=er
-  mem=1
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.66
-TASK 2 / 5 	Avg Acc: 67.32
-TASK 3 / 5 	Avg Acc: 55.1258901864372
-TASK 4 / 5 	Avg Acc: 64.93575885563592
-TASK 5 / 5 	Avg Acc: 53.56016178904071
-average accuracy = 53.56016178904072, forget = 0.3796265557446719, learning accuracy = 83.93028624861446
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.12
-TASK 2 / 5 	Avg Acc: 66.32
-TASK 3 / 5 	Avg Acc: 60.71859045277607
-TASK 4 / 5 	Avg Acc: 64.0046640820765
-TASK 5 / 5 	Avg Acc: 58.12616052826502
-average accuracy = 58.12616052826502, forget = 0.3034547294848155, learning accuracy = 82.40253888705027
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.03
-TASK 2 / 5 	Avg Acc: 67.985
-TASK 3 / 5 	Avg Acc: 63.47591067404221
-TASK 4 / 5 	Avg Acc: 63.60583745712049
-TASK 5 / 5 	Avg Acc: 60.20387515168707
-average accuracy = 60.20387515168708, forget = 0.2959072154455529, learning accuracy = 83.8764523873313
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 48.82
-TASK 2 / 5 	Avg Acc: 66.225
-TASK 3 / 5 	Avg Acc: 63.09054497029297
-TASK 4 / 5 	Avg Acc: 61.268890110265346
-TASK 5 / 5 	Avg Acc: 54.413218298057885
-average accuracy = 54.413218298057885, forget = 0.3563168500044652, learning accuracy = 82.9185662984151
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 32.7
-TASK 2 / 5 	Avg Acc: 65.065
-TASK 3 / 5 	Avg Acc: 61.16653964351568
-TASK 4 / 5 	Avg Acc: 63.878135391549655
-TASK 5 / 5 	Avg Acc: 60.950737396183
-average accuracy = 60.950737396183, forget = 0.23737957346382363, learning accuracy = 79.94110327328889
-
-Final Average accuracy =  57.45083063264674 +/- 2.9882792604117063 forget =  0.31453698482866577 +/- 0.04981036076045929 learning accuracy =  82.61378941894 +/- 1.4565883866714928
-------------------- Experiment ended -----------------
-
-
-
- >>>>>>>> ER
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.05
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=er
-  mem=5
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.66
-TASK 2 / 5 	Avg Acc: 71.705
-TASK 3 / 5 	Avg Acc: 71.04816431059209
-TASK 4 / 5 	Avg Acc: 73.37763628197249
-TASK 5 / 5 	Avg Acc: 71.38512802651832
-average accuracy = 71.3851280265183, forget = 0.1594182858441156, learning accuracy = 84.13859089404755
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.12
-TASK 2 / 5 	Avg Acc: 72.575
-TASK 3 / 5 	Avg Acc: 70.65674042204466
-TASK 4 / 5 	Avg Acc: 72.81897913941552
-TASK 5 / 5 	Avg Acc: 71.1202181036883
-average accuracy = 71.12021810368829, forget = 0.15189868157008596, learning accuracy = 82.42211262929517
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.03
-TASK 2 / 5 	Avg Acc: 70.58
-TASK 3 / 5 	Avg Acc: 70.57688383527966
-TASK 4 / 5 	Avg Acc: 72.99480217641404
-TASK 5 / 5 	Avg Acc: 71.02985313013832
-average accuracy = 71.02985313013832, forget = 0.16209833643274021, learning accuracy = 83.99772004475753
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 48.82
-TASK 2 / 5 	Avg Acc: 71.655
-TASK 3 / 5 	Avg Acc: 69.54987092808851
-TASK 4 / 5 	Avg Acc: 72.95150222737038
-TASK 5 / 5 	Avg Acc: 70.54307130211862
-average accuracy = 70.54307130211862, forget = 0.16104098256452284, learning accuracy = 83.42634990728045
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 32.7
-TASK 2 / 5 	Avg Acc: 70.89500000000001
-TASK 3 / 5 	Avg Acc: 66.74678959229666
-TASK 4 / 5 	Avg Acc: 73.12324415971926
-TASK 5 / 5 	Avg Acc: 70.08228532404563
-average accuracy = 70.08228532404561, forget = 0.14833303915233848, learning accuracy = 79.8489284562327
-
-Final Average accuracy =  70.83211117730184 +/- 0.46340435391094315 forget =  0.1565578651127606 +/- 0.005446704042955543 learning accuracy =  82.76674038632268 +/- 1.5789087500835979
-------------------- Experiment ended -----------------
-
-
-
- >>>>>>>> ER
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.05
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=er
-  mem=10
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.66
-TASK 2 / 5 	Avg Acc: 73.065
-TASK 3 / 5 	Avg Acc: 72.0461524277812
-TASK 4 / 5 	Avg Acc: 76.26244685042472
-TASK 5 / 5 	Avg Acc: 74.79697243629144
-average accuracy = 74.79697243629144, forget = 0.11943078262651095, learning accuracy = 84.3514350464123
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 42.12
-TASK 2 / 5 	Avg Acc: 73.19
-TASK 3 / 5 	Avg Acc: 72.38582462610121
-TASK 4 / 5 	Avg Acc: 75.71653966978184
-TASK 5 / 5 	Avg Acc: 75.08827162361644
-average accuracy = 75.08827162361644, forget = 0.10737661418687848, learning accuracy = 82.55440075856671
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 50.03
-TASK 2 / 5 	Avg Acc: 74.25
-TASK 3 / 5 	Avg Acc: 72.3242040565458
-TASK 4 / 5 	Avg Acc: 75.22459123288104
-TASK 5 / 5 	Avg Acc: 74.36524751653454
-average accuracy = 74.36524751653454, forget = 0.11808644928792439, learning accuracy = 83.7901634595685
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 48.82
-TASK 2 / 5 	Avg Acc: 74.265
-TASK 3 / 5 	Avg Acc: 70.39699856586765
-TASK 4 / 5 	Avg Acc: 75.19675355512479
-TASK 5 / 5 	Avg Acc: 72.85697448505192
-average accuracy = 72.85697448505192, forget = 0.12641936800991807, learning accuracy = 82.79852392584537
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 32.7
-TASK 2 / 5 	Avg Acc: 72.7
-TASK 3 / 5 	Avg Acc: 67.90125793894694
-TASK 4 / 5 	Avg Acc: 74.52075454798566
-TASK 5 / 5 	Avg Acc: 74.64095314642333
-average accuracy = 74.64095314642334, forget = 0.10702465696394711, learning accuracy = 80.4309257035391
-
-Final Average accuracy =  74.34968384158353 +/- 0.7821560276212057 forget =  0.11566757421503579 +/- 0.007470659954405326 learning accuracy =  82.7850897787864 +/- 1.3460384091664723
-------------------- Experiment ended -----------------
 
 
 
@@ -1304,155 +939,6 @@ Final Average accuracy =  45.489717844703954 +/- 1.8937279397324058 forget =  0.
 
 
 
- >>>>>>>> TAG-RMSProp
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.0005
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=tag
-  tag-opt=rms
-  b=5
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-	Prev Task: 1  	Manual	 57.1    	 1.0
-TASK 1 / 5 	Avg Acc: 57.1
-	Prev Task: 1  	Manual	 18.44    	 1.414
-	Prev Task: 2  	Manual	 98.97    	 0.007
-TASK 2 / 5 	Avg Acc: 58.705
-	Prev Task: 1  	Manual	 12.89    	 1.358
-	Prev Task: 2  	Manual	 71.9    	 1.474
-	Prev Task: 3  	Manual	 90.05838967424708    	 0.007
-TASK 3 / 5 	Avg Acc: 58.28279655808237
-	Prev Task: 1  	Manual	 13.41    	 1.381
-	Prev Task: 2  	Manual	 66.05    	 1.502
-	Prev Task: 3  	Manual	 77.63137676705593    	 1.387
-	Prev Task: 4  	Manual	 93.32264957264957    	 0.007
-TASK 4 / 5 	Avg Acc: 62.60350658492637
-	Prev Task: 1  	Manual	 13.49    	 1.307
-	Prev Task: 2  	Manual	 45.83    	 1.467
-	Prev Task: 3  	Manual	 44.17255685310387    	 1.427
-	Prev Task: 4  	Manual	 80.76923076923077    	 1.405
-	Prev Task: 5  	Manual	 89.83    	 0.007
-TASK 5 / 5 	Avg Acc: 54.818357524466926
-average accuracy = 54.81835752446693, forget = 0.38797312906140496, learning accuracy = 85.85620784937933
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-	Prev Task: 1  	Manual	 60.07    	 1.0
-TASK 1 / 5 	Avg Acc: 60.07
-	Prev Task: 1  	Manual	 16.76    	 1.402
-	Prev Task: 2  	Manual	 99.02    	 0.007
-TASK 2 / 5 	Avg Acc: 57.89
-	Prev Task: 1  	Manual	 12.81    	 1.35
-	Prev Task: 2  	Manual	 81.8    	 1.287
-	Prev Task: 3  	Manual	 91.70251997541487    	 0.007
-TASK 3 / 5 	Avg Acc: 62.10417332513829
-	Prev Task: 1  	Manual	 17.07    	 1.249
-	Prev Task: 2  	Manual	 89.92    	 1.336
-	Prev Task: 3  	Manual	 82.83266748617086    	 1.405
-	Prev Task: 4  	Manual	 93.53632478632478    	 0.007
-TASK 4 / 5 	Avg Acc: 70.83974806812391
-	Prev Task: 1  	Manual	 16.2    	 1.323
-	Prev Task: 2  	Manual	 80.16    	 1.364
-	Prev Task: 3  	Manual	 58.14382298709281    	 1.367
-	Prev Task: 4  	Manual	 83.44017094017094    	 1.791
-	Prev Task: 5  	Manual	 88.78    	 0.007
-TASK 5 / 5 	Avg Acc: 65.34479878545275
-average accuracy = 65.34479878545275, forget = 0.26596212708618977, learning accuracy = 86.62176895234794
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-	Prev Task: 1  	Manual	 54.62    	 1.0
-TASK 1 / 5 	Avg Acc: 54.62
-	Prev Task: 1  	Manual	 18.6    	 1.392
-	Prev Task: 2  	Manual	 98.61    	 0.007
-TASK 2 / 5 	Avg Acc: 58.605000000000004
-	Prev Task: 1  	Manual	 13.26    	 1.504
-	Prev Task: 2  	Manual	 71.02    	 1.498
-	Prev Task: 3  	Manual	 90.86893054701905    	 0.007
-TASK 3 / 5 	Avg Acc: 58.382976849006354
-	Prev Task: 1  	Manual	 16.61    	 1.331
-	Prev Task: 2  	Manual	 70.41    	 1.323
-	Prev Task: 3  	Manual	 76.27919483712354    	 1.488
-	Prev Task: 4  	Manual	 93.05555555555556    	 0.007
-TASK 4 / 5 	Avg Acc: 64.08868759816977
-	Prev Task: 1  	Manual	 12.42    	 1.441
-	Prev Task: 2  	Manual	 66.19    	 1.418
-	Prev Task: 3  	Manual	 55.04763368162262    	 1.455
-	Prev Task: 4  	Manual	 63.835470085470085    	 1.544
-	Prev Task: 5  	Manual	 90.8    	 0.007
-TASK 5 / 5 	Avg Acc: 57.658620753418546
-average accuracy = 57.65862075341854, forget = 0.3491534558387048, learning accuracy = 85.59089722051492
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-	Prev Task: 1  	Manual	 61.25    	 1.0
-TASK 1 / 5 	Avg Acc: 61.25
-	Prev Task: 1  	Manual	 19.28    	 1.358
-	Prev Task: 2  	Manual	 98.83    	 0.007
-TASK 2 / 5 	Avg Acc: 59.055
-	Prev Task: 1  	Manual	 16.24    	 1.581
-	Prev Task: 2  	Manual	 78.62    	 1.401
-	Prev Task: 3  	Manual	 91.11862323294407    	 0.007
-TASK 3 / 5 	Avg Acc: 61.99287441098136
-	Prev Task: 1  	Manual	 14.1    	 1.444
-	Prev Task: 2  	Manual	 53.86    	 1.358
-	Prev Task: 3  	Manual	 81.03488014751076    	 1.609
-	Prev Task: 4  	Manual	 93.58974358974359    	 0.007
-TASK 4 / 5 	Avg Acc: 60.64615593431358
-	Prev Task: 1  	Manual	 16.33    	 1.349
-	Prev Task: 2  	Manual	 54.75    	 1.433
-	Prev Task: 3  	Manual	 60.648432698217576    	 1.558
-	Prev Task: 4  	Manual	 79.16666666666667    	 1.604
-	Prev Task: 5  	Manual	 90.3    	 0.007
-TASK 5 / 5 	Avg Acc: 60.239019872976854
-average accuracy = 60.23901987297685, forget = 0.3347331686445085, learning accuracy = 87.01767336453753
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-	Prev Task: 1  	Manual	 59.67    	 1.0
-TASK 1 / 5 	Avg Acc: 59.67
-	Prev Task: 1  	Manual	 25.76    	 1.49
-	Prev Task: 2  	Manual	 98.91    	 0.007
-TASK 2 / 5 	Avg Acc: 62.335
-	Prev Task: 1  	Manual	 13.83    	 1.465
-	Prev Task: 2  	Manual	 72.4    	 1.314
-	Prev Task: 3  	Manual	 91.23770743700061    	 0.007
-TASK 3 / 5 	Avg Acc: 59.155902479000204
-	Prev Task: 1  	Manual	 17.0    	 1.334
-	Prev Task: 2  	Manual	 80.58    	 1.392
-	Prev Task: 3  	Manual	 81.13859864781807    	 1.54
-	Prev Task: 4  	Manual	 94.17735042735043    	 0.007
-TASK 4 / 5 	Avg Acc: 68.22398726879211
-	Prev Task: 1  	Manual	 18.69    	 1.395
-	Prev Task: 2  	Manual	 70.49    	 1.494
-	Prev Task: 3  	Manual	 64.37461585740627    	 1.53
-	Prev Task: 4  	Manual	 85.09615384615384    	 1.473
-	Prev Task: 5  	Manual	 91.13    	 0.007
-TASK 5 / 5 	Avg Acc: 65.95615394071201
-average accuracy = 65.95615394071201, forget = 0.26336072040197733, learning accuracy = 87.0250115728702
-
-Final Average accuracy =  60.803390175405426 +/- 4.317500920046119 forget =  0.3202365202065571 +/- 0.048611020383112304 learning accuracy =  86.42231179192999 +/- 0.5948461061918108
-------------------- Experiment ended -----------------
-
 
 
  >>>>>>>> Naive Adagrad
@@ -1603,155 +1089,6 @@ Final Average accuracy =  49.37408106367442 +/- 3.571445888734719 forget =  0.47
 
 
 
- >>>>>>>> TAG-Adagrad
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.005
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=tag
-  tag-opt=adagrad
-  b=5
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 58.48
-TASK 2 / 5 	Avg Acc: 58.935
-TASK 3 / 5 	Avg Acc: 59.170450727309984
-TASK 4 / 5 	Avg Acc: 62.24411272910658
-TASK 5 / 5 	Avg Acc: 60.36881411438388
-average accuracy = 60.36881411438387, forget = 0.3123419219737444, learning accuracy = 85.35616787228342
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 59.58
-TASK 2 / 5 	Avg Acc: 60.985
-TASK 3 / 5 	Avg Acc: 61.66590862528171
-TASK 4 / 5 	Avg Acc: 68.44631045813438
-TASK 5 / 5 	Avg Acc: 66.0171116994731
-average accuracy = 66.0171116994731, forget = 0.2510284953692759, learning accuracy = 86.09939132901518
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 57.01
-TASK 2 / 5 	Avg Acc: 62.834999999999994
-TASK 3 / 5 	Avg Acc: 63.662005736529395
-TASK 4 / 5 	Avg Acc: 65.63713061898834
-TASK 5 / 5 	Avg Acc: 64.27492492606076
-average accuracy = 64.27492492606076, forget = 0.26899301136274095, learning accuracy = 85.79436583508003
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 61.1
-TASK 2 / 5 	Avg Acc: 60.879999999999995
-TASK 3 / 5 	Avg Acc: 61.97458512599877
-TASK 4 / 5 	Avg Acc: 68.74874488466529
-TASK 5 / 5 	Avg Acc: 66.19112210087256
-average accuracy = 66.19112210087256, forget = 0.25508361004733165, learning accuracy = 86.5978109046591
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 57.52
-TASK 2 / 5 	Avg Acc: 62.275
-TASK 3 / 5 	Avg Acc: 51.21430239704978
-TASK 4 / 5 	Avg Acc: 64.25550706822372
-TASK 5 / 5 	Avg Acc: 63.05349958762128
-average accuracy = 63.05349958762129, forget = 0.2861635231326073, learning accuracy = 85.94658143822987
-
-Final Average accuracy =  63.98109448568232 +/- 2.1459229370238693 forget =  0.27472211237714006 +/- 0.02247681833919789 learning accuracy =  85.95886347585352 +/- 0.4045872482227888
-------------------- Experiment ended -----------------
-
-
-
- >>>>>>>> TAG-Adam
-Parameters:
-  benchmark=5data
-  num_tasks=5
-  runs=5
-  epochs-per-task=1
-  batch_size=64
-  learning_rate=0.001
-  learning rate decay(gamma)=1.0
-  dropout prob=0.0
-  optimizer opt=tag
-  tag-opt=adam
-  b=5
-CUDA: True
-Loading 5 tasks for 5data
-Loading Task/Dataset: 0
-Files already downloaded and verified
-Files already downloaded and verified
-Loading Task/Dataset: 1
-Loading Task/Dataset: 2
-Using downloaded and verified file: ./data/SVHN/train_32x32.mat
-Using downloaded and verified file: ./data/SVHN/test_32x32.mat
-Loading Task/Dataset: 3
-Loading Task/Dataset: 4
-loaded all tasks!
-
-------------------- Experiment-1 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 64.61
-TASK 2 / 5 	Avg Acc: 59.265
-TASK 3 / 5 	Avg Acc: 64.37480639213277
-TASK 4 / 5 	Avg Acc: 69.77385017256867
-TASK 5 / 5 	Avg Acc: 66.26105876790695
-average accuracy = 66.26105876790695, forget = 0.2654439671883126, learning accuracy = 87.49657614297196
-
-------------------- Experiment-2 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 64.27
-TASK 2 / 5 	Avg Acc: 60.214999999999996
-TASK 3 / 5 	Avg Acc: 63.412229051423886
-TASK 4 / 5 	Avg Acc: 68.54635802615059
-TASK 5 / 5 	Avg Acc: 63.20379755094322
-average accuracy = 63.203797550943214, forget = 0.30245151345615384, learning accuracy = 87.39991862743553
-
-------------------- Experiment-3 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 62.72
-TASK 2 / 5 	Avg Acc: 58.33
-TASK 3 / 5 	Avg Acc: 61.666603155091174
-TASK 4 / 5 	Avg Acc: 69.03590159908383
-TASK 5 / 5 	Avg Acc: 60.15602782111695
-average accuracy = 60.15602782111695, forget = 0.33334062889067495, learning accuracy = 86.82327813237093
-
-------------------- Experiment-4 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 63.15
-TASK 2 / 5 	Avg Acc: 60.075
-TASK 3 / 5 	Avg Acc: 60.28640032780167
-TASK 4 / 5 	Avg Acc: 68.00510799331789
-TASK 5 / 5 	Avg Acc: 63.75697968575166
-average accuracy = 63.75697968575166, forget = 0.2889601153609759, learning accuracy = 86.87378891462973
-
-------------------- Experiment-5 started -----------------
-[1 2 3 4 5]
-TASK 1 / 5 	Avg Acc: 63.96
-TASK 2 / 5 	Avg Acc: 59.69499999999999
-TASK 3 / 5 	Avg Acc: 62.08621184183569
-TASK 4 / 5 	Avg Acc: 69.29879004932785
-TASK 5 / 5 	Avg Acc: 67.85014862444118
-average accuracy = 67.85014862444118, forget = 0.2421184489569708, learning accuracy = 87.21962454099885
-
-Final Average accuracy =  64.245602490032 +/- 2.649662151736099 forget =  0.2864629347706176 +/- 0.031201343514665573 learning accuracy =  87.1626372716814 +/- 0.2719055568452333
-------------------- Experiment ended -----------------
 
 
  >>>>>>>> Multi-task
@@ -1782,3 +1119,879 @@ loaded all tasks!
 [1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5]
 Final Average accuracy =  69.99510442269607 +/- 4.441371088381434 forget =  0.0 +/- 0.0 learning accuracy =  0.0 +/- 0.0
 ------------------- Experiment ended -----------------
+
+************************ replicating experiment (5-dataset) ***********************
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=10
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 55.91
+TASK 2 / 5 	Avg Acc: 62.205
+TASK 3 / 5 	Avg Acc: 63.769541077648014
+TASK 4 / 5 	Avg Acc: 68.22214685147537
+TASK 5 / 5 	Avg Acc: 62.4921206982596
+average accuracy = 62.49212069825961, forget = 0.279933297217363, learning accuracy = 84.88678447564864
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 43.5
+TASK 2 / 5 	Avg Acc: 59.44
+TASK 3 / 5 	Avg Acc: 61.13373079287032
+TASK 4 / 5 	Avg Acc: 65.3127760442112
+TASK 5 / 5 	Avg Acc: 61.058605434993886
+average accuracy = 61.05860543499388, forget = 0.2650257548894457, learning accuracy = 82.26066582614953
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.95
+TASK 2 / 5 	Avg Acc: 47.75
+TASK 3 / 5 	Avg Acc: 63.73237041589839
+TASK 4 / 5 	Avg Acc: 64.75171961924573
+TASK 5 / 5 	Avg Acc: 64.04274683098777
+average accuracy = 64.04274683098777, forget = 0.2090558786293267, learning accuracy = 80.3872171213339
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 54.83
+TASK 2 / 5 	Avg Acc: 67.625
+TASK 3 / 5 	Avg Acc: 63.28643105920918
+TASK 4 / 5 	Avg Acc: 66.85131733986834
+TASK 5 / 5 	Avg Acc: 63.870275532021076
+average accuracy = 63.87027553202107, forget = 0.2631849597339764, learning accuracy = 84.92507231073918
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 49.95
+TASK 2 / 5 	Avg Acc: 61.405
+TASK 3 / 5 	Avg Acc: 62.70976439254251
+TASK 4 / 5 	Avg Acc: 65.54861905662459
+TASK 5 / 5 	Avg Acc: 60.704616309184225
+average accuracy = 60.704616309184225, forget = 0.29686488805362504, learning accuracy = 84.45380735347423
+
+Final Average accuracy =  62.433672961089314 +/- 1.3810727287436746 forget =  0.26281295570474733 +/- 0.02948727994618498 learning accuracy =  83.3827094174691 +/- 1.7899906022499288
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> A-GEM
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=agem
+  mem=5
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 55.91
+TASK 2 / 5 	Avg Acc: 62.644999999999996
+TASK 3 / 5 	Avg Acc: 63.336371645154685
+TASK 4 / 5 	Avg Acc: 67.83801544712884
+TASK 5 / 5 	Avg Acc: 62.94747844861551
+average accuracy = 62.94747844861551, forget = 0.26989191356857306, learning accuracy = 84.53883153410136
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 43.5
+TASK 2 / 5 	Avg Acc: 62.295
+TASK 3 / 5 	Avg Acc: 63.317693095677114
+TASK 4 / 5 	Avg Acc: 66.81569559358896
+TASK 5 / 5 	Avg Acc: 61.33981283784848
+average accuracy = 61.33981283784849, forget = 0.26455619159062616, learning accuracy = 82.50430816509858
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.95
+TASK 2 / 5 	Avg Acc: 52.99
+TASK 3 / 5 	Avg Acc: 63.083589428395825
+TASK 4 / 5 	Avg Acc: 63.0508328211432
+TASK 5 / 5 	Avg Acc: 60.66593217026776
+average accuracy = 60.66593217026775, forget = 0.2661027685846217, learning accuracy = 81.9541536570375
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 54.83
+TASK 2 / 5 	Avg Acc: 64.045
+TASK 3 / 5 	Avg Acc: 60.261757836508906
+TASK 4 / 5 	Avg Acc: 63.98434752231311
+TASK 5 / 5 	Avg Acc: 60.07151388691892
+average accuracy = 60.07151388691892, forget = 0.2986002430933131, learning accuracy = 83.95953333438396
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 49.95
+TASK 2 / 5 	Avg Acc: 62.135
+TASK 3 / 5 	Avg Acc: 62.73023150993649
+TASK 4 / 5 	Avg Acc: 63.88564542522286
+TASK 5 / 5 	Avg Acc: 61.91682762569671
+average accuracy = 61.91682762569671, forget = 0.2815072029691267, learning accuracy = 84.43740386322685
+
+Final Average accuracy =  61.38831299386948 +/- 0.9968420977101877 forget =  0.2761316639612521 +/- 0.01270620522327836 learning accuracy =  83.47884611076964 +/- 1.0533635227629743
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=5
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 56.23
+TASK 2 / 5 	Avg Acc: 74.41499999999999
+TASK 3 / 5 	Avg Acc: 71.70675681212867
+TASK 4 / 5 	Avg Acc: 73.93743288996055
+TASK 5 / 5 	Avg Acc: 73.77701683660874
+average accuracy = 73.77701683660874, forget = 0.15097813657352682, learning accuracy = 85.85526776249087
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 43.23
+TASK 2 / 5 	Avg Acc: 73.195
+TASK 3 / 5 	Avg Acc: 68.06355050194632
+TASK 4 / 5 	Avg Acc: 74.15904622318882
+TASK 5 / 5 	Avg Acc: 70.58453421167373
+average accuracy = 70.58453421167374, forget = 0.1492337845859665, learning accuracy = 81.58807901911652
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.52
+TASK 2 / 5 	Avg Acc: 68.68
+TASK 3 / 5 	Avg Acc: 72.40078467527147
+TASK 4 / 5 	Avg Acc: 73.39260522223798
+TASK 5 / 5 	Avg Acc: 71.92944358816763
+average accuracy = 71.92944358816763, forget = 0.15915493422953472, learning accuracy = 84.66183832653039
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 53.39
+TASK 2 / 5 	Avg Acc: 73.815
+TASK 3 / 5 	Avg Acc: 72.1859823806597
+TASK 4 / 5 	Avg Acc: 75.63545188302103
+TASK 5 / 5 	Avg Acc: 69.2589043964299
+average accuracy = 69.2589043964299, forget = 0.19899018683119787, learning accuracy = 85.17811934292573
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.0
+TASK 2 / 5 	Avg Acc: 72.68
+TASK 3 / 5 	Avg Acc: 72.31702315099365
+TASK 4 / 5 	Avg Acc: 74.51185293314211
+TASK 5 / 5 	Avg Acc: 72.25931908656801
+average accuracy = 72.25931908656801, forget = 0.15172507393924115, learning accuracy = 84.3973250017073
+
+Final Average accuracy =  71.5618436238896 +/- 1.5353994196757075 forget =  0.16201642323189341 +/- 0.018795737853970318 learning accuracy =  84.33612589055416 +/- 1.4613925229507403
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> ER
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.1
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=er
+  mem=10
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 56.23
+TASK 2 / 5 	Avg Acc: 74.78
+TASK 3 / 5 	Avg Acc: 73.48710715017415
+TASK 4 / 5 	Avg Acc: 75.80354703481316
+TASK 5 / 5 	Avg Acc: 75.63708504457368
+average accuracy = 75.63708504457368, forget = 0.12321153544093003, learning accuracy = 85.49400787984807
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 43.23
+TASK 2 / 5 	Avg Acc: 74.88
+TASK 3 / 5 	Avg Acc: 73.17964761319402
+TASK 4 / 5 	Avg Acc: 76.8879909670675
+TASK 5 / 5 	Avg Acc: 75.86346558870345
+average accuracy = 75.86346558870345, forget = 0.10833694322306803, learning accuracy = 83.0004210465489
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.52
+TASK 2 / 5 	Avg Acc: 75.105
+TASK 3 / 5 	Avg Acc: 74.41653349723418
+TASK 4 / 5 	Avg Acc: 76.5125031650723
+TASK 5 / 5 	Avg Acc: 76.28776298467632
+average accuracy = 76.28776298467632, forget = 0.10547910067293907, learning accuracy = 84.52409103851144
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 53.39
+TASK 2 / 5 	Avg Acc: 74.875
+TASK 3 / 5 	Avg Acc: 74.53446015160829
+TASK 4 / 5 	Avg Acc: 76.92007615873166
+TASK 5 / 5 	Avg Acc: 73.35607567806093
+average accuracy = 73.35607567806093, forget = 0.15040622311001847, learning accuracy = 85.38857352686242
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 50.0
+TASK 2 / 5 	Avg Acc: 72.805
+TASK 3 / 5 	Avg Acc: 73.50730383118214
+TASK 4 / 5 	Avg Acc: 75.45213726432688
+TASK 5 / 5 	Avg Acc: 76.07259113569624
+average accuracy = 76.07259113569623, forget = 0.10762709039236391, learning accuracy = 84.68275836708534
+
+Final Average accuracy =  75.44339608634213 +/- 1.065806938926211 forget =  0.1190121785678639 +/- 0.01691121350230636 learning accuracy =  84.61797037177124 +/- 0.8933921391271952
+------------------- Experiment ended -----------------
+
+
+ >>>>>>>> TAG-RMSProp
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.0005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag
+  tag-opt=rms
+  b=7
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 57.1    	 1.0
+TASK 1 / 5 	Avg Acc: 57.1
+	Prev Task: 1  	Manual	 10.7    	 2.088
+	Prev Task: 2  	Manual	 98.89    	 0.001
+TASK 2 / 5 	Avg Acc: 54.795
+	Prev Task: 1  	Manual	 16.51    	 2.123
+	Prev Task: 2  	Manual	 73.75    	 2.037
+	Prev Task: 3  	Manual	 90.3080823601721    	 0.001
+TASK 3 / 5 	Avg Acc: 60.18936078672403
+	Prev Task: 1  	Manual	 18.01    	 1.827
+	Prev Task: 2  	Manual	 81.11    	 1.779
+	Prev Task: 3  	Manual	 77.55454824830977    	 3.113
+	Prev Task: 4  	Manual	 93.80341880341881    	 0.001
+TASK 4 / 5 	Avg Acc: 67.61949176293214
+	Prev Task: 1  	Manual	 16.95    	 1.809
+	Prev Task: 2  	Manual	 59.53    	 2.035
+	Prev Task: 3  	Manual	 59.54210202827289    	 2.658
+	Prev Task: 4  	Manual	 83.81410256410257    	 2.166
+	Prev Task: 5  	Manual	 89.94    	 0.001
+TASK 5 / 5 	Avg Acc: 61.95524091847509
+average accuracy = 61.9552409184751, forget = 0.30066324142803863, learning accuracy = 86.00830023271818
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 60.07    	 1.0
+TASK 1 / 5 	Avg Acc: 60.07
+	Prev Task: 1  	Manual	 17.56    	 1.965
+	Prev Task: 2  	Manual	 98.94    	 0.001
+TASK 2 / 5 	Avg Acc: 58.25
+	Prev Task: 1  	Manual	 15.29    	 1.939
+	Prev Task: 2  	Manual	 77.76    	 1.783
+	Prev Task: 3  	Manual	 90.68070067609096    	 0.001
+TASK 3 / 5 	Avg Acc: 61.24356689203032
+	Prev Task: 1  	Manual	 18.91    	 1.776
+	Prev Task: 2  	Manual	 81.16    	 1.864
+	Prev Task: 3  	Manual	 76.87077443146896    	 2.118
+	Prev Task: 4  	Manual	 91.45299145299145    	 0.001
+TASK 4 / 5 	Avg Acc: 67.09844147111511
+	Prev Task: 1  	Manual	 19.41    	 1.949
+	Prev Task: 2  	Manual	 68.88    	 1.755
+	Prev Task: 3  	Manual	 65.56545789797173    	 2.406
+	Prev Task: 4  	Manual	 85.9508547008547    	 2.374
+	Prev Task: 5  	Manual	 89.1    	 0.001
+TASK 5 / 5 	Avg Acc: 65.78126251976528
+average accuracy = 65.78126251976528, forget = 0.25334344882563997, learning accuracy = 86.04873842581648
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 54.62    	 1.0
+TASK 1 / 5 	Avg Acc: 54.62
+	Prev Task: 1  	Manual	 15.9    	 1.981
+	Prev Task: 2  	Manual	 98.28    	 0.001
+TASK 2 / 5 	Avg Acc: 57.09
+	Prev Task: 1  	Manual	 12.66    	 2.247
+	Prev Task: 2  	Manual	 67.24    	 2.034
+	Prev Task: 3  	Manual	 89.19406883835279    	 0.001
+TASK 3 / 5 	Avg Acc: 56.36468961278426
+	Prev Task: 1  	Manual	 14.96    	 2.048
+	Prev Task: 2  	Manual	 66.62    	 1.831
+	Prev Task: 3  	Manual	 66.90227412415489    	 3.017
+	Prev Task: 4  	Manual	 93.80341880341881    	 0.001
+TASK 4 / 5 	Avg Acc: 60.571423231893434
+	Prev Task: 1  	Manual	 15.66    	 1.952
+	Prev Task: 2  	Manual	 60.8    	 2.047
+	Prev Task: 3  	Manual	 52.00522433927474    	 3.018
+	Prev Task: 4  	Manual	 83.76068376068376    	 3.104
+	Prev Task: 5  	Manual	 89.86    	 0.001
+TASK 5 / 5 	Avg Acc: 60.4171816199917
+average accuracy = 60.417181619991695, forget = 0.30917894885453273, learning accuracy = 85.15149752835433
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 61.25    	 1.0
+TASK 1 / 5 	Avg Acc: 61.25
+	Prev Task: 1  	Manual	 13.72    	 2.148
+	Prev Task: 2  	Manual	 98.82    	 0.001
+TASK 2 / 5 	Avg Acc: 56.269999999999996
+	Prev Task: 1  	Manual	 14.21    	 2.684
+	Prev Task: 2  	Manual	 76.39    	 2.08
+	Prev Task: 3  	Manual	 90.16210817455439    	 0.001
+TASK 3 / 5 	Avg Acc: 60.254036058184795
+	Prev Task: 1  	Manual	 15.68    	 2.126
+	Prev Task: 2  	Manual	 72.58    	 1.964
+	Prev Task: 3  	Manual	 83.45113706207745    	 2.429
+	Prev Task: 4  	Manual	 93.37606837606837    	 0.001
+TASK 4 / 5 	Avg Acc: 66.27180135953645
+	Prev Task: 1  	Manual	 12.12    	 2.102
+	Prev Task: 2  	Manual	 71.65    	 2.099
+	Prev Task: 3  	Manual	 62.87261831591887    	 2.457
+	Prev Task: 4  	Manual	 80.71581196581197    	 2.675
+	Prev Task: 5  	Manual	 88.34    	 0.001
+TASK 5 / 5 	Avg Acc: 63.139686056346164
+average accuracy = 63.13968605634616, forget = 0.29062436567222977, learning accuracy = 86.38963531012455
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+	Prev Task: 1  	Manual	 59.67    	 1.0
+TASK 1 / 5 	Avg Acc: 59.67
+	Prev Task: 1  	Manual	 19.93    	 2.363
+	Prev Task: 2  	Manual	 98.92    	 0.001
+TASK 2 / 5 	Avg Acc: 59.425
+	Prev Task: 1  	Manual	 12.31    	 2.346
+	Prev Task: 2  	Manual	 75.71    	 2.181
+	Prev Task: 3  	Manual	 90.9880147510756    	 0.001
+TASK 3 / 5 	Avg Acc: 59.66933825035853
+	Prev Task: 1  	Manual	 12.83    	 2.42
+	Prev Task: 2  	Manual	 83.31    	 2.068
+	Prev Task: 3  	Manual	 77.47771972956362    	 2.921
+	Prev Task: 4  	Manual	 93.80341880341881    	 0.001
+TASK 4 / 5 	Avg Acc: 66.8552846332456
+	Prev Task: 1  	Manual	 12.96    	 1.989
+	Prev Task: 2  	Manual	 64.31    	 2.475
+	Prev Task: 3  	Manual	 56.945298094652735    	 2.132
+	Prev Task: 4  	Manual	 83.44017094017094    	 2.397
+	Prev Task: 5  	Manual	 90.65    	 0.001
+TASK 5 / 5 	Avg Acc: 61.661093806964736
+average accuracy = 61.66109380696473, forget = 0.3143149112991768, learning accuracy = 86.80628671089889
+
+Final Average accuracy =  62.590892984308596 +/- 1.815116126479773 forget =  0.29362498321592356 +/- 0.021684749333652692 learning accuracy =  86.08089164158248 +/- 0.5461863087045509
+------------------- Experiment ended -----------------
+
+
+
+>>>>>>>> TAG-Adagrad
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag
+  tag-opt=adagrad
+  b=7
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.48
+TASK 2 / 5 	Avg Acc: 58.185
+TASK 3 / 5 	Avg Acc: 60.99509731612374
+TASK 4 / 5 	Avg Acc: 69.12944506169922
+TASK 5 / 5 	Avg Acc: 67.55901080589834
+average accuracy = 67.55901080589834, forget = 0.2278236717202759, learning accuracy = 85.78490454352041
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 59.58
+TASK 2 / 5 	Avg Acc: 60.76
+TASK 3 / 5 	Avg Acc: 63.65170047121491
+TASK 4 / 5 	Avg Acc: 66.05706727814288
+TASK 5 / 5 	Avg Acc: 67.56919719057149
+average accuracy = 67.5691971905715, forget = 0.22866509634427584, learning accuracy = 85.86240489811357
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.01
+TASK 2 / 5 	Avg Acc: 61.269999999999996
+TASK 3 / 5 	Avg Acc: 60.386619545175165
+TASK 4 / 5 	Avg Acc: 68.14626799888632
+TASK 5 / 5 	Avg Acc: 68.81823166753345
+average accuracy = 68.81823166753345, forget = 0.20887581057370547, learning accuracy = 85.52829651342988
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 61.1
+TASK 2 / 5 	Avg Acc: 59.02
+TASK 3 / 5 	Avg Acc: 65.19893669330055
+TASK 4 / 5 	Avg Acc: 67.61947732967708
+TASK 5 / 5 	Avg Acc: 67.46990699677977
+average accuracy = 67.46990699677977, forget = 0.23806626466308395, learning accuracy = 86.51520816982648
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.52
+TASK 2 / 5 	Avg Acc: 59.88
+TASK 3 / 5 	Avg Acc: 51.88436795738578
+TASK 4 / 5 	Avg Acc: 63.4400272905405
+TASK 5 / 5 	Avg Acc: 67.21595059860579
+average accuracy = 67.21595059860579, forget = 0.23042483018927398, learning accuracy = 85.6499370137477
+
+Final Average accuracy =  67.72645945187776 +/- 0.5605667650218149 forget =  0.22677113469812302 +/- 0.009652636967020737 learning accuracy =  85.86815022772763 +/- 0.34315139138931866
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (5-dataset) ***********************
+ >>>>>>>> TAG-Adam
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.0005
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=tag
+  tag-opt=adam
+  b=7
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 59.92
+TASK 2 / 5 	Avg Acc: 60.195
+TASK 3 / 5 	Avg Acc: 61.65495185412826
+TASK 4 / 5 	Avg Acc: 69.17911255837654
+TASK 5 / 5 	Avg Acc: 67.28946922394003
+average accuracy = 67.28946922394003, forget = 0.23843138044431836, learning accuracy = 86.36397965948551
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 61.64
+TASK 2 / 5 	Avg Acc: 58.405
+TASK 3 / 5 	Avg Acc: 59.305525507068225
+TASK 4 / 5 	Avg Acc: 68.93856110034199
+TASK 5 / 5 	Avg Acc: 62.60272447323216
+average accuracy = 62.60272447323216, forget = 0.29870610333632774, learning accuracy = 86.49921274013836
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.39
+TASK 2 / 5 	Avg Acc: 59.825
+TASK 3 / 5 	Avg Acc: 59.74523663183774
+TASK 4 / 5 	Avg Acc: 69.36585877210953
+TASK 5 / 5 	Avg Acc: 67.2089327008442
+average accuracy = 67.2089327008442, forget = 0.2336165048671195, learning accuracy = 85.89825309021374
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 62.71
+TASK 2 / 5 	Avg Acc: 64.36
+TASK 3 / 5 	Avg Acc: 61.58093628354845
+TASK 4 / 5 	Avg Acc: 66.25685620327907
+TASK 5 / 5 	Avg Acc: 59.964323662133125
+average accuracy = 59.96432366213312, forget = 0.3279393011362741, learning accuracy = 86.19946775303505
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.99
+TASK 2 / 5 	Avg Acc: 59.04
+TASK 3 / 5 	Avg Acc: 62.07391723007581
+TASK 4 / 5 	Avg Acc: 65.23780573810537
+TASK 5 / 5 	Avg Acc: 61.74068815238576
+average accuracy = 61.74068815238576, forget = 0.29894129014125936, learning accuracy = 85.65599136368651
+
+Final Average accuracy =  63.76122764250705 +/- 2.9724181430873844 forget =  0.27952691598505985 +/- 0.03710829308324516 learning accuracy =  86.12338092131183 +/- 0.3079162398208395
+------------------- Experiment ended -----------------
+
+
+
+************************ replicating experiment (5-dataset) ***********************
+ >>>>>>>> RMSProp EWC
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=rms-ewc
+  lambda=100
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.001
+    momentum: 0
+    weight_decay: 0
+)
+TASK 1 / 5 	Avg Acc: 57.97
+TASK 2 / 5 	Avg Acc: 60.84
+TASK 3 / 5 	Avg Acc: 60.653333333333336
+TASK 4 / 5 	Avg Acc: 59.40307215576883
+TASK 5 / 5 	Avg Acc: 53.731313917387666
+average accuracy = 53.73131391738767, forget = 0.36969639654547465, learning accuracy = 83.30702564102565
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.001
+    momentum: 0
+    weight_decay: 0
+)
+TASK 1 / 5 	Avg Acc: 57.05
+TASK 2 / 5 	Avg Acc: 56.235
+TASK 3 / 5 	Avg Acc: 62.83081540667895
+TASK 4 / 5 	Avg Acc: 62.44269102065046
+TASK 5 / 5 	Avg Acc: 56.77792501536571
+average accuracy = 56.7779250153657, forget = 0.33602906140502936, learning accuracy = 83.66024992776806
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.001
+    momentum: 0
+    weight_decay: 0
+)
+TASK 1 / 5 	Avg Acc: 46.32
+TASK 2 / 5 	Avg Acc: 60.400000000000006
+TASK 3 / 5 	Avg Acc: 57.436728129481665
+TASK 4 / 5 	Avg Acc: 60.0772059109367
+TASK 5 / 5 	Avg Acc: 56.93871433449431
+average accuracy = 56.93871433449431, forget = 0.32220606170446364, learning accuracy = 82.7151992708514
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.001
+    momentum: 0
+    weight_decay: 0
+)
+TASK 1 / 5 	Avg Acc: 58.33
+TASK 2 / 5 	Avg Acc: 65.32
+TASK 3 / 5 	Avg Acc: 60.380762138905965
+TASK 4 / 5 	Avg Acc: 62.96101690752735
+TASK 5 / 5 	Avg Acc: 60.95737448715322
+average accuracy = 60.95737448715322, forget = 0.28907079990964435, learning accuracy = 84.08303847992475
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.001
+    momentum: 0
+    weight_decay: 0
+)
+TASK 1 / 5 	Avg Acc: 58.23
+TASK 2 / 5 	Avg Acc: 58.68
+TASK 3 / 5 	Avg Acc: 61.826256914566684
+TASK 4 / 5 	Avg Acc: 62.1035556763799
+TASK 5 / 5 	Avg Acc: 60.52014414868747
+average accuracy = 60.520144148687486, forget = 0.2952677745733062, learning accuracy = 84.14156611455198
+
+Final Average accuracy =  57.78509438061768 +/- 2.6723676268426457 forget =  0.3224540188275837 +/- 0.029222308937284704 learning accuracy =  83.58141588682436 +/- 0.5286264356463272
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> RMSProp A-GEM
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=rms-agem
+  mem=1
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.71
+TASK 2 / 5 	Avg Acc: 62.434999999999995
+TASK 3 / 5 	Avg Acc: 62.760358533087484
+TASK 4 / 5 	Avg Acc: 68.47363699641204
+TASK 5 / 5 	Avg Acc: 59.59230778686587
+average accuracy = 59.592307786865874, forget = 0.3277080296965208, learning accuracy = 85.80895016258754
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.42
+TASK 2 / 5 	Avg Acc: 57.725
+TASK 3 / 5 	Avg Acc: 64.89112476951445
+TASK 4 / 5 	Avg Acc: 66.65884826827205
+TASK 5 / 5 	Avg Acc: 53.905383407141244
+average accuracy = 53.905383407141244, forget = 0.3945037500196997, learning accuracy = 85.46568340871721
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 47.88
+TASK 2 / 5 	Avg Acc: 58.87
+TASK 3 / 5 	Avg Acc: 65.87356689203031
+TASK 4 / 5 	Avg Acc: 69.64908517590447
+TASK 5 / 5 	Avg Acc: 58.76924471130863
+average accuracy = 58.76924471130862, forget = 0.3141302098928866, learning accuracy = 83.89966150273956
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.88
+TASK 2 / 5 	Avg Acc: 63.655
+TASK 3 / 5 	Avg Acc: 65.02250768285188
+TASK 4 / 5 	Avg Acc: 65.42035828355895
+TASK 5 / 5 	Avg Acc: 60.57306865448968
+average accuracy = 60.57306865448968, forget = 0.31631869730351597, learning accuracy = 85.87856443877095
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.43
+TASK 2 / 5 	Avg Acc: 57.894999999999996
+TASK 3 / 5 	Avg Acc: 64.59673837328415
+TASK 4 / 5 	Avg Acc: 67.02669777893348
+TASK 5 / 5 	Avg Acc: 56.44222677152118
+average accuracy = 56.44222677152118, forget = 0.37286607922399256, learning accuracy = 86.27151310944059
+
+Final Average accuracy =  57.85644626626531 +/- 2.4015564917878183 forget =  0.3451053532273231 +/- 0.03256273159125074 learning accuracy =  85.46487452445118 +/- 0.8234179563735452
+------------------- Experiment ended -----------------
+
+
+
+ >>>>>>>> RMSProp ER
+Parameters:
+  benchmark=5data
+  num_tasks=5
+  runs=5
+  epochs-per-task=1
+  batch_size=64
+  learning_rate=0.001
+  learning rate decay(gamma)=1.0
+  dropout prob=0.0
+  optimizer opt=rms-er
+  mem=1
+CUDA: True
+Loading 5 tasks for 5data
+Loading Task/Dataset: 0
+Files already downloaded and verified
+Files already downloaded and verified
+Loading Task/Dataset: 1
+Loading Task/Dataset: 2
+Using downloaded and verified file: ./data/SVHN/train_32x32.mat
+Using downloaded and verified file: ./data/SVHN/test_32x32.mat
+Loading Task/Dataset: 3
+Loading Task/Dataset: 4
+loaded all tasks!
+
+------------------- Experiment-1 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.97
+TASK 2 / 5 	Avg Acc: 65.665
+TASK 3 / 5 	Avg Acc: 57.82879532882606
+TASK 4 / 5 	Avg Acc: 58.34258511549231
+TASK 5 / 5 	Avg Acc: 53.15520935705693
+average accuracy = 53.155209357056926, forget = 0.41193631808845393, learning accuracy = 86.11011480413325
+
+------------------- Experiment-2 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 57.05
+TASK 2 / 5 	Avg Acc: 63.474999999999994
+TASK 3 / 5 	Avg Acc: 61.830878918254456
+TASK 4 / 5 	Avg Acc: 64.16394000283674
+TASK 5 / 5 	Avg Acc: 50.82165949600492
+average accuracy = 50.82165949600492, forget = 0.44383777126377, learning accuracy = 86.32868119710652
+
+------------------- Experiment-3 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 46.32
+TASK 2 / 5 	Avg Acc: 66.24
+TASK 3 / 5 	Avg Acc: 57.85814792050809
+TASK 4 / 5 	Avg Acc: 64.4826676569009
+TASK 5 / 5 	Avg Acc: 54.99929525790743
+average accuracy = 54.99929525790742, forget = 0.34350602979107897, learning accuracy = 82.47977764119375
+
+------------------- Experiment-4 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.33
+TASK 2 / 5 	Avg Acc: 65.12
+TASK 3 / 5 	Avg Acc: 62.14079287031346
+TASK 4 / 5 	Avg Acc: 63.50004986630525
+TASK 5 / 5 	Avg Acc: 48.6783516198341
+average accuracy = 48.6783516198341, forget = 0.44966415811703153, learning accuracy = 84.65148426919663
+
+------------------- Experiment-5 started -----------------
+[1 2 3 4 5]
+TASK 1 / 5 	Avg Acc: 58.23
+TASK 2 / 5 	Avg Acc: 63.065
+TASK 3 / 5 	Avg Acc: 60.43824011473059
+TASK 4 / 5 	Avg Acc: 67.40843637548001
+TASK 5 / 5 	Avg Acc: 52.922946096585925
+average accuracy = 52.92294609658593, forget = 0.41391044473862537, learning accuracy = 86.03578167567596
+
+Final Average accuracy =  52.11549236547786 +/- 2.1696659684078914 forget =  0.412570944399792 +/- 0.03775097457718511 learning accuracy =  85.12116791746124 +/- 1.447077600745808
+------------------- Experiment ended -----------------
+
+
+

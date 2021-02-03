@@ -6,7 +6,7 @@ plt.style.use('ggplot')
 params = {'mathtext.default': 'regular'}
 plt.rcParams.update(params)
 
-dataset = '5data'
+dataset = 'imagenet'
 f = open(dataset + '.txt', 'r')
 
 dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'permute': 'Permute MNIST',
@@ -16,7 +16,7 @@ dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'p
 # ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
 ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'TAG-RMSProp']
 
-n_tasks = 5
+n_tasks = 5 if dataset=='5data' else 20
 lines = f.readlines()
 curr = 0
 valid = 2
@@ -124,7 +124,6 @@ def plot_detailed(lim=5):
 		plt.figure(i + 1)
 		plot(i + 1, man_acc_main, man_acc_main_std, 'TAG-RMSProp', i, alpha)
 		plot(i + 1, rms_acc_prev, rms_acc_prev_std, 'Naive RMSProp', i, alpha)
-		plt.xticks(tasks)
 		# vals = (corr_main.ix[i][1:]-corr_main.min(axis=0)[1:])/(corr_main.max(axis=0)[1:]-corr_main.min(axis=0)[1:])
 		# plt.plot(tasks[1:], vals*0.2+0.8, color=colors[i], label=r'$\alpha(t, '+str(i+1)+')$', marker='o')
 		plt.plot(tasks[1:], corr_main.loc[i][1:], color=colors[i], label=r'$\alpha(t, ' + str(i + 1) + ')$', marker='o')
@@ -135,11 +134,13 @@ def plot_detailed(lim=5):
 		         label=r'$\max_{\tau}~~\alpha(t, \tau)$')
 		plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color='black', linestyle=':', alpha=alpha,
 		         label=r'$\min_{\tau}~~\alpha(t, \tau)$')
-
+		fs = 15
 		plt.xlabel('Tasks (t)')
-		plt.title(r'$\tau=$' + str(i + 1) + ' (' + dataset_name + ')')
-		plt.ylabel('Accuracy\t\t\t' + r'$\alpha(t,\tau)$')
-		plt.legend()
+		plt.yticks(fontsize=fs)
+		plt.xticks(tasks, fontsize=fs-4)
+		plt.title(r'$\tau=$' + str(i + 1) + ' (' + dataset_name + ')', fontsize=fs)
+		plt.ylabel('Accuracy\t\t\t' + r'$\alpha(t,\tau)$', fontsize=fs)
+		plt.legend(fontsize=fs-4)
 		plt.savefig('pics/'+dataset_name + '_' + str(i + 1) + '.png')
 
 
@@ -203,5 +204,5 @@ def plot_means(man_acc_main, rms_acc_prev, corr_main):
 
 
 # plot_means(man_acc_main, rms_acc_prev, corr_main)
-plot_detailed(range(10))
-plt.show()
+plot_detailed(range(min(n_tasks-1,10)))
+# plt.show()

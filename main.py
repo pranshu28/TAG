@@ -84,6 +84,8 @@ def avg_runs_exp(runs, validate=False):
 	while r<runs and attempts<5:
 		args.seed += 1
 		score, forget, learn_acc = continuum_run(args, train_loaders, val_loaders if validate else test_loaders)
+		# if score<57:
+		# 	return score
 		if score!=0:
 			all_scores += [[score, forget, learn_acc]]
 			r+=1
@@ -104,22 +106,24 @@ def hyp_lr():
 	for lr in lrs:
 		args.lr = lr
 		print(args.lr)
+		args.seed = 0
 		acc = avg_runs_exp(args.runs, validate=True)
 		if acc > best_acc:
 			best_acc = acc
 			best_hyp = lr
-	print('Best [lr, b]:', best_hyp)
+	print('Best [lr]:', best_hyp)
 
 
 def hyp_tag():
-	lrs = (0.00005, 0.000025, 0.00001)
-	bs = (1, 3, 5, 7)
-	best_hyp, best_acc = 0, []
-	for lr in lrs:
-		args.lr = lr
-		for b in bs:
-			args.b = b
+	bs = (5,1,7, 3)
+	lrs = (0.005, 0.001, 0.0005, 0.0001)#, 0.00005, 0.00001)
+	best_hyp, best_acc = 0, 0
+	for b in bs:
+		args.b = b
+		for lr in lrs:
+			args.lr = lr
 			print(args.lr, args.b)
+			args.seed = 0
 			acc = avg_runs_exp(args.runs, validate=True)
 			if acc > best_acc:
 				best_acc = acc
@@ -129,12 +133,13 @@ def hyp_tag():
 
 def hyp_ewc():
 	ls, bs = (0.1, 0.05, 0.01, 0.001), (1, 10, 100)
-	best_hyp, best_acc = 0, []
+	best_hyp, best_acc = 0, 0
 	for l in ls:
 		args.lr =l
 		for b in bs:
 			args.lambd = b
 			print(l, b)
+			args.seed = 0
 			acc = avg_runs_exp(args.runs, validate=True)
 			if acc > best_acc:
 				best_acc = acc
@@ -146,7 +151,7 @@ def hyp_stable():
 	dropouts = (0.0, 0.1, 0.25, 0.5)
 	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
 	bs = (0.9, 0.8, 0.7)
-	best_hyp, best_acc = 0, []
+	best_hyp, best_acc = 0, 0
 	for dropout in dropouts:
 		args.dropout = dropout
 		for lr in lrs:
@@ -154,6 +159,7 @@ def hyp_stable():
 			for b in bs:
 				args.gamma = b
 				print(dropout, lr, b)
+				args.seed = 0
 				acc = avg_runs_exp(args.runs, validate=True)
 				if acc>best_acc:
 					best_acc = acc
@@ -170,35 +176,31 @@ def continuum_run(args, train_loaders, test_loaders):
 	criterion = nn.CrossEntropyLoss().to(DEVICE)
 	time = 0
 	tag = 'tag' in args.opt
+	optimizer = None
 
 	if args.opt != '':
 		opt = {'rms': torch.optim.RMSprop, 'adagrad': torch.optim.Adagrad, 'adam': torch.optim.Adam}
-		if args.opt in opt:
-			optimizer = opt[args.opt](model.parameters(), lr=args.lr)
+		for i in opt:
+			if i in args.opt:
+				optimizer = opt[i](model.parameters(), lr=args.lr)
+				break
 		if tag:
 			optimizer = tag_opt(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
+		if optimizer is None:
+			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		if 'er' in args.opt:
 			ALGO = ER(args)
-			if not tag:
-				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		if 'agem' in args.opt:
-			if not tag:
-				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 			ALGO = AGEM(model, optimizer, criterion, args)
 		if 'ewc' in args.opt:
-			sample_size = 200
 			ALGO = EWC(model, criterion)
-			if not tag:
-				optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		if 'ogd' in args.opt:
-			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 			ALGO = OGD(args, model, optimizer)
 
 	continuum = np.tile(np.arange(1, args.tasks + 1), 6) if args.multi == 1 else np.arange(1, args.tasks + 1)
 
 	tasks_done = []
 	print(continuum)
-	skip = 0
 
 	for current_task_id in (continuum):  # range(1, args.tasks+1)
 		train_loader = train_loaders[current_task_id-1]
@@ -237,7 +239,7 @@ def continuum_run(args, train_loaders, test_loaders):
 		if 'ogd' in args.opt:
 			ALGO._update_mem(current_task_id, train_loader)
 		if 'ewc' in args.opt:
-			loader = torch.utils.data.DataLoader(train_loader.dataset, batch_size=sample_size, shuffle=True)
+			loader = torch.utils.data.DataLoader(train_loader.dataset, batch_size=200, shuffle=True)
 			ALGO.update(model, current_task_id, loader)
 
 
@@ -253,18 +255,12 @@ def continuum_run(args, train_loaders, test_loaders):
 			avg_acc += metrics['accuracy'] / len(tasks_done)
 			if args.multi !=1:
 				acc_db, loss_db = log_metrics(metrics, time, prev_task_id, acc_db, loss_db)
-				if (args.tag_opt == 'tag' and args.tag_opt == 'rms') or args.opt=='rms': # verbose
+				if (args.opt == 'tag' and args.tag_opt == 'rms') or args.opt=='rms' and verbose: # verbose
 					save_checkpoint(model, time, tag, prev_task_id, metrics, imp)
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
-		# if avg_acc<=20:
-		# 	skip=1
-		# 	break
 
 		torch.cuda.empty_cache()
 	if args.multi != 1:
-		# if skip==1:
-		# 	print('Aborting this run!!')
-		# 	return 0., 0., 0.
 		score, forget, learn_acc = end_experiment(args, acc_db, loss_db)
 	else:
 		score, forget, learn_acc = avg_acc, 0., 0.
