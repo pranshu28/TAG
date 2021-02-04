@@ -84,8 +84,6 @@ def avg_runs_exp(runs, validate=False):
 	while r<runs and attempts<5:
 		args.seed += 1
 		score, forget, learn_acc = continuum_run(args, train_loaders, val_loaders if validate else test_loaders)
-		# if score<57:
-		# 	return score
 		if score!=0:
 			all_scores += [[score, forget, learn_acc]]
 			r+=1
@@ -148,8 +146,8 @@ def hyp_ewc():
 
 
 def hyp_stable():
-	dropouts = (0.0, 0.1, 0.25, 0.5)
-	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
+	dropouts = (0.0, 0.1)#, 0.25, 0.5)
+	lrs = (0.1, 0.05, 0.01)#, 0.005, 0.001)
 	bs = (0.9, 0.8, 0.7)
 	best_hyp, best_acc = 0, 0
 	for dropout in dropouts:
@@ -304,6 +302,6 @@ if __name__ == "__main__":
 	if not get_val:
 		avg_runs_exp(args.runs)
 	else:
-		print('\n\nHyperparameter search',args.hyp_gs)
+		print('\n\nHyperparameter search:',args.hyp_gs)
 		hyp_fun = {'ewc':hyp_ewc, 'tag':hyp_tag, 'stable':hyp_stable, 'lr':hyp_lr}
 		hyp_fun[args.hyp_gs]()

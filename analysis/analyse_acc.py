@@ -47,18 +47,18 @@ def taged_plot():
 [ 60.027 , 1.079 ],
 [ 67.472 , 0.691 ]
 ])
-	data4 = np.array([[ 46.482 , 3.62 ],
-[ 45.49 , 1.894 ],
-[ 62.591 , 1.815 ],
-[ 48.58 , 1.467 ],
-[ 57.785 , 2.672 ],
-[ 65.667 , 2.48 ],
-[ 55.9 , 2.581 ],
-[ 57.856 , 2.402 ],
-[ 69.866 , 2.876 ],
-[ 61.581 , 2.65 ],
-[ 52.115 , 2.17 ],
-[ 69.957 , 1.232 ]])
+	data4 = np.array([[ 46.48 , 3.62 ],
+[ 45.49 , 1.89 ],
+[ 62.59 , 1.82 ],
+[ 48.58 , 1.47 ],
+[ 57.79 , 2.67 ],
+[ 67.25 , 0.86 ],
+[ 55.9 , 2.58 ],
+[ 57.86 , 2.4 ],
+[ 69.71 , 2.32 ],
+[ 61.58 , 2.65 ],
+[ 52.12 , 2.17 ],
+[ 70.71 , 2.21 ]])
 	# ls = ['Naive SGD', 'TAG-RMSProp', 'EWC', 'TAG-EWC', 'A-GEM_1', 'TAG-A-GEM_1','ER_1', 'TAG-ER_1']
 	ls = ['Naive SGD', 'Naive RMSProp', 'TAG-RMSProp', 'EWC', 'RMSProp EWC', 'TAG-EWC', 'A-GEM_1', 'RMSProp A-GEM_1', 'TAG-A-GEM_1','ER_1', 'RMSProp ER_1', 'TAG-ER_1']
 	shift = len(ls)-4
@@ -78,15 +78,15 @@ def taged_plot():
 			err = dataset[data][j,1]
 			if j%3==2:
 				print(method, dataset[data][j,0]-dataset[data][j-2,0], dataset[data][j,0]-dataset[data][j-1,0])
-			# if j%2!=0:
-			# 	plt.bar(x, t, yerr=err, width = 0.5, label=method, hatch = '/', edgecolor='black', color=cs[j])
-			# else:
-			plt.bar(x, t, yerr=err, width=0.5, label=method, edgecolor='black', color=cs[j])
+			if j%3==2:
+				plt.bar(x, t, yerr=err, width = 0.5, label=method, hatch = '/', edgecolor='black', color=cs[j])
+			else:
+				plt.bar(x, t, yerr=err, width=0.5, label=method, edgecolor='black', color=cs[j])
 		# break
 	# plt.legend(bbox_to_anchor=(1, 1))
-	plt.ylabel(('Accuracy (%)'))
+	plt.ylabel(('Accuracy (%)'), fontsize=15)
 	# plt.xticks([1.5, shift + 1.5,2*shift+ 1.5, 3*shift+1.5], dataset)
-	plt.xticks([2.75, shift + 2.75,2*shift+ 2.75, 3*shift+2.75], dataset)
+	plt.xticks([2.75, shift + 2.75,2*shift+ 2.75, 3*shift+2.75], dataset, fontsize=12)
 
 
 def naive_plot(f=''):
@@ -114,7 +114,7 @@ def naive_plot(f=''):
 [ 63.761 , 2.972 , 0.28 , 0.037 ]])
 
 	labels = ['Naive SGD', 'Naive Adagrad', 'TAG-Adagrad', 'Naive RMSProp', 'TAG-RMSProp', 'Naive Adam', 'TAG-Adam']
-	dataset = ['Split-CIFAR100', 'Split-miniImageNet', 'Split-CUB', '5-dataset']
+	dataset = ['Split-\nCIFAR100', 'Split-\nminiImageNet', 'Split-CUB', '5-dataset']
 
 	data = {}
 	for di, d in enumerate(np.array([get_naive(data1), get_naive(data2), get_naive(data3), get_naive(data4)])):
@@ -130,23 +130,23 @@ def naive_plot(f=''):
 			data['e_'+dataset[int(di)]+'_f'][k] = d[3][i]
 
 	ls = ['Naive SGD', 'Naive Adagrad', 'TAG-Adagrad', 'Naive RMSProp', 'TAG-RMSProp', 'Naive Adam', 'TAG-Adam']
-	plt.figure(figsize=(7,4))
-	# plt.ylim(0,100)
+	plt.figure(figsize=(7,5))
 	# cs = ['tab:brown','tab:blue','tab:blue','tab:orange','tab:orange','tab:green','tab:green']
 	cs =  plt.cm.tab20(np.linspace(0, 1, 20))
 	for i,o in enumerate(ls):
 		t = [data[d+f][o] for d in dataset]
 		x = [5*o+(0.5*i) for o in range(len(dataset))]
 		err = [data['e_'+d+f][o] for d in dataset]
-		# if i%2==0 and i>0:
-		# 	plt.bar(x, t, yerr=err, width = 0.5, label = o, hatch = '/', edgecolor='black', color=cs[i+5])
-		# else:
-		plt.bar(x, t, yerr=err, width=0.5, label=o, edgecolor='black', color=cs[i+1])
+		if i%2==0 and i>0:
+			plt.bar(x, t, yerr=err, width = 0.5, label = o, hatch = '/', edgecolor='black', color=cs[i+1])
+		else:
+			plt.bar(x, t, yerr=err, width=0.5, label=o, edgecolor='black', color=cs[i+1])
 	fs=10
-	# plt.legend(bbox_to_anchor=(1.001, 1))
+	plt.legend(bbox_to_anchor=(1.001, 1))
+	# plt.ylim(35,70)
 	plt.yticks(fontsize=15)
 	plt.ylabel(('Accuracy (%)' if f=='' else 'Forgetting'), fontsize=15)
-	plt.xticks([1.5, 6.5, 11.5, 16.5], dataset, fontsize=10)
+	plt.xticks([1.5, 6.5, 11.5, 16.5], dataset, fontsize=12)
 
 def acc(dataset):
 	f = open(dataset+'.txt', 'r')
@@ -209,8 +209,8 @@ def acc(dataset):
 		fs = 15
 		plt.yticks(fontsize=fs)
 		plt.xticks(tasks[inds], fontsize=fs)
-		plt.title(dataset)
-		# plt.ylim(25,60)
+		# plt.title(dataset)
+		plt.ylim(35,70)
 		plt.xlabel('Tasks', fontsize=fs)
 		plt.ylabel('Accuracy (%)', fontsize=fs)
 		plt.legend(fontsize=fs-4)#bbox_to_anchor=(1.01, 1))
@@ -244,11 +244,11 @@ def acc(dataset):
 # acc('cifar')
 # acc('imagenet')
 # acc('cub')
-# acc('5data')
+acc('5data')
 
 # naive_plot('')
-naive_plot('_f')
+# naive_plot('_f')
 
 # taged_plot()
-
+#
 plt.show()

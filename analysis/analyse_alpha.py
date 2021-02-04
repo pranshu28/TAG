@@ -112,8 +112,12 @@ def plot(f, man_acc, std, label, i=-1, alpha=1.0):
 	plt.figure(f)
 	# plt.plot(tasks[1:], man_acc.mean(axis=0)[1:]/100, alpha=alpha, label=label)
 	if i != -1:
-		plt.plot(tasks[1:], man_acc.loc[i][1:], label=label)
-		plt.fill_between(tasks[1:], man_acc.loc[i][1:] - std.loc[i][1:], man_acc.loc[i][1:] + std.loc[i][1:], alpha=alpha)
+		if i!=0:
+			plt.plot(tasks[1:], man_acc.loc[i][1:], label=label)
+			plt.fill_between(tasks[1:], man_acc.loc[i][1:] - std.loc[i][1:], man_acc.loc[i][1:] + std.loc[i][1:], alpha=alpha)
+		else:
+			plt.plot(tasks, man_acc.loc[i], label=label)
+			plt.fill_between(tasks, man_acc.loc[i] - std.loc[i], man_acc.loc[i] + std.loc[i], alpha=alpha)
 
 
 def plot_detailed(lim=5):
@@ -129,7 +133,7 @@ def plot_detailed(lim=5):
 		plt.plot(tasks[1:], corr_main.loc[i][1:], color=colors[i], label=r'$\alpha(t, ' + str(i + 1) + ')$', marker='o')
 		# plt.fill_between(tasks[1:], corr_main.loc[i][1:] - corr_main_std.loc[i][1:], corr_main.loc[i][1:] + corr_main_std.loc[i][1:], color=colors[i], alpha=0.25)
 		plt.plot(tasks[1:], corr_main.mean(axis=0)[1:], color='black', alpha=alpha,
-		         label=r'$E_{\tau}~~[\alpha(t, \tau)]$')
+		         label=r'$\mathbb{E}_{\tau}~~[\alpha(t, \tau)]$')
 		plt.plot(tasks[1:], corr_main.max(axis=0)[1:], color='black', linestyle=':', alpha=alpha,
 		         label=r'$\max_{\tau}~~\alpha(t, \tau)$')
 		plt.plot(tasks[1:], corr_main.min(axis=0)[1:], color='black', linestyle=':', alpha=alpha,
@@ -138,7 +142,7 @@ def plot_detailed(lim=5):
 		plt.xlabel('Tasks (t)')
 		plt.yticks(fontsize=fs)
 		plt.xticks(tasks, fontsize=fs-4)
-		plt.title(r'$\tau=$' + str(i + 1) + ' (' + dataset_name + ')', fontsize=fs)
+		# plt.title(r'$\tau=$' + str(i + 1) + ' (' + dataset_name + ')', fontsize=fs)
 		plt.ylabel('Accuracy\t\t\t' + r'$\alpha(t,\tau)$', fontsize=fs)
 		plt.legend(fontsize=fs-4)
 		plt.savefig('pics/'+dataset_name + '_' + str(i + 1) + '.png')
