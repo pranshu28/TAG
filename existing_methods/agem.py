@@ -113,7 +113,9 @@ class AGEM(nn.Module):
 		if len(self.observed_tasks) > 1:
 			self.zero_grad()
 			prev_tasks = self.observed_tasks[:-1]
-			mem_x, mem_y = self.sample(self.memory_data[prev_tasks].reshape((len(prev_tasks * self.n_mem_per_class * self.nc_per_task), *self.input_size)), self.memory_labs[prev_tasks].reshape(-1))
+			mem_x, mem_y = self.sample(self.memory_data[prev_tasks].reshape((len(prev_tasks * self.n_mem_per_class * self.nc_per_task),
+			                                                                 *self.input_size)),
+			                           self.memory_labs[prev_tasks].reshape(-1))
 			mem_preds = net(mem_x, None)
 			mem_preds = apply_mask(mem_y, mem_preds, self.nc_per_task)
 			# print(self.memory_data[prev_tasks].shape, self.memory_labs[prev_tasks], mem_y, torch.argmax(mem_preds,dim=1))
