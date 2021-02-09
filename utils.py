@@ -1,12 +1,9 @@
-import uuid
 import argparse
 import matplotlib
 
 matplotlib.use('Agg')
 from models import *
-from data_utils import *
-
-import matplotlib.pyplot as plt
+from data.data_utils import *
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 

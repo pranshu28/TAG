@@ -1,9 +1,8 @@
-import random
 from tag_update import *
-from er import *
-from agem import *
-from ewc import *
-from ogd import *
+from existing_methods.er import *
+from existing_methods.agem import *
+from existing_methods.ewc import *
+from existing_methods.ogd import *
 
 
 def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, ALGO=None):

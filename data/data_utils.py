@@ -1,7 +1,6 @@
 import torchvision
 import torchvision.transforms.functional as TorchVisionFunc
-from data_utils_2 import *
-from tqdm import tqdm
+from data.data_utils_2 import *
 import tarfile
 import os
 import cv2
