@@ -23,7 +23,6 @@ def apply_mask(mem_y, out, n_classes):
 	return out
 
 
-
 def parse_arguments():
 	"""
 	Parse and print the relevant arguments
