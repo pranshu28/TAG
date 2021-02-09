@@ -126,11 +126,9 @@ def get_benchmark_model(args):
 		if args.tasks==10:
 			return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
 		# if args.opt == 'ogd':
-		# return LeNetC(hidden_dim=256, classes_per_task=int(100 / args.tasks), out_dim = 100)
+			# return LeNetC(hidden_dim=256, classes_per_task=int(100 / args.tasks), out_dim = 100)
 		return ResNet18(config={'input_size': (3, 32, 32), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	elif 'imagenet' in args.dataset:
-		# if args.epochs_per_task!=1:
-		# 	return ResNet18(config={'input_size': (3, 84, 84), 'dropout': args.dropout, 'stride1':2,'avg_pool':2, 'classes': int(100 / args.tasks)}).to(DEVICE)
 		return ResNet18(config={'input_size': (3, 84, 84), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	elif 'cub' in args.dataset:
 		return ResNet18_CUB(config={'input_size': (3, 224, 224), 'dropout': args.dropout, 'classes': int(200 / args.tasks)}).to(DEVICE)
