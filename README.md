@@ -3,7 +3,7 @@
 In this work, we propose a task-aware optimizer called **TAG** that adapts the learning rate based on the relatedness among tasks. 
 We utilize the directions taken by the parameters during the updates by accumulating the gradients specific to each task. 
 These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. 
-In the experiments, we show that TAG not only accounts for catastrophic forgetting but also allows positive backward transfer. 
+In the experiments, we show that TAG not only accounts for catastrophic forgetting but also exhibits positive backward transfer. 
 We also show that our method performs better than several state-of-the-art methods in lifelong learning on Split-CIFA100, Split-miniImageNet, Split-CUB and 5-dataset. 
 The overall implementation is based on the repository [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
 
