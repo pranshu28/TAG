@@ -20,6 +20,9 @@ class MyDataloader(torch.utils.data.Dataset):
 
 
 def get_nomnist(task_id):
+    """
+    Parses and returns the downloaded notMNIST dataset
+    """
     classes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
     tar_path = "./data/notMNIST_small.tar"
     tmp_path = "./data/tmp"
@@ -49,10 +52,7 @@ def get_nomnist(task_id):
 
 def get_5_datasets(task_id, DATA, batch_size, get_val=False):
     """
-    Returns the dataset for a single task of Rotation MNIST dataset
-    :param task_id:
-    :param batch_size:
-    :return:
+    Returns the data loaders for a single task of 5-dataset
     """
     if task_id in [0,2]:
         transforms = torchvision.transforms.Compose([
@@ -102,10 +102,7 @@ def get_5_datasets(task_id, DATA, batch_size, get_val=False):
 
 def get_5_datasets_tasks(num_tasks, batch_size, get_val=False):
     """
-    Returns data loaders for all tasks of rotation MNIST dataset.
-    :param num_tasks: number of tasks in the benchmark.
-    :param batch_size:
-    :return:
+    Returns data loaders for all tasks of 5-dataset.
     """
     datasets = {}
     data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'notMNIST',  torchvision.datasets.FashionMNIST]
@@ -121,10 +118,6 @@ def get_permuted_mnist(task_id, batch_size):
     """
     Get the dataset loaders (train and test) for a `single` task of permuted MNIST.
     This function will be called several times for each task.
-
-    :param task_id: id of the task [starts from 1]
-    :param batch_size:
-    :return: a tuple: (train loader, test loader)
     """
 
     # convention, the first task will be the original MNIST images, and hence no permutation
@@ -146,10 +139,6 @@ def get_permuted_mnist(task_id, batch_size):
 def get_permuted_mnist_tasks(num_tasks, batch_size):
     """
     Returns the datasets for sequential tasks of permuted MNIST
-
-    :param num_tasks: number of tasks.
-    :param batch_size: batch-size for loaders.
-    :return: a dictionary where each key is a dictionary itself with train, and test loaders.
     """
     datasets = {}
     for task_id in range(1, num_tasks+1):
@@ -172,9 +161,6 @@ class RotationTransform:
 def get_rotated_mnist(task_id, batch_size, per_task_rotation=10):
     """
     Returns the dataset for a single task of Rotation MNIST dataset
-    :param task_id:
-    :param batch_size:
-    :return:
     """
     rotation_degree = (task_id - 1)*per_task_rotation
     rotation_degree -= (np.random.random()*per_task_rotation)
@@ -194,9 +180,6 @@ def get_rotated_mnist(task_id, batch_size, per_task_rotation=10):
 def get_rotated_mnist_tasks(num_tasks, batch_size):
     """
     Returns data loaders for all tasks of rotation MNIST dataset.
-    :param num_tasks: number of tasks in the benchmark.
-    :param batch_size:
-    :return:
     """
     datasets = {}
     per_task_rotation = {1:360, 2:180, 3: 120, 4: 90, 5:60, 6: 60, 7:45, 8:45, 9:30, 10:30}[num_tasks] if num_tasks<=10 else 10
@@ -209,13 +192,8 @@ def get_rotated_mnist_tasks(num_tasks, batch_size):
 
 def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, get_val=False):
     """
-    Returns a single task of split CIFAR-100 dataset
-    :param task_id:
-    :param batch_size:
-    :return:
+    Returns a single task of Split-CIFAR100 dataset
     """
-
-
     start_class = (task_id-1)*classes
     end_class = task_id * classes
 
@@ -244,10 +222,7 @@ def get_split_cifar100(task_id, classes, batch_size, cifar_train, cifar_test, ge
 
 def get_split_cifar100_tasks(num_tasks, batch_size, get_val=False):
     """
-    Returns data loaders for all tasks of split CIFAR-100
-    :param num_tasks:
-    :param batch_size:
-    :return:
+    Returns data loaders for all tasks of Split-CIFAR100
     """
     datasets = {}
 

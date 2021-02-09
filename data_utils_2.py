@@ -6,7 +6,12 @@ from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 import pickle
 
-""" Template Dataset with Labels """
+"""
+Data utils for imagenet and CUB.
+Implementation is based on the one provided by:
+    Aljundi, Rahaf, et al. "Online continual learning with maximally interfered retrieval."
+    arXiv preprint arXiv:1908.04742 (2019).
+"""
 
 
 class XYDataset(torch.utils.data.Dataset):
@@ -40,7 +45,6 @@ class XYDataset(torch.utils.data.Dataset):
 			return (x - 0.5) * 2, y
 
 
-""" Template Dataset for Continual Learning """
 class CLDataLoader(object):
 	def __init__(self, datasets_per_task, args, train=True):
 		bs = args.batch_size if train else 256
@@ -241,72 +245,9 @@ def make_valid_from_train(dataset, cut=0.9):
 	return tr_ds, val_ds
 
 
-# def get_mini_imagenet(task_id, classes, batch_size, train_X, test_X, train_Y, test_Y):
-# 	"""
-# 	Returns a single task of split CIFAR-100 dataset
-# 	:param task_id:
-# 	:param batch_size:
-# 	:return:
-# 	"""
-#
-# 	start_class = (task_id - 1) * classes
-# 	end_class = task_id * classes
-#
-# 	# train_X = torch.tensor(train_X)
-# 	targets_train = torch.tensor(train_Y)
-# 	target_train_idx = ((targets_train >= start_class) & (targets_train < end_class))
-#
-# 	# test_X = torch.tensor(test_X)
-# 	targets_test = torch.tensor(test_Y)
-# 	target_test_idx = ((targets_test >= start_class) & (targets_test < end_class))
-#
-# 	train_loader = torch.utils.data.DataLoader(
-# 		torch.utils.data.dataset.Subset(tuple(zip(train_X,train_Y)), np.where(target_train_idx == 1)[0]), batch_size=batch_size,
-# 		shuffle=True)
-# 	test_loader = torch.utils.data.DataLoader(
-# 		torch.utils.data.dataset.Subset(tuple(zip(test_X,test_Y)), np.where(target_test_idx == 1)[0]), batch_size=batch_size)
-#
-# 	return train_loader, test_loader
-
-
-# def get_mini_imagenet_tasks(num_tasks, batch_size):
-# 	"""
-# 	Returns data loaders for all tasks of split CUB
-# 	:param num_tasks:
-# 	:param batch_size:
-# 	:return:
-# 	"""
-# 	datasets = {}
-#
-# 	# transforms = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), ])
-# 	for i in ['train', 'test', 'val']:
-# 		file = open("data/imagenet/mini-imagenet-cache-" + i + ".pkl", "rb")
-# 		file_data = pickle.load(file)
-# 		data = file_data["image_data"]
-# 		if i == 'train':
-# 			main_data = data.`([64, 600, 84, 84, 3])
-# 		else:
-# 			app_data = data.reshape([(20 if i == 'test' else 16), 600, 84, 84, 3])
-# 			main_data = np.append(main_data, app_data, axis=0)
-# 	all_data = (main_data.reshape((60000, 84, 84, 3))/255. - 0.5) *2
-# 	# all_data -= np.array((0.406, 0.456, 0.485), dtype=np.float32)  # -> images between 0 and 1
-# 	# all_data /= np.array((0.225, 0.224, 0.229), dtype=np.float32)
-# 	all_label = np.array([[i] * 600 for i in range(100)]).flatten()
-#
-# 	train_X, test_X, train_Y, test_Y = train_test_split(all_data, all_label, test_size=0.2)
-# 	classes = int(100/num_tasks)
-#
-# 	for task_id in range(1, num_tasks + 1):
-# 		train_loader, test_loader = get_mini_imagenet(task_id, classes, batch_size, train_X, test_X, train_Y, test_Y)
-# 		datasets[task_id] = {'train': train_loader, 'test': test_loader}
-# 	return datasets
-
 def get_mini_imagenet(task_id, classes, batch_size, all_data, all_label):
 	"""
-	Returns a single task of split CIFAR-100 dataset
-	:param task_id:
-	:param batch_size:
-	:return:
+	Returns a single task of Split-miniImageNet dataset
 	"""
 
 	start_class = (task_id - 1) * classes
@@ -320,10 +261,7 @@ def get_mini_imagenet(task_id, classes, batch_size, all_data, all_label):
 
 def get_mini_imagenet_tasks(num_tasks, batch_size):
 	"""
-	Returns data loaders for all tasks of split CUB
-	:param num_tasks:
-	:param batch_size:
-	:return:
+	Returns data loaders for all tasks of Split-miniImageNet
 	"""
 	datasets = {}
 

@@ -6,16 +6,19 @@ matplotlib.use('Agg')
 from models import *
 from data_utils import *
 
-# import seaborn as sns
 import matplotlib.pyplot as plt
 
-
-TRIAL_ID = uuid.uuid4().hex.upper()[0:6]
-# EXPERIMENT_DIRECTORY = './outputs/{}'.format(TRIAL_ID)
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 def apply_mask(mem_y, out, n_classes):
+	"""
+	Apply mask on the predicted outputs based on the given task - assuming task-incremental learning setup
+	:param mem_y: Actual labels
+	:param out: Predictions
+	:param n_classes: Number of classes per task
+	:return: Masked predictions
+	"""
 	for i,y in enumerate(mem_y):
 		mask = torch.zeros_like(out[i])
 		mask[y-(y%n_classes):y-(y%n_classes)+n_classes]=1
@@ -64,7 +67,11 @@ def parse_arguments():
 		print("  lambda="+str(args.lambd))
 	return args
 
+
 def set_seeds(seed):
+	"""
+	Set seeds for reproducibility
+	"""
 	os.environ['PYTHONHASHSEED'] = str(seed)
 	np.random.seed(seed)
 	torch.manual_seed(seed)
@@ -73,12 +80,10 @@ def set_seeds(seed):
 	torch.backends.cudnn.benchmark = False
 	torch.backends.cudnn.deterministic = True
 
+
 def init_experiment(args):
 	print('\n------------------- Experiment-'+str(args.seed)+' started -----------------')
-	# 1. setup seed for reproducibility
 	set_seeds(args.seed)
-
-	# 3. create data structures to store metrics
 	loss_db = {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
 	acc_db =  {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
 	return acc_db, loss_db
@@ -104,9 +109,8 @@ def end_experiment(args, acc_db, loss_db):
 
 def get_benchmark_data_loader(args):
 	"""
-    Returns the benchmark loader which could be either of these:
-    get_split_cifar100_tasks, get_permuted_mnist_tasks, or get_rotated_mnist_tasks
-
+    Returns the benchmark loader based on MNIST:
+    get_permuted_mnist_tasks, or get_rotated_mnist_tasks
     :param args:
     :return: a function which when called, returns all tasks
     """
@@ -115,14 +119,12 @@ def get_benchmark_data_loader(args):
 	elif args.dataset == 'rot-mnist' or args.dataset == 'rotation-mnist':
 		return get_rotated_mnist_tasks
 	else:
-		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
+		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist and rot-mnist.")
 
 
 def get_benchmark_model(args):
 	"""
     Return the corresponding PyTorch model for experiment
-    :param args:
-    :return:
     """
 	if 'mnist' in args.dataset:
 		if args.tasks == 20 and args.hiddens < 256:
@@ -146,7 +148,6 @@ def get_benchmark_model(args):
 		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist, rot-mnist, and cifar-100.")
 
 
-
 def log_metrics(metrics, time, task_id, acc_db, loss_db, p=False):
 	"""
 	Log accuracy and loss at different times of training
@@ -161,21 +162,11 @@ def log_metrics(metrics, time, task_id, acc_db, loss_db, p=False):
 	return acc_db, loss_db
 
 
-def save_checkpoint(model, time, manual, prev_task_id, metrics, imp):
+def print_details(tag, prev_task_id, metrics, alpha):
 	"""
-	Save checkpoints of model paramters
-	:param model: pytorch model
-	:param time: int
+	Print test accuracy on past task datasets (along with )
 	"""
-	# filename = '{directory}/model-{trial}-{time}.pth'.format(directory=EXPERIMENT_DIRECTORY, trial=TRIAL_ID, time=time)
-	# torch.save(model.cpu().state_dict(), filename)
-	if manual:
-		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'], '   \t', imp[prev_task_id - 1])
+	if tag:
+		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'], '   \t', alpha[prev_task_id - 1])
 	else:
 		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'])
-
-
-# def visualize_result(df, filename):
-# 	ax = sns.lineplot(data=df,  dashes=False)
-# 	ax.figure.savefig(filename, dpi=250)
-# 	plt.close()

@@ -7,6 +7,9 @@ import torchvision.models as models
 
 
 class ResNet18_CUB(nn.Module):
+	"""
+	Resnet18 (pretrained on Imagenet) for CUB benchmark
+	"""
 
 	def __init__(self, config):
 		super(ResNet18_CUB, self).__init__()
@@ -37,7 +40,6 @@ class MLP(nn.Module):
 	"""
 	Two layer MLP for MNIST benchmarks.
 	"""
-
 	def __init__(self, hiddens, config):
 		super(MLP, self).__init__()
 		self.n_classes = config['classes']
@@ -110,6 +112,11 @@ class BasicBlock(nn.Module):
 
 
 class ResNet(nn.Module):
+	"""
+	Reduced ResNet - based on
+		Chaudhry, Arslan, et al. "On tiny episodic memories in continual learning."
+		arXiv preprint arXiv:1902.10486 (2019).
+	"""
 	def __init__(self, block, num_blocks, num_classes, nf, config={}):
 		super(ResNet, self).__init__()
 		self.in_planes = nf
@@ -163,6 +170,9 @@ def ResNet18(nclasses=100, nf=20, config={}):
 
 
 class AlexNet(torch.nn.Module):
+	"""
+	5-layer version of AlexNet for OGD and GPM purposes
+	"""
 	def __init__(self, config):
 		super(AlexNet, self).__init__()
 
@@ -215,6 +225,9 @@ class AlexNet(torch.nn.Module):
 
 
 class LeNet(nn.Module):
+	"""
+	LeNet model for OGD purposes
+	"""
 	def __init__(self, out_dim, classes_per_task, in_channel=1, img_sz=32, hidden_dim=500):
 		super(LeNet, self).__init__()
 		feat_map_sz = img_sz // 4

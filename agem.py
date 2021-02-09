@@ -2,11 +2,11 @@ from utils import *
 
 def store_grad(pp, grads, grad_dims, tid):
 	"""
-		This stores parameter gradients of past tasks.
-		pp: parameters
-		grads: gradients
-		grad_dims: list with number of parameters per layers
-		tid: task id
+	This stores parameter gradients of past tasks.
+	:param pp: parameters
+	:param grads: gradients
+	:param grad_dims: list with number of parameters per layers
+	:param tid: task id
 	"""
 	# store the gradients
 	grads[:, tid].fill_(0.0)
@@ -21,11 +21,11 @@ def store_grad(pp, grads, grad_dims, tid):
 
 def overwrite_grad(pp, newgrad, grad_dims):
 	"""
-		This is used to overwrite the gradients with a new gradient
-		vector, whenever violations occur.
-		pp: parameters
-		newgrad: corrected gradient
-		grad_dims: list storing number of parameters at each layer
+	This is used to overwrite the gradients with a new gradient vector, whenever violations occur.
+
+	:param pp: parameters
+	:param newgrad: new gradients to be updated
+	:param grad_dims: list with number of parameters per layers
 	"""
 	cnt = 0
 	for param in pp():
@@ -39,6 +39,11 @@ def overwrite_grad(pp, newgrad, grad_dims):
 
 
 class AGEM(nn.Module):
+	"""
+	Implementation of A-GEM proposed in
+		Chaudhry, Arslan, et al. "Efficient lifelong learning with a-gem."
+		arXiv preprint arXiv:1812.00420 (2018).
+	"""
 	def __init__(self, net, optimizer, criterion, args):
 		super(AGEM, self).__init__()
 
@@ -85,6 +90,14 @@ class AGEM(nn.Module):
 			return mem_x[indices], mem_y[indices]
 
 	def observe_agem(self, net, x, t, y):
+		"""
+		Computing new gradients for the given input and labels
+		:param net: Current model
+		:param x: Input samples
+		:param t: Current task
+		:param y: Labels
+		:return: Model with the new corresponding gradients
+		"""
 		if t != self.old_task:
 			self.observed_tasks.append(t)
 			self.old_task = t

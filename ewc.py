@@ -8,6 +8,11 @@ import torch.utils.data
 
 
 class EWC(object):
+	"""
+	Implementation of EWC based on the origianl paper
+		Kirkpatrick, James, et al. "Overcoming catastrophic forgetting in neural networks."
+		Proceedings of the national academy of sciences 114.13 (2017): 3521-3526.
+	"""
 	def __init__(self, model, criterion):
 
 		self.model = model

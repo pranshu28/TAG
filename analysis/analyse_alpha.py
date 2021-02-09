@@ -13,7 +13,6 @@ dataset_name = {'rotate_eq': 'Rotated MNIST (30)', 'rotate': 'Rotated MNIST', 'p
                 'cifar10_resnet': 'CIFAR-100 (10 tasks)',
                 'cifar10': 'CIFAR-100 (10 tasks)', 'cifar': 'Split-CIFAR100', 'imagenet': 'Split-miniImageNet',
                 'cub': 'Split-CUB', '5data': '5-dataset'}[dataset]
-# ls = ['Plastic (Naive) SGD', 'Plastic (Naive) RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'Manual RMSProp (Ours)']
 ls = ['Naive SGD', 'Naive RMSProp', 'A-GEM', 'ER', 'Stable SGD', 'TAG-RMSProp']
 
 n_tasks = 5 if dataset=='5data' else 20

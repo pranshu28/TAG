@@ -1,5 +1,8 @@
-# Understanding the Role of Training Regimes in Continual Learning
-Towards increasing stability of neural networks for continual learning
+# TAG
+Task-based Accumulated Gradients for Lifelong learning.
+
+In this work, While existing methods employ the general task-agnostic stochastic gradient descent update rule, we propose a task-aware optimizer that adapts the learning rate based on the relatedness among tasks. We utilize the directions taken by the parameters during the updates by accumulating the gradients specific to each task. These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. We empirically show that our proposed adaptive learning rate not only accounts for catastrophic forgetting but also allows positive backward transfer. We also show that our method performs better than several state-of-the-art methods in lifelong learning on complex datasets with a large number of tasks. 
+
 
 
 ## 1. Code Structure

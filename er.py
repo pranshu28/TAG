@@ -7,7 +7,12 @@ import torch.nn.functional as F
 
 
 class ER(nn.Module):
-    def __init__(self, args, input_size=None):
+    """
+    Implementation of ER based on the one provided by
+        Aljundi, Rahaf, et al. "Online continual learning with maximally interfered retrieval."
+        arXiv preprint arXiv:1908.04742 (2019).
+    """
+    def __init__(self, args):
         super().__init__()
         self.args = args
         self.k = 0.03
