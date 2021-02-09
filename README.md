@@ -85,7 +85,7 @@ For replicating the results given in the Appendix:
  * Run ```bash scripts/replicate_appendix_replay.sh <dataset>``` : Comparing TAG results with A-GEM and ER having bigger memory sizes.
 
 We run the following command to replicate the grid-search performed to choose the best hyper-parameters set:
- * Run ```bash scripts/replicate_appendix_gs.sh <dataset>```
+ * ```bash scripts/replicate_appendix_gs.sh <dataset>```
 
 In all above cases, `<dataset>` can be one of the following:
  * `cifar`: Split-CIFAR100
