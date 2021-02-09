@@ -10,55 +10,11 @@ def get_naive(data):
 
 
 def taged_plot():
-	data1 = np.array([[ 51.358 , 3.214 ],
-[ 48.906 , 2.88 ],
-[ 62.786 , 0.286 ],
-[ 49.058 , 3.438 ],
-[ 51.482 , 2.057 ],
-[ 63.977 , 0.655 ],
-[ 54.248 , 2.001 ],
-[ 49.53 , 2.164 ],
-[ 64.8 , 1.007 ],
-[ 59.144 , 1.769 ],
-[ 49.706 , 0.782 ],
-[ 66.564 , 0.391 ]])
-	data2 = np.array([[ 48.647 , 1.482 ],
-[ 45.065 , 0.597 ],
-[ 57.202 , 1.368 ],
-[ 47.87 , 2.081 ],
-[ 42.403 , 2.991 ],
-[ 58.146 , 0.163 ],
-[ 50.322 , 1.286 ],
-[ 44.155 , 1.709 ],
-[ 58.962 , 0.886 ],
-[ 54.668 , 0.709 ],
-[ 43.47 , 0.916 ],
-[ 58.913 , 1.111 ]])
-	data3 = np.array([[ 54.878 , 1.826 ],
-[ 49.401 , 1.775 ],
-[ 61.576 , 1.236 ],
-[ 55.659 , 0.967 ],
-[ 50.894 , 1.891 ],
-[ 59.496 , 0.709 ],
-[ 56.913 , 1.369 ],
-[ 51.512 , 1.639 ],
-[ 62.93 , 0.935 ],
-[ 59.247 , 0.816 ],
-[ 60.027 , 1.079 ],
-[ 67.472 , 0.691 ]
+	data1 = np.array([[ 51.358 , 3.214 ],[ 48.906 , 2.88 ],[ 62.786 , 0.286 ],[ 49.058 , 3.438 ],[ 51.482 , 2.057 ],[ 63.977 , 0.655 ],[ 54.248 , 2.001 ],[ 49.53 , 2.164 ],[ 64.8 , 1.007 ],[ 59.144 , 1.769 ],[ 49.706 , 0.782 ],[ 66.564 , 0.391 ]])
+	data2 = np.array([[ 48.647 , 1.482 ],[ 45.065 , 0.597 ],[ 57.202 , 1.368 ],[ 47.87 , 2.081 ],[ 42.403 , 2.991 ],[ 58.146 , 0.163 ],[ 50.322 , 1.286 ],[ 44.155 , 1.709 ],[ 58.962 , 0.886 ],[ 54.668 , 0.709 ],[ 43.47 , 0.916 ],[ 58.913 , 1.111 ]])
+	data3 = np.array([[ 54.878 , 1.826 ],[ 49.401 , 1.775 ],[ 61.576 , 1.236 ],[ 55.659 , 0.967 ],[ 50.894 , 1.891 ],[ 59.496 , 0.709 ],[ 56.913 , 1.369 ],[ 51.512 , 1.639 ],[ 62.93 , 0.935 ],[ 59.247 , 0.816 ],[ 60.027 , 1.079 ],[ 67.472 , 0.691 ]
 ])
-	data4 = np.array([[ 46.48 , 3.62 ],
-[ 45.49 , 1.89 ],
-[ 62.59 , 1.82 ],
-[ 48.58 , 1.47 ],
-[ 57.79 , 2.67 ],
-[ 67.25 , 0.86 ],
-[ 55.9 , 2.58 ],
-[ 57.86 , 2.4 ],
-[ 69.71 , 2.32 ],
-[ 61.58 , 2.65 ],
-[ 52.12 , 2.17 ],
-[ 70.71 , 2.21 ]])
+	data4 = np.array([[ 46.48 , 3.62 ],[ 45.49 , 1.89 ],[ 62.59 , 1.82 ],[ 48.58 , 1.47 ],[ 57.79 , 2.67 ],[ 67.25 , 0.86 ],[ 55.9 , 2.58 ],[ 57.86 , 2.4 ],[ 69.71 , 2.32 ],[ 61.58 , 2.65 ],[ 52.12 , 2.17 ],[ 70.71 , 2.21 ]])
 	# ls = ['Naive SGD', 'TAG-RMSProp', 'EWC', 'TAG-EWC', 'A-GEM_1', 'TAG-A-GEM_1','ER_1', 'TAG-ER_1']
 	ls = ['Naive SGD', 'Naive RMSProp', 'TAG-RMSProp', 'EWC', 'RMSProp EWC', 'TAG-EWC', 'A-GEM_1', 'RMSProp A-GEM_1', 'TAG-A-GEM_1','ER_1', 'RMSProp ER_1', 'TAG-ER_1']
 	shift = len(ls)-4
@@ -79,11 +35,12 @@ def taged_plot():
 			if j%3==2:
 				print(method, dataset[data][j,0]-dataset[data][j-2,0], dataset[data][j,0]-dataset[data][j-1,0])
 			if j%3==2:
-				plt.bar(x, t, yerr=err, width = 0.5, label=method, hatch = '/', edgecolor='black', color=cs[j])
+				plt.bar(x, t, yerr=err, width = 0.5, label=method, hatch = '/', edgecolor=cs[j-2], color=cs[j])
+				# plt.bar(x, t, yerr=err, width=0.5, label=method, edgecolor='black', color='none')
 			else:
 				plt.bar(x, t, yerr=err, width=0.5, label=method, edgecolor='black', color=cs[j])
-		# break
-	# plt.legend(bbox_to_anchor=(1, 1))
+		break
+	plt.legend(bbox_to_anchor=(1, 1))
 	plt.ylabel(('Accuracy (%)'), fontsize=15)
 	# plt.xticks([1.5, shift + 1.5,2*shift+ 1.5, 3*shift+1.5], dataset)
 	plt.xticks([2.75, shift + 2.75,2*shift+ 2.75, 3*shift+2.75], dataset, fontsize=12)
@@ -91,27 +48,9 @@ def taged_plot():
 
 def naive_plot(f=''):
 	data1 = np.array([[ 51.36 , 3.21 , 0.18 , 0.03 ],[ 50.98 , 1.05 , 0.22 , 0.02 ],[ 63.22 , 0.78 , 0.1 , 0.01 ],[ 48.91 , 2.88 , 0.2 , 0.03 ],[ 62.79 , 0.29 , 0.1 , 0.01 ],[ 48.69 , 1.56 , 0.19 , 0.01 ],[62.086 , 1.3698, 0.0981 , 0.00750]])
-	data2 = np.array([[ 48.19 , 0.79 , 0.13 , 0.01 ],
-[ 49.93 , 1.8 , 0.16 , 0.01 ],
-[ 56.99 , 0.57 , 0.05 , 0.004 ],
-[ 45.06 , 0.6 , 0.21 , 0.01 ],
-[ 57.2 , 1.37 , 0.06 , 0.02 ],
-[ 45.92 , 1.58 , 0.2 , 0.02 ],
-[ 57.61 , 1.24 , 0.06 , 0.01 ]])
-	data3 = np.array([[ 54.878 , 1.826 , 0.122 , 0.014 ],
-[ 55.443 , 1.216 , 0.105 , 0.003 ],
-[ 61.765 , 1.044 , 0.11 , 0.011 ],
-[ 49.401 , 1.775 , 0.237 , 0.01 ],
-[ 61.576 , 1.236 , 0.11 , 0.015 ],
-[ 44.205 , 1.985 , 0.252 , 0.021 ],
-[ 57.538 , 0.83 , 0.1 , 0.004 ]])
-	data4 = np.array([[ 46.482 , 3.62 , 0.476 , 0.046 ],
-[ 54.234 , 2.961 , 0.392 , 0.039 ],
-[ 67.726 , 0.561 , 0.227 , 0.01 ],
-[ 45.49 , 1.894 , 0.501 , 0.033 ],
-[ 62.591 , 1.815 , 0.294 , 0.022 ],
-[ 49.374 , 3.571 , 0.478 , 0.038 ],
-[ 63.761 , 2.972 , 0.28 , 0.037 ]])
+	data2 = np.array([[ 48.19 , 0.79 , 0.13 , 0.01 ],[ 49.93 , 1.8 , 0.16 , 0.01 ],[ 56.99 , 0.57 , 0.05 , 0.004 ],[ 45.06 , 0.6 , 0.21 , 0.01 ],[ 57.2 , 1.37 , 0.06 , 0.02 ],[ 45.92 , 1.58 , 0.2 , 0.02 ],[ 57.61 , 1.24 , 0.06 , 0.01 ]])
+	data3 = np.array([[ 54.878 , 1.826 , 0.122 , 0.014 ],[ 55.443 , 1.216 , 0.105 , 0.003 ],[ 61.765 , 1.044 , 0.11 , 0.011 ],[ 49.401 , 1.775 , 0.237 , 0.01 ],[ 61.576 , 1.236 , 0.11 , 0.015 ],[ 44.205 , 1.985 , 0.252 , 0.021 ],[ 57.538 , 0.83 , 0.1 , 0.004 ]])
+	data4 = np.array([[ 46.482 , 3.62 , 0.476 , 0.046 ],[ 54.234 , 2.961 , 0.392 , 0.039 ],[ 67.726 , 0.561 , 0.227 , 0.01 ],[ 45.49 , 1.894 , 0.501 , 0.033 ],[ 62.591 , 1.815 , 0.294 , 0.022 ],[ 49.374 , 3.571 , 0.478 , 0.038 ],[ 63.761 , 2.972 , 0.28 , 0.037 ]])
 
 	labels = ['Naive SGD', 'Naive Adagrad', 'TAG-Adagrad', 'Naive RMSProp', 'TAG-RMSProp', 'Naive Adam', 'TAG-Adam']
 	dataset = ['Split-\nCIFAR100', 'Split-\nminiImageNet', 'Split-CUB', '5-dataset']
@@ -138,9 +77,10 @@ def naive_plot(f=''):
 		x = [5*o+(0.5*i) for o in range(len(dataset))]
 		err = [data['e_'+d+f][o] for d in dataset]
 		if i%2==0 and i>0:
-			plt.bar(x, t, yerr=err, width = 0.5, label = o, hatch = '/', edgecolor='black', color=cs[i+1])
+			plt.bar(x, t, yerr=err, width = 0.5, label = o, hatch = '/', edgecolor=cs[i+2], color=cs[i+3])
+			plt.bar(x, t, yerr=err, width=0.5, color='none', edgecolor='black')
 		else:
-			plt.bar(x, t, yerr=err, width=0.5, label=o, edgecolor='black', color=cs[i+1])
+			plt.bar(x, t, yerr=err, width=0.5, label=o, edgecolor='black', color=cs[i+3])
 	fs=10
 	plt.legend(bbox_to_anchor=(1.001, 1))
 	# plt.ylim(35,70)
@@ -235,8 +175,7 @@ def acc(dataset):
 			except:
 				pass
 		plot_means(1, dataset, exp, tasks, opt_data[exp], opt_data[exp+'_std'], colors[ind], style='-')
-		# print('[',content[0], ',', content[1] ,'],') #',', content[2], ',', content[3],
-		print(exp,'\n\t\t& $', content[0], '~(\pm', content[1], ')$ & $', content[2], '~(\pm', content[3], ')$ & $', content[4], '~(\pm', content[5], ')$')
+		# print('[',content[0], ',', content[1] ,'],') #',', content[2], ',', content[3],		print(exp,'\n\t\t& $', content[0], '~(\pm', content[1], ')$ & $', content[2], '~(\pm', content[3], ')$ & $', content[4], '~(\pm', content[5], ')$')
 
 		# print('\t\t', content[0], '(±', content[1], ')', content[2], '(±', content[3], ')', content[4], '(±', content[5], ')')
 
@@ -244,11 +183,11 @@ def acc(dataset):
 # acc('cifar')
 # acc('imagenet')
 # acc('cub')
-acc('5data')
+# acc('5data')
 
 # naive_plot('')
 # naive_plot('_f')
 
-# taged_plot()
+taged_plot()
 #
 plt.show()

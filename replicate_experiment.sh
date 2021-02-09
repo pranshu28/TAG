@@ -55,8 +55,8 @@ if [ $1 = "cifar" ]; then
 #    echo " >>>>>>>> Naive RMSProp "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 ##
-#    echo " >>>>>>>> TAG-RMSProp"
-#    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
+    echo " >>>>>>>> TAG-RMSProp"
+    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
 #
 #    echo " >>>>>>>> Naive Adagrad "
 #    python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.01 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
@@ -263,7 +263,6 @@ elif [ $1 = "5data" ]; then
 #
 #    echo " >>>>>>>> TAG-RMSProp"
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 5 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag' --b 7 --tag-opt 'rms'
-#    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag' --b 3 --tag-opt 'rms'
 #
 #    echo " >>>>>>>> Naive Adagrad "
 #    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 1 --lr 0.005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'adagrad'
