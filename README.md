@@ -53,22 +53,36 @@ root
 7. `scripts`: Bash scripts for replicating the results shown in the paper.
  ___
  
-## 2. Setup & Installation
+## Setup & Installation
 The code is tested on Python 3.6+ and PyTorch 1.5.0. We also provide ``requirements.txt`` that contains other important packages and the command to install them is given below.
 ```
 bash setup_and_install.sh
 ```
  ___
 
-## 3. Replicating the Results
+## Sources of the datasets
+We download the datasets from the below links and store them in the `data` folder:
+ * CIFAR100: torchvision
+ * mini-Imangenet: [link](https://www.kaggle.com/whitemoon/miniimagenet)
+ * CUB: Parse this [tar file](https://drive.google.com/file/d/1hbzc_P1FuxMkcabkgn9ZKinBwW683j45/view).
+ * 5-dataset: It consists of the following datasets:
+    * CIFAR10: torchvision
+    * MNIST: torchvision
+    * SVHN: torchvision
+    * notMNIST: Parse the `notMNIST_small.tar` file that is downloaded from [this link](https://yaroslavvb.com/upload/notMNIST/).
+    * FashionMNIST: torchvision
+
+ ___
+
+## Replicating the Results
 We provide the following scripts to replicate the results:   
- * 3.1 Run ```bash scripts/replicate_experiment_naive.sh <dataset>``` for experiment in the Section 4.1 (Naive-optimizers vs TAG-optimizers).   
- * 3.2 Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 1``` for experiment in the Section 4.2 (Comparison with other baselines).
- * 3.3 Run ```bash scripts/replicate_appendix_hybrid.sh <dataset>```  for experiment in the Section 4.3 (Combining TAG with other baselines).
+ * Run ```bash scripts/replicate_experiment_naive.sh <dataset>``` for experiment in the Section 4.1 (Naive-optimizers vs TAG-optimizers).   
+ * Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 1``` for experiment in the Section 4.2 (Comparison with other baselines).
+ * Run ```bash scripts/replicate_appendix_hybrid.sh <dataset>```  for experiment in the Section 4.3 (Combining TAG with other baselines).
  
 For replicating the results given in the Appendix:
- * 3.4 Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 5```: Comparison with other baselines by training on 5 epochs per task.
- * 3.5 Run ```bash scripts/replicate_appendix_replay.sh <dataset>``` : Comparing TAG results with A-GEM and ER having bigger memory sizes.
+ * Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 5```: Comparison with other baselines by training on 5 epochs per task.
+ * Run ```bash scripts/replicate_appendix_replay.sh <dataset>``` : Comparing TAG results with A-GEM and ER having bigger memory sizes.
 
 In all above cases, `<dataset>` can be one of the following:
  * `cifar`: Split-CIFAR100
