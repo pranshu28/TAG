@@ -333,7 +333,7 @@ if __name__ == "__main__":
 		args.classes = 100
 	elif args.dataset == 'cub':
 		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t)
-		                                            for elem, t in zip(get_split_cub_(args, grid_search), [True, False, False])]
+		                                            for elem, t in zip(get_split_cub(args, grid_search), [True, False, False])]
 		args.classes = 200
 	elif args.dataset == '5data':
 		tasks = get_5_datasets_tasks(args.tasks, args.batch_size, grid_search)

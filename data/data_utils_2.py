@@ -61,7 +61,7 @@ class CLDataLoader(object):
 		return len(self.loaders)
 
 
-def get_split_cub_(args, get_val=False):
+def get_split_cub(args, get_val=False):
 	args.n_classes = 200
 	args.n_classes_per_task = args.n_classes
 	args.use_conv = True
@@ -243,45 +243,3 @@ def make_valid_from_train(dataset, cut=0.9):
 		val_ds += [(x_val, y_val)]
 
 	return tr_ds, val_ds
-
-
-def get_mini_imagenet(task_id, classes, batch_size, all_data, all_label):
-	"""
-	Returns a single task of Split-miniImageNet dataset
-	"""
-
-	start_class = (task_id - 1) * classes
-	end_class = task_id * classes
-	target_idx = ((all_label >= start_class) & (all_label < end_class))
-	train_X, test_X, train_Y, test_Y = train_test_split(all_data[target_idx], all_label[target_idx], test_size=0.2)
-	train_loader = torch.utils.data.DataLoader(tuple(zip(train_X, train_Y)), batch_size=batch_size, shuffle=True)
-	test_loader = torch.utils.data.DataLoader(tuple(zip(test_X, test_Y)), batch_size=batch_size)
-	return train_loader, test_loader
-
-
-def get_mini_imagenet_tasks(num_tasks, batch_size):
-	"""
-	Returns data loaders for all tasks of Split-miniImageNet
-	"""
-	datasets = {}
-
-	# transforms = torchvision.transforms.Compose([torchvision.transforms.ToTensor(), ])
-	for i in ['train', 'test', 'val']:
-		file = open("data/imagenet/mini-imagenet-cache-" + i + ".pkl", "rb")
-		file_data = pickle.load(file)
-		data = file_data["image_data"]
-		if i == 'train':
-			main_data = data.reshape([64, 600, 84, 84, 3])
-		else:
-			app_data = data.reshape([(20 if i == 'test' else 16), 600, 84, 84, 3])
-			main_data = np.append(main_data, app_data, axis=0)
-	all_data = (main_data.reshape((60000, 84, 84, 3)) / 255.)  # - 0.5) *2
-	all_data -= np.array((0.406, 0.456, 0.485), dtype=np.float32)  # -> images between 0 and 1
-	all_data /= np.array((0.225, 0.224, 0.229), dtype=np.float32)
-	all_label = np.array([[i] * 600 for i in range(100)]).flatten()
-	classes = int(100 / num_tasks)
-
-	for task_id in range(1, num_tasks + 1):
-		train_loader, test_loader = get_mini_imagenet(task_id, classes, batch_size, all_data, all_label)
-		datasets[task_id] = {'train': train_loader, 'test': test_loader}
-	return datasets

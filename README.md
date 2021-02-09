@@ -14,8 +14,8 @@ The high level structure of the code is as follows:
 root
 ├── main.py
 ├── models.py
-├── utils.py
 ├── tag_update.py
+├── utils.py
 │
 ├── existing_methods
 │   └── agem.py
@@ -30,28 +30,41 @@ root
 
 1. `main.py`   : Contains main function that imports datasets and models based on given arguments. It also contains implementation of Naive-optimizers and Stable SGD.      
 2. `models.py`   : Implementation of different deep learning models used in this work.      
-3. `tag_update.py`   : Implementation of our proposed parameter update method - **TAG**.      
-4. `data`: Code for downloading nad importing the datasets used in this work:
+3. `tag_update.py`   : Implementation of our proposed parameter update method - TAG.      
+4. `utils.py`   : Contains functions for setting seed, initializing experiments and logging etc.      
+5. `data`: Code for downloading nad importing the datasets used in this work:
     
-    4.1 `data_utils.py`:  Code for importing CIFAR100 (similar as [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
-    4.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
-5. `existing_methods`: Implementations of the existing baselines used for our experiments:   
+    5.1 `data_utils.py`:  Code for importing CIFAR100 (similar as [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
+    5.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
+6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
-    5.1 `agem.py` Implementations for A-GEM.   
-    5.2 `er.py`: Implementation comes from the open source implementation of ER-Reservoir in the repository [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
-    5.3 `ewc.py`: Open source implementation of EWC.  
-    5.4 `ogd.py`: A substantial part of this implementation of OGD comes from the repository [MehdiAbbanaBennani / continual-learning-ogdplus](https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus). 
-
+    6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch / GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
+    6.2 `er.py`: Implementation of ER comes from the open source repository [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
+    6.3 `ewc.py`: Implementation of EWC comes from the open source repository [moskomule / ewc.pytorch](https://github.com/moskomule/ewc.pytorch) and .  
+    6.4 `ogd.py`: Implementation of OGD comes from the open source repository [MehdiAbbanaBennani / continual-learning-ogdplus](https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus). 
+ ___
+ 
 ## 2. Setup & Installation
 The code is tested on Python 3.6+ and PyTorch 1.5.0. We also provide ``requirements.txt`` that contains other important packages and the command to install them is given below.
 ```
 bash setup_and_install.sh
 ```
+ ___
 
 ## 3. Replicating the Results
 We provide the following scripts to replicate the results:   
- * 3.1 Run ```bash replicate_experiment_1.sh``` for experiment 1 (stable vs plastic).   
- * 3.2 Run ```bash replicate_experiment_2.sh``` for experiment 2 (Comparison with other methods with 20 tasks).
- * 3.3 Run ```bash replicate_appendix_c5.sh```  for the experiment in appendix C5 (Stabilizing other methods).
+ * 3.1 Run ```bash scripts/replicate_experiment_naive.sh <dataset>``` for experiment in the Section 4.1 (Naive-optimizers vs TAG-optimizers).   
+ * 3.2 Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 1``` for experiment in the Section 4.2 (Comparison with other baselines).
+ * 3.3 Run ```bash scripts/replicate_appendix_hybrid.sh <dataset>```  for experiment in the Section 4.3 (Combining TAG with other baselines).
  
-For faster replication, here we have only 3 runs per method per experiment, but we used 5 runs for the reported results.
+For replicating the results given in the Appendix:
+ * 3.4 Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 5```: Comparison with other baselines by training on 5 epochs per task.
+ * 3.5 Run ```bash scripts/replicate_appendix_replay.sh <dataset>``` : Comparing TAG results with A-GEM and ER having bigger memory sizes.
+
+In all above cases, `<dataset>` can be one of the following:
+ * `cifar`: Split-CIFAR100
+ * `imagenet`: Split-miniImageNet
+ * `cub`: Split-CUB
+ * `5data`: 5-dataset
+ 
+ ___
