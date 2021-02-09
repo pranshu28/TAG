@@ -31,7 +31,7 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			pred = net(X)
 		net.zero_grad()
 
-		###### EWC / OGD / AGEM / ER ######
+		# EWC / OGD / AGEM / ER
 		if ALGO is not None:
 			if 'ewc' in args.opt:
 				loss_ewc = args.lambd * ALGO.penalty(net)

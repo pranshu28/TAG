@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-cd ~/anaconda3/bin
-source activate gcn_env
-cd ~/pranshu/research/mtl_ll/tag
-
 if [ $1 = "cifar" ]; then
     echo "************************ replicating experiment (Split CIFAR-100) ***********************"
 
