@@ -104,7 +104,11 @@ def get_5_datasets_tasks(num_tasks, batch_size, get_val=False):
     Returns data loaders for all tasks of 5-dataset.
     """
     datasets = {}
-    data_list = [torchvision.datasets.CIFAR10, torchvision.datasets.MNIST, torchvision.datasets.SVHN, 'notMNIST',  torchvision.datasets.FashionMNIST]
+    data_list = [torchvision.datasets.CIFAR10,
+                 torchvision.datasets.MNIST,
+                 torchvision.datasets.SVHN,
+                 'notMNIST',
+                 torchvision.datasets.FashionMNIST]
     for task_id, DATA in enumerate(data_list):
         print('Loading Task/Dataset:', task_id)
         train_loader, test_loader, val_loader = get_5_datasets(task_id, DATA, batch_size, get_val=get_val)
@@ -130,7 +134,9 @@ def get_permuted_mnist(task_id, batch_size):
     target_transform = torchvision.transforms.Compose([torchvision.transforms.Lambda(lambda y: y+(task_id-1)*10)])
     mnist_train = torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms, target_transform=target_transform)
     train_loader = torch.utils.data.DataLoader(mnist_train, batch_size=batch_size, num_workers=4, pin_memory=True, shuffle=True)
-    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms, target_transform=target_transform),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True,
+                                                                         transform=transforms, target_transform=target_transform),
+                                              batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
 
     return train_loader, test_loader
 
@@ -170,8 +176,12 @@ def get_rotated_mnist(task_id, batch_size, per_task_rotation=10):
         ])
     target_transform = torchvision.transforms.Compose([torchvision.transforms.Lambda(lambda y: y+(task_id-1)*10)])
 
-    train_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=True, download=True, transform=transforms, target_transform=target_transform), batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
-    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True, transform=transforms, target_transform=target_transform),  batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
+    train_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=True, download=True,
+                                                                          transform=transforms, target_transform=target_transform),
+                                               batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
+    test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('./data/', train=False, download=True,
+                                                                         transform=transforms, target_transform=target_transform),
+                                              batch_size=256, shuffle=False, num_workers=4, pin_memory=True)
 
     return train_loader, test_loader
 

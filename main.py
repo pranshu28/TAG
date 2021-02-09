@@ -22,13 +22,13 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 	net.zero_grad()
 	net.train()
 	alpha_mean = {}
-	for batch_idx, (data, target) in enumerate(loader):
-		data = data.to(DEVICE)
-		target = target.to(DEVICE)
+	for step, (X, Y) in enumerate(loader):
+		X = X.to(DEVICE)
+		Y = Y.to(DEVICE)
 		if task_id is not None:
-			pred = net(data, task_id+1)
+			pred = net(X, task_id+1)
 		else:
-			pred = net(data)
+			pred = net(X)
 		net.zero_grad()
 
 		###### EWC / OGD / AGEM / ER ######
@@ -38,12 +38,12 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 				loss_ewc.backward()
 				torch.nn.utils.clip_grad_norm_(net.parameters(), 100)
 			elif 'ogd' in args.opt:
-				loss = criterion(pred, target)
+				loss = criterion(pred, Y)
 				loss.backward()
 				net = ALGO.optimizer_step(optimizer)
 				continue
 			elif 'agem' in args.opt:
-				net = ALGO.observe_agem(net, data, task_id, target)
+				net = ALGO.observe_agem(net, X, task_id, Y)
 			else:
 				if task_id > 0:
 					mem_x, mem_y, b_task_ids = ALGO.sample(args.batch_size, exclude_task=None, pr=False)
@@ -51,16 +51,16 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 					mem_pred = apply_mask(mem_y, mem_pred, net.n_classes)
 					loss_mem = criterion(mem_pred, mem_y)
 					loss_mem.backward()
-				ALGO.add_reservoir(data, target, None, task_id)
+				ALGO.add_reservoir(X, Y, None, task_id)
 
 		if 'agem' not in args.opt:
-			loss = criterion(pred, target)
+			loss = criterion(pred, Y)
 			loss.backward()
 
 		if tag:
-			optimizer.step(net, task_id, batch_idx)
+			optimizer.step(net, task_id, step)
 			if task_id > 0:
-				alpha_mean = store_alpha(optimizer, task_id, batch_idx, alpha_mean)
+				alpha_mean = store_alpha(optimizer, task_id, step, alpha_mean)
 		else:
 			optimizer.step()
 	return net, alpha_mean
@@ -213,6 +213,7 @@ def continuum_run(args, train_loaders, test_loaders):
 	tag = 'tag' in args.opt
 	optimizer = None
 
+	# Create object of class
 	if args.opt != '':
 		opt = {'rms': torch.optim.RMSprop, 'adagrad': torch.optim.Adagrad, 'adam': torch.optim.Adam}
 		for i in opt:
@@ -220,7 +221,7 @@ def continuum_run(args, train_loaders, test_loaders):
 				optimizer = opt[i](model.parameters(), lr=args.lr)
 				break
 		if tag:
-			optimizer = tag_opt(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
+			optimizer = TAG(model, args, args.tasks, lr=args.lr, optim=args.tag_opt, b=args.b)
 		if optimizer is None:
 			optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 		if 'er' in args.opt:
@@ -237,19 +238,21 @@ def continuum_run(args, train_loaders, test_loaders):
 	tasks_done = []
 	print(continuum)
 
-	for current_task_id in (continuum):  # range(1, args.tasks+1)
-		train_loader = train_loaders[current_task_id-1]
+	for current_task_id in (continuum):
+
+		# Naive SGD / Stable SGD
 		lr = max(args.lr * (args.gamma ** current_task_id), 0.00005)
+		if args.opt == '':
+			optimizer = torch.optim.SGD(model.parameters(), lr=lr)
 
+		# Training part
 		best_val_loss, overfit = np.inf, 0
+		train_loader = train_loaders[current_task_id-1]
 		iterator = tqdm(range(1, args.epochs_per_task+1)) if args.epochs_per_task!=1 else range(1, args.epochs_per_task+1)
-
 		for epoch in iterator:
-			if args.opt == '':
-				optimizer = torch.optim.SGD(model.parameters(), lr=lr)
-
 			model, alpha_mean = train_single_epoch(args, model, optimizer, train_loader, criterion, current_task_id-1, tag, ALGO)
 
+			# Early stopping in case of large number of epochs
 			if args.epochs_per_task>20 and test_loaders is not None:
 				val_loader = val_loaders[current_task_id - 1]
 				metrics = eval_single_epoch(model, val_loader, criterion, current_task_id)
@@ -262,7 +265,7 @@ def continuum_run(args, train_loaders, test_loaders):
 					if overfit>=5:
 						break
 
-			############ Analysis Part #############
+			# Collect alphas values for analysis
 			alpha_val = [1.0]
 			if tag and args.tag_opt=='rms':
 				mat = np.array([alpha_mean[i] for i in alpha_mean])
@@ -282,6 +285,7 @@ def continuum_run(args, train_loaders, test_loaders):
 		if current_task_id not in tasks_done:
 			tasks_done += [current_task_id]
 
+		# Evaluation part
 		avg_acc = 0.
 		for prev_task_id in tasks_done:  # range(1, current_task_id+1):
 			model = model.to(DEVICE)
@@ -295,6 +299,7 @@ def continuum_run(args, train_loaders, test_loaders):
 		print("TASK {} / {}".format(current_task_id, args.tasks), '\tAvg Acc:', avg_acc)
 
 		torch.cuda.empty_cache()
+
 	if args.multi != 1:
 		score, forget, learn_acc = end_experiment(args, acc_db, loss_db)
 	else:
@@ -310,6 +315,7 @@ if __name__ == "__main__":
 	torch.cuda.manual_seed(args.seed)
 
 	tasks=None
+	verbose = False
 	grid_search = args.hyp_gs != ''
 
 	print('CUDA:', torch.cuda.is_available())
@@ -322,10 +328,12 @@ if __name__ == "__main__":
 		val_loaders = [tasks[i]['val'] for i in tasks]
 		args.classes = 100
 	elif args.dataset == 'imagenet':
-		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_miniimagenet(args, grid_search), [True, False, False])]
+		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t)
+		                                            for elem, t in zip(get_miniimagenet(args, grid_search), [True, False, False])]
 		args.classes = 100
 	elif args.dataset == 'cub':
-		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t) for elem, t in zip(get_split_cub_(args, grid_search), [True, False, False])]
+		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t)
+		                                            for elem, t in zip(get_split_cub_(args, grid_search), [True, False, False])]
 		args.classes = 200
 	elif args.dataset == '5data':
 		tasks = get_5_datasets_tasks(args.tasks, args.batch_size, grid_search)
@@ -337,8 +345,8 @@ if __name__ == "__main__":
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		args.classes = 10
 	print("loaded all tasks!")
-	verbose = False
 
+	# Run the experiment for multiple runs
 	if not grid_search:
 		avg_runs_exp(args.runs)
 	else:

@@ -25,6 +25,9 @@ def apply_mask(mem_y, out, n_classes):
 
 
 def parse_arguments():
+	"""
+	Parse and print the relevant arguments
+	"""
 	parser = argparse.ArgumentParser(description='Argument parser')
 	parser.add_argument('--tasks', default=5, type=int, help='total number of tasks')
 	parser.add_argument('--epochs-per-task', default=1, type=int, help='epochs per task')
@@ -87,16 +90,9 @@ def init_experiment(args):
 
 
 def end_experiment(args, acc_db, loss_db):
-	
-	# 1. save all metrics into csv file
-	# acc_df = pd.DataFrame(acc_db)
-	# acc_df.to_csv(EXPERIMENT_DIRECTORY+'/accs.csv')
-	# visualize_result(acc_df, EXPERIMENT_DIRECTORY+'/accs.png')
-	#
-	# loss_df = pd.DataFrame(loss_db)
-	# loss_df.to_csv(EXPERIMENT_DIRECTORY+'/loss.csv')
-	# visualize_result(loss_df, EXPERIMENT_DIRECTORY+'/loss.png')
-
+	"""
+	Print the final metrics
+	"""
 	score = np.mean([acc_db[i][-1] for i in acc_db.keys()])
 	forget = np.mean([max(acc_db[i])-acc_db[i][-1] for i in range(1, args.tasks)])/100.0
 	la = np.mean([acc_db[i][i-1] for i in acc_db.keys()])
