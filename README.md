@@ -5,7 +5,7 @@ We utilize the directions taken by the parameters during the updates by accumula
 These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. 
 In the experiments, we show that TAG not only accounts for catastrophic forgetting but also exhibits positive backward transfer. 
 We also show that our method performs better than several state-of-the-art methods in lifelong learning on Split-CIFAR100, Split-miniImageNet, Split-CUB and 5-dataset. 
-The overall implementation is adopted from the repository [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
+The overall implementation is adopted from the repository [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
 
 ## Project Structure
 The high level structure of the code is as follows:
@@ -42,14 +42,14 @@ root
 4. `utils.py`   : Contains functions for setting seed, initializing experiments and logging etc.      
 5. `data`: Code for downloading nad importing the datasets used in this work:
     
-    5.1 `data_utils.py`:  Code for importing CIFAR100 (similar as [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
-    5.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
+    5.1 `data_utils.py`:  Code for importing CIFAR100 (similar as [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
+    5.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
 6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
-    6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch / GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
-    6.2 `er.py`: Implementation of ER comes from the open source repository [optimass / Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
-    6.3 `ewc.py`: Implementation of EWC comes from the open source repository [moskomule / ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
-    6.4 `ogd.py`: Implementation of OGD comes from the open source repository [MehdiAbbanaBennani / continual-learning-ogdplus](https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus). 
+    6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
+    6.2 `er.py`: Implementation of ER comes from the open source repository [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
+    6.3 `ewc.py`: Implementation of EWC comes from the open source repository [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
+    6.4 `ogd.py`: Implementation of OGD comes from the open source repository [MehdiAbbanaBennani/continual-learning-ogdplus](https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus). 
 7. `scripts`: Bash scripts for replicating the results shown in the paper.
  ___
  
