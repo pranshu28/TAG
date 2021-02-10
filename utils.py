@@ -99,21 +99,6 @@ def end_experiment(args, acc_db, loss_db):
 	return score, forget, la
 
 
-def get_benchmark_data_loader(args):
-	"""
-    Returns the benchmark loader based on MNIST:
-    get_permuted_mnist_tasks, or get_rotated_mnist_tasks
-    :param args:
-    :return: a function which when called, returns all tasks
-    """
-	if args.dataset == 'perm-mnist' or args.dataset == 'permuted-mnist':
-		return get_permuted_mnist_tasks
-	elif args.dataset == 'rot-mnist' or args.dataset == 'rotation-mnist':
-		return get_rotated_mnist_tasks
-	else:
-		raise Exception("Unknown dataset.\n" + "The code supports 'perm-mnist and rot-mnist.")
-
-
 def get_benchmark_model(args):
 	"""
     Return the corresponding PyTorch model for experiment
