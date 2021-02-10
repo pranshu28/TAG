@@ -76,16 +76,33 @@ We download the datasets from the below links and store them in the `data` folde
 
 ## Replicating the Results
 We provide the following scripts to replicate the results:   
- * Run ```bash scripts/replicate_experiment_naive.sh <dataset>``` for experiment in the Section 4.1 (Naive-optimizers vs TAG-optimizers).   
- * Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 1``` for experiment in the Section 4.2 (Comparison with other baselines).
- * Run ```bash scripts/replicate_appendix_hybrid.sh <dataset>```  for experiment in the Section 4.3 (Combining TAG with other baselines).
+ * For experiment in the Section 4.1 (Naive-optimizers vs TAG-optimizers), run: 
+ ```
+ bash scripts/replicate_experiment_naive.sh <dataset>
+ ``` 
+ * For experiment in the Section 4.2 (Comparison with other baselines), run:
+  ```
+  bash scripts/replicate_experiment_baselines.sh <dataset> 1
+  ``` 
+ * For experiment in the Section 4.3 (Combining TAG with other baselines), run: 
+ ```
+ bash scripts/replicate_appendix_hybrid.sh <dataset>
+ ```
  
 For replicating the results given in the Appendix:
- * Run ```bash scripts/replicate_experiment_baselines.sh <dataset> 5```: Comparison with other baselines by training on 5 epochs per task.
- * Run ```bash scripts/replicate_appendix_replay.sh <dataset>``` : Comparing TAG results with A-GEM and ER having bigger memory sizes.
+ * Comparison with other baselines by training on 5 epochs per task: 
+ ```
+ bash scripts/replicate_experiment_baselines.sh <dataset> 5
+ ```
+ * Comparing TAG results with A-GEM and ER having bigger memory sizes:
+ ```
+ bash scripts/replicate_appendix_replay.sh <dataset>
+ ```
 
 We run the following command to replicate the grid-search performed to choose the best hyper-parameters set:
- * ```bash scripts/replicate_appendix_gs.sh <dataset>```
+ ```
+ bash scripts/replicate_appendix_gs.sh <dataset>
+ ```
 
 In all above cases, `<dataset>` can be one of the following:
  * `cifar`: Split-CIFAR100
