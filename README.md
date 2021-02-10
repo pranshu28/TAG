@@ -20,6 +20,7 @@ root
 ├── data
 │   └── data_utils.py
 │   └── data_utils_2.py   
+│   └── data_loader.py
 │
 ├── existing_methods
 │   └── agem.py
@@ -42,8 +43,9 @@ root
 4. `utils.py`   : Contains functions for setting seed, initializing experiments and logging etc.      
 5. `data`: Code for downloading nad importing the datasets used in this work:
     
-    5.1 `data_utils.py`:  Code for importing CIFAR100 (similar as [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
+    5.1 `data_utils.py`:  Code for importing CIFAR100 (borrowed from [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
     5.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
+    5.3 `data_utils_2.py`:  Code for getting the data loaders ready for the given dataset and number of tasks.  
 6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
     6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
