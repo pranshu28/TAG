@@ -5,7 +5,7 @@ We utilize the directions taken by the parameters during the updates by accumula
 These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. 
 In the experiments, we show that TAG not only accounts for catastrophic forgetting but also exhibits positive backward transfer. 
 We also show that our method performs better than several state-of-the-art methods in lifelong learning on Split-CIFAR100, Split-miniImageNet, Split-CUB and 5-dataset. 
-The overall implementation is based on the repository [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
+The overall implementation is adopted from the repository [imirzadeh / stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
 
 ## Project Structure
 The high level structure of the code is as follows:
@@ -54,9 +54,9 @@ root
  ___
  
 ## Setup & Installation
-The code is tested on Python 3.6+ and PyTorch 1.5.0. We also provide ``requirements.txt`` that contains other important packages and the command to install them is given below.
+The code is tested on Python 3.6+ and PyTorch 1.5.0. We provide ``requirements.txt`` that contains other important packages and the command to install them is given below.
 ```
-bash setup_and_install.sh
+pip install -r requirements.txt
 ```
  ___
 

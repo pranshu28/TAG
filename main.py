@@ -239,7 +239,7 @@ def continuum_run(args, train_loaders, test_loaders):
 	tasks_done = []
 	print(continuum)
 
-	for current_task_id in (continuum):
+	for current_task_id in continuum:
 
 		# Naive SGD / Stable SGD
 		lr = max(args.lr * (args.gamma ** current_task_id), 0.00005)
@@ -266,7 +266,7 @@ def continuum_run(args, train_loaders, test_loaders):
 					if overfit>=5:
 						break
 
-			# Collect alphas values for analysis
+			# Collect alpha values for analysis
 			alpha_val = [1.0]
 			if tag and args.tag_opt=='rms':
 				mat = np.array([alpha_mean[i] for i in alpha_mean])
@@ -288,7 +288,7 @@ def continuum_run(args, train_loaders, test_loaders):
 
 		# Evaluation part
 		avg_acc = 0.
-		for prev_task_id in tasks_done:  # range(1, current_task_id+1):
+		for prev_task_id in tasks_done:
 			model = model.to(DEVICE)
 			test_loader = test_loaders[prev_task_id - 1]
 			metrics = eval_single_epoch(model, test_loader, criterion, prev_task_id)
@@ -315,7 +315,6 @@ if __name__ == "__main__":
 	torch.manual_seed(args.seed)
 	torch.cuda.manual_seed(args.seed)
 
-	tasks=None
 	verbose = False
 	grid_search = args.hyp_gs != ''
 
