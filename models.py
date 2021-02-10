@@ -39,6 +39,7 @@ class ResNet18_CUB(nn.Module):
 class MLP(nn.Module):
 	"""
 	Two layer MLP for MNIST benchmarks.
+	Refer: https://github.com/imirzadeh/stable-continual-learning/blob/master/stable_sgd/models.py
 	"""
 	def __init__(self, hiddens, config):
 		super(MLP, self).__init__()
@@ -113,9 +114,8 @@ class BasicBlock(nn.Module):
 
 class ResNet(nn.Module):
 	"""
-	Reduced ResNet - based on
-		Chaudhry, Arslan, et al. "On tiny episodic memories in continual learning."
-		arXiv preprint arXiv:1902.10486 (2019).
+	Reduced ResNet - used in methods like ER and Stable SGD.
+	Refer: https://github.com/imirzadeh/stable-continual-learning/blob/master/stable_sgd/models.py
 	"""
 	def __init__(self, block, num_blocks, num_classes, nf, config={}):
 		super(ResNet, self).__init__()
@@ -171,7 +171,8 @@ def ResNet18(nclasses=100, nf=20, config={}):
 
 class AlexNet(torch.nn.Module):
 	"""
-	5-layer version of AlexNet for OGD and GPM purposes
+	5-layer version of AlexNet for GPM purposes
+	Refer: https://github.com/joansj/hat/blob/master/src/networks/alexnet.py
 	"""
 	def __init__(self, config):
 		super(AlexNet, self).__init__()
@@ -227,6 +228,7 @@ class AlexNet(torch.nn.Module):
 class LeNet(nn.Module):
 	"""
 	LeNet model for OGD purposes
+	Refer: https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus/blob/master/models/lenet.py
 	"""
 	def __init__(self, out_dim, classes_per_task, in_channel=1, img_sz=32, hidden_dim=500):
 		super(LeNet, self).__init__()
