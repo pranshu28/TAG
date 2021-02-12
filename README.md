@@ -64,8 +64,8 @@ pip install -r requirements.txt
 ## Sources of the datasets
 We download the datasets from the below links and store them in the `data` folder:
  * CIFAR100: torchvision
- * mini-Imangenet: [link](https://www.kaggle.com/whitemoon/miniimagenet)
- * CUB: Parse this [tar file](https://drive.google.com/file/d/1hbzc_P1FuxMkcabkgn9ZKinBwW683j45/view).
+ * mini-Imangenet: Store dataset from [link](https://www.kaggle.com/whitemoon/miniimagenet) in `data/mini_imagenet` folder.
+ * CUB: Parse this [tar file](https://drive.google.com/file/d/1hbzc_P1FuxMkcabkgn9ZKinBwW683j45/view) and store it in `data/CUB_200_2011` folder.
  * 5-dataset: It consists of the following datasets:
     * CIFAR10: torchvision
     * MNIST: torchvision
