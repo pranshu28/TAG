@@ -4,8 +4,7 @@ In this work, we propose a task-aware optimizer called **TAG** that adapts the l
 We utilize the directions taken by the parameters during the updates by accumulating the gradients specific to each task. 
 These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. 
 In the experiments, we show that TAG not only accounts for catastrophic forgetting but also exhibits positive backward transfer. 
-We also show that our method performs better than several state-of-the-art methods in lifelong learning on Split-CIFAR100, Split-miniImageNet, Split-CUB and 5-dataset. 
-The overall implementation is adopted from the repository [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning).
+We also show that our method performs better than several state-of-the-art methods in lifelong learning on Split-CIFAR100, Split-miniImageNet, Split-CUB and 5-dataset.
 
 ## Project Structure
 The high level structure of the code is as follows:
@@ -35,22 +34,19 @@ root
 
 ```
 
-1. `main.py`   : Contains main function that imports datasets and models based on given arguments. It also contains implementation of Naive-optimizers and Stable SGD.      
+1. `main.py`   : Contains main function that imports datasets and models based on given arguments. It also contains implementation of Naive-optimizers and Stable SGD (code adopted from [1]).      
 2. `models.py`   : Implementation of different deep learning models used in this work.      
 3. `tag_update.py`   : Implementation of our proposed parameter update method - TAG.      
 4. `utils.py`   : Contains functions for setting seed, initializing experiments, grid-search and logging etc.      
 5. `data`: Code for downloading nad importing the datasets used in this work:
     
     5.1 `data_loader.py`:  Code for getting the data loaders ready for the given dataset and number of tasks.  
-    5.2 `data_utils.py`:  Code for importing the datasets:
-    * Mini-Imangenet and CUB datasets (borrowed from [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
-    * CIFAR100 (borrowed from [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)).
-    * 5-dataset.
+    5.2 `data_utils.py`:  Code for importing the datasets (adopted from [1] and [2]).
 6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
-    6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
-    6.2 `er.py`: Implementation of ER comes from the repository [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
-    6.3 `ewc.py`: A part of the code for EWC is borrowed from the repository [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
+    6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [3].   
+    6.2 `er.py`: Implementation of ER comes from [2].  
+    6.3 `ewc.py`: A part of the code for EWC is borrowed from [4].  
 7. `scripts`: Bash scripts for replicating the results shown in the paper.
  ___
  
@@ -111,4 +107,16 @@ In all above cases, `<dataset>` can be one of the following:
  * `cub`: Split-CUB
  * `5data`: 5-dataset
  
+ ___
+
+## Acknowledgements
+We would like to thanks the authors of the following open source repositories:
+
+[1] Mirzadeh,   S.   I.,   Farajtabar,   M.,   Pascanu,   R.,   and Ghasemzadeh,  H.Understanding  the  role  of  train-ing  regimes  in  continual  learning. arXiv  preprint arXiv:2006.06958, 2020. Github link: [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)
+
+[2] Aljundi, R., Belilovsky, E., Tuytelaars, T., Charlin, L., Caccia, M., Lin, M., & Page-Caccia, L. Online Continual Learning with Maximal Interfered RetrievalAdvances in Neural Information Processing Systems 32, 11849–11860, 2019. Github link: [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)
+
+[3] Lopez-Paz, D., & Ranzato, M.. Gradient Episodic Memory for Continual Learning. In NIPS, 2017. Github link: [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory)
+
+[4] Hataya R. EWC pytorch. Github link: [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch)
  ___
