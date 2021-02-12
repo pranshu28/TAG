@@ -207,7 +207,7 @@ def hyp_stable(args, avg_runs_exp):
 	Grid search for Stable SGD: Learning rate, decay and Dropout
 	"""
 	dropouts = (0.0, 0.1, 0.25, 0.5)
-	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
+	lrs = (0.1, 0.05, 0.01)
 	decays = (0.9, 0.8, 0.7)
 	best_hyp, best_acc = 0, 0
 	for dropout in dropouts:
