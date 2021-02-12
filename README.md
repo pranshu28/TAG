@@ -110,7 +110,7 @@ In all above cases, `<dataset>` can be one of the following:
  ___
 
 ## Acknowledgements
-We would like to thanks the authors of the following open source repositories:
+We would like to thank the authors of the following open source repositories:
 
 [1] Mirzadeh,   S.   I.,   Farajtabar,   M.,   Pascanu,   R.,   and Ghasemzadeh,  H. Understanding  the  role  of  training  regimes  in  continual  learning. arXiv  preprint arXiv:2006.06958, 2020. Github link: [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)
 
