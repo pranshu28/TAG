@@ -28,10 +28,10 @@ root
 │
 └── scripts
     └── replicate_experiment_baselines.sh
-    └── replicate_experiment_gs.sh
+    └── replicate_appendix_gs.sh
     └── replicate_experiment_hybrid.sh
     └── replicate_experiment_naive.sh
-    └── replicate_experiment_replay.sh
+    └── replicate_appendix_replay.sh
 
 ```
 
@@ -87,7 +87,7 @@ We provide the following scripts to replicate the results:
   ``` 
  * For experiment in the Section 4.3 (Combining TAG with other baselines), run: 
  ```
- bash scripts/replicate_appendix_hybrid.sh <dataset>
+ bash scripts/replicate_experiment_hybrid.sh <dataset>
  ```
  
 For replicating the results given in the Appendix:
