@@ -38,7 +38,7 @@ root
 1. `main.py`   : Contains main function that imports datasets and models based on given arguments. It also contains implementation of Naive-optimizers and Stable SGD.      
 2. `models.py`   : Implementation of different deep learning models used in this work.      
 3. `tag_update.py`   : Implementation of our proposed parameter update method - TAG.      
-4. `utils.py`   : Contains functions for setting seed, initializing experiments and logging etc.      
+4. `utils.py`   : Contains functions for setting seed, initializing experiments, grid-search and logging etc.      
 5. `data`: Code for downloading nad importing the datasets used in this work:
     
     5.1 `data_loader.py`:  Code for getting the data loaders ready for the given dataset and number of tasks.  
