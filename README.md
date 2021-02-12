@@ -49,8 +49,8 @@ root
 6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
     6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
-    6.2 `er.py`: Implementation of ER comes from the open source repository [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
-    6.3 `ewc.py`: Implementation of EWC comes from the open source repository [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
+    6.2 `er.py`: Implementation of ER comes from the repository [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
+    6.3 `ewc.py`: A part of the code for EWC is borrowed from the repository [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
 7. `scripts`: Bash scripts for replicating the results shown in the paper.
  ___
  
