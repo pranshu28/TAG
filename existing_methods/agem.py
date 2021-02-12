@@ -55,7 +55,7 @@ class AGEM(nn.Module):
 			self.input_size = (3, 224, 224)
 		elif 'cifar' in args.dataset:
 			self.input_size = (3, 32, 32)
-		elif 'imagenet' in args.dataset:
+		elif 'mini_imagenet' in args.dataset:
 			self.input_size = (3, 84, 84)
 		elif '5data' in args.dataset:
 			self.input_size = (3, 32, 32)

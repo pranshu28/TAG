@@ -18,15 +18,13 @@ root
 ├── utils.py
 │
 ├── data
-│   └── data_utils.py
-│   └── data_utils_2.py   
 │   └── data_loader.py
+│   └── data_utils.py
 │
 ├── existing_methods
 │   └── agem.py
 │   └── er.py
 │   └── ewc.py
-│   └── ogd.py
 │
 └── scripts
     └── replicate_experiment_baselines.sh
@@ -43,15 +41,16 @@ root
 4. `utils.py`   : Contains functions for setting seed, initializing experiments and logging etc.      
 5. `data`: Code for downloading nad importing the datasets used in this work:
     
-    5.1 `data_utils.py`:  Code for importing CIFAR100 (borrowed from [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)) and 5-dataset.  
-    5.2 `data_utils_2.py`:  Code for importing mini-Imangenet and CUB datasets (most part of the implementation comes from [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
-    5.3 `data_loader.py`:  Code for getting the data loaders ready for the given dataset and number of tasks.  
+    5.1 `data_loader.py`:  Code for getting the data loaders ready for the given dataset and number of tasks.  
+    5.2 `data_utils.py`:  Code for importing the datasets:
+    * Mini-Imangenet and CUB datasets (borrowed from [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)).  
+    * CIFAR100 (borrowed from [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)).
+    * 5-dataset.
 6. `existing_methods`: Implementations of the existing baselines used for our experiments:   
     
     6.1 `agem.py` A substantial part of implementation of A-GEM comes from the official GEM repository [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory).   
     6.2 `er.py`: Implementation of ER comes from the open source repository [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval).  
     6.3 `ewc.py`: Implementation of EWC comes from the open source repository [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch).  
-    6.4 `ogd.py`: Implementation of OGD comes from the open source repository [MehdiAbbanaBennani/continual-learning-ogdplus](https://github.com/MehdiAbbanaBennani/continual-learning-ogdplus). 
 7. `scripts`: Bash scripts for replicating the results shown in the paper.
  ___
  
@@ -108,7 +107,7 @@ We run the following command to replicate the grid-search performed to choose th
 
 In all above cases, `<dataset>` can be one of the following:
  * `cifar`: Split-CIFAR100
- * `imagenet`: Split-miniImageNet
+ * `mini_imagenet`: Split-miniImageNet
  * `cub`: Split-CUB
  * `5data`: 5-dataset
  

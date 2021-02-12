@@ -39,44 +39,44 @@ if [ $1 = "cifar" ]; then
     echo " >>>>>>>> TAG-RMSProp"
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --lr 0.00025 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
 
-elif [ $1 = "imagenet" ]; then
+elif [ $1 = "mini_imagenet" ]; then
     echo "************************ replicating experiment (Split-miniImageNet) ***********************"
 
     echo " >>>>>>>> Naive SGD "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
 
     echo " >>>>>>>> EWC "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'ewc' --lambd 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'ewc' --lambd 1
 
     echo " >>>>>>>> RMSProp EWC "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-ewc' --lambd 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-ewc' --lambd 1
 
     echo " >>>>>>>> TAG-EWC "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-ewc' --lambd 1 --b 5 --tag-opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-ewc' --lambd 1 --b 5 --tag-opt 'rms'
 
     echo " >>>>>>>> A-GEM "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.1 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 1
 
     echo " >>>>>>>> RMSProp A-GEM "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-agem' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-agem' --mem-size 1
 
     echo " >>>>>>>> TAG-A-GEM "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-agem' --mem-size 1 --b 5 --tag-opt 'rms'
 
     echo " >>>>>>>> ER "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.05 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
 
     echo " >>>>>>>> RMSProp ER "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-er' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms-er' --mem-size 1
 
     echo " >>>>>>>> TAG-ER "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag-er' --mem-size 1 --b 5 --tag-opt 'rms'
 
     echo " >>>>>>>> Naive RMSProp "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 
     echo " >>>>>>>> TAG-RMSProp"
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --lr 0.0001 --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
 
 elif [ $1 = "cub" ]; then
     echo "************************ replicating experiment (Split-CUB) ***********************"

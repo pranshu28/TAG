@@ -37,41 +37,41 @@ if [ $1 = "cifar" ]; then
     python3 -m main --dataset cifar100 --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'adam'
 
 
-elif [ $1 = "imagenet" ]; then
-    echo "************************ replicating experiment (mini-imagenet) ***********************"
+elif [ $1 = "mini_imagenet" ]; then
+    echo "************************ replicating experiment (mini-mini_imagenet) ***********************"
 
     echo " >>>>>>>> Naive SGD "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5
 
     echo " >>>>>>>> EWC "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'ewc' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'ewc' --lambd 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'ewc' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'ewc' --lambd 1
 
     echo " >>>>>>>> A-GEM "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'agem' --mem-size 1
 
     echo " >>>>>>>> ER "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'er' --mem-size 1
 
     echo " >>>>>>>> Stable SGD "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'stable' --gamma 0.9 --batch-size 10 --dropout 0.0 --runs 5
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'stable' --gamma 0.9 --batch-size 10 --dropout 0.0 --runs 5
 
     echo " >>>>>>>> Naive RMSProp "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'rms'
 
     echo " >>>>>>>> TAG-RMSProp"
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'rms'
 
     echo " >>>>>>>> Naive Adagrad "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adagrad'
 
     echo " >>>>>>>> Naive Adam "
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adam'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'lr' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'adam'
 
     echo " >>>>>>>> TAG-Adagrad"
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'adagrad'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'adagrad'
 
     echo " >>>>>>>> TAG-Adam"
-    python3 -m main --dataset imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'adam'
+    python3 -m main --dataset mini_imagenet --tasks 20 --epochs-per-task 1 --hyp-gs 'tag' --gamma 1.0 --batch-size 10 --dropout 0.0 --runs 5 --opt 'tag' --b 5 --tag-opt 'adam'
 
 
 elif [ $1 = "cub" ]; then

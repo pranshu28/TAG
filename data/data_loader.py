@@ -1,5 +1,4 @@
 from data.data_utils import *
-from data.data_utils_2 import *
 
 
 def get_benchmark_data_loader(args):
@@ -27,7 +26,7 @@ def get_data_loaders(args, grid_search=False):
 		train_loaders, test_loaders = [tasks[i]['train'] for i in tasks], [tasks[i]['test'] for i in tasks]
 		val_loaders = [tasks[i]['val'] for i in tasks]
 		args.classes = 100
-	elif args.dataset == 'imagenet':
+	elif args.dataset == 'mini_imagenet':
 		train_loaders, test_loaders, val_loaders = [CLDataLoader(elem, args, train=t)
 		                                            for elem, t in zip(get_miniimagenet(args, grid_search), [True, False, False])]
 		args.classes = 100

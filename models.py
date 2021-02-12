@@ -77,6 +77,10 @@ def conv3x3(in_planes, out_planes, stride=1):
 
 
 class BasicBlock(nn.Module):
+	"""
+	Basic Block for Reduced ResNet
+	Refer: https://github.com/imirzadeh/stable-continual-learning/blob/master/stable_sgd/models.py
+	"""
 	expansion = 1
 
 	def __init__(self, in_planes, planes, stride=1, config={}):

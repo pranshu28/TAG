@@ -7,6 +7,15 @@ class TAG(object):
 	Implementation of our proposed TAG optimizer
 	"""
 	def __init__(self, model, args, num_tasks, optim='rms', lr=None, b=5):
+		"""
+		Gets all the necessary arguments for initialization
+		:param model: Current model
+		:param args: All arguments for experiment configuration
+		:param num_tasks: Total number of tasks
+		:param optim: Base optimizers to be used: {'rms':TAG-RMSProp,  'adagrad':TAG-Adagrad, 'adam': TAG-Adam}
+		:param lr: Learning rate (eta)
+		:param b: Hyperparameter for regulating alpha - high b value implies more focus on preventing forgetting
+		"""
 		self.optim = optim
 		self.args = args
 		self.iters = 0
@@ -69,7 +78,6 @@ class TAG(object):
 		:return: New update to the given parameter
 		"""
 		bias_corr1, bias_corr2 = 1, 1
-		eq = {1:'n,nh->h', 2:'n,nhw->hw', 3:'n,nhwc->hwc', 4: 'n,nhwvd->hwvd', 5:'n,nhwzxc->hwzxc'}[len(param_grad.shape)]
 		new_v = None
 
 		# Update task-based first moment
@@ -102,7 +110,7 @@ class TAG(object):
 			alpha_add_ = torch.from_numpy(np.array([1.0] * (task_id + 1))).to(DEVICE)
 		self.alpha_add_[task_id][param_name] = alpha_add_.cpu().numpy()
 
-		# Concatenate all task-based second moments and compute inner product with alphas
+		# Concatenate all task-based second moments
 		for t in range(task_id):
 			new_v = self.v_t[t][param_name].unsqueeze(0) \
 					if t==0 \
@@ -110,6 +118,10 @@ class TAG(object):
 		new_v = self.v_t[task_id][param_name].unsqueeze(0) \
 				if new_v is None \
 				else torch.cat((new_v, self.v_t[task_id][param_name].unsqueeze(0)), dim=0)
+
+		# Compute inner product of alphas and task-based second moments using torch.einsum() function.
+		# eq takes care of varying the dimensions of parameter variable with each layer.
+		eq = {1:'n,nh->h', 2:'n,nhw->hw', 3:'n,nhwc->hwc', 4: 'n,nhwvd->hwvd', 5:'n,nhwzxc->hwzxc'}[len(param_grad.shape)]
 		denom = (torch.sqrt(torch.einsum(eq, alpha_add_.float(), new_v))/ math.sqrt(bias_corr2)) + 1e-8
 
 		return - (self.lr * numer / denom)

@@ -57,8 +57,6 @@ def parse_arguments():
 		return args
 	if 'er' in args.opt or 'agem' in args.opt:
 		print("  mem="+str(args.mem_size))
-	if 'ogd' in args.opt:
-		print("  mem=" + str(args.mem_size))
 	if 'tag' in args.opt:
 		print("  tag-opt="+str(args.tag_opt))
 		print("  b="+str(args.b))
@@ -81,10 +79,13 @@ def set_seeds(seed):
 
 
 def init_experiment(args):
+	"""
+	Initialize the experiment and logging dictionaries
+	"""
 	print('\n------------------- Experiment-'+str(args.seed)+' started -----------------')
 	set_seeds(args.seed)
 	loss_db = {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
-	acc_db =  {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
+	acc_db = {t: [0 for i in range(args.tasks)] for t in range(1, args.tasks+1)}
 	return acc_db, loss_db
 
 
@@ -110,10 +111,8 @@ def get_benchmark_model(args):
 	elif 'cifar' in args.dataset:
 		if args.tasks==10:
 			return AlexNet(config={'input_size': (3, 32, 32), 'total_classes': 100, 'classes': int(100 / args.tasks)}).to(DEVICE)
-		# if args.opt == 'ogd':
-			# return LeNetC(hidden_dim=256, classes_per_task=int(100 / args.tasks), out_dim = 100)
 		return ResNet18(config={'input_size': (3, 32, 32), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
-	elif 'imagenet' in args.dataset:
+	elif 'mini_imagenet' in args.dataset:
 		return ResNet18(config={'input_size': (3, 84, 84), 'dropout': args.dropout, 'classes': int(100 / args.tasks)}).to(DEVICE)
 	elif 'cub' in args.dataset:
 		return ResNet18_CUB(config={'input_size': (3, 224, 224), 'dropout': args.dropout, 'classes': int(200 / args.tasks)}).to(DEVICE)
@@ -145,3 +144,83 @@ def print_details(tag, prev_task_id, metrics, alpha):
 		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'], '   \t', alpha[prev_task_id - 1])
 	else:
 		print('\tPrev Task:', prev_task_id, ' \tManual\t', metrics['accuracy'])
+
+
+def hyp_lr(args, avg_runs_exp):
+	"""
+	Grid search over Learning rate
+	"""
+	lrs = (0.1, 0.05, 0.01, 0.001)
+	best_hyp, best_acc = 0, 0
+	for lr in lrs:
+		args.lr = lr
+		print(args.lr)
+		args.seed = 0
+		acc = avg_runs_exp(args.runs, validate=True)
+		if acc > best_acc:
+			best_acc = acc
+			best_hyp = lr
+	print('Best [lr]:', best_hyp)
+
+
+def hyp_tag(args, avg_runs_exp):
+	"""
+	Grid search for TAG: Learning rate and b
+	"""
+	bs = (5,1,7, 3)
+	lrs = (0.005, 0.001, 0.0005, 0.0001, 0.00005, 0.00001)
+	best_hyp, best_acc = 0, 0
+	for b in bs:
+		args.b = b
+		for lr in lrs:
+			args.lr = lr
+			print(args.lr, args.b)
+			args.seed = 0
+			acc = avg_runs_exp(args.runs, validate=True)
+			if acc > best_acc:
+				best_acc = acc
+				best_hyp = [lr,b]
+	print('Best [lr, b]:', best_hyp)
+
+
+def hyp_ewc(args, avg_runs_exp):
+	"""
+	Grid search for EWC: Learning rate and Lambda
+	"""
+	ls, lambdas = (0.1, 0.05, 0.01, 0.001), (1, 10, 100)
+	best_hyp, best_acc = 0, 0
+	for l in ls:
+		args.lr =l
+		for b in lambdas:
+			args.lambd = b
+			print(l, b)
+			args.seed = 0
+			acc = avg_runs_exp(args.runs, validate=True)
+			if acc > best_acc:
+				best_acc = acc
+				best_hyp = [l,b]
+	print('Best [lr, lambda]:', best_hyp)
+
+
+def hyp_stable(args, avg_runs_exp):
+	"""
+	Grid search for Stable SGD: Learning rate, decay and Dropout
+	"""
+	dropouts = (0.0, 0.1, 0.25, 0.5)
+	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
+	decays = (0.9, 0.8, 0.7)
+	best_hyp, best_acc = 0, 0
+	for dropout in dropouts:
+		args.dropout = dropout
+		for lr in lrs:
+			args.lr = lr
+			for b in decays:
+				args.gamma = b
+				print(dropout, lr, b)
+				args.seed = 0
+				acc = avg_runs_exp(args.runs, validate=True)
+				if acc>best_acc:
+					best_acc = acc
+					best_hyp = [dropout, lr, b]
+	print('Best [dropout, lr, decay]:', best_hyp)
+

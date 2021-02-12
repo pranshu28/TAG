@@ -25,7 +25,7 @@ class ER(nn.Module):
         elif 'cifar' in args.dataset:
             input_size = (3, 32, 32)
             n_classes = 100
-        elif 'imagenet' in args.dataset:
+        elif 'mini_imagenet' in args.dataset:
             input_size = (3, 84, 84)
             n_classes = 100
         elif '5data' in args.dataset:
@@ -82,27 +82,11 @@ class ER(nn.Module):
     def valid(self):
         return self.is_valid[:self.current_index]
 
-    def display(self, gen=None, epoch=-1):
-        from torchvision.utils import save_image
-        from PIL import Image
-
-        # if 'cifar' in self.args.dataset:
-        #     shp = (-1, 3, 32, 32)
-        # else:
-        #     shp = (-1, 1, 28, 28)
-
-        if gen is not None:
-            x = gen.decode(self.x)
-        else:
-            x = self.x
-
-        # save_image((x.reshape(shp) * 0.5 + 0.5), 'samples/buffer_%d.png' % epoch, nrow=int(self.current_index ** 0.5))
-        #Image.open('buffer_%d.png' % epoch).show()
-        # print(self.y.sum(dim=0))
-
-    def add_reservoir(self, x, y, logits, t):
+    def add_reservoir(self, x, y, task_id):
+        """
+        Add new data in the episodic memory - reservoir sampling
+        """
         n_elem = x.size(0)
-        save_logits = logits is not None
 
         # add whatever still fits in the buffer
         place_left = max(0, self.bx.size(0) - self.current_index)
@@ -110,11 +94,7 @@ class ER(nn.Module):
             offset = min(place_left, n_elem)
             self.bx[self.current_index: self.current_index + offset].data.copy_(x[:offset])
             self.by[self.current_index: self.current_index + offset].data.copy_(y[:offset])
-            self.bt[self.current_index: self.current_index + offset].fill_(t)
-
-
-            if save_logits:
-                self.logits[self.current_index: self.current_index + offset].data.copy_(logits[:offset])
+            self.bt[self.current_index: self.current_index + offset].fill_(task_id)
 
             self.current_index += offset
             self.n_seen_so_far += offset
@@ -132,7 +112,7 @@ class ER(nn.Module):
         valid_indices = (indices < self.bx.size(0)).long()
 
         idx_new_data = valid_indices.nonzero().squeeze(-1)
-        idx_buffer   = indices[idx_new_data]
+        idx_buffer = indices[idx_new_data]
 
         self.n_seen_so_far += x.size(0)
 
@@ -149,55 +129,27 @@ class ER(nn.Module):
         # perform overwrite op
         self.bx[idx_buffer] = x[idx_new_data.long()].float()
         self.by[idx_buffer] = y[idx_new_data.long()]
-        self.bt[idx_buffer] = t
+        self.bt[idx_buffer] = task_id
 
-        if save_logits:
-            self.logits[idx_buffer] = logits[idx_new_data]
-
-
-    def measure_valid(self, generator, classifier):
-        with torch.no_grad():
-            # fetch valid examples
-            valid_indices = self.valid.nonzero()
-            valid_x, valid_y = self.bx[valid_indices], self.by[valid_indices]
-            one_hot_y = self.to_one_hot(valid_y.flatten())
-
-            hid_x = generator.idx_2_hid(valid_x)
-            x_hat = generator.decode(hid_x)
-
-            logits = classifier(x_hat)
-            _, pred = logits.max(dim=1)
-            one_hot_pred = self.to_one_hot(pred)
-            correct = one_hot_pred * one_hot_y
-
-            per_class_correct = correct.sum(dim=0)
-            per_class_deno    = one_hot_y.sum(dim=0)
-            per_class_acc     = per_class_correct.float() / per_class_deno.float()
-            self.class_weight = 1. - per_class_acc
-            self.valid_acc    = per_class_acc
-            self.valid_deno   = per_class_deno
-
-
-    def sample(self, amt, exclude_task = None, ret_ind = False, pr=False):
+    def sample(self, batch_size, exclude_task=None):
+        """
+        Get sample batch from the episodic memory
+        :param batch_size: Size of the batch
+        :param exclude_task: Exclude the current task data samples from the batch
+        """
         if exclude_task is not None:
             valid_indices = (self.t != exclude_task)
             valid_indices = valid_indices.nonzero().squeeze()
             bx, by, bt = self.bx[valid_indices], self.by[valid_indices], self.bt[valid_indices]
         else:
             bx, by, bt = self.bx[:self.current_index], self.by[:self.current_index], self.bt[:self.current_index]
-        if bx.size(0) < amt:
-            if ret_ind:
-                return bx, by, bt, torch.from_numpy(np.arange(bx.size(0)))
-            else:
-                return bx, by, bt
+        if bx.size(0) < batch_size:
+            return bx, by, bt
         else:
-            indices = torch.from_numpy(np.random.choice(bx.size(0), amt, replace=False))
+            indices = torch.from_numpy(np.random.choice(bx.size(0), batch_size, replace=False))
 
             indices = indices.to(self.args.device)
-            if ret_ind:
-                return bx[indices], by[indices], bt[indices], indices
-            else:
-                return bx[indices], by[indices], bt[indices]
+            return bx[indices], by[indices], bt[indices]
 
     def split(self, amt):
         indices = torch.randperm(self.current_index).to(self.args.device)

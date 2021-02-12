@@ -3,7 +3,6 @@ from data.data_loader import *
 from existing_methods.er import *
 from existing_methods.agem import *
 from existing_methods.ewc import *
-from existing_methods.ogd import *
 
 
 def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, tag=False, ALGO=None):
@@ -32,27 +31,22 @@ def train_single_epoch(args, net, optimizer, loader, criterion, task_id=None, ta
 			pred = net(X)
 		net.zero_grad()
 
-		# EWC / OGD / AGEM / ER
+		# EWC / AGEM / ER
 		if ALGO is not None:
 			if 'ewc' in args.opt:
 				loss_ewc = args.lambd * ALGO.penalty(net)
 				loss_ewc.backward()
 				torch.nn.utils.clip_grad_norm_(net.parameters(), 100)
-			elif 'ogd' in args.opt:
-				loss = criterion(pred, Y)
-				loss.backward()
-				net = ALGO.optimizer_step(optimizer)
-				continue
 			elif 'agem' in args.opt:
 				net = ALGO.observe_agem(net, X, task_id, Y)
-			else:
+			elif 'er' in args.opt:
 				if task_id > 0:
-					mem_x, mem_y, b_task_ids = ALGO.sample(args.batch_size, exclude_task=None, pr=False)
+					mem_x, mem_y, b_task_ids = ALGO.sample(args.batch_size, exclude_task=None)
 					mem_pred = net(mem_x, None)
 					mem_pred = apply_mask(mem_y, mem_pred, net.n_classes)
 					loss_mem = criterion(mem_pred, mem_y)
 					loss_mem.backward()
-				ALGO.add_reservoir(X, Y, None, task_id)
+				ALGO.add_reservoir(X, Y, task_id)
 
 		if 'agem' not in args.opt:
 			loss = criterion(pred, Y)
@@ -103,101 +97,17 @@ def avg_runs_exp(runs, validate=False):
 	"""
 	all_scores = []
 	r = 0
-	attempts = 0
-	while r<runs and attempts<5:
+	while r<runs:
 		args.seed += 1
 		score, forget, learn_acc = continuum_run(args, train_loaders, val_loaders if validate else test_loaders)
-		if score!=0:
-			all_scores += [[score, forget, learn_acc]]
-			r+=1
-			attempts = 0
-		attempts += 1
+		all_scores += [[score, forget, learn_acc]]
+		r+=1
 	all_scores = np.array(all_scores)
-	if len(all_scores)>0:
-		print('\nFinal Average accuracy = ', all_scores.mean(axis=0)[0], '+/-', all_scores.std(axis=0)[0],
-		      'forget = ', all_scores.mean(axis=0)[1], '+/-', all_scores.std(axis=0)[1],
-		      'learning accuracy = ', all_scores.mean(axis=0)[2], '+/-', all_scores.std(axis=0)[2])
+	print('\nFinal Average accuracy = ', all_scores.mean(axis=0)[0], '+/-', all_scores.std(axis=0)[0],
+	      'forget = ', all_scores.mean(axis=0)[1], '+/-', all_scores.std(axis=0)[1],
+	      'learning accuracy = ', all_scores.mean(axis=0)[2], '+/-', all_scores.std(axis=0)[2])
 	print('------------------- Experiment ended -----------------\n\n\n')
 	return all_scores.mean(axis=0)[0]
-
-
-def hyp_lr():
-	"""
-	Grid search over Learning rate
-	"""
-	lrs = (0.1, 0.05, 0.01, 0.001)
-	best_hyp, best_acc = 0, 0
-	for lr in lrs:
-		args.lr = lr
-		print(args.lr)
-		args.seed = 0
-		acc = avg_runs_exp(args.runs, validate=True)
-		if acc > best_acc:
-			best_acc = acc
-			best_hyp = lr
-	print('Best [lr]:', best_hyp)
-
-
-def hyp_tag():
-	"""
-	Grid search for TAG: Learning rate and b
-	"""
-	bs = (5,1,7, 3)
-	lrs = (0.005, 0.001, 0.0005, 0.0001, 0.00005, 0.00001)
-	best_hyp, best_acc = 0, 0
-	for b in bs:
-		args.b = b
-		for lr in lrs:
-			args.lr = lr
-			print(args.lr, args.b)
-			args.seed = 0
-			acc = avg_runs_exp(args.runs, validate=True)
-			if acc > best_acc:
-				best_acc = acc
-				best_hyp = [lr,b]
-	print('Best [lr, b]:', best_hyp)
-
-
-def hyp_ewc():
-	"""
-	Grid search for EWC: Learning rate and Lambda
-	"""
-	ls, lambdas = (0.1, 0.05, 0.01, 0.001), (1, 10, 100)
-	best_hyp, best_acc = 0, 0
-	for l in ls:
-		args.lr =l
-		for b in lambdas:
-			args.lambd = b
-			print(l, b)
-			args.seed = 0
-			acc = avg_runs_exp(args.runs, validate=True)
-			if acc > best_acc:
-				best_acc = acc
-				best_hyp = [l,b]
-	print('Best [lr, lambda]:', best_hyp)
-
-
-def hyp_stable():
-	"""
-	Grid search for Stable SGD: Learning rate, decay and Dropout
-	"""
-	dropouts = (0.0, 0.1, 0.25, 0.5)
-	lrs = (0.1, 0.05, 0.01, 0.005, 0.001)
-	decays = (0.9, 0.8, 0.7)
-	best_hyp, best_acc = 0, 0
-	for dropout in dropouts:
-		args.dropout = dropout
-		for lr in lrs:
-			args.lr = lr
-			for b in decays:
-				args.gamma = b
-				print(dropout, lr, b)
-				args.seed = 0
-				acc = avg_runs_exp(args.runs, validate=True)
-				if acc>best_acc:
-					best_acc = acc
-					best_hyp = [dropout, lr, b]
-	print('Best [dropout, lr, decay]:', best_hyp)
 
 
 def continuum_run(args, train_loaders, test_loaders):
@@ -231,8 +141,6 @@ def continuum_run(args, train_loaders, test_loaders):
 			ALGO = AGEM(model, optimizer, criterion, args)
 		if 'ewc' in args.opt:
 			ALGO = EWC(model, criterion)
-		if 'ogd' in args.opt:
-			ALGO = OGD(args, model, optimizer)
 
 	continuum = np.tile(np.arange(1, args.tasks + 1), 6) if args.multi == 1 else np.arange(1, args.tasks + 1)
 
@@ -275,8 +183,6 @@ def continuum_run(args, train_loaders, test_loaders):
 
 		if tag:
 			optimizer.update_all(current_task_id-1)
-		if 'ogd' in args.opt:
-			ALGO._update_mem(current_task_id, train_loader)
 		if 'ewc' in args.opt:
 			loader = torch.utils.data.DataLoader(train_loader.dataset, batch_size=200, shuffle=True)
 			ALGO.update(model, current_task_id, loader)
@@ -328,4 +234,4 @@ if __name__ == "__main__":
 	else:
 		print('\n\n Hyperparameter search:',args.hyp_gs)
 		hyp_fun = {'ewc':hyp_ewc, 'tag':hyp_tag, 'stable':hyp_stable, 'lr':hyp_lr}
-		hyp_fun[args.hyp_gs]()
+		hyp_fun[args.hyp_gs](args, avg_runs_exp)
