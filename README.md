@@ -112,11 +112,11 @@ In all above cases, `<dataset>` can be one of the following:
 ## Acknowledgements
 We would like to thanks the authors of the following open source repositories:
 
-[1] Mirzadeh,   S.   I.,   Farajtabar,   M.,   Pascanu,   R.,   and Ghasemzadeh,  H. Understanding  the  role  of  train-ing  regimes  in  continual  learning. arXiv  preprint arXiv:2006.06958, 2020. Github link: [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)
+[1] Mirzadeh,   S.   I.,   Farajtabar,   M.,   Pascanu,   R.,   and Ghasemzadeh,  H. Understanding  the  role  of  training  regimes  in  continual  learning. arXiv  preprint arXiv:2006.06958, 2020. Github link: [imirzadeh/stable-continual-learning](https://github.com/imirzadeh/stable-continual-learning)
 
-[2] Aljundi, R., Belilovsky, E., Tuytelaars, T., Charlin, L., Caccia, M., Lin, M., & Page-Caccia, L. Online Continual Learning with Maximal Interfered Retrieval. Advances in Neural Information Processing Systems 32, 11849–11860, 2019. Github link: [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)
+[2] Aljundi, R., Belilovsky, E., Tuytelaars, T., Charlin, L., Caccia, M., Lin, M., and Page-Caccia, L. Online Continual Learning with Maximal Interfered Retrieval. Advances in Neural Information Processing Systems 32, 11849–11860, 2019. Github link: [optimass/Maximally_Interfered_Retrieval](https://github.com/optimass/Maximally_Interfered_Retrieval)
 
-[3] Lopez-Paz, D., & Ranzato, M.. Gradient Episodic Memory for Continual Learning. NIPS, 2017. Github link: [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory)
+[3] Lopez-Paz, D., and Ranzato, M.. Gradient Episodic Memory for Continual Learning. NIPS, 2017. Github link: [facebookresearch/GradientEpisodicMemory](https://github.com/facebookresearch/GradientEpisodicMemory)
 
 [4] Hataya R. EWC pytorch. Github link: [moskomule/ewc.pytorch](https://github.com/moskomule/ewc.pytorch)
  ___
