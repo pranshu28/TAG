@@ -103,7 +103,7 @@ elif [ $1 = "5data" ]; then
     python3 -m main --dataset 5data --tasks 5 --epochs-per-task $2 --lr 0.001 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'rms'
 
     echo " >>>>>>>> TAG-RMSProp"
-    python3 -m main --dataset 5data --tasks 5 --epochs-per-task 5 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag' --b 7 --tag-opt 'rms'
+    python3 -m main --dataset 5data --tasks 5 --epochs-per-task $2 --lr 0.0005 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --opt 'tag' --b 7 --tag-opt 'rms'
 
     echo " >>>>>>>> Multi-task "
     python3 -m main --dataset 5data --tasks 5 --epochs-per-task $2 --lr 0.05 --gamma 1.0 --batch-size 64 --dropout 0.0 --runs 5 --multi 1
