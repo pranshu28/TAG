@@ -66,7 +66,7 @@ We download the datasets from the below links and store them in the `data` folde
     * CIFAR10: torchvision
     * MNIST: torchvision
     * SVHN: torchvision
-    * notMNIST: Parse the `notMNIST_small.tar` file that is downloaded from [this link](https://yaroslavvb.com/upload/notMNIST/).
+    * notMNIST: Parse the `notMNIST_small.tar` file that is downloaded from [this link](http://yaroslavvb.blogspot.com/2011/09/notmnist-dataset.html).
     * FashionMNIST: torchvision
 
  ___
